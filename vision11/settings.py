@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
     'mainAPP',
+    'usermanagerAPP',
 ]
 
 MIDDLEWARE = [
@@ -43,10 +44,26 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'vision11.urls'
 
+
+
+TEMPLATES_DIRS = [
+    os.path.join(BASE_DIR,'templates')
+]
+
+
+if DEBUG:
+    STATICFILES_DIRS = [
+        os.path.join(BASE_DIR,'statics')
+    ]
+else:
+    STATIC_ROOT = os.path.join(BASE_DIR,'statics')
+
+
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': TEMPLATES_DIRS,
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -112,8 +129,10 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '348112354410-olp3k7jc99r6ld908v2qgt0hf7iqkfqm.a
 
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
 
-SITE_ID = 1
 
+SITE_ID = 1
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
 
 
 # Provider specific settings
