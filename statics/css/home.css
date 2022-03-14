@@ -1,5 +1,159 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui;
+}
+body {
+  overflow-x: hidden;
+}
+.multicolorbg {
+  background: linear-gradient(120deg, #000 55%, crimson 55%);
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+.img1 {
+  height: 80vh;
+  width: min(400px, 50vw);
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+}
+.img2 {
+  height: 100%;
+  width: 400px;
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.content-div {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 20px;
+}
+
+.content-div button {
+  outline: none;
+  border: none;
+  padding: 20px;
+  font-size: 20px;
+  margin-top: 20px;
+  border-radius: 34px;
+  cursor: pointer;
+  color: crimson;
+  font-weight: bold;
+}
+footer {
+  color: white;
+  position: absolute;
+  bottom: 1%;
+  right: 1%;
+}
+
+.faq-container {
+  max-width: 80%;
+  margin: auto;
+}
+
+.faq.active {
+  background-color: white;
+  box-shadow: 0 3px 6px rgb(0 0 0 / 10%), 0 3px 6px rgb(0 0 0 / 10%);
+}
+
+.faq {
+  background-color: transparent;
+  border: 1px solid #9fa4a8;
+  border-radius: 10px;
+  margin: 20px 0;
+  padding: 30px;
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+
+.faqs {
+  display: block;
+  width: 70%;
+  margin: 50px auto;
+}
+
+.faqs p {
+  margin-top: 10px;
+  text-align: justify;
+}
+
+.faqs h3 {
+  text-align: justify;
+}
+
+.faq-tittle {
+  margin: 0 35px 0 0;
+}
+
+.faq-text {
+  display: none;
+  margin: 30px 0 0;
+}
+
+.faq.active .faq-text {
+  display: block;
+}
+
+.faq-toggle {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  font-size: 16px;
+  padding: 0%;
+  height: 30px;
+  width: 30px;
+}
+
+.faq-toggle .fa-times {
+  display: none;
+}
+
+.faq.active .faq-toggle .fa-times {
+  color: #fff;
+  display: block;
+}
+
+.faq.active .faq-toggle .fa-chevron-down {
+  display: none;
+}
+
+.faq.active .faq-toggle {
+  background-color: #9fa4a8;
+  border-radius: 50%;
+}
+
+.dropdown-menu {
+  background: transparent;
+  width: 100px !important;
+}
+
+.centertxt {
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+
+.mainheading {
+  display: block;
+  margin: 40px auto;
+  text-align: center;
+  text-decoration: underline;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }

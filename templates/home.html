@@ -1,12 +1,127 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome User to Vision11</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
 </head>
+
+
 <body>
-    
+    <div class="multicolorbg">
+
+        <div class="left">
+            <img class="img1" src="{% static 'imgs/web/gayle.png' %}" alt="">
+        </div>
+
+        <div class="right">
+            <img class="img2" src="{% static 'imgs/web/smartphone2.png' %}" alt="">
+        </div>
+
+        <div class="centertxt">
+            <h1>WELCOME TO</h1>
+            <h1>VISION 11</h1>
+        </div>
+
+        <div class="content-div">
+            <h3>India's Biggest</h3>
+            <h3>Sports Game</h3>
+            <button>Register Now</button>
+        </div>
+
+        <footer>* A Fantasy game for all ages with google security.</footer>
+
+    </div>
+
+    <div class="mainheading">
+        <h1>FAQS</h1>
+    </div>
+
+    <div class="faq-container">
+
+        <div class="faq active">
+            <h3 class="faq-tittle">How "Fill" Feature Works?</h3>
+            <p class="faq-text">Click on Fill In navbar It will Redirect you to login Page If You have Credentials Please Login or just create New by clicking on signup. Once you login It will Redirect You to Page where you have to provide FUC or Form Unique Code Provided
+                in link while creating new Form (Don't Copy Paste the whole link rather provide only FUC.) FUC should be like https://domain/fillform/FUC</p>
+            <button class="faq-toggle">
+                <i class="fas fa-chevron-down"></i>
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+
+        <div class="faq">
+            <h3 class="faq-tittle">How to create a Form?</h3>
+            <p class="faq-text">Well This is pretty simple SignUp/Login and then Just Click on create on home page and it will redirect you to page where you can create as much form as you want. Since You'll receive all the responses on the basis of your creator's mail on creator access page.</p>
+            <button class="faq-toggle">
+                <i class="fas fa-chevron-down"></i>
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+
+        <div class="faq">
+            <h3 class="faq-tittle">Any Other Ways to a fill form?</h3>
+            <p class="faq-text">Hmmm Ya that's too boring just to copy FUC and paste in input box. Rather than I've made a custom link option so that just click on a link and fill the form simple enough Right? You'll get a custom link once you create a form.</p>
+            <button class="faq-toggle">
+                <i class="fas fa-chevron-down"></i>
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+
+        <div class="faq">
+            <h3 class="faq-tittle">I want to contribute in this Form.</h3>
+            <p class="faq-text">If anyone intrested please contact @ 19bcs053@smvdu.ac.in You are Always welcome.</p>
+            <button class="faq-toggle">
+                <i class="fas fa-chevron-down"></i>
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+
+        <div class="faq">
+            <h3 class="faq-tittle">Creator Access Page</h3>
+            <p class="faq-text">Checkout New Creator Access page <a target="_blank" href="/managequizes">Here</a></p>
+            <button class="faq-toggle">
+                <i class="fas fa-chevron-down"></i>
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+
+        <div class="faq">
+            <h3 class="faq-tittle">Problems</h3>
+            <p class="faq-text">There is some problems with the hosting provider(Heroku) that makes website slower. If You Know any other free hosting provider for python web apps please let me know.</p>
+            <button class="faq-toggle">
+                <i class="fas fa-chevron-down"></i>
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+
+        <!-- link to icons closing/opening section -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous">
+
+        <!-- script to work as toggle for read more icons -->
+        <script>
+            var toggles = document.querySelectorAll(".faq-toggle");
+            toggles.forEach((toggle) => {
+                toggle.addEventListener("click", function() {
+                    toggle.parentNode.classList.toggle("active");
+                });
+            });
+        </script>
+
+    </div>
+
+
 </body>
+
+
 </html>
