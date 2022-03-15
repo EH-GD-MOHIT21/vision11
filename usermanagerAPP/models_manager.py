@@ -13,13 +13,9 @@ class UserManager(BaseUserManager):
 
         user = self.model(
             email=self.normalize_email(email),
+            username = username
         )
-        try:
-            self.model.objects.get(username=username)
-            raise ValueError('Username already exists')
-        except:
-            pass
-        user.username=username
+       
         user.set_password(password)
         user.save(using=self._db)
     
@@ -30,15 +26,10 @@ class UserManager(BaseUserManager):
         Creates and saves a staff user with the given email and password.
         """
         user = self.create_user(
-            email,
+            email=self.normalize_email(email),
+            username=username,
             password=password,
         )
-        try:
-            self.model.objects.get(username=username)
-            raise ValueError('Username already exists')
-        except:
-            pass
-        user.username=username
         user.staff = True
         user.save(using=self._db)
         return user
@@ -48,16 +39,12 @@ class UserManager(BaseUserManager):
         Creates and saves a superuser with the given email and password.
         """
         user = self.create_user(
-            email,
+            email=self.normalize_email(email),
+            username=username,
             password=password,
         )
-        try:
-            self.model.objects.get(username=username)
-            raise ValueError('Username already exists')
-        except:
-            pass
-        user.username=username
         user.staff = True
         user.superuser = True
         user.save(using=self._db)
+        print(user)
         return user
