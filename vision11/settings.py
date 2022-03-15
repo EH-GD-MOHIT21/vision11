@@ -133,7 +133,9 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
 SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
-
+ACCOUNT_FORMS = {
+'signup': 'usermanagerAPP.forms.Signup_details',
+}
 
 # Provider specific settings
 SOCIALACCOUNT_PROVIDERS = {
@@ -146,3 +148,4 @@ SOCIALACCOUNT_PROVIDERS = {
     }
 }
 
+AUTH_USER_MODEL = "usermanagerAPP.User1" 
