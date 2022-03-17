@@ -126,9 +126,11 @@ AUTHENTICATION_BACKENDS = [
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '348112354410-olp3k7jc99r6ld908v2qgt0hf7iqkfqm.apps.googleusercontent.com'
 
+# social auth settings (django-allauth)
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '348112354410-olp3k7jc99r6ld908v2qgt0hf7iqkfqm.apps.googleusercontent.com'
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
+
 
 
 SITE_ID = 1
@@ -137,6 +139,8 @@ LOGOUT_REDIRECT_URL = '/'
 ACCOUNT_FORMS = {
 'signup': 'usermanagerAPP.forms.Signup_details',
 }
+
+
 
 # Provider specific settings
 SOCIALACCOUNT_PROVIDERS = {
@@ -149,4 +153,27 @@ SOCIALACCOUNT_PROVIDERS = {
     }
 }
 
+
+# email configuration
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = 587
+EMAIL_HOST_USER = "no.reply.python.py@gmail.com"
+EMAIL_HOST_PASSWORD = "qwerty@123"
+EMAIL_USE_TLS = True
+
+
+
+# auth user model
 AUTH_USER_MODEL = "usermanagerAPP.User1" 
+
+
+
+# django all-auth settings
+ACCOUNT_AUTHENTICATION_METHOD = "username_email"
+ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 1
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = "mandatory"
+ACCOUNT_LOGIN_ATTEMPTS_LIMIT = 5
+ACCOUNT_LOGIN_ATTEMPTS_TIMEOUT = 300
+ACCOUNT_LOGOUT_ON_PASSWORD_CHANGE = True

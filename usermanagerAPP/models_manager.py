@@ -1,3 +1,13 @@
+"""
+    This file contains model manager for
+    our custom user model user1 and 
+    called in usermanagerAPP.models.py
+
+    syntax:
+        objects = UserManager()
+        
+"""
+
 from django.contrib.auth.models import (
     BaseUserManager, AbstractBaseUser
 )

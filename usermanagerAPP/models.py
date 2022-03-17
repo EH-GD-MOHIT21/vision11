@@ -1,15 +1,20 @@
 from django.db import models
 from .models_manager import UserManager
-from django.contrib.auth.models import AbstractUser,User
+from django.contrib.auth.models import AbstractUser
 
+# to identify the currency 18+ have vision coins
 Currency_Choices=[
     ('vision coins', 'vision coins'),
     ('vision candies' ,'vision candies')
 ]
+
+# gender choice
 Gender_Choices=[
     ('Male', 'Male'),
     ('Female', 'Female')
 ]
+
+# custom user model
 class User1(AbstractUser):
     first_name = models.CharField(max_length=20)   
     second_name = models.CharField(max_length=20)
