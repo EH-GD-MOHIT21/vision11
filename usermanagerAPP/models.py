@@ -4,8 +4,8 @@ from django.contrib.auth.models import AbstractUser
 
 # to identify the currency 18+ have vision coins
 Currency_Choices=[
-    ('vision coins', 'vision coins'),
-    ('vision candies' ,'vision candies')
+    ('vision candies' ,'vision candies'),
+    ('vision coins', 'vision coins')
 ]
 
 # gender choice
@@ -17,7 +17,7 @@ Gender_Choices=[
 # custom user model
 class User1(AbstractUser):
     first_name = models.CharField(max_length=20)   
-    second_name = models.CharField(max_length=20)
+    last_name = models.CharField(max_length=20)
     username=models.CharField(max_length=20,unique=True)
     age = models.IntegerField(null=True,blank=True)
     email=models.EmailField()

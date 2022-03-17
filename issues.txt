@@ -1,6 +1,1 @@
-I've added sending mail facility and overrided some django-allauth settings here are some 
-problems to troubleshoot :-
-
-1. all details are not saving after signup (such as:- gender,lastname etc)
-2. it stores the data before confirmation of email and doesn't have any variables/methods to
-    detect whether the user is authorised or not. 
+all the previous issues are fixed.
