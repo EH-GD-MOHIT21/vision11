@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome User to Vision11</title>
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="shortcut icon" href="{% static 'imgs/web/favicon.ico' %}" type="image/x-icon">
 </head>
 
 
@@ -25,7 +26,8 @@
 
         <div class="centertxt">
             <h1>WELCOME TO</h1>
-            <h1>VISION 11</h1>
+            {% comment %} <h1>VISION 11</h1> {% endcomment %}
+            <img width="250px" height="70px" src="{% static 'imgs/web/logo.png' %}" alt="">
         </div>
 
         <div class="content-div">
