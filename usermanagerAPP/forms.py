@@ -28,7 +28,7 @@ class Signup_details(UserCreationForm):
         fields = ('first_name','last_name','age','username','email','gender_type','country')
 
     def signup(self, request):
-        user = super(self,Signup_details).save(request)
+        user = super(Signup_details,self).save(request)
         user.first_name = self.cleaned_data['first_name']
         user.last_name = self.cleaned_data['last_name']
         user.username = self.cleaned_data['username']

@@ -45,19 +45,17 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'vision11.urls'
 
 
-
 TEMPLATES_DIRS = [
-    os.path.join(BASE_DIR,'templates')
+    os.path.join(BASE_DIR, 'templates')
 ]
 
 
 if DEBUG:
     STATICFILES_DIRS = [
-        os.path.join(BASE_DIR,'statics')
+        os.path.join(BASE_DIR, 'statics')
     ]
 else:
-    STATIC_ROOT = os.path.join(BASE_DIR,'statics')
-
+    STATIC_ROOT = os.path.join(BASE_DIR, 'statics')
 
 
 TEMPLATES = [
@@ -79,14 +77,12 @@ TEMPLATES = [
 WSGI_APPLICATION = 'vision11.wsgi.application'
 
 
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -114,11 +110,10 @@ USE_I18N = True
 USE_TZ = True
 
 
-
 STATIC_URL = 'static/'
 
-MEDIA_URL='/media/'
-MEDIA_ROOT=os.path.join('BASE_DIR','statics/imgs')
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join('BASE_DIR', 'statics/imgs')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTHENTICATION_BACKENDS = [
@@ -132,14 +127,12 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '348112354410-olp3k7jc99r6ld908v2qgt0hf7iqkfqm.a
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
 
 
-
 SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 ACCOUNT_FORMS = {
-'signup': 'usermanagerAPP.forms.Signup_details',
+    'signup': 'usermanagerAPP.forms.Signup_details',
 }
-
 
 
 # Provider specific settings
@@ -163,10 +156,8 @@ EMAIL_HOST_PASSWORD = "qwerty@123"
 EMAIL_USE_TLS = True
 
 
-
 # auth user model
-AUTH_USER_MODEL = "usermanagerAPP.User1" 
-
+AUTH_USER_MODEL = "usermanagerAPP.User1"
 
 
 # django all-auth settings
@@ -177,4 +168,4 @@ ACCOUNT_EMAIL_VERIFICATION = "mandatory"
 ACCOUNT_LOGIN_ATTEMPTS_LIMIT = 5
 ACCOUNT_LOGIN_ATTEMPTS_TIMEOUT = 300
 ACCOUNT_LOGOUT_ON_PASSWORD_CHANGE = True
-SOCIALACCOUNT_LOGIN_ON_GET=True
+SOCIALACCOUNT_LOGIN_ON_GET = True
