@@ -33,7 +33,7 @@
         <div class="content-div">
             <h3>India's Biggest</h3>
             <h3>Sports Game</h3>
-            <button>Register Now</button>
+            <button id="registernow-btn">Register Now</button>
         </div>
 
         <footer>* A Fantasy game for all ages with google security.</footer>
@@ -118,6 +118,10 @@
                     toggle.parentNode.classList.toggle("active");
                 });
             });
+
+            document.getElementById('registernow-btn').addEventListener('click',function(){
+                window.location.href = "/accounts/login"
+            })
         </script>
 
     </div>
