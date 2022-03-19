@@ -1,14 +1,3 @@
-
-@font-face {
-  font-family: Poppins-Regular;
-  src: url('../fonts/poppins/Poppins-Regular.ttf'); 
-}
-
-@font-face {
-  font-family: Poppins-Medium;
-  src: url('../fonts/poppins/Poppins-Medium.ttf'); 
-}
-
 @font-face {
   font-family: Poppins-Bold;
   src: url('../fonts/poppins/Poppins-Bold.ttf'); 
@@ -40,6 +29,11 @@ body, html {
   background-repeat: no-repeat;
 }
 
+.error-text {
+  color: crimson;
+  font-weight: 800;
+}
+
 /*---------------------------------------------*/
 a {
 	font-family: Poppins-Regular;
@@ -59,7 +53,8 @@ a:focus {
 
 a:hover {
 	text-decoration: none;
-  color: #a64bf4;
+  color: crimson;
+  font-weight: 800;
 }
 
 /*---------------------------------------------*/
@@ -292,11 +287,11 @@ iframe {
 }
 
 .input100:focus + .focus-input100::after {
-  color: #a64bf4;
+  color: crimson;
 }
 
 .has-val.input100 + .focus-input100::after {
-  color: #a64bf4;
+  color: crimson;
 }
 
 
@@ -467,6 +462,10 @@ iframe {
   background-color: #333333;
 }
 
+.logoimg{
+  display: none;
+}
+
 /*//////////////////////////////////////////////////////////////////
 [ Responsive ]*/
 
@@ -477,10 +476,6 @@ iframe {
   }
 } 
 
-.logoimg{
-  display: none;
-}
-
 @media(max-width:950px){
   .mainimg{
     display: none;
@@ -490,5 +485,11 @@ iframe {
     width: 300px;
     height: 100px;
     margin: 20px auto;
+  }
+}
+
+@media (max-width:310px) {
+  .logoimg{
+    width: 100%;
   }
 }

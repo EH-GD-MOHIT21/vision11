@@ -1,1 +1,3 @@
-all the previous issues are fixed.
+1. refactoring code
+2. add all required templates and design them.
+3. modefied signup add next/prev buttons to make attractive use gender images instead of select field.

@@ -1,21 +1,140 @@
-{% extends "account/base.html" %}
-
 {% load i18n %}
-
-{% block head_title %}{% trans "Signup" %}{% endblock %}
-
 {% block content %}
-<h1>{% trans "Sign Up" %}</h1>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/util.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css" integrity="sha512-rRQtF4V2wtAvXsou4iUAs2kXHi3Lj9NE7xJR77DE7GHsxgY9RTWy93dzMXgDIG8ToiRTD45VsDNdTiUagOFeZA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="limiter">
+    <div class="container-login100">
+        <div class="imgcon">
+            <img class="mainimg" src="{% static 'imgs/web/gayle1.png' %}">
+            <img class="logoimg" src="{% static 'imgs/web/logo.png' %}">
+        </div>
+        <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+            <form method="post" action="{% url 'account_signup' %}" class="login100-form validate-form">
+                {% csrf_token %}
+                {% if redirect_field_value %}
+                    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+                {% endif %}
+                <p class="form-text error-text">
+                    {{ form.non_field_errors.as_text }}
+                </p>
+                
 
-<p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
+                <div class="wrap-input100 validate-input">
+                    <label for="id_first_name" class="label-input100">First Name: </label>
+                    {{form.first_name}}
+                </div>
+                <p id="emailHelp" class="form-text error-text m-b-23">
+                    {{ form.first_name.errors.as_text }}
+                </p>
 
-<form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
-  {% csrf_token %}
-  {{ form.as_p }}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-  {% endif %}
-  <button type="submit">{% trans "Sign Up" %} &raquo;</button>
-</form>
 
+                <div class="wrap-input100 validate-input">
+                    <label for="id_last_name" class="label-input100">Last Name: </label>
+                    {{form.last_name}}
+                </div>
+                <p id="emailHelp" class="form-text error-text m-b-23">
+                    {{ form.last_name.errors.as_text }}
+                </p>
+
+
+
+                <div class="wrap-input100 validate-input">
+                    <label for="id_email" class="label-input100">Email: </label>
+                    {{form.email}}
+                </div>
+                <p id="emailHelp" class="form-text error-text m-b-23">
+                    {{ form.email.errors.as_text }}
+                </p>
+
+                <div class="wrap-input100 validate-input">
+                    <label for="id_username" class="label-input100">Username: </label>
+                    {{form.username}}
+                </div>
+                <p id="emailHelp" class="form-text error-text m-b-23">
+                    {{ form.username.errors.as_text }}
+                </p>
+
+                <div class="wrap-input100 validate-input">
+                    <label for="id_age" class="label-input100">age: </label>
+                    {{form.age}}
+                </div>
+                <p id="emailHelp" class="form-text error-text m-b-23">
+                    {{ form.age.errors.as_text }}
+                </p>
+
+                <div class="wrap-input100 validate-input">
+                    <label for="id_country" class="label-input100">country</label>
+                    {{form.country}}
+                </div>
+                <p id="passwordHelp" class="form-text error-text m-b-23">
+                    {{ form.country.errors.as_text }}
+                </p>
+
+                <div class="wrap-input100 validate-input">
+                    <label for="id_password1" class="label-input100">Password</label>
+                    {{form.password1}}
+                </div>
+                <p id="passwordHelp" class="form-text error-text m-b-23">
+                    {{ form.password1.errors.as_text }}
+                </p>
+
+
+                <div class="wrap-input100 validate-input">
+                    <label for="id_password2" class="label-input100">Password</label>
+                    {{form.password2}}
+                </div>
+                <p id="passwordHelp" class="form-text error-text m-b-23">
+                    {{ form.password2.errors.as_text }}
+                </p>
+
+                <div>
+                    <label for="id_gender_type">Gender type:</label>
+                    <select name="gender_type" id="id_gender_type">
+                    <option value="Male">Male</option>
+
+                    <option value="Female">Female</option>
+
+                    </select>
+                </div>
+                <p id="passwordHelp" class="form-text error-text">
+                    {{ form.gender_type.errors.as_text }}
+                </p>
+
+
+                <div class="">
+                    <div class="p-t-8 p-b-15" style="display: flex;justify-content: space-between;align-items: center;">
+                        <a href="{% url 'account_login' %}" class="">
+                            Already have an account?
+                        </a>
+                        <a href="{% url 'account_reset_password' %}" class="">
+                            Forgot Password?
+                        </a>
+                    </div>
+                </div>
+                <div class="container-login100-form-btn">
+                    <div class="wrap-login100-form-btn">
+                        <div class="login100-form-bgbtn">
+                        </div>
+                        <button class="login100-form-btn" type="submit" id="loginButton">Sign Up</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    </div> 
+</body>
 {% endblock %}
+{% comment %} 
+<p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p> {% endcomment %}
