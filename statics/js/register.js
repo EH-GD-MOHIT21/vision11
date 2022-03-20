@@ -92,3 +92,5 @@ document.getElementById('prevbtn').addEventListener('click',function(){
         document.getElementById('prevbtn').style.display = 'none';
     }
 })
+
+document.getElementById('signupform').style.display = 'block';

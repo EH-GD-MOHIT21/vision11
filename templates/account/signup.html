@@ -21,7 +21,7 @@
             <img class="logoimg" src="{% static 'imgs/web/logo.png' %}">
         </div>
         <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
-            <form method="post" action="{% url 'account_signup' %}" class="login100-form validate-form">
+            <form method="post" action="{% url 'account_signup' %}" class="login100-form validate-form" id="signupform" style="display: none;">
                 {% csrf_token %}
                 {% if redirect_field_value %}
                     <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
