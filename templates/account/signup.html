@@ -29,77 +29,87 @@
                 <p class="form-text error-text">
                     {{ form.non_field_errors.as_text }}
                 </p>
+                <p id="emailHelp" class="form-text error-text m-b-23">
+                    {{ form.first_name.errors.as_text }}
+                </p>
+                <p id="emailHelp" class="form-text error-text m-b-23">
+                    {{ form.last_name.errors.as_text }}
+                </p>
+                <p id="emailHelp" class="form-text error-text m-b-23">
+                    {{ form.email.errors.as_text }}
+                </p>
+                <p id="emailHelp" class="form-text error-text m-b-23">
+                    {{ form.username.errors.as_text }}
+                </p>
+                <p id="emailHelp" class="form-text error-text m-b-23">
+                    {{ form.age.errors.as_text }}
+                </p>
+                <p id="passwordHelp" class="form-text error-text m-b-23">
+                    {{ form.country.errors.as_text }}
+                </p>
+                <p id="passwordHelp" class="form-text error-text m-b-23">
+                    {{ form.password1.errors.as_text }}
+                </p>
+                <p id="passwordHelp" class="form-text error-text m-b-23">
+                    {{ form.password2.errors.as_text }}
+                </p>
+                <p id="passwordHelp" class="form-text error-text">
+                    {{ form.gender_type.errors.as_text }}
+                </p>
                 
 
                 <div class="wrap-input100 validate-input">
                     <label for="id_first_name" class="label-input100">First Name: </label>
                     {{form.first_name}}
                 </div>
-                <p id="emailHelp" class="form-text error-text m-b-23">
-                    {{ form.first_name.errors.as_text }}
-                </p>
+                <p id="msg-error-1" class="form-text error-text m-b-23"></p>
 
 
                 <div class="wrap-input100 validate-input">
                     <label for="id_last_name" class="label-input100">Last Name: </label>
                     {{form.last_name}}
                 </div>
-                <p id="emailHelp" class="form-text error-text m-b-23">
-                    {{ form.last_name.errors.as_text }}
-                </p>
-
+                <p id="msg-error-2" class="form-text error-text m-b-23"></p>
 
 
                 <div class="wrap-input100 validate-input">
                     <label for="id_email" class="label-input100">Email: </label>
                     {{form.email}}
                 </div>
-                <p id="emailHelp" class="form-text error-text m-b-23">
-                    {{ form.email.errors.as_text }}
-                </p>
+                <p id="msg-error-3" class="form-text error-text m-b-23"></p>
 
                 <div class="wrap-input100 validate-input">
                     <label for="id_username" class="label-input100">Username: </label>
                     {{form.username}}
                 </div>
-                <p id="emailHelp" class="form-text error-text m-b-23">
-                    {{ form.username.errors.as_text }}
-                </p>
+                <p id="msg-error-4" class="form-text error-text m-b-23"></p>
 
                 <div class="wrap-input100 validate-input">
                     <label for="id_age" class="label-input100">age: </label>
                     {{form.age}}
                 </div>
-                <p id="emailHelp" class="form-text error-text m-b-23">
-                    {{ form.age.errors.as_text }}
-                </p>
+                <p id="msg-error-5" class="form-text error-text m-b-23"></p>
 
                 <div class="wrap-input100 validate-input">
                     <label for="id_country" class="label-input100">country</label>
                     {{form.country}}
                 </div>
-                <p id="passwordHelp" class="form-text error-text m-b-23">
-                    {{ form.country.errors.as_text }}
-                </p>
+                <p id="msg-error-6" class="form-text error-text m-b-23"></p>
 
                 <div class="wrap-input100 validate-input">
                     <label for="id_password1" class="label-input100">Password</label>
                     {{form.password1}}
                 </div>
-                <p id="passwordHelp" class="form-text error-text m-b-23">
-                    {{ form.password1.errors.as_text }}
-                </p>
+                <p id="msg-error-7" class="form-text error-text m-b-23"></p>
 
 
                 <div class="wrap-input100 validate-input">
                     <label for="id_password2" class="label-input100">Password</label>
                     {{form.password2}}
                 </div>
-                <p id="passwordHelp" class="form-text error-text m-b-23">
-                    {{ form.password2.errors.as_text }}
-                </p>
+                <p id="msg-error-8" class="form-text error-text m-b-23"></p>
 
-                <div>
+                <div class="wrap-input100">
                     <label for="id_gender_type">Gender type:</label>
                     <select name="gender_type" id="id_gender_type">
                     <option value="Male">Male</option>
@@ -108,9 +118,7 @@
 
                     </select>
                 </div>
-                <p id="passwordHelp" class="form-text error-text">
-                    {{ form.gender_type.errors.as_text }}
-                </p>
+                <p id="msg-error-9" class="form-text error-text m-b-23"></p>
 
 
                 <div class="">
@@ -123,7 +131,21 @@
                         </a>
                     </div>
                 </div>
-                <div class="container-login100-form-btn">
+
+                <div class="container-login100-form-btn flex-btn-container">
+                    <div class="wrap-login100-form-btn flex-child">
+                        <div class="login100-form-bgbtn">
+                        </div>
+                        <button class="login100-form-btn" type="button" id="prevbtn">Prev</button>
+                    </div>
+                    <div class="wrap-login100-form-btn flex-child">
+                        <div class="login100-form-bgbtn">
+                        </div>
+                        <button class="login100-form-btn" type="button" id="nextbtn">Next</button>
+                    </div>
+                </div>
+
+                <div class="container-login100-form-btn wrap-input100" id="btns-container-pn">
                     <div class="wrap-login100-form-btn">
                         <div class="login100-form-bgbtn">
                         </div>
@@ -135,6 +157,7 @@
     </div>
     </div> 
 </body>
+<script src="{% static 'js/register.js' %}"></script>
 {% endblock %}
 {% comment %} 
 <p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p> {% endcomment %}
