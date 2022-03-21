@@ -1,3 +1,4 @@
 1. refactoring code
 2. add all required templates and design them.
 3. modefied signup add next/prev buttons to make attractive use gender images instead of select field.
+4. media query for signup page .container-login100 remove min-height for <= 830px

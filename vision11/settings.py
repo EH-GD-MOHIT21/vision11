@@ -30,6 +30,9 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.google',
     'mainAPP',
     'usermanagerAPP',
+    'rest_framework',
+    'channels',
+    'chatsupportAPP',
     'whitenoise.runserver_nostatic',
 ]
 
@@ -171,3 +174,6 @@ ACCOUNT_LOGIN_ATTEMPTS_LIMIT = 5
 ACCOUNT_LOGIN_ATTEMPTS_TIMEOUT = 300
 ACCOUNT_LOGOUT_ON_PASSWORD_CHANGE = True
 SOCIALACCOUNT_LOGIN_ON_GET = True
+
+# ASGI APP
+ASGI_APPLICATION = 'vision11.asgi.application'
