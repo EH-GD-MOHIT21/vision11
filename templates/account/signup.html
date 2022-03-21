@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{% static 'css/util.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css" integrity="sha512-rRQtF4V2wtAvXsou4iUAs2kXHi3Lj9NE7xJR77DE7GHsxgY9RTWy93dzMXgDIG8ToiRTD45VsDNdTiUagOFeZA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="limiter">
@@ -110,13 +111,21 @@
                 <p id="msg-error-8" class="form-text error-text m-b-23"></p>
 
                 <div class="wrap-input100">
-                    <label for="id_gender_type">Gender type:</label>
-                    <select name="gender_type" id="id_gender_type">
-                    <option value="Male">Male</option>
-
-                    <option value="Female">Female</option>
-
-                    </select>
+                    <div style="display: none;">
+                        <label for="id_gender_type">Gender type:</label>
+                        <select name="gender_type" id="id_gender_type">
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </div>
+                    <div class="gender-classify">
+                        <div class="male">
+                            <img class="boyimg" id="boyimg" src="{% static 'imgs/web/boy.png' %}">
+                        </div>
+                        <div class="female">
+                            <img class="girlimg" id="girlimg" src="{% static 'imgs/web/girl.png' %}">
+                        </div>
+                    </div>
                 </div>
                 <p id="msg-error-9" class="form-text error-text m-b-23"></p>
 
