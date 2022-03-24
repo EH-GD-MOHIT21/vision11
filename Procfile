@@ -1,1 +1,1 @@
-web: daphne manager.asgi:application --port $PORT --bind 0.0.0.0 -v2
+web: daphne vision11.asgi:application --port $PORT --bind 0.0.0.0 -v2
