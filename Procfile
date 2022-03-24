@@ -1,1 +1,1 @@
-web: gunicorn vision11.wsgi --log-file -
+web: daphne manager.asgi:application --port $PORT --bind 0.0.0.0 -v2

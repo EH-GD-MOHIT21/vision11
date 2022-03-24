@@ -80,6 +80,7 @@ ul, li {
 input {
 	outline: none;
 	border: none;
+  width: calc(100% - 82px);
 }
 
 textarea {
@@ -484,7 +485,9 @@ img.boyimg, img.girlimg {
 }
 
 .logoimg{
-  display: none;
+  width: 250px;
+  display: block;
+  margin: auto;
 }
 
 /*//////////////////////////////////////////////////////////////////
@@ -506,6 +509,12 @@ img.boyimg, img.girlimg {
     width: 300px;
     height: 100px;
     margin: 20px auto;
+  }
+}
+
+@media(max-width:830px){
+  .container-login100{
+    min-height: unset;
   }
 }
 

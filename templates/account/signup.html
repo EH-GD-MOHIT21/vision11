@@ -19,149 +19,151 @@
     <div class="container-login100">
         <div class="imgcon">
             <img class="mainimg" src="{% static 'imgs/web/gayle1.png' %}">
-            <img class="logoimg" src="{% static 'imgs/web/logo.png' %}">
         </div>
-        <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
-            <form method="post" action="{% url 'account_signup' %}" class="login100-form validate-form" id="signupform" style="display: none;">
-                {% csrf_token %}
-                {% if redirect_field_value %}
-                    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
-                {% endif %}
-                <p class="form-text error-text">
-                    {{ form.non_field_errors.as_text }}
-                </p>
-                <p id="emailHelp" class="form-text error-text m-b-23">
-                    {{ form.first_name.errors.as_text }}
-                </p>
-                <p id="emailHelp" class="form-text error-text m-b-23">
-                    {{ form.last_name.errors.as_text }}
-                </p>
-                <p id="emailHelp" class="form-text error-text m-b-23">
-                    {{ form.email.errors.as_text }}
-                </p>
-                <p id="emailHelp" class="form-text error-text m-b-23">
-                    {{ form.username.errors.as_text }}
-                </p>
-                <p id="emailHelp" class="form-text error-text m-b-23">
-                    {{ form.age.errors.as_text }}
-                </p>
-                <p id="passwordHelp" class="form-text error-text m-b-23">
-                    {{ form.country.errors.as_text }}
-                </p>
-                <p id="passwordHelp" class="form-text error-text m-b-23">
-                    {{ form.password1.errors.as_text }}
-                </p>
-                <p id="passwordHelp" class="form-text error-text m-b-23">
-                    {{ form.password2.errors.as_text }}
-                </p>
-                <p id="passwordHelp" class="form-text error-text">
-                    {{ form.gender_type.errors.as_text }}
-                </p>
-                
+        <div class="containerlogoform">
+            <img class="logoimg" src="{% static 'imgs/web/logo.png' %}">
+            <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+                <form method="post" action="{% url 'account_signup' %}" class="login100-form validate-form" id="signupform" style="display: none;">
+                    {% csrf_token %}
+                    {% if redirect_field_value %}
+                        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+                    {% endif %}
+                    <p class="form-text error-text">
+                        {{ form.non_field_errors.as_text }}
+                    </p>
+                    <p id="emailHelp" class="form-text error-text m-b-23">
+                        {{ form.first_name.errors.as_text }}
+                    </p>
+                    <p id="emailHelp" class="form-text error-text m-b-23">
+                        {{ form.last_name.errors.as_text }}
+                    </p>
+                    <p id="emailHelp" class="form-text error-text m-b-23">
+                        {{ form.email.errors.as_text }}
+                    </p>
+                    <p id="emailHelp" class="form-text error-text m-b-23">
+                        {{ form.username.errors.as_text }}
+                    </p>
+                    <p id="emailHelp" class="form-text error-text m-b-23">
+                        {{ form.age.errors.as_text }}
+                    </p>
+                    <p id="passwordHelp" class="form-text error-text m-b-23">
+                        {{ form.country.errors.as_text }}
+                    </p>
+                    <p id="passwordHelp" class="form-text error-text m-b-23">
+                        {{ form.password1.errors.as_text }}
+                    </p>
+                    <p id="passwordHelp" class="form-text error-text m-b-23">
+                        {{ form.password2.errors.as_text }}
+                    </p>
+                    <p id="passwordHelp" class="form-text error-text">
+                        {{ form.gender_type.errors.as_text }}
+                    </p>
+                    
 
-                <div class="wrap-input100 validate-input">
-                    <label for="id_first_name" class="label-input100">First Name: </label>
-                    {{form.first_name}}
-                </div>
-                <p id="msg-error-1" class="form-text error-text m-b-23"></p>
-
-
-                <div class="wrap-input100 validate-input">
-                    <label for="id_last_name" class="label-input100">Last Name: </label>
-                    {{form.last_name}}
-                </div>
-                <p id="msg-error-2" class="form-text error-text m-b-23"></p>
-
-
-                <div class="wrap-input100 validate-input">
-                    <label for="id_email" class="label-input100">Email: </label>
-                    {{form.email}}
-                </div>
-                <p id="msg-error-3" class="form-text error-text m-b-23"></p>
-
-                <div class="wrap-input100 validate-input">
-                    <label for="id_username" class="label-input100">Username: </label>
-                    {{form.username}}
-                </div>
-                <p id="msg-error-4" class="form-text error-text m-b-23"></p>
-
-                <div class="wrap-input100 validate-input">
-                    <label for="id_age" class="label-input100">age: </label>
-                    {{form.age}}
-                </div>
-                <p id="msg-error-5" class="form-text error-text m-b-23"></p>
-
-                <div class="wrap-input100 validate-input">
-                    <label for="id_country" class="label-input100">country</label>
-                    {{form.country}}
-                </div>
-                <p id="msg-error-6" class="form-text error-text m-b-23"></p>
-
-                <div class="wrap-input100 validate-input">
-                    <label for="id_password1" class="label-input100">Password</label>
-                    {{form.password1}}
-                </div>
-                <p id="msg-error-7" class="form-text error-text m-b-23"></p>
-
-
-                <div class="wrap-input100 validate-input">
-                    <label for="id_password2" class="label-input100">Password</label>
-                    {{form.password2}}
-                </div>
-                <p id="msg-error-8" class="form-text error-text m-b-23"></p>
-
-                <div class="wrap-input100">
-                    <div style="display: none;">
-                        <label for="id_gender_type">Gender type:</label>
-                        <select name="gender_type" id="id_gender_type">
-                            <option value="Male">Male</option>
-                            <option value="Female">Female</option>
-                        </select>
+                    <div class="wrap-input100 validate-input">
+                        <label for="id_first_name" class="label-input100">First Name: </label>
+                        {{form.first_name}}
                     </div>
-                    <div class="gender-classify">
-                        <div class="male">
-                            <img class="boyimg" id="boyimg" src="{% static 'imgs/web/boy.png' %}">
+                    <p id="msg-error-1" class="form-text error-text m-b-23"></p>
+
+
+                    <div class="wrap-input100 validate-input">
+                        <label for="id_last_name" class="label-input100">Last Name: </label>
+                        {{form.last_name}}
+                    </div>
+                    <p id="msg-error-2" class="form-text error-text m-b-23"></p>
+
+
+                    <div class="wrap-input100 validate-input">
+                        <label for="id_email" class="label-input100">Email: </label>
+                        {{form.email}}
+                    </div>
+                    <p id="msg-error-3" class="form-text error-text m-b-23"></p>
+
+                    <div class="wrap-input100 validate-input">
+                        <label for="id_username" class="label-input100">Username: </label>
+                        {{form.username}}
+                    </div>
+                    <p id="msg-error-4" class="form-text error-text m-b-23"></p>
+
+                    <div class="wrap-input100 validate-input">
+                        <label for="id_age" class="label-input100">age: </label>
+                        {{form.age}}
+                    </div>
+                    <p id="msg-error-5" class="form-text error-text m-b-23"></p>
+
+                    <div class="wrap-input100 validate-input">
+                        <label for="id_country" class="label-input100">country</label>
+                        {{form.country}}
+                    </div>
+                    <p id="msg-error-6" class="form-text error-text m-b-23"></p>
+
+                    <div class="wrap-input100 validate-input">
+                        <label for="id_password1" class="label-input100">Password</label>
+                        {{form.password1}}
+                    </div>
+                    <p id="msg-error-7" class="form-text error-text m-b-23"></p>
+
+
+                    <div class="wrap-input100 validate-input">
+                        <label for="id_password2" class="label-input100">Password</label>
+                        {{form.password2}}
+                    </div>
+                    <p id="msg-error-8" class="form-text error-text m-b-23"></p>
+
+                    <div class="wrap-input100">
+                        <div style="display: none;">
+                            <label for="id_gender_type">Gender type:</label>
+                            <select name="gender_type" id="id_gender_type">
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
                         </div>
-                        <div class="female">
-                            <img class="girlimg" id="girlimg" src="{% static 'imgs/web/girl.png' %}">
+                        <div class="gender-classify">
+                            <div class="male">
+                                <img class="boyimg" id="boyimg" src="{% static 'imgs/web/boy.png' %}">
+                            </div>
+                            <div class="female">
+                                <img class="girlimg" id="girlimg" src="{% static 'imgs/web/girl.png' %}">
+                            </div>
                         </div>
                     </div>
-                </div>
-                <p id="msg-error-9" class="form-text error-text m-b-23"></p>
+                    <p id="msg-error-9" class="form-text error-text m-b-23"></p>
 
 
-                <div class="">
-                    <div class="p-t-8 p-b-15" style="display: flex;justify-content: space-between;align-items: center;">
-                        <a href="{% url 'account_login' %}" class="">
-                            Already have an account?
-                        </a>
-                        <a href="{% url 'account_reset_password' %}" class="">
-                            Forgot Password?
-                        </a>
-                    </div>
-                </div>
-
-                <div class="container-login100-form-btn flex-btn-container">
-                    <div class="wrap-login100-form-btn flex-child">
-                        <div class="login100-form-bgbtn">
+                    <div class="">
+                        <div class="p-t-8 p-b-15" style="display: flex;justify-content: space-between;align-items: center;">
+                            <a href="{% url 'account_login' %}" class="">
+                                Already have an account?
+                            </a>
+                            <a href="{% url 'account_reset_password' %}" class="">
+                                Forgot Password?
+                            </a>
                         </div>
-                        <button class="login100-form-btn" type="button" id="prevbtn">Prev</button>
                     </div>
-                    <div class="wrap-login100-form-btn flex-child">
-                        <div class="login100-form-bgbtn">
-                        </div>
-                        <button class="login100-form-btn" type="button" id="nextbtn">Next</button>
-                    </div>
-                </div>
 
-                <div class="container-login100-form-btn wrap-input100" id="btns-container-pn">
-                    <div class="wrap-login100-form-btn">
-                        <div class="login100-form-bgbtn">
+                    <div class="container-login100-form-btn flex-btn-container">
+                        <div class="wrap-login100-form-btn flex-child">
+                            <div class="login100-form-bgbtn">
+                            </div>
+                            <button class="login100-form-btn" type="button" id="prevbtn">Prev</button>
                         </div>
-                        <button class="login100-form-btn" type="submit" id="loginButton">Sign Up</button>
+                        <div class="wrap-login100-form-btn flex-child">
+                            <div class="login100-form-bgbtn">
+                            </div>
+                            <button class="login100-form-btn" type="button" id="nextbtn">Next</button>
+                        </div>
                     </div>
-                </div>
-            </form>
+
+                    <div class="container-login100-form-btn wrap-input100" id="btns-container-pn">
+                        <div class="wrap-login100-form-btn">
+                            <div class="login100-form-bgbtn">
+                            </div>
+                            <button class="login100-form-btn" type="submit" id="loginButton">Sign Up</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
     </div> 
