@@ -9,7 +9,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-_%m7ea3s-j7c!%#$1kcr5rd9l%v0+3r2)kfokng)=fl!i992(h'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'channels',
     'chatsupportAPP',
     'whitenoise.runserver_nostatic',
+    'payments',
 ]
 
 MIDDLEWARE = [
@@ -177,3 +178,8 @@ SOCIALACCOUNT_LOGIN_ON_GET = True
 
 # ASGI APP
 ASGI_APPLICATION = 'vision11.asgi.application'
+
+
+# RAZOR PAY DUMMY CREDENTIALS
+RAZOR_KEY_ID = "rzp_test_48HADa6gNmd6ks"
+RAZOR_KEY_SECRET = "cs3QfR8Wb6WQ7ZidL5Fr5P29"

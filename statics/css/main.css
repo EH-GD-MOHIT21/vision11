@@ -77,10 +77,14 @@ ul, li {
 
 
 /*---------------------------------------------*/
-input {
+input[type="text"], input[type="password"],input[type="email"],input[type="number"] {
 	outline: none;
 	border: none;
   width: calc(100% - 82px);
+}
+
+.text-center{
+  text-align: center;
 }
 
 textarea {
