@@ -1,12 +1,32 @@
-{% extends "account/base.html" %}
-
 {% load i18n %}
-
-{% block head_title %}{% trans "Verify Your E-mail Address" %}{% endblock %}
-
+{% load static %}
 {% block content %}
-    <h1>{% trans "Verify Your E-mail Address" %}</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify Your E-mail Address</title>
+    <link rel="stylesheet" href="{% static 'css/prdone.css' %}">
+</head>
+<body>
+    <div class="background">
+        <div class="parentcontainer">
+            <div class="wrappercontainer">
+                <div class="topimg">
+                    <img src="{% static 'imgs/web/logo.png' %}">
+                </div>
+                <div class="outercontainer">
 
-    <p>{% blocktrans %}We have sent an e-mail to you for verification. Follow the link provided to finalize the signup process. If you do not see the verification e-mail in your main inbox, check your spam folder. Please contact us if you do not receive the verification e-mail within a few minutes.{% endblocktrans %}</p>
+                    <h1>{% trans "Verify Your E-mail Address" %}</h1>
+
+                    <p>{% blocktrans %}We have sent an e-mail to you for verification. Follow the link provided to finalize the signup process. If you do not see the verification e-mail in your main inbox, check your spam folder. Please contact us if you do not receive the verification e-mail within a few minutes.{% endblocktrans %}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
 
 {% endblock %}
