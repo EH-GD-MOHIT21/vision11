@@ -183,3 +183,14 @@ ASGI_APPLICATION = 'vision11.asgi.application'
 # RAZOR PAY DUMMY CREDENTIALS
 RAZOR_KEY_ID = "rzp_test_48HADa6gNmd6ks"
 RAZOR_KEY_SECRET = "cs3QfR8Wb6WQ7ZidL5Fr5P29"
+
+
+# Channel Layer Setup
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [("127.0.0.1", 6379)],
+        },
+    },
+}
