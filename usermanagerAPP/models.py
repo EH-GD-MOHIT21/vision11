@@ -1,6 +1,23 @@
 from django.db import models
 from .models_manager import UserManager
 from django.contrib.auth.models import AbstractUser
+from allauth.account.signals import user_logged_in
+from django.dispatch import receiver
+from vision11.email.send_email import send_mail
+from vision11.email.messages import messages
+from vision11.email.subjects import subjects
+
+
+
+# django-all-auth overloaded login callback using signal
+@receiver(user_logged_in)
+def user_logged_in_callback(sender, request, user, **kwargs):
+    # send mail here
+    email = user.email
+    send_mail(to=[email],subject=subjects["login-success"],message=messages["login-success"])
+
+
+
 
 # to identify the currency 18+ have vision coins
 Currency_Choices=[
