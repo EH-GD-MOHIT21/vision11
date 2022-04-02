@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payment @ Vision11</title>
+    <style>
+    * {
+        box-sizing: border-box;
+        padding: 0px;
+        margin: 0px;
+        font-family: cursive;
+    }
+    html,
+    body {
+        height: 100%;
+    }
+    body {
+        background-color: #f1f5f8;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .card {
+        background-color: white;
+        padding: 25px;
+        border: 1px solid #bbbbbb;
+        border-radius: 5px;
+        box-shadow: 1px 1px 10px 0px rgb(0 0 0 / 25%);
+    }
+    .title {
+        text-align: center;
+        letter-spacing: 1px;
+    }
+    .muted {
+        color: #8e7f7f;
+        display: block;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    .btn_container {
+        padding: 20px;
+        text-align: center;
+    }
+    .btn {
+        border-radius: 4px;
+        cursor: pointer;
+        padding: 4px 8px;
+        background-color: #ffaaa7;
+        color: white;
+        font-size: 1.2em;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+    </style>
+</head>
+<body>
+    {% for plan in plans %}
+    <div class="card">
+            <h1 class="title">You'll get {{ plan.vision_coins }} vision coins.</h1>
+            <small class="muted"
+                >You'll charged ₹{{ plan.plan_price }} with {{ plan.bonus_coins }} extra vision coins</small
+            >
+            <div class="btn_container">
+                <!-- Payment Button -->
+                <button class="btn" id="pay-btn-{{forloop.counter0}}" onclick="window.location.href='/purchase/offer={{plan.id}}'">Pay Now</button>
+            </div>
+    </div>
+    {% endfor %}
+</body>
+</html>

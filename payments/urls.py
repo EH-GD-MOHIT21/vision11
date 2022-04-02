@@ -2,6 +2,7 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('paymenthandler/', views.paymenthandler),
-    path('home', views.homepage),
+    path('purchase/paymenthandler/', views.paymenthandler),
+    path('home', views.render_offer_page),
+    path('purchase/offer=<int:offerid>',views.homepage),
 ]

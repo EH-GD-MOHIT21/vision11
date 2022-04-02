@@ -9,3 +9,11 @@ def RenderHomePage(request):
     rendering home page.
     '''
     return render(request,'home.html')
+
+
+def RenderDashboard(request):
+    '''
+    This method is used for
+    rendering dashboard page.
+    '''
+    return render(request,'dashboard.html')

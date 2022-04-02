@@ -4,7 +4,7 @@
 	<meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>GFG</title>
+	<title>Purchase @ Vision11</title>
 	<style>
 	* {
 		box-sizing: border-box;
@@ -57,15 +57,15 @@
 </head>
 <body>
 	<div class="card">
-	<h1 class="title">Buy Me a Chai </h1>
-	<small class="muted"
-		>If you like my work, you can support me by donating ₹200</small
-	>
-	<div class="btn_container">
-		<!-- Payment Button -->
-		<button class="btn" id="pay-btn">Donate</button>
-	</div>
-	</div>
+		<h1 class="title">You'll get {{ plan.vision_coins }} vision coins.</h1>
+		<small class="muted"
+			>You'll charged ₹{{ plan.plan_price }} with {{ plan.bonus_coins }} extra vision coins</small
+		>
+		<div class="btn_container">
+			<!-- Payment Button -->
+			<button class="btn" id="pay-btn">Pay Now</button>
+		</div>
+</div>
 </body>
 
 <!-- Razorpay's Javascript code. -->
