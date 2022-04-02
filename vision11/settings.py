@@ -81,6 +81,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'vision11.wsgi.application'
+  
 
 
 DATABASES = {
@@ -90,16 +91,16 @@ DATABASES = {
     }
 }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd801e0m4sdtpdu',
-        'HOST': 'ec2-3-231-254-204.compute-1.amazonaws.com',
-        'PORT': 5432,
-        'USER': 'jbyoptjqibgoyy',
-        'PASSWORD': 'aeb05c686bab5d837a7817563ffb3145533248701debdd176438901ab9313d0b'
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'd801e0m4sdtpdu',
+#         'HOST': 'ec2-3-231-254-204.compute-1.amazonaws.com',
+#         'PORT': 5432,
+#         'USER': 'jbyoptjqibgoyy',
+#         'PASSWORD': 'aeb05c686bab5d837a7817563ffb3145533248701debdd176438901ab9313d0b'
+#     }
+# }
 
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -205,3 +206,9 @@ CHANNEL_LAYERS = {
         },
     },
 }
+
+# CHANNEL_LAYERS = {
+#     "default": {
+#         "BACKEND": "channels.layers.InMemoryChannelLayer"
+#     }
+# }
