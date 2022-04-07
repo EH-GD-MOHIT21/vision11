@@ -31,7 +31,17 @@
             <div class="right content-div">
                 <h3>India's Biggest</h3>
                 <h3>Sports Game</h3>
+                {% if not user.is_authenticated %}
                 <button id="registernow-btn">Register Now</button>
+                {% else %}
+                <h3>Hey {{user.first_name}}!</h3>
+                <button id="log-out-btn">Log Out</button>  
+                <script>
+                    document.getElementById('log-out-btn').addEventListener('click',function(){
+                        window.location.href = '/accounts/logout';
+                    })
+                </script>
+                {% endif %}
             </div>
         </div>
         {% comment %} <footer>* A Fantasy game for all ages with google security.</footer> {% endcomment %}
@@ -144,10 +154,10 @@
         
 
         <div class="faq">
-            <h3 class="faq-tittle">Is it safe to add money to Dream11?</h3>
-            <p class="faq-text">Adding money to your Dream11 account is both simple and safe. We have many different payment options enabled on Dream11 and work hard to ensure that your personal details are safe with us.
+            <h3 class="faq-tittle">Is it safe to add money to Vision11?</h3>
+            <p class="faq-text">Adding money to your Vision11 account is both simple and safe. We have many different payment options enabled on Vision11 and work hard to ensure that your personal details are safe with us.
                 <br>
-                What's more, after you verify your personal details, you can withdraw the money that you win on Dream11 directly to your bank account.</p>
+                What's more, after you verify your personal details, you can withdraw the money that you win on Vision11 directly to your bank account.</p>
             <button class="faq-toggle">
                 <i class="fas fa-chevron-down"></i>
                 <i class="fas fa-times"></i>

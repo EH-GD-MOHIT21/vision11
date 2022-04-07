@@ -5,6 +5,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponseBadRequest
 from .models import Plan,Order
 from django.contrib.auth.decorators import login_required
+from django.utils import timezone
 
 
 # authorize razorpay client with API Keys.
@@ -15,7 +16,17 @@ razorpay_client = razorpay.Client(
 @login_required(login_url='/accounts/login')
 def render_offer_page(request):
 	plans = Plan.objects.all()
-	return render(request,'offers.html',{'plans':plans})
+	render_this = []
+	show_banner = []
+	for plan in plans:
+		if plan.offer_end_date == None or plan.offer_end_date == '':
+			render_this.append(plan)
+			show_banner.append(False)
+		elif plan.offer_end_date > timezone.now():
+			render_this.append(plan)
+			t = plan.offer_end_date - timezone.now()
+			show_banner.append(t.days*24*60*60+t.seconds)
+	return render(request,'offers.html',{'plans':zip(render_this,show_banner)})
 
 
 @login_required(login_url='/accounts/login')
@@ -23,7 +34,11 @@ def homepage(request,offerid):
 	currency = 'INR'
 	try:
 		plan = Plan.objects.get(id=offerid)
-	except:
+		if plan.offer_end_date == '' or plan.offer_end_date == None:
+			pass
+		elif timezone.now() > plan.offer_end_date:
+			return HttpResponseBadRequest()
+	except Exception as e:
 		return HttpResponseBadRequest()
 	amount = plan.plan_price * 100 # to paise
  
