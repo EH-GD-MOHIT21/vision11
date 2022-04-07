@@ -12,15 +12,14 @@
         margin: 0px;
         font-family: cursive;
     }
-    html,
-    body {
-        height: 100%;
-    }
-    body {
+    
+
+    .cards-container {
         background-color: #f1f5f8;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
     }
     .card {
         background-color: white;
@@ -28,6 +27,10 @@
         border: 1px solid #bbbbbb;
         border-radius: 5px;
         box-shadow: 1px 1px 10px 0px rgb(0 0 0 / 25%);
+        width: 300px;
+        margin: 20px;
+        position: relative;
+        overflow: hidden;
     }
     .title {
         text-align: center;
@@ -36,7 +39,7 @@
     .muted {
         color: #8e7f7f;
         display: block;
-        margin-bottom: 10px;
+        margin-top: 10px;
         text-align: center;
     }
     .btn_container {
@@ -53,20 +56,69 @@
         font-weight: 600;
         letter-spacing: 1px;
     }
+    .tag-limited-time-offer{
+        width: 150px;
+    height: 20px;
+    background: red;
+    position: absolute;
+    top: 9%;
+    left: -13%;
+    transform: rotate(-45deg);
+    text-align: center;
+    }
+    .parentplans {
+        padding: 25px;
+    }
+    
+    
     </style>
 </head>
 <body>
-    {% for plan in plans %}
-    <div class="card">
-            <h1 class="title">You'll get {{ plan.vision_coins }} vision coins.</h1>
-            <small class="muted"
-                >You'll charged ₹{{ plan.plan_price }} with {{ plan.bonus_coins }} extra vision coins</small
-            >
-            <div class="btn_container">
-                <!-- Payment Button -->
-                <button class="btn" id="pay-btn-{{forloop.counter0}}" onclick="window.location.href='/purchase/offer={{plan.id}}'">Pay Now</button>
+    <div class="cards-container">
+        {% for plan,bannerstatus in plans %}
+        <div class="card">
+            {% if bannerstatus %}
+            <div class="tag-limited-time-offer">Expire Soon</div>
+            {% endif %}
+            <div class="parentplans">
+                <h1 class="title">You'll get {{ plan.vision_coins }} vision coins.</h1>
+                <small class="muted"
+                    >You'll charged ₹{{ plan.plan_price }} with {{ plan.bonus_coins }} extra vision coins.
+                    {% if bannerstatus %}
+                    <p style="color:crimson;">
+                        <span>Offer ends in: </span>
+                        <span id="{{ forloop.counter0 }}"></span>
+                    </p>
+                    <script>
+                        var id = document.getElementById("{{ forloop.counter0 }}");
+                        id.textContent = parseInt({{bannerstatus}}/60)+":"+parseInt({{bannerstatus}}-parseInt({{bannerstatus}}/60)*60);
+                        function mohit(){
+                            new_val = id.textContent.split(':')
+                            minutes = parseInt(new_val[0]);
+                            seconds = parseInt(new_val[1]);
+                            if(seconds>0){
+                                seconds-=1
+                            }else if(minutes>0){
+                                seconds = 59
+                                minutes -= 1;
+                            }else{
+                                minutes = 0;
+                                seconds = 0;
+                                clearInterval(promise);
+                            }
+                            id.textContent = minutes+":"+seconds;
+                        }
+                        promise = setInterval(mohit,999);
+                    </script>
+                {% endif %}
+                </small>
+                <div class="btn_container">
+                    <!-- Payment Button -->
+                    <button class="btn" id="pay-btn-{{forloop.counter0}}" onclick="window.location.href='/purchase/offer={{plan.id}}'">Pay Now</button>
+                </div>
             </div>
+        </div>
+        {% endfor %}
     </div>
-    {% endfor %}
 </body>
 </html>
