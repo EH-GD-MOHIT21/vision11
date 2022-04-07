@@ -11,3 +11,8 @@ class Chat(models.Model):
 
     def __str__(self):
         return(self.message)
+
+class Queue(models.Model):
+    user = models.ForeignKey(User1,on_delete=models.CASCADE)
+    joined_at = models.DateTimeField(null=True)
+    

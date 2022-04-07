@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
     <link rel="shortcut icon" href="{% static 'imgs/web/favicon.ico' %}" type="image/x-icon">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 
@@ -32,16 +34,50 @@
             <div class="right content-div">
                 <h3>India's Biggest</h3>
                 <h3>Sports Game</h3>
-                <button id="registernow-btn">Register Now</button>  
+                <button id="registernow-btn">Register Now</button>
             </div>
         </div>
         {% comment %} <footer>* A Fantasy game for all ages with google security.</footer> {% endcomment %}
-        <button style="position: absolute;
+
+        <div id="body">
+
+            <div id="chat-circle" class="btn btn-raised">
+                <div id="chat-overlay"></div>
+                <i class="material-icons">speaker_phone</i>
+            </div>
+
+            <div class="chat-box" id="chat_box">
+                <div class="chat-box-header">
+                    Vision11 Support
+                    <span class="chat-box-toggle"><i class="material-icons">close</i></span>
+                </div>
+                <div class="chat-box-body" id="chat_body">
+                    <div class="chat-box-overlay">
+                    </div>
+                    <div class="chat-logs" id="chat_logs">
+
+                    </div>
+                    <!--chat-log -->
+                </div>
+                <div class="chat-input" id="input_chat">
+                    <form>
+                        <input type="text" id="chat-input" placeholder="Send a message..." />
+                        <button type="submit" class="chat-submit" id="chat-submit"><i
+                                class="material-icons">send</i></button>
+                    </form>
+                </div>
+            </div>
+
+
+
+
+        </div>
+        <!-- <button style="position: absolute;
         bottom: 20px;
         right: 50px;
         background: transparent;
         border: none;"><i class="fa fa-comment" aria-hidden="true" style="font-size: 50px;
-color: white;"></i></button>
+color: white;"></i></button> -->
     </div>
 
     <div class="mainheading">
@@ -52,7 +88,8 @@ color: white;"></i></button>
 
         <div class="faq active">
             <h3 class="faq-tittle">How does fantasy sports work?</h3>
-            <p class="faq-text">On vision11, you create your fantasy team based on a real-life match to score maximum points and win exciting cash prizes worth Crores!</p>
+            <p class="faq-text">On vision11, you create your fantasy team based on a real-life match to score maximum
+                points and win exciting cash prizes worth Crores!</p>
             <button class="faq-toggle">
                 <i class="fas fa-chevron-down"></i>
                 <i class="fas fa-times"></i>
@@ -62,18 +99,30 @@ color: white;"></i></button>
 
         <div class="faq">
             <h3 class="faq-tittle">What is Fantasy Cricket?</h3>
-            <p class="faq-text">Fantasy cricket is a fantasy sports game where each player can make a team of 11 players. As the game starts, the users get points for the fantasy teams they have selected based on their performance in the real match. The points are given on the basis of runs, wickets and catches, among others.
+            <p class="faq-text">Fantasy cricket is a fantasy sports game where each player can make a team of 11
+                players. As the game starts, the users get points for the fantasy teams they have selected based on
+                their performance in the real match. The points are given on the basis of runs, wickets and catches,
+                among others.
                 <br>
-                To join a fantasy cricket league, you need to join a match and pick a fantasy team of 11 players that includes 1-6 batsmen, 1-6 bowlers, 1-4 wicket-keepers and 1-6 all-rounders. Along with it, you also need to select the Captain and Vice-Captain of the team.
+                To join a fantasy cricket league, you need to join a match and pick a fantasy team of 11 players that
+                includes 1-6 batsmen, 1-6 bowlers, 1-4 wicket-keepers and 1-6 all-rounders. Along with it, you also need
+                to select the Captain and Vice-Captain of the team.
                 <br>
                 But what truly makes online fantasy cricket so interesting? Well, there is more than one reason for it.
                 <br>
-                Create your team: Fantasy sports put you in control. You make your own cricket team 11 and then enjoy seeing them win a match. So, you can actually leave behind the frustrating feeling of watching a team play that you didn't agree to.
+                Create your team: Fantasy sports put you in control. You make your own cricket team 11 and then enjoy
+                seeing them win a match. So, you can actually leave behind the frustrating feeling of watching a team
+                play that you didn't agree to.
                 <br>
-                Exciting online fantasy matches: Indian fantasy cricket can never give you a dull moment. It's like you are playing every match with the cricket team. It's the kind of engagement that you can never get tired of.
+                Exciting online fantasy matches: Indian fantasy cricket can never give you a dull moment. It's like you
+                are playing every match with the cricket team. It's the kind of engagement that you can never get tired
+                of.
                 <br>
-                Winning factor: One of the most rewarding ways to spend your leisure time. When you play fantasy cricket and win cash, you not only get an adrenaline rush but also a sense of achievement. You can win cash rewards and prizes every day in the cricket game. To improve your skills, you can always do a quick check on fantasy cricket tips and become a pro in this game. So, start and play fantasy sport games now.
-                </p>
+                Winning factor: One of the most rewarding ways to spend your leisure time. When you play fantasy cricket
+                and win cash, you not only get an adrenaline rush but also a sense of achievement. You can win cash
+                rewards and prizes every day in the cricket game. To improve your skills, you can always do a quick
+                check on fantasy cricket tips and become a pro in this game. So, start and play fantasy sport games now.
+            </p>
             <button class="faq-toggle">
                 <i class="fas fa-chevron-down"></i>
                 <i class="fas fa-times"></i>
@@ -85,7 +134,8 @@ color: white;"></i></button>
             <h3 class="faq-tittle">Benefits of Playing Fantasy Sports on Vision11?</h3>
             <p class="faq-text">It’s Fast, Smooth and Effortless:
                 <br>
-                The visual interface of fantasy cricket games on Vision11 is seamless and designed for fantasy sports players to experience gaming in its real sense -
+                The visual interface of fantasy cricket games on Vision11 is seamless and designed for fantasy sports
+                players to experience gaming in its real sense -
                 <br>
                 Almost no loading time
                 Doesn’t demand too much space
@@ -93,32 +143,40 @@ color: white;"></i></button>
                 Clean, organized, and simple dashboard with fantasy cricket tournaments
                 Play Fantasy Cricket Games & choose from regular fantasy tournaments:
                 <br>
-                Forming fantasy cricket teams is simple – Just select players and get started! Fantasy sports rules are clear, wherein, you can just do everything with simple taps.
+                Forming fantasy cricket teams is simple – Just select players and get started! Fantasy sports rules are
+                clear, wherein, you can just do everything with simple taps.
                 <br>
                 Real Matches with real teams:
                 <br>
-                Fantasy sports platforms like Vision11 make sure your experience is seamless as you witness your fantasy teams playing along. Your skill and strategies in equal parts can make you win fantasy cricket games.
+                Fantasy sports platforms like Vision11 make sure your experience is seamless as you witness your fantasy
+                teams playing along. Your skill and strategies in equal parts can make you win fantasy cricket games.
                 <br>
                 Exclusive Offers and Promotions designed for you:
                 <br>
-                Fantasy sports platform Vision11 offers exclusive offers that make your fantasy sports experience so much better. With discounts, referral bonus and lots more, you win more with Vision11.
+                Fantasy sports platform Vision11 offers exclusive offers that make your fantasy sports experience so
+                much better. With discounts, referral bonus and lots more, you win more with Vision11.
                 <br>
                 The Interface:
                 <br>
-                Yes, it’s as friendly as it can get. All you need to do is select a fantasy game and you can just get started in no time.
+                Yes, it’s as friendly as it can get. All you need to do is select a fantasy game and you can just get
+                started in no time.
                 <br>
                 Real Time Updates:
                 <br>
-                Fantasy cricket platform, Vision11 gives you real time match score updates right on the app. Play fantasy cricket and check scores as the match plays on.
+                Fantasy cricket platform, Vision11 gives you real time match score updates right on the app. Play
+                fantasy cricket and check scores as the match plays on.
                 <br>
                 Practice and Real Cash Games:
                 <br>
-                Whether you’re a novice or an expert, you can play fantasy sports very easily. Pick from real cash games or practice matches to start off.
+                Whether you’re a novice or an expert, you can play fantasy sports very easily. Pick from real cash games
+                or practice matches to start off.
                 <br>
                 Secure Transactions:
                 <br>
-                Playing with real cash means having a secure platform, which is the most important thing for any fantasy cricket platform. Vision11 is a safe and secure fantasy cricket app where you can play for cash and win real money credited directly to your bank account.
-                </p>
+                Playing with real cash means having a secure platform, which is the most important thing for any fantasy
+                cricket platform. Vision11 is a safe and secure fantasy cricket app where you can play for cash and win
+                real money credited directly to your bank account.
+            </p>
             <button class="faq-toggle">
                 <i class="fas fa-chevron-down"></i>
                 <i class="fas fa-times"></i>
@@ -128,10 +186,13 @@ color: white;"></i></button>
 
         <div class="faq">
             <h3 class="faq-tittle">Can I add cash on Vision11 using digital wallets like Paytm or PhonePe?</h3>
-            <p class="faq-text">Yes, to link wallets, head to My Balance > Manage Payments and tap on Link Account to link your Paytm/PhonePe wallets. Follow the on-screen instructions, and authenticate using the OTP sent to your number.
+            <p class="faq-text">Yes, to link wallets, head to My Balance > Manage Payments and tap on Link Account to
+                link your Paytm/PhonePe wallets. Follow the on-screen instructions, and authenticate using the OTP sent
+                to your number.
                 <br>
-                PS: Your Paytm/ PhonePe wallets should be linked with the same mobile number you've registered on Vision11.
-                </p>
+                PS: Your Paytm/ PhonePe wallets should be linked with the same mobile number you've registered on
+                Vision11.
+            </p>
             <button class="faq-toggle">
                 <i class="fas fa-chevron-down"></i>
                 <i class="fas fa-times"></i>
@@ -141,19 +202,23 @@ color: white;"></i></button>
 
         <div class="faq">
             <h3 class="faq-tittle">When does Vision11 credit the winning amount? </h3>
-            <p class="faq-text">Usually, IMPS withdrawals can take up to 3 working days to get credited. NEFT withdrawals can take up to 3 working days to get credited.</p>
+            <p class="faq-text">Usually, IMPS withdrawals can take up to 3 working days to get credited. NEFT
+                withdrawals can take up to 3 working days to get credited.</p>
             <button class="faq-toggle">
                 <i class="fas fa-chevron-down"></i>
                 <i class="fas fa-times"></i>
             </button>
         </div>
-        
+
 
         <div class="faq">
             <h3 class="faq-tittle">Is it safe to add money to Dream11?</h3>
-            <p class="faq-text">Adding money to your Dream11 account is both simple and safe. We have many different payment options enabled on Dream11 and work hard to ensure that your personal details are safe with us.
+            <p class="faq-text">Adding money to your Dream11 account is both simple and safe. We have many different
+                payment options enabled on Dream11 and work hard to ensure that your personal details are safe with us.
                 <br>
-                What's more, after you verify your personal details, you can withdraw the money that you win on Dream11 directly to your bank account.</p>
+                What's more, after you verify your personal details, you can withdraw the money that you win on Dream11
+                directly to your bank account.
+            </p>
             <button class="faq-toggle">
                 <i class="fas fa-chevron-down"></i>
                 <i class="fas fa-times"></i>
@@ -163,7 +228,8 @@ color: white;"></i></button>
 
         <div class="faq">
             <h3 class="faq-tittle">Problems</h3>
-            <p class="faq-text">There is some problems with the hosting provider(Heroku) that makes website slower. If You Know any other free hosting provider for python web apps please let me know.</p>
+            <p class="faq-text">There is some problems with the hosting provider(Heroku) that makes website slower. If
+                You Know any other free hosting provider for python web apps please let me know.</p>
             <button class="faq-toggle">
                 <i class="fas fa-chevron-down"></i>
                 <i class="fas fa-times"></i>
@@ -172,18 +238,19 @@ color: white;"></i></button>
 
 
         <!-- link to icons closing/opening section -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"
+            integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous">
 
         <!-- script to work as toggle for read more icons -->
         <script>
             var toggles = document.querySelectorAll(".faq-toggle");
             toggles.forEach((toggle) => {
-                toggle.addEventListener("click", function() {
+                toggle.addEventListener("click", function () {
                     toggle.parentNode.classList.toggle("active");
                 });
             });
 
-            document.getElementById('registernow-btn').addEventListener('click',function(){
+            document.getElementById('registernow-btn').addEventListener('click', function () {
                 window.location.href = "/accounts/login"
             })
         </script>
@@ -192,6 +259,6 @@ color: white;"></i></button>
 
 
 </body>
-
+<script src="{% static 'js/chat.js' %}"></script>
 
 </html>

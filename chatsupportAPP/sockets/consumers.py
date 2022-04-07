@@ -9,6 +9,7 @@ from channels.exceptions import StopConsumer
 from channels.generic.websocket import AsyncWebsocketConsumer
 from chatsupportAPP.models import Chat
 from usermanagerAPP.models import User1
+from chatsupportAPP import views
 
 
 class MyASyncConsumer(AsyncWebsocketConsumer): 
@@ -33,10 +34,26 @@ class MyASyncConsumer(AsyncWebsocketConsumer):
                 'type':'chat.message',
                 'message': f"Hii agent is here how can i help you!!",
                 }
-            )
+                )
+            else:
+                queue_len = await sync_to_async(views.create_queue)(user)
+                await self.channel_layer.group_send(
+                self.group_name,
+                {
+                'type':'chat2.message',
+                'message': f"{queue_len}",
+                }
+                )
+    async def chat2_message(self,event):
+        await self.send(text_data=json.dumps({
+            'msg':event['message'],
+            'status':'no',
+        }))
+
     async def chat_message(self,event):
         await self.send(text_data=json.dumps({
             'msg':event['message'],
+            'status':'yes',
         }))
     
     async def receive(self,text_data=None,bytes_data=None):
@@ -61,10 +78,14 @@ class MyASyncConsumer(AsyncWebsocketConsumer):
     async def chat1_message(self,event):
         await self.send(text_data=json.dumps({
             'msg':event['message'],
+            'status':'yes'
         }))
         
     async def disconnect(self,event):
         print('websocket disconnected...',event)
+        user = self.scope['user']
+        if(user.staff == False):
+            await sync_to_async(views.remove_queue)(user)
         self.channel_layer.group_discard(
             self.group_name,
             self.channel_name
