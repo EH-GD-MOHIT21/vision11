@@ -14,7 +14,7 @@ from django.contrib.auth.models import (
 
 
 class UserManager(BaseUserManager):
-    def create_user(self,username, email, password=None):
+    def create_user(self, username, email, password=None):
         """
         Creates and saves a User with the given email and password.
         """
@@ -23,15 +23,15 @@ class UserManager(BaseUserManager):
 
         user = self.model(
             email=self.normalize_email(email),
-            username = username
+            username=username
         )
-       
+
         user.set_password(password)
         user.save(using=self._db)
-    
+
         return user
 
-    def create_staffuser(self,username, email, password):
+    def create_staffuser(self, username, email, password):
         """
         Creates and saves a staff user with the given email and password.
         """
@@ -44,7 +44,7 @@ class UserManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
-    def create_superuser(self,username, email, password):
+    def create_superuser(self, username, email, password):
         """
         Creates and saves a superuser with the given email and password.
         """
@@ -56,5 +56,4 @@ class UserManager(BaseUserManager):
         user.staff = True
         user.superuser = True
         user.save(using=self._db)
-        print(user)
         return user
