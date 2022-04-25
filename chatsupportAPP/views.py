@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.conf import settings
 import os
 import datetime
@@ -37,7 +37,11 @@ def get_queue(user_obj):
 def RenderAdminChat(request):
     if request.user.is_authenticated:
         if(request.user.staff):
-            all_queues = Queue.objects.first()
-            id_queue = all_queues.group_name
-            return render(request, 'admin_chatbox.html',{'queues':all_queues,'queue_id':id_queue})  
+            try:
+                all_queues = Queue.objects.first()
+                id_queue = all_queues.group_name
+                return render(request, 'admin_chatbox.html',{'queues':all_queues,'queue_id':id_queue}) 
+            except:
+                return redirect('/')
+    return redirect('/') 
 

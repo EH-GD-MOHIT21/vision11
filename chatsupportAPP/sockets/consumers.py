@@ -98,7 +98,9 @@ class MyASyncConsumer(AsyncWebsocketConsumer):
     async def disconnect(self,event):
         print('websocket disconnected...',event)
         user = self.scope['user']
-        if(user.staff == False):  
+        if user.is_anonymous:
+            await self.close()
+        elif(user.staff == False):  
             await self.channel_layer.group_send(
                 self.group_name,
                 {
