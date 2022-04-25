@@ -10,10 +10,9 @@ $(function () {
         try{
             ws.send(JSON.stringify({
                 'msg':msg
-            }))  
+            }))   
         }
         catch(err){  
-            console.log(err) 
         }
         var buttons = [
             {
@@ -25,14 +24,12 @@ $(function () {
                 value: 'new'
             }
         ];
-        setTimeout(function () {
-            generate_message(msg, 'user');
-        }, 1000)
 
     })
-
+    const user_id = JSON.parse(document.getElementById('user_id').textContent);
+    const user_name = JSON.parse(document.getElementById('user_name').textContent);
     function connect_chat(){
-        ws= new WebSocket('ws://'+window.location.host+'/'+'ws/sc/'+'hks'+'/'+1+'/')
+        ws= new WebSocket('ws://'+window.location.host+'/'+'ws/sc/'+user_id+'/'+1+'/')
                 ws.onopen=function(){
                     console.log('websocket is open now..')
                     ws.send
@@ -54,22 +51,38 @@ $(function () {
                         ptag.appendChild(queue_elem);
                         document.getElementById('chat_logs').appendChild(ptag)
                     }
-                    
-                    else {generate_message(data['msg'],'user')}   
-                    console.log(data['msg'])
-                    console.log(data['status'])
-                    if(data['status']=='yes' && data['msg']=='Hii agent is here how can i help you!!'){
+                    else if(data['updation']=='yes'){
+                        queue_no = document.getElementById('queue_elm')
+                        queue_no.innerHTML= `Your in Queue no:${data['msg']}`;   
+                    }
+                    else if (data['status']=='yes' && data['msg']=='Hii agent is here how can i help you!!'){
+                        inputdom = document.getElementById('input_chat')
                         inputdom.style.display='';
                         var ptagg = document.getElementById('queue_show')
                         ptagg.innerHTML='';
-                        generate_message(data['msg'],'user')  
+                        if(data['username']==user_name){
+                            Type_of = 'self';
+                        }
+                        else{
+                            Type_of = 'user'; 
+                        }
+                        generate_message(data['msg'],Type_of)  
                     }
+                    else {
+                        if(data['username']==user_name){
+                            Type_of = 'self';
+                        }
+                        else{
+                            Type_of = 'user'; 
+                        }
+                        generate_message(data['msg'],Type_of)} 
                 }
                 ws.onclose=function(event){
                     console.log('server disconnected...')
                     var ptagg = document.getElementById('queue_show')
                     ptagg.remove()
-                    
+                    var chat_hist = document.getElementById('chat_logs')
+                    chat_hist.innerHTML='';
                 } 
     }
 
@@ -77,9 +90,6 @@ $(function () {
         INDEX++;
         var str = "";
         str += "<div id='cm-msg-" + INDEX + "' class=\"chat-msg " + type + "\">";
-        str += "          <span class=\"msg-avatar\">";
-        str += "            <img src=\"https:\/\/image.crisp.im\/avatar\/operator\/196af8cc-f6ad-4ef7-afd1-c45d5231387c\/240\/?1483361727745\">";
-        str += "          <\/span>";
         str += "          <div class=\"cm-msg-text\">";
         str += msg;
         str += "          <\/div>";

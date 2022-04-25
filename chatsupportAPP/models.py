@@ -1,3 +1,5 @@
+from pyexpat import model
+from xmlrpc.client import TRANSPORT_ERROR
 from django.db import models
 from usermanagerAPP.models import User1
 
@@ -14,5 +16,6 @@ class Chat(models.Model):
 
 class Queue(models.Model):
     user = models.ForeignKey(User1,on_delete=models.CASCADE)
+    group_name = models.CharField(max_length=25,null=True,blank=True)
     joined_at = models.DateTimeField(null=True)
     

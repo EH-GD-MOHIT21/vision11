@@ -3,5 +3,6 @@ from . import views
 
 urlpatterns = [
     path('',views.RenderHomePage),   
-    path('dashboard',views.RenderDashboard), 
+    path('dashboard',views.RenderDashboard),
+
 ]

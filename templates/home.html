@@ -266,6 +266,8 @@ color: white;"></i></button> -->
 
 
 </body>
+{{ request.user.id|json_script:"user_id" }}
+{{ request.user.username|json_script:"user_name" }}
 <script src="{% static 'js/chat.js' %}"></script>
 
 </html>

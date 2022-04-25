@@ -1,0 +1,106 @@
+ {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Chat @ Vision11</title>
+    <link rel="stylesheet" href="{% static 'admin/css/admin_chat.css' %}">  
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">   
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+</head>
+<body> 
+    <div class="head">
+        <h3 style="text-align: center;">Admin Here...</h3>
+    </div>
+    <div id='bodybox'>
+        <div id='chatborder'>
+            <h4 style="text-align: center;">{{ queues.user.username }}</h4>
+            <div class="chtbox" id="chtbox"></div>
+          <p class="admin_chatlog" id="admin_chat">       
+          </p>
+          <p class="user_chatlog" id="user_chat">       
+        </p>
+        <input type="text" name="chat" id="chatbox" placeholder="Hi there! Type here to talk to me.">
+          <button type="submit" class="chat-submit" id="chat-submit"><i
+            class="material-icons">send</i></button>
+    </div>
+          
+      </div>      
+</body>
+{{ queue_id|json_script:"user_id" }}
+{{ request.user.username|json_script:"user_name" }}
+<script>
+    const user_id = JSON.parse(document.getElementById('user_id').textContent);
+    const user_name = JSON.parse(document.getElementById('user_name').textContent);
+    function connect_chat(){
+        ws= new WebSocket('ws://'+window.location.host+'/'+'ws/sc/'+user_id+'/'+1+'/')
+                ws.onopen=function(){
+                    console.log('websocket is open now..')
+                    ws.send
+                }
+                ws.onmessage=function(event){ 
+                    const data=JSON.parse(event.data)
+                    console.log(data['msg'])
+                    console.log(data['username'])
+                    user_nm = data['username']
+                    var ntag = document.createElement("p")
+                    if(user_nm == user_name){
+                        ntag.className = "admin_chatlog"
+                        document.getElementById('chtbox').appendChild(ntag)
+                        ntag.innerHTML = "Admin :" + data['msg']
+                    }
+                    else{
+                        if(data['msg']=='User left Please refresh Page to Chat to new user'){
+                            document.getElementById("chatbox").disabled = true;
+                            document.getElementById('chtbox').appendChild(ntag)
+                            ntag.innerHTML = "Chat Ended :" + data['msg']
+                        }
+                        else{
+                        ntag.className = "user_chatlog"
+                        document.getElementById('chtbox').appendChild(ntag)
+                        ntag.innerHTML = "User :" +data['msg']
+                        }
+                    }
+                        
+                }
+                ws.onclose=function(event){
+                    console.log('server disconnected...')
+                    
+                } 
+        
+    }    
+    $("#chat-submit").click(function (e) {
+        e.preventDefault();
+        var msg = $("#chatbox").val();
+        if (msg.trim() == '') {
+            return false;
+        }
+        else{
+        get_input = document.getElementById('chatbox')
+        get_input.value=""
+        try{
+            ws.send(JSON.stringify({
+                'msg':msg
+            }))   
+        }
+        catch(err){  
+        }}
+        var buttons = [
+            {
+                name: 'Existing User',
+                value: 'existing'
+            },
+            {
+                name: 'New User',
+                value: 'new'
+            }
+        ];
+
+    })
+connect_chat()
+
+</script>
+</html>
+       

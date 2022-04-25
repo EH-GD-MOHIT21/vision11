@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from chatsupportAPP.models import Queue 
 # Create your views here.
 
 
@@ -17,3 +17,4 @@ def RenderDashboard(request):
     rendering dashboard page.
     '''
     return render(request,'dashboard.html')
+
