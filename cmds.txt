@@ -1,0 +1,7 @@
+celery -A taskSchedularApp.celery worker --pool=solo -l info
+cd redisServer
+.\redis-server.exe
+cmd
+workon vision11
+python manage.py runserver
+celery -A taskSchedularApp beat -l info

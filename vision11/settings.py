@@ -1,3 +1,4 @@
+from celery.schedules import crontab
 from pathlib import Path
 import os
 
@@ -9,7 +10,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-_%m7ea3s-j7c!%#$1kcr5rd9l%v0+3r2)kfokng)=fl!i992(h'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -34,7 +35,9 @@ INSTALLED_APPS = [
     'channels',
     'chatsupportAPP',
     'whitenoise.runserver_nostatic',
-    'payments'
+    'payments',
+    'taskSchedularApp',
+    'django_celery_results'
 ]
 
 MIDDLEWARE = [
@@ -81,7 +84,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'vision11.wsgi.application'
-  
 
 
 DATABASES = {
@@ -206,3 +208,13 @@ CHANNEL_LAYERS = {
         },
     },
 }
+
+
+
+
+# celery
+CELERY_BROKER_URL = 'redis://localhost:6379'
+CELERY_RESULT_BACKEND = 'django-db'
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TASK_SERIALIZER = 'json'
