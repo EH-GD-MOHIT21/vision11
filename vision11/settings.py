@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
     'payments',
     'taskSchedularApp',
-    'django_celery_results'
+    'django_celery_results',
+    'records',
 ]
 
 MIDDLEWARE = [
