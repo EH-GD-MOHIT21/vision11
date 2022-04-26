@@ -38,6 +38,16 @@ class MyASyncConsumer(AsyncWebsocketConsumer):
                 'updation':'no'
                 }
                 )
+                queue_obj = await sync_to_async(Queue.objects.get)(group_name = self.group_name)
+                await sync_to_async(views.remove_queue)(queue_obj)
+                for i in await self.get_all_queues():
+                    queue_info = await sync_to_async(views.get_queue)(i) 
+                    await self.channel_layer.group_send(
+                    queue_info['grp_name'],
+                    {
+                    'type':'chat3.message',
+                    'message': f"{queue_info['queue_length']}",
+                    })
             else:
                 queue_len = await sync_to_async(views.create_queue)(user,self.group_name)
                 await self.channel_layer.group_send(
@@ -104,24 +114,23 @@ class MyASyncConsumer(AsyncWebsocketConsumer):
                 {
                     'type':'chat5.message',
                     'message': "User left Please refresh Page to Chat to new user",
-                    'username': user.username
+                    'username': user.username      
                 }
             )
-            await sync_to_async(views.remove_queue)(user)
+            await sync_to_async(views.remove_queue1)(user)
             for i in await self.get_all_queues():
-                queue_info = await sync_to_async(views.get_queue)(i.user) 
+                queue_info = await sync_to_async(views.get_queue)(i) 
                 await self.channel_layer.group_send(
-                queue_info.grp_name,
+                queue_info['grp_name'],
                 {
                 'type':'chat3.message',
-                'message': f"{queue_info.queue_length}",
+                'message': f"{queue_info['queue_length']}",
                 })
     async def chat3_message(self,event):
         await self.send(text_data=json.dumps({
             'msg':event['message'],
             'status':'no',
             'updation':'yes',
-            'username':event['username'],
         }))
     async def chat5_message(self,event):
         await self.send(text_data=json.dumps({

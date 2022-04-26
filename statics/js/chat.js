@@ -36,7 +36,7 @@ $(function () {
                 }
                 ws.onmessage=function(event){ 
                     const data=JSON.parse(event.data)
-                    if(data['status']=='no'){
+                    if(data['status']=='no' && data['updation']=='no'){
                         inputdom = document.getElementById('input_chat')
                         inputdom.style.display='none';
                         var ptag=document.createElement("div");
