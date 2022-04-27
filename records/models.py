@@ -3,10 +3,11 @@ from django.db import models
 # Create your models here.
 
 choices = (
-    ('wicket_keeper_batsman','wicket_keeper_batsman'),
-    ('batsman','batsman'),
-    ('all_rounder','all_rounder'),
-    ('bowler','bowler')
+    ('WK-Batsman','WK-Batsman'),
+    ('Batsman','Batsman'),
+    ('Batting Allrounder','Batting Allrounder'),
+    ('Bowling Allrounder','Bowling Allrounder'),
+    ('Bowler','Bowler')
 )
 
 

@@ -296,7 +296,7 @@ nav .profile-details i{
   display: flex;
   justify-content: flex-end;
 }
-.sales-boxes .box .button a{
+.sales-boxes .box .button a,.home-section .home-content .overview-boxes .right-side .button a{
   color: #fff;
   background: #0A2558;
   padding: 4px 12px;
@@ -306,9 +306,10 @@ nav .profile-details i{
   text-decoration: none;
   transition: all 0.3s ease;
 }
-.sales-boxes .box .button a:hover{
+.sales-boxes .box .button a:hover,.home-section .home-content .overview-boxes .right-side .button a:hover{
   background:  #0d3073;
 }
+
 
 /* Right box */
 .home-content .sales-boxes .top-sales{

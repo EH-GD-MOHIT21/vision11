@@ -19,51 +19,33 @@
     </div>
       <ul class="nav-links">
         <li>
-          <a href="#" class="active">
+          <a href="#" class="active" id="basedash">
             <i class='bx bx-grid-alt' ></i>
             <span class="links_name">Dashboard</span>
           </a>
         </li>
         <li>
-          <a href="#">
-            <i class='bx bx-box' ></i>
-            <span class="links_name">email verification</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
+          <a href="#" id="ageverdash">
             <i class='bx bx-list-ul' ></i>
             <span class="links_name">age verification</span>
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="#" id="absdash">
             <i class='bx bx-pie-chart-alt-2' ></i>
             <span class="links_name">About us</span>
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="#" id="hefedash">
             <i class='bx bx-coin-stack' ></i>
             <span class="links_name">Help& feedback</span>
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="/accounts/logout">
             <i class='bx bx-book-alt' ></i>
-            <span class="links_name">Setting</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class='bx bx-user' ></i>
-            <span class="links_name"></span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class='bx bx-cog' ></i>
-            <span class="links_name"></span>
+            <span class="links_name">logout</span>
           </a>
         </li>
         <li class="log_out">
@@ -86,12 +68,12 @@
       </div>
       <div class="profile-details">
         <!--<img src="images/profile.jpg" alt="">-->
-        <span class="admin_name">user name</span>
+        <span class="admin_name">Hey! {{user.username}}</span>
         <i class='bx bx-chevron-down' ></i>
       </div>
     </nav>
 
-    <div class="home-content">
+    <div class="home-content" id="base-dashboard">
       <div class="overview-boxes">
         <div class="box">
           <div class="right-side">
@@ -153,6 +135,61 @@
         </div>
       </div>
     </div>
+
+    <div class="home-content" id="age-verification-dashboard">
+      <div class="overview-boxes">
+        <div class="box">
+          <div class="right-side">
+            <div class="box-topic">No of contests joined</div>
+            <div class="number">
+              <input type="file" name="">
+            </div>
+            <div class="indicator">
+              <i class='bx bx-up-arrow-alt'></i>
+              <span class="text">Id proof may be aadhar/pan/licence etc.</span>
+            </div>
+            <div class="button">
+              <a href="#">See All</a>
+            </div>
+          </div>
+          <i class='bx bx-cart-alt cart'></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="home-content" id="about-us-dashboard">
+      <div class="overview-boxes">
+        <div class="box">
+          <div class="right-side">
+            <div class="box-topic">No of contests joined</div>
+            <div class="number">10</div>
+            <div class="indicator">
+              <i class='bx bx-up-arrow-alt'></i>
+              <span class="text">Up from yesterday</span>
+            </div>
+          </div>
+          <i class='bx bx-cart-alt cart'></i>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="home-content" id="help-feedback-dashboard">
+      <div class="overview-boxes">
+        <div class="box">
+          <div class="right-side">
+            <div class="box-topic">No of contests joined</div>
+            <div class="number">10</div>
+            <div class="indicator">
+              <i class='bx bx-up-arrow-alt'></i>
+              <span class="text">Up from yesterday</span>
+            </div>
+          </div>
+          <i class='bx bx-cart-alt cart'></i>
+        </div>
+      </div>
+    </div>
+
   </section>
 
   <script>
@@ -165,6 +202,30 @@ sidebarBtn.onclick = function() {
 }else
   sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
 }
+ </script>
+
+ <script>
+    elms = ["base-dashboard","age-verification-dashboard","about-us-dashboard","help-feedback-dashboard"]
+    triggered = ["basedash","ageverdash","absdash","hefedash"]
+    for(var i=1;i<elms.length;i++){
+        document.getElementById(elms[i]).style.display = "none";
+    }
+
+    for(var i=0;i<triggered.length;i++){
+      document.getElementById(triggered[i]).addEventListener('click',function(){
+          for(var j=0;j<elms.length;j++){
+            if(this.id==triggered[j]){
+                document.getElementById(elms[j]).style.display = 'block';
+                if(!document.getElementById(triggered[j]).classList.contains('active'))
+                document.getElementById(triggered[j]).classList.add('active');
+            }else{
+                document.getElementById(elms[j]).style.display = 'none';
+                if(document.getElementById(triggered[j]).classList.contains('active'))
+                document.getElementById(triggered[j]).classList.remove('active');
+            }
+          }
+      })
+    }
  </script>
 
 </body>

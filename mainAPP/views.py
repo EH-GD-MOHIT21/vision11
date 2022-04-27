@@ -18,6 +18,7 @@ def RenderHomePage(request):
     return render(request,'home.html')
 
 
+@login_required(login_url='/login')
 def RenderDashboard(request):
     '''
     This method is used for
