@@ -6,6 +6,7 @@ from django.http import HttpResponseBadRequest
 from .models import Plan, Order
 from django.contrib.auth.decorators import login_required
 from django.utils import timezone
+from usermanagerAPP.models import User1
 
 
 
@@ -18,6 +19,8 @@ razorpay_client = razorpay.Client(
 
 @login_required(login_url='/accounts/login')
 def render_offer_page(request):
+    if not request.user.is_adult or request.user.currency_type=='vision candies':
+        return HttpResponseBadRequest('please verify you are 18+ year old.')
     plans = Plan.objects.all()
     render_this = []
     show_banner = []
@@ -36,6 +39,8 @@ def render_offer_page(request):
 
 @login_required(login_url='/accounts/login')
 def homepage(request, offerid):
+    if not request.user.is_adult or request.user.currency_type=='vision candies':
+        return HttpResponseBadRequest('please verify you are 18+ year old.')
     currency = 'INR'
     try:
         plan = Plan.objects.get(id=offerid)
@@ -69,7 +74,7 @@ def homepage(request, offerid):
                           amount=plan.plan_price, order_id=razorpay_order_id)
     except:
         Order.objects.create(
-            user=request.user, amount=plan.plan_price, order_id=razorpay_order_id).save()
+            user=request.user, amount=plan.plan_price, order_id=razorpay_order_id,plan_benefits=plan.vision_coins).save()
 
     return render(request, 'razorpay.html', context=context)
 
@@ -84,6 +89,8 @@ def homepage(request, offerid):
 @login_required(login_url='/accounts/login')
 @csrf_exempt
 def paymenthandler(request):
+    if not request.user.is_adult or request.user.currency_type=='vision candies':
+        return HttpResponseBadRequest('please verify you are 18+ year old.')
     # only accept POST request.
     if request.method == "POST":
         try:
@@ -106,6 +113,9 @@ def paymenthandler(request):
                     # capture the payemt
                     razorpay_client.payment.capture(payment_id, amount)
                     order.update_status
+                    
+                    request.user.vision_credits += round(order.plan_benefits,3)
+                    request.user.save()
                     order.save()
                     # render success page on successful caputre of payment
                     return redirect('/')

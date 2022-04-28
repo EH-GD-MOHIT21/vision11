@@ -310,6 +310,10 @@ nav .profile-details i{
   background:  #0d3073;
 }
 
+.button_upload{
+  margin: 20px auto;
+  text-align: center;
+}
 
 /* Right box */
 .home-content .sales-boxes .top-sales{
@@ -345,6 +349,34 @@ nav .profile-details i{
   font-weight: 400;
   color: #333;
 }
+
+.box_age,.box_abs{
+  width: calc(90% - 15px) !important;
+  text-align: center;
+}
+
+.overview_boxes_age{
+  justify-content: center !important;
+  min-height: 60vh;
+}
+
+.overview_boxes_abs{
+  justify-content: center !important;
+}
+
+.age_content,.abs_content{
+  min-height: 100vh;
+}
+
+.content-abs{
+  text-align: left !important;
+}
+
+.content-abs .text{
+  font-size: 14px !important;
+}
+
+
 /* Responsive Media Query */
 @media (max-width: 1240px) {
   .sidebar{

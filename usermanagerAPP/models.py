@@ -1,3 +1,4 @@
+from random import choices
 from django.db import models
 from .models_manager import UserManager
 from django.contrib.auth.models import AbstractUser
@@ -6,6 +7,13 @@ from django.dispatch import receiver
 from vision11.email.send_email import send_mail
 from vision11.email.messages import messages
 from vision11.email.subjects import subjects
+from django.db.models.signals import pre_save
+
+
+class Choices(models.TextChoices):
+    VISION_COINS = ('vision coins', 'vision coins')
+    VISION_CANDIES = ('vision candies', 'vision candies')
+
 
 
 # django-all-auth overloaded login callback using signal
@@ -61,7 +69,7 @@ class User1(AbstractUser):
 
     currency_type = models.CharField(
         choices=Currency_Choices,
-        default=Currency_Choices[1],
+        default=Choices.VISION_CANDIES,
         max_length=50
     )
 
@@ -109,3 +117,20 @@ class User1(AbstractUser):
     @property
     def is_superuser(self):
         return self.superuser
+
+
+
+@receiver(pre_save, sender=User1)
+def pre_save(sender, instance, **kwargs):
+    previous = User1.objects.get(id=instance.id)
+    if previous.adult and previous.currency_type == 'vision coins':
+        if instance.currency_type == 'vision candies':
+            print(instance.currency_type)
+            instance.currency_type = Choices.VISION_COINS
+        if not instance.adult:
+            instance.adult = True
+    if previous.adult != instance.adult and instance.adult:
+        instance.currency_type = Choices.VISION_COINS
+        instance.vision_credits = 0
+    elif previous.currency_type != instance.currency_type:
+        instance.vision_credits = 0
