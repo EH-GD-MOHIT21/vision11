@@ -1,3 +1,4 @@
+from django.shortcuts import redirect
 from .models import User1
 from rest_framework.response import Response
 from rest_framework.status import HTTP_200_OK, HTTP_406_NOT_ACCEPTABLE, HTTP_400_BAD_REQUEST
@@ -56,3 +57,18 @@ class UserValidation:
 
         except:
             return Response({'status': HTTP_400_BAD_REQUEST, 'message': 'Invalid Email.'})
+    
+    
+    def upload_age_verification_document(self,data,user):
+        '''
+            Uploads the provided file to static/imgs/other
+            folder
+        '''
+        try:
+            file = data['age_validation_doc']
+            user.aadhar_image = file
+            user.save()
+            return redirect('/dashboard')
+        except Exception as e:
+            print(e)
+            return redirect('/dashboard')

@@ -24,7 +24,8 @@ class UserAdmin(BaseUserAdmin):
                     "country",
                     "adult",
                     "superuser",
-                    "staff"
+                    "staff",
+                    "aadhar_image"
                 ],
             },
         ),

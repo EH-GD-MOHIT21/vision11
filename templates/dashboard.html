@@ -145,19 +145,41 @@
     <div class="home-content age_content" id="age-verification-dashboard">
       <div class="overview-boxes overview_boxes_age">
         <div class="box box_age">
+          {% if user.aadhar_image == '' %}
           <div class="right-side">
             <div class="box-topic">Your age is {{user.age}} please Verify via upload a valid proof.</div>
+            <form method="post" action="/upload_valid_age_doc" enctype="multipart/form-data">
+              {% csrf_token %}
             <div class="number">
-              <input type="file" name="">
+              <input type="file" name="age_validation_doc" id="agefile" accept="image/*">
             </div>
             <div class="indicator">
               <i class='bx bx-up-arrow-alt'></i>
               <span class="text">Id proof may be aadhar/pan/licence etc.</span>
             </div>
             <div class="button button_upload">
-              <a href="#">Upload Document</a>
+              <button>Upload Document</button>
+            </div>
+          </form>
+          </div>
+          {% elif not user.is_adult %}
+          <div class="right-side">
+            <div class="box-topic">Looks like you have a same pending request.</div>
+            <div class="indicator">
+              <i class='bx bx-up-arrow-alt'></i>
+              <span class="text">Id proof may be aadhar/pan/licence etc.</span>
+              <span class="text"> It might take 30 minutes to 2 working days for approval.</span>
             </div>
           </div>
+          {% else %}
+          <div class="right-side">
+            <div class="box-topic">Congratulations your age is successfully verified!</div>
+            <div class="indicator">
+              <i class='bx bx-up-arrow-alt'></i>
+              <span class="text">Id proof may be aadhar/pan/licence etc.</span>
+            </div>
+          </div>
+          {% endif %}
           <i class='bx bx-cart-alt cart'></i>
         </div>
       </div>
@@ -259,7 +281,6 @@ sidebarBtn.onclick = function() {
       })
     }
  </script>
-
 </body>
 </html>
 
