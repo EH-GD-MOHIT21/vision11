@@ -8,6 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard @ Vision11</title>
+    <link rel="shortcut icon" href="/static/imgs/web/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
 </head>
 <body>
@@ -18,6 +19,12 @@
       <span class="logo_name">vision11</span>
     </div>
       <ul class="nav-links">
+        <li>
+          <a href="/">
+            <i class='bx bx-list-ul' ></i>
+            <span class="links_name">Home</span>
+          </a>
+        </li>
         <li>
           <a href="#" class="active" id="basedash">
             <i class='bx bx-grid-alt' ></i>
@@ -39,19 +46,19 @@
         <li>
           <a href="#" id="hefedash">
             <i class='bx bx-coin-stack' ></i>
-            <span class="links_name">Help& feedback</span>
+            <span class="links_name">Suggest a Feature?</span>
+          </a>
+        </li>
+        <li>
+          <a href="/play">
+            <i class='bx bx-coin-stack' ></i>
+            <span class="links_name">Play a game</span>
           </a>
         </li>
         <li>
           <a href="/accounts/logout">
             <i class='bx bx-book-alt' ></i>
             <span class="links_name">logout</span>
-          </a>
-        </li>
-        <li class="log_out">
-          <a href="#">
-            <i class='bx bx-log-out'></i>
-            <span class="links_name">Log out</span>
           </a>
         </li>
       </ul>
@@ -110,8 +117,8 @@
         </div>
         <div class="box">
           <div class="right-side">
-            <div class="box-topic">Total coins earned</div>
-            <div class="number">20</div>
+            <div class="box-topic">Total {{user.currency_type}}</div>
+            <div class="number">{{user.vision_credits}}</div>
             <div class="indicator">
               <i class='bx bx-down-arrow-alt down'></i>
               <span class="text">Down From Today</span>
@@ -136,11 +143,11 @@
       </div>
     </div>
 
-    <div class="home-content" id="age-verification-dashboard">
-      <div class="overview-boxes">
-        <div class="box">
+    <div class="home-content age_content" id="age-verification-dashboard">
+      <div class="overview-boxes overview_boxes_age">
+        <div class="box box_age">
           <div class="right-side">
-            <div class="box-topic">No of contests joined</div>
+            <div class="box-topic">Your age is {{user.age}} please Verify via upload a valid proof.</div>
             <div class="number">
               <input type="file" name="">
             </div>
@@ -148,8 +155,8 @@
               <i class='bx bx-up-arrow-alt'></i>
               <span class="text">Id proof may be aadhar/pan/licence etc.</span>
             </div>
-            <div class="button">
-              <a href="#">See All</a>
+            <div class="button button_upload">
+              <a href="#">Upload Document</a>
             </div>
           </div>
           <i class='bx bx-cart-alt cart'></i>
@@ -157,18 +164,44 @@
       </div>
     </div>
 
-    <div class="home-content" id="about-us-dashboard">
-      <div class="overview-boxes">
-        <div class="box">
+    <div class="home-content abs_content" id="about-us-dashboard">
+      <div class="overview-boxes overview_boxes_abs">
+        <div class="box box_abs">
           <div class="right-side">
-            <div class="box-topic">No of contests joined</div>
-            <div class="number">10</div>
+            <div class="box-topic">About us</div>
+            <div class="number"></div>
             <div class="indicator">
-              <i class='bx bx-up-arrow-alt'></i>
-              <span class="text">Up from yesterday</span>
+              <div class="content-abs">
+                <p class="text">
+                  Welcome to Vision11, your number one choice for playing fantasy games.. We're dedicated to providing you the very best output.
+                </p>
+                <br>
+                <div class="box-topic">Who we are?</div>
+                <p class="text">
+                Vision 11 is the flagship product of Fantasy Sports Vision11 Private Limited. Vision11 is India's Biggest Sports Gaming platform with users playing Fantasy Cricket. It is a fantasy Sports Management platform that offers Indian sports fans a platform to showcase their sports knowledge. User can create their own team made up of real-life players from upcoming matches, score points based on their on-field performance and compete with other User.
+                </p>
+                <br>
+                <div class="box-topic">Our Mission</div>
+                <p class="text">
+                We make sure you become a part of the game you love so much and get a chance to win real cash and some more amazing rewards. So gear up as we take you to a world of 'fantasies' where you play alongside the stars of the game. We offer a safe and secured platform to enjoy fantasy sports at your leisure.
+                </p>
+                <br>
+                <div class="box-topic">Conclusion</div>
+                <p class="text">
+                We are proud to continually serve our growing community of avid sports fans with the latest innovative offerings and contribute to the overall expansion of the Indian sports ecosystem
+                </p>
+                <br>
+                <p class="text">
+                We hope you enjoy our application as much as we enjoy offering them to you. If you have any questions or comments, please don't hesitate to contact us.
+                </p>
+                <br>
+                <br>
+                <p class="text">Sincerely,</p>
+                <p class="text">Development team</p>
+                </p>
+              </div>
             </div>
           </div>
-          <i class='bx bx-cart-alt cart'></i>
         </div>
       </div>
     </div>
