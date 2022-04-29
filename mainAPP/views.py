@@ -26,6 +26,7 @@ def RenderDashboard(request):
     '''
     return render(request,'dashboard.html')
 
+   
 
 def Calculate_Points_For_Match():
     pass
@@ -34,6 +35,22 @@ def Calculate_Points_For_Match():
 @login_required(login_url='/login')
 def Render_show_league(request):
     return render(request,'leagues.html')
+
+@login_required(login_url='/login')
+def RenderTodaysMatches(request):
+    '''
+    This method is used for
+    rendering Today's Matches page.
+    '''
+    return render(request,'Scheduled_matches.html') 
+
+@login_required(login_url='/login')
+def RenderTeamSelection(request):
+    '''
+    This method is used for
+    rendering Team selection page.
+    '''
+    return render(request,'selecting_team.html')
 
 
 class get_leagues(APIView):

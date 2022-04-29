@@ -1,0 +1,159 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.multicolorbg {
+    background: crimson;
+    background-image: linear-gradient(120deg, #000 55%, crimson 55%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.multicolorbg .box{
+  width: 600px;
+  margin: auto;
+  margin-top: 100px;
+  background: #fff;
+  padding: 15px 14px;
+  border-radius: 12px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+
+
+.multicolorbg .box .teamplayers .player_data{
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+  text-align: left;
+  padding: 8px;
+}
+
+.active{
+    background-color: #dddddd;    
+}
+
+.bastmans{
+    display: none;
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+  text-align: left;
+  padding: 8px;
+}
+
+.bowlers{
+    display: none;
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+  text-align: left;
+  padding: 8px;
+}
+
+.allrounders{
+    display: none;
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+  text-align: left;
+  padding: 8px;
+}
+
+.wkbat{
+    display: flex;
+    justify-content: center;
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+  text-align: left;
+  padding: 8px;
+  margin-top: 5px;
+}
+
+.batsman{
+    display: flex;
+    justify-content: center;
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+  text-align: left;
+  padding: 8px;
+  margin-top: 5px;
+}
+
+.allround{
+    display: flex;
+    justify-content: center;
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+  text-align: left;
+  padding: 8px;
+  margin-top: 5px;
+}
+
+.bowler{
+    display: flex;
+    justify-content: center;
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+  text-align: left;
+  padding: 8px;
+  margin-top: 5px;      
+}
+
+.head{
+    display: flex;
+    justify-content: center;
+}
+
+.head1{
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+.wkbat img, .batsman img, .bowler img, .allround img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.player_name{
+    position: absolute;
+    padding-left: 15px;
+    margin-top: 5px;
+}
+
+.player_role{
+    margin-top: 27px;
+    font-size: small;
+    position: absolute;
+    padding-left: 15px;
+}
+
+.player_info{
+    width: 60%;
+}
+
+.credits{
+    width: 25%;
+}
+
+.addbtn{
+    width: 15%;
+    text-align: center;
+}
+
+.head a{
+    display: block;
+    cursor: pointer;
+}
+
+.overmsg{
+  display: none;
+}
