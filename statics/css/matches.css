@@ -1,0 +1,133 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.multicolorbg {
+    background: crimson;
+    background-image: linear-gradient(120deg, #000 55%, crimson 55%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.multicolorbg .match_card{
+    background-color: white;
+    width: 600px;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 5px;
+    background: #fff;
+    padding: 15px 14px;
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+.multicolorbg .match_card .teams{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+       
+}
+.multicolorbg .match_card .teams .team1info img, .multicolorbg .match_card .teams .team2info img{
+    width: 95%;
+    height: 90px;
+    border-radius: 2px;
+}
+
+.multicolorbg .match_card .teams .team1info{
+    width: 20%;
+    margin-left: 10px;
+    text-align: center;
+}
+
+.multicolorbg .match_card .teams .team2info{    
+    width: 20%;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.multicolorbg .match_card .teams .vs{
+    margin-top: 20px;
+}
+
+.multicolorbg .match_card .createbutton{
+    text-align: center;
+    margin-top: 15px;      
+}
+
+.multicolorbg .match_card .createbutton a{
+  color: #fff;
+  background: #0A2558;
+  padding: 4px 12px;
+  font-size: 18px;
+  font-weight: 400;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.multicolorbg .match_card span{
+    font-size: 14px;
+}
+
+.multicolorbg .match_card .createbutton a:hover{
+    background:  #0d3073;
+}
+ 
+@media (max-width:625px){
+    .multicolorbg .match_card{
+        width: 95%;
+        margin: auto;
+        margin-top: 100px;
+    }
+    .multicolorbg .match_card .teams .team1info{
+        width: 25%;
+    }
+    .multicolorbg .match_card .teams .team2info{
+        width: 25%;
+    }
+}
+
+@media (max-width:425px){
+    .multicolorbg .match_card{
+        width: 98%;
+    }
+    .multicolorbg .match_card .teams .team1info{
+        width: 33%;
+        margin-left: 0px;
+    }
+    .multicolorbg .match_card .teams .team2info{
+        width: 33%;
+        margin-right: 0px;
+    }
+    .multicolorbg .match_card .teams .team1info img, .multicolorbg .match_card .teams .team2info img{
+        width: 100%;
+    }
+    .multicolorbg .match_card span{
+        font-weight: 500;
+    font-size: 12px;
+    }
+}
+
+@media (max-width:315px){
+    multicolorbg .match_card{
+        width: 100%;
+    }
+    .multicolorbg .match_card .teams .team1info{
+        width: 35%;
+        margin-left: 0px;
+    }
+    .multicolorbg .match_card .teams .team2info{
+        width: 35%;
+        margin-right: 0px;
+}
+}     

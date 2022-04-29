@@ -26,6 +26,7 @@ def RenderDashboard(request):
     '''
     return render(request,'dashboard.html')
 
+   
 
 def Calculate_Points_For_Match():
     pass
@@ -35,9 +36,44 @@ def Calculate_Points_For_Match():
 def Render_show_league(request):
     return render(request,'leagues.html')
 
+@login_required(login_url='/login')
+def RenderTodaysMatches(request):
+    '''
+    This method is used for
+    rendering Today's Matches page.
+    '''
+    return render(request,'Scheduled_matches.html') 
+
+@login_required(login_url='/login')
+def RenderTeamSelection(request):
+    '''
+    This method is used for
+    rendering Team selection page.
+    '''
+    return render(request,'selecting_team.html')
+
 
 class get_leagues(APIView):
     def get(self,request):
         url = 'https://apiv2.api-cricket.com/cricket/?method=get_leagues&APIkey=9bc453870544fc489f861bc5cac3646ad83f8782fef306adac0d22f66940b6ad'
         data = requests.get(url)
         return Response({'status':200,'data':json.loads(data.text)})
+
+def handler_404(request, exception=None):
+    '''
+        view to handle 404 error
+        attached in project level
+        urls.py (gform.urls)
+    '''
+    data = {}
+    return render(request,'404error.html', data)
+
+
+def handler_500(request,  exception=None):
+    '''
+        view to handle 500 error
+        attached in project level
+        urls.py (gform.urls)
+    '''
+    data = {}
+    return render(request,'500error.html', data)
