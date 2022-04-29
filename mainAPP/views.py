@@ -58,3 +58,22 @@ class get_leagues(APIView):
         url = 'https://apiv2.api-cricket.com/cricket/?method=get_leagues&APIkey=9bc453870544fc489f861bc5cac3646ad83f8782fef306adac0d22f66940b6ad'
         data = requests.get(url)
         return Response({'status':200,'data':json.loads(data.text)})
+
+def handler_404(request, exception=None):
+    '''
+        view to handle 404 error
+        attached in project level
+        urls.py (gform.urls)
+    '''
+    data = {}
+    return render(request,'404error.html', data)
+
+
+def handler_500(request,  exception=None):
+    '''
+        view to handle 500 error
+        attached in project level
+        urls.py (gform.urls)
+    '''
+    data = {}
+    return render(request,'500error.html', data)
