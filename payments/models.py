@@ -38,6 +38,7 @@ class Order(models.Model):
     order_id = models.SlugField()
     currency = models.CharField(max_length=5, default="INR")
     payment_capture = models.FloatField(default=0)
+    plan_benefits = models.FloatField(default=0)
     order_status = models.CharField(
         choices=mychoice, default=Choices.PENDING, max_length=25)
 
