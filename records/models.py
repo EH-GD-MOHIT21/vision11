@@ -1,31 +1,6 @@
 from django.db import models
-
+from mainAPP.models import Player
 # Create your models here.
-
-choices = (
-    ('WK-Batsman','WK-Batsman'),
-    ('Batsman','Batsman'),
-    ('Batting Allrounder','Batting Allrounder'),
-    ('Bowling Allrounder','Bowling Allrounder'),
-    ('Bowler','Bowler')
-)
-
-
-
-class Team(models.Model):
-    team_name = models.CharField(max_length=50)
-    team_pic = models.ImageField(null=True,blank=True)
-
-
-
-
-class Player(models.Model):
-    player_name = models.CharField(max_length=50)
-    team = models.ManyToManyField(to=Team)
-    player_pic = models.ImageField(null=True,blank=True)
-    player_points = models.FloatField(default=7)
-    player_type = models.CharField(choices=choices,default=choices[0],max_length=30)
-
 
 
 

@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'taskSchedularApp',
     'django_celery_results',
     'records',
+    'django_admin_logs',
 ]
 
 MIDDLEWARE = [
@@ -132,9 +133,6 @@ USE_TZ = True
 
 
 STATIC_URL = 'static/'
-
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join('BASE_DIR', 'statics/imgs')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTHENTICATION_BACKENDS = [
@@ -146,14 +144,13 @@ AUTHENTICATION_BACKENDS = [
 # social auth settings (django-allauth)
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '348112354410-olp3k7jc99r6ld908v2qgt0hf7iqkfqm.apps.googleusercontent.com'
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
-
-
 SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 ACCOUNT_FORMS = {
     'signup': 'usermanagerAPP.forms.Signup_details',
 }
+
 
 
 # Provider specific settings
@@ -191,6 +188,7 @@ ACCOUNT_LOGIN_ATTEMPTS_TIMEOUT = 3600  # 1 hrs block
 ACCOUNT_LOGOUT_ON_PASSWORD_CHANGE = True
 SOCIALACCOUNT_LOGIN_ON_GET = True
 
+
 # ASGI APP
 ASGI_APPLICATION = 'vision11.asgi.application'
 
@@ -212,7 +210,6 @@ CHANNEL_LAYERS = {
 
 
 
-
 # celery
 CELERY_BROKER_URL = 'redis://localhost:6379'
 CELERY_RESULT_BACKEND = 'django-db'
@@ -220,7 +217,16 @@ CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TASK_SERIALIZER = 'json'
 
+
+# csrf cookie name
 CSRF_COOKIE_NAME = "X-CSRFToken"
 
+
+# Media permissions
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'statics/imgs')
+
+
+# Django Admin logs
+DJANGO_ADMIN_LOGS_DELETABLE = True
+DJANGO_ADMIN_LOGS_ENABLED = True
