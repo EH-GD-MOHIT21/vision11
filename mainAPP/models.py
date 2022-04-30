@@ -25,6 +25,9 @@ class Match(models.Model):
     time = models.DateTimeField()
     players = models.ManyToManyField(Player)
 
+    def __str__(self):
+        return self.title
+
 
 
 class PlayersMatchData(models.Model):

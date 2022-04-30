@@ -1,8 +1,9 @@
 #makes a request at cricbuzz per day from celery
 import requests
 from bs4 import BeautifulSoup
-import json
 from operator import *
+from mainAPP.models import Match
+from datetime import datetime,timezone
 
 
 def list_today_matches(URL="https://www.cricbuzz.com/cricket-schedule/upcoming-series/all"):
@@ -35,9 +36,11 @@ def list_today_matches(URL="https://www.cricbuzz.com/cricket-schedule/upcoming-s
                 break
             matchtime = time.find_all('div',class_='cb-font-12 text-gray')[0]
             servertimegmt = matchtime.find_all('span')[0]
-            match_times.append(servertimegmt.get_text())
+            m2 = datetime.strptime(servertimegmt.get_text(), '%I:%M %p')
+            today = datetime.today()
+            m2 = m2.replace(year=today.year,month=today.month,day=today.day,tzinfo=timezone.utc)
+            match_times.append(m2)
             cntr -= 1
-    
-    print(match_links)
-    print(match_titles)
-    print(match_times)
+
+    for link,title,time in zip(match_links,match_titles,match_times):
+        Match.objects.get_or_create(url=link,title=title,time=time)

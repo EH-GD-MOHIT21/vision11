@@ -122,7 +122,10 @@ class User1(AbstractUser):
 
 @receiver(pre_save, sender=User1)
 def pre_save(sender, instance, **kwargs):
-    previous = User1.objects.get(id=instance.id)
+    try:
+        previous = User1.objects.get(id=instance.id)
+    except:
+        return
     if previous.adult and previous.currency_type == 'vision coins':
         if instance.currency_type == 'vision candies':
             print(instance.currency_type)
