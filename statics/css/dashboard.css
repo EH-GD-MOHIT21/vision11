@@ -376,6 +376,85 @@ nav .profile-details i{
   font-size: 14px !important;
 }
 
+/* Feature-Suggestion form Css */
+
+
+.createbutton{
+    text-align: center;
+    margin-top: 15px; 
+}
+
+.suggestion_box{
+  width: 70% !important;
+  margin: auto;
+}
+
+.suggestion_box_child{
+  width: 90%;
+}
+
+.createbutton a{
+  color: #fff;
+  background: #0A2558;
+  padding: 4px 12px;
+  font-size: 18px;
+  font-weight: 400;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.createbutton a:hover{
+    background:  #0d3073;
+}
+
+.name{
+    margin: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.name input{
+    width: 48%;
+    border-radius: 5px;
+    font-size: 16px;
+    border: 1px solid #b8bdc9;
+    padding: 5px;
+    margin-top: 2px;
+}
+
+.input_title{
+    display: block;
+    margin-top: 8px;
+}
+
+.form_{
+    margin-top: 15px;
+    border: 1px solid #b8bdc9;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.mail input, .summary_title input{
+    width: 97%;
+    border-radius: 5px;
+    font-size: 16px;
+    border: 1px solid #b8bdc9;
+    padding: 5px;
+    margin-top: 2px;
+}
+
+.suggestion_des textarea{
+    width: 97%;
+    border-radius: 5px;
+    font-size: 16px;
+    border: 1px solid #b8bdc9;
+    resize: none;
+    height: 140px;
+    margin-top: 2px;
+    padding: 2px;
+}
+/*-------------------*/
 
 /* Responsive Media Query */
 @media (max-width: 1240px) {
