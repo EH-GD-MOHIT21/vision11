@@ -31,12 +31,12 @@ def RenderDashboard(request):
     return render(request, 'dashboard.html')
 
 
-@login_required(login_url='/login')
+@login_required(login_url='/accounts/login')
 def Render_show_league(request):
     return render(request, 'leagues.html')
 
 
-@login_required(login_url='/login')
+@login_required(login_url='/accounts/login')
 def RenderTodaysMatches(request):
     '''
     This method is used for
@@ -45,7 +45,7 @@ def RenderTodaysMatches(request):
     return render(request, 'Scheduled_matches.html')
 
 
-@login_required(login_url='/login')
+@login_required(login_url='/accounts/login')
 def RenderTeamSelection(request):
     '''
     This method is used for
@@ -53,7 +53,7 @@ def RenderTeamSelection(request):
     '''
     return render(request, 'selecting_team.html')
 
-@login_required(login_url='/login')
+@login_required(login_url='/accounts/login')
 def RenderFeatureSuggestion(request):
     '''
     This method is used for
