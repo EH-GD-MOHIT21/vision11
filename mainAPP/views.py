@@ -10,6 +10,7 @@ from rest_framework.status import HTTP_200_OK
 from rest_framework.views import APIView
 
 from mainAPP.models import Team
+from mainAPP.repository import vision11
 
 # Create your views here.
 
@@ -91,7 +92,9 @@ def handler_500(request,  exception=None):
 
 class GetTodaysMatchesListAPI(APIView):
     def get(self, request):
-        pass
+        if request.user.is_authenticated:
+            return vision11().get_match_list()
+        return Response({'status':403,'message':'Please authenticate yourself.'})
 
 
 class GetLiveScoreAPI(APIView):
@@ -100,8 +103,14 @@ class GetLiveScoreAPI(APIView):
 
 
 class GetTodaysSquadList(APIView):
-    def get(self, request):
-        pass
+    def post(self, request):
+        if request.user.is_authenticated:
+            try:
+                return vision11().get_todays_squad(request.data['team1'],request.data['team2'])
+            except Exception as e:
+                print(e)
+                return Response({'status':404,'message':'Either No contest available or timeline expired.'})
+        return Response({'status':403,'message':'Please authenticate yourself.'})
 
 
      
