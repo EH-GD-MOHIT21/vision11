@@ -1,14 +1,12 @@
 import datetime
 import json
 from datetime import timezone
-from unicodedata import name
 
 from asgiref.sync import sync_to_async
 from channels.db import database_sync_to_async
 from channels.exceptions import StopConsumer
 from channels.generic.websocket import AsyncWebsocketConsumer
 from chatsupportAPP.models import Chat, Queue
-from usermanagerAPP.models import User1
 from chatsupportAPP import views
 
 

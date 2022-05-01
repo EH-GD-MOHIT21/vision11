@@ -1,15 +1,7 @@
-import json
-from venv import create
-from django.http import HttpResponse
 from django.shortcuts import redirect, render
-from chatsupportAPP.models import Queue
 from django.contrib.auth.decorators import login_required
-import requests
 from rest_framework.response import Response
-from rest_framework.status import HTTP_200_OK
 from rest_framework.views import APIView
-
-from mainAPP.models import Team
 from mainAPP.repository import vision11
 
 # Create your views here.
@@ -63,13 +55,6 @@ def RenderFeatureSuggestion(request):
     return render(request, 'feature_suggestion.html')
 
 
-class get_leagues(APIView):
-    def get(self, request):
-        url = 'https://apiv2.api-cricket.com/cricket/?method=get_leagues&APIkey=9bc453870544fc489f861bc5cac3646ad83f8782fef306adac0d22f66940b6ad'
-        data = requests.get(url)
-        return Response({'status': 200, 'data': json.loads(data.text)})
-
-
 def handler_404(request, exception=None):
     '''
         view to handle 404 error
@@ -113,8 +98,3 @@ class GetTodaysSquadList(APIView):
         return Response({'status':403,'message':'Please authenticate yourself.'})
 
 
-     
-
-
- 
-        
