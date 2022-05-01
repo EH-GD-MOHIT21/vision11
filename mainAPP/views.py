@@ -1,4 +1,6 @@
 import json
+from venv import create
+from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from chatsupportAPP.models import Queue
 from django.contrib.auth.decorators import login_required
@@ -6,6 +8,8 @@ import requests
 from rest_framework.response import Response
 from rest_framework.status import HTTP_200_OK
 from rest_framework.views import APIView
+
+from mainAPP.models import Team
 
 # Create your views here.
 
@@ -49,6 +53,14 @@ def RenderTeamSelection(request):
     '''
     return render(request, 'selecting_team.html')
 
+@login_required(login_url='/login')
+def RenderFeatureSuggestion(request):
+    '''
+    This method is used for
+    rendering Feature Suggestion page.
+    '''
+    return render(request, 'feature_suggestion.html')
+
 
 class get_leagues(APIView):
     def get(self, request):
@@ -90,3 +102,10 @@ class GetLiveScoreAPI(APIView):
 class GetTodaysSquadList(APIView):
     def get(self, request):
         pass
+
+
+     
+
+
+ 
+        
