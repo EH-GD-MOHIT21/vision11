@@ -4,22 +4,6 @@ from django.db import models
 from usermanagerAPP.models import User1
 # Create your models here.
 
-choices = (
-    ('WK-Batsman','WK-Batsman'),
-    ('Batsman','Batsman'),
-    ('Batting Allrounder','Batting Allrounder'),
-    ('Bowling Allrounder','Bowling Allrounder'),
-    ('Bowler','Bowler')
-)
-
-
-class Player(models.Model):
-    pid = models.IntegerField(unique=True,primary_key=True)
-    player_name = models.CharField(max_length=50)
-    player_pic = models.ImageField(null=True,blank=True)
-    player_points = models.FloatField(default=7)
-    player_type = models.CharField(choices=choices,default=choices[0],max_length=30)
-
 
 class Team(models.Model):
     team_id = models.IntegerField(unique=True,primary_key=True)
@@ -29,6 +13,17 @@ class Team(models.Model):
 
     def __str__(self):
         return self.team_name
+
+
+class Player(models.Model):
+    pid = models.IntegerField(unique=True,primary_key=True)
+    player_name = models.CharField(max_length=50)
+    player_pic = models.ImageField(null=True,blank=True)
+    player_points = models.FloatField(default=7)
+    player_type = models.CharField(max_length=30)
+    player_team = models.ManyToManyField(Team)
+
+
 
 class User_Feature_Suggestion(models.Model):
     user = models.ForeignKey(User1,on_delete=models.CASCADE)
