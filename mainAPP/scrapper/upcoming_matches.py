@@ -15,6 +15,7 @@ def list_today_matches(URL="https://www.cricbuzz.com/cricket-schedule/upcoming-s
     match_links = []
     match_titles = []
     match_times = []
+    match_names = []
     BASE_URL = 'https://www.cricbuzz.com'
 
     matchlist = todays_match.find_all('div',class_='cb-col-100 cb-col')
@@ -28,6 +29,7 @@ def list_today_matches(URL="https://www.cricbuzz.com/cricket-schedule/upcoming-s
             useful_link = BASE_URL+link.replace('live-cricket-scores','live-cricket-scorecard')
             match_links.append(useful_link)
             match_titles.append(dummy_link['title'])
+            match_names.append(dummy_link.get_text())
             cntr += 1
 
         times = match.find_all('div',class_='cb-col-40 cb-col cb-mtchs-dy-tm cb-adjst-lst')
@@ -42,5 +44,6 @@ def list_today_matches(URL="https://www.cricbuzz.com/cricket-schedule/upcoming-s
             match_times.append(m2)
             cntr -= 1
 
-    for link,title,time in zip(match_links,match_titles,match_times):
-        Match.objects.get_or_create(url=link,title=title,time=time)
+    for link,title,time,name in zip(match_links,match_titles,match_times,match_names):
+        team1,team2 = name.split(',')[0].split(' vs ')
+        Match.objects.get_or_create(url=link,title=title,time=time,name=name,team1=team1,team2=team2)
