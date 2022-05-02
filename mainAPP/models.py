@@ -40,6 +40,7 @@ class Match(models.Model):
     name = models.CharField(max_length=100,null=True,blank=True)
     team1 = models.CharField(max_length=60,null=True,blank=True)
     team2 = models.CharField(max_length=60,null=True,blank=True)
+    is_match_end = models.BooleanField(default=False)
 
     def __str__(self):
         return self.title

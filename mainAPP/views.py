@@ -82,9 +82,15 @@ class GetTodaysMatchesListAPI(APIView):
         return Response({'status':403,'message':'Please authenticate yourself.'})
 
 
-class GetLiveScoreAPI(APIView):
-    def get(self, request):
-        pass
+class GetFantasyScoreAPI(APIView):
+    def post(self, request):
+        if request.user.is_authenticated:
+            try:
+                return vision11().get_fantasy_score(request.data['url'])
+            except Exception as e:
+                print(e)
+                return Response({'status':500,'message':'Something went wrong please try again after some time.'})
+        return Response({'status':403,'message':'Please authenticate yourself.'})
 
 
 class GetTodaysSquadList(APIView):

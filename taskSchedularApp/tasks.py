@@ -11,11 +11,11 @@ def EveryThreeMinutesTask():
 
 # fetch next upcoming matches
 @task(name='fetch_match_list',time_limit=25)
-def EverySixHoursTask():
+def EveryDayTask():
     print("This runs every day at 0-10 AM GMT")
 
 
 # update players/team model here to be updated
 @task(name='updateteamorplayers',time_limit=25)
-def EverySixHoursTask():
+def EveryMondayTask():
     print("This runs every monday at 1-30 AM GMT")

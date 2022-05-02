@@ -1,6 +1,6 @@
-from mainAPP.models import Match,Player,Team
+from mainAPP.models import Match,Player, PlayersMatchData,Team
 from django.utils import timezone
-from .serializers import MatchListSerializer,GameSquadSerializer
+from .serializers import FantasyScoreSerializer, MatchListSerializer,GameSquadSerializer
 from rest_framework.response import Response
 
 class vision11:
@@ -8,6 +8,8 @@ class vision11:
         matches = Match.objects.filter(time__gt=timezone.now())
         match = MatchListSerializer(matches,many=True)
         return Response({'status':200,'message':'success','data':match.data})
+
+        
 
     def get_todays_squad(self,team1,team2):
         match = Match.objects.filter(team1=team1,team2=team2)[0]
@@ -22,3 +24,11 @@ class vision11:
         gamesquad1 = GameSquadSerializer(p1,many=True)
         gamesquad2 = GameSquadSerializer(p2,many=True)
         return Response({'status':200,'message':'success','team1':gamesquad1.data,'team2':gamesquad2.data})
+
+
+
+    def get_fantasy_score(self,url):
+        match = Match.objects.get(url=url)
+        players = PlayersMatchData.objects.filter(match_url=match)
+        serialized_players = FantasyScoreSerializer(players,many=True)
+        return Response({'status':200,'message':'success','match':url,'data':serialized_players.data})

@@ -1,5 +1,6 @@
+from attr import fields
 from rest_framework.serializers import ModelSerializer
-from mainAPP.models import Match, Player
+from mainAPP.models import Match, Player, PlayersMatchData
 
 
 class MatchListSerializer(ModelSerializer):
@@ -8,9 +9,10 @@ class MatchListSerializer(ModelSerializer):
         fields = '__all__'
 
 
-class LiveScoreSerializer(ModelSerializer):
+class FantasyScoreSerializer(ModelSerializer):
     class Meta:
-        model = ''
+        model = PlayersMatchData
+        exclude = ['match_url']
 
 
 class GameSquadSerializer(ModelSerializer):
