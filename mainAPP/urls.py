@@ -9,4 +9,7 @@ urlpatterns = [
     path('gettodaysmatchlist',views.GetTodaysMatchesListAPI.as_view()),  
     path('gettodayssquadlist',views.GetTodaysSquadList.as_view()),  
     path('getfantasyscore',views.GetFantasyScoreAPI.as_view()),
+    path('getcompletedmatches',views.GetCompletedMatchesList.as_view()),
+    path('getlivematches',views.GetCompletedMatchesList.as_view()),
+    path('getupcomingmatches',views.GetCompletedMatchesList.as_view()),
 ]

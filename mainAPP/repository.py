@@ -32,3 +32,21 @@ class vision11:
         players = PlayersMatchData.objects.filter(match_url=match)
         serialized_players = FantasyScoreSerializer(players,many=True)
         return Response({'status':200,'message':'success','match':url,'data':serialized_players.data})
+
+
+    def get_completed_matches(self):
+        match = Match.objects.filter(is_match_end=False)
+        serialized_matches = MatchListSerializer(match,many=True)
+        return Response({'status':200,'message':'success','data':serialized_matches.data})
+
+
+    def get_Live_matches(self):
+        match = Match.objects.filter(is_match_end=False,time__lt=timezone.now())
+        serialized_matches = MatchListSerializer(match,many=True)
+        return Response({'status':200,'message':'success','data':serialized_matches.data})
+
+    
+    def get_upcoming_matches(self):
+        match = Match.objects.filter(is_match_end=False,time__gt=timezone.now())
+        serialized_matches = MatchListSerializer(match,many=True)
+        return Response({'status':200,'message':'success','data':serialized_matches.data})

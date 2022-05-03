@@ -104,3 +104,31 @@ class GetTodaysSquadList(APIView):
         return Response({'status':403,'message':'Please authenticate yourself.'})
 
 
+class GetCompletedMatchesList(APIView):
+    def get(self,request):
+        if request.user.is_authenticated:
+            try:
+                return vision11().get_completed_matches()
+            except:
+                return Response({'status':500,'message':'something went wrong.'})
+        return Response({'status':403,'message':'Please authenticate yourself.'})
+
+
+class GetLiveMatchesList(APIView):
+    def get(self,request):
+        if request.user.is_authenticated:
+            try:
+                return vision11().get_Live_matches()
+            except:
+                return Response({'status':500,'message':'something went wrong.'})
+        return Response({'status':403,'message':'Please authenticate yourself.'})
+
+
+class GetUpcomingMatchesList(APIView):
+    def get(self,request):
+        if request.user.is_authenticated:
+            try:
+                return vision11().get_upcoming_matches()
+            except:
+                return Response({'status':500,'message':'something went wrong.'})
+        return Response({'status':403,'message':'Please authenticate yourself.'})
