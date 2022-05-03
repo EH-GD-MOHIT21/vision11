@@ -80,7 +80,7 @@ class admin_user_roles:
         user = User1.objects.get(id=pid)
         user.adult = True
         user.save()
-        send_mail(to=user.email,subject=f'Hurry {user.username}! Your request for age verification is Approved.',message=f'Hey {user.username}!\n\nYour age verification request finally got approved today. You can now make purchase on vision11, can earn money, can play paid contests and many more features are unlocked now for you. See you in vision11\n\n\n Thanks and regards\n\n\nVision11.com')
+        send_mail(to=[user.email],subject=f'Hurry {user.username}! Your request for age verification is Approved.',message=f'Hey {user.username}!\n\nYour age verification request finally got approved today. You can now make purchase on vision11, can earn money, can play paid contests and many more features are unlocked now for you. See you in vision11\n\n\n Thanks and regards\n\n\nVision11.com')
 
         return redirect('/ageverification/admin_portal')
 
@@ -89,7 +89,6 @@ class admin_user_roles:
         user = User1.objects.get(id=pid)
         user.aadhar_image = None
         user.save()
-        send_mail(to=user.email,subject=f'Sorry {user.username}! Your request for age verification is rejected.',message=f'Sorry {user.username}!\n\nWe understand about your efforts but this time your age verification request has been removed by our admin support either the document you\'ve uploaded is invalid or you are not 18+ years old. please try after some time with a legal document that can prove your age is 18+.\n\n\n Thanks and regards\n\n\nVision11.com')
-
+        send_mail(to=[user.email],subject=f'Sorry {user.username}! Your request for age verification is rejected.',message=f'Sorry {user.username}!\n\nWe understand about your efforts but this time your age verification request has been removed by our admin support either the document you\'ve uploaded is invalid or you are not 18+ years old. please try after some time with a legal document that can prove your age is 18+.\n\n\n Thanks and regards\n\n\nVision11.com')
         return redirect('/ageverification/admin_portal')
 

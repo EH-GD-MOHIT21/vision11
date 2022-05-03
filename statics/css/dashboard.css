@@ -393,7 +393,7 @@ nav .profile-details i{
   width: 90%;
 }
 
-.createbutton button{
+.createbutton button,.button_upload button{
   color: #fff;
   background: #0A2558;
   padding: 4px 12px;
@@ -402,9 +402,10 @@ nav .profile-details i{
   border-radius: 4px;
   text-decoration: none;
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 
-.createbutton button:hover{
+.createbutton button:hover,.button_upload button{
     background:  #0d3073;
 }
 
