@@ -99,7 +99,7 @@ class GetLiveScoreAPI(APIView):
         pass
 
 
-class GetTodaysSquadList(APIView):
+class GetTeamsSquadList(APIView):
     def get(self, request):
         pass
 
