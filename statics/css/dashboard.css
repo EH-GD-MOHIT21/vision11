@@ -393,7 +393,7 @@ nav .profile-details i{
   width: 90%;
 }
 
-.createbutton a{
+.createbutton button{
   color: #fff;
   background: #0A2558;
   padding: 4px 12px;
@@ -404,8 +404,20 @@ nav .profile-details i{
   transition: all 0.3s ease;
 }
 
-.createbutton a:hover{
+.createbutton button:hover{
     background:  #0d3073;
+}
+
+.success{
+  color: green;
+}
+
+.info{
+  color: lime;
+}
+
+.error{
+  color: crimson;
 }
 
 .name{

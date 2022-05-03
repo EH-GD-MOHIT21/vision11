@@ -8,8 +8,16 @@
 </head>
 <body>
     {% for user in data %}
-        username: {{user.username}}
-        <img src="">
+        <h1>username: {{user.username}}</h1>
+        <p>age: {{user.age}}</p>
+        <img src="/static/imgs/{{user.aadhar_image}}">
+        <div class="btnscontainer">
+            <a href="/accept_request/pid={{user.id}}">Accept Request</a>
+            <a href="/deny_request/pid={{user.id}}">Deny Request</a>
+        </div>
     {% endfor %}
+    {% if not len %}
+        <h1>There are no pending request for approval</h1>
+    {% endif %}
 </body>
 </html>

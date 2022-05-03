@@ -1,9 +1,10 @@
-from mainAPP.models import Match,Player, PlayersMatchData,Team
+from mainAPP.models import Match,Player, PlayersMatchData,Team, User_Feature_Suggestion
 from django.utils import timezone
 from .serializers import FantasyScoreSerializer, MatchListSerializer,GameSquadSerializer
 from rest_framework.response import Response
 from usermanagerAPP.models import User1
-from django.shortcuts import render
+from django.shortcuts import redirect, render
+from django.contrib import messages
 
 class vision11:
     def get_match_list(self):
@@ -54,10 +55,24 @@ class vision11:
         return Response({'status':200,'message':'success','data':serialized_matches.data})
 
 
+    def save_suggestion_form(self,request):
+        model = User_Feature_Suggestion.objects.create(
+            user = request.user,
+            user_first_name = request.POST['first_name'],
+            user_last_name = request.POST['last_name'],
+            user_email = request.POST['email'],
+            feature_title = request.POST['title'],
+            feature_des = request.POST['description']
+        )
+        
+        messages.success(request, 'Your Suggestions have been send successfullly.')
+        return redirect('/dashboard')
+
 
 class vision11_render:
     
     def render_age_adminportal(self,request):
         users = User1.objects.filter(adult=False)
         user_obj = [user for user in users if user.aadhar_image!='']
-        return render(request,'admin_age_verification.html',{'data':user_obj})
+        len_obj = len(user_obj)
+        return render(request,'admin_age_verification.html',{'data':user_obj,'len': len_obj})

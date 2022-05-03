@@ -52,13 +52,6 @@ def RenderTeamSelection(request):
     '''
     return render(request, 'selecting_team.html')
 
-@login_required(login_url='/accounts/login')
-def RenderFeatureSuggestion(request):
-    '''
-    This method is used for
-    rendering Feature Suggestion page.
-    '''
-    return render(request, 'feature_suggestion.html')
 
 
 def handler_404(request, exception=None):
@@ -80,6 +73,18 @@ def handler_500(request,  exception=None):
     data = {}
     return render(request, '500error.html', data)
 
+
+def Save_Suggestion_Form(request):
+    '''
+        View Function to save suggesition
+        in corresponding model
+    '''
+    try:
+        if request.user.is_authenticated:
+            return vision11().save_suggestion_form(request)
+        return redirect('/')
+    except:
+        return redirect('/')
 
 class GetTodaysMatchesListAPI(APIView):
     def get(self, request):

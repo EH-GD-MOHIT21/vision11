@@ -1,6 +1,7 @@
 from django.http import HttpResponseBadRequest
+from django.shortcuts import redirect
 from rest_framework.views import APIView
-from .repository import UserValidation
+from .repository import UserValidation, admin_user_roles
 
 
 class CheckForUsername(APIView):
@@ -38,3 +39,22 @@ def AgeVerificationUploadDocument(request):
     if request.user.is_authenticated:
         return UserValidation().upload_age_verification_document(request.FILES,request.user)
     return HttpResponseBadRequest()
+
+
+
+def accept_age_verification_request(request,pid):
+    try:
+        if request.user.is_authenticated and request.user.is_staff:
+            return admin_user_roles().accept_age_verification_request(pid)
+        return redirect('/')
+    except:
+        return redirect('/')
+
+
+def deny_age_verification_request(request,pid):
+    try:
+        if request.user.is_authenticated and request.user.is_staff:
+            return admin_user_roles().deny_age_verification_request(pid)
+        return redirect('/')
+    except:
+        return redirect('/')

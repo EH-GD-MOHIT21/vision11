@@ -247,10 +247,18 @@
           <div class="box suggestion_box">
             <div class="right-side suggestion_box_child">
               <div class="suggestion_form">
+                {% if messages %}
+                  <ul class="messages">
+                  {% for message in messages %}
+                  <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                  {% endfor %}
+                  </ul>
+                {% endif %}
                 <div class="head" style="text-align: center;">
                   <h3>Feature Suggestion Form</h3>
                 </div>
-                <form action="suggestion_form" method="post">
+                <form action="/suggestions" method="post">
+                  {% csrf_token %}
                   <div class="form_">
                     <label class="input_title">Name: </label>
                     <div class="name">
@@ -272,7 +280,7 @@
                   </div>
 
                   <div class="createbutton">
-                    <a href="#">Send Suggestion</a>
+                    <button>Send Suggestion</button>
                   </div>
                 </form>
               </div>
