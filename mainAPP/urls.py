@@ -12,4 +12,5 @@ urlpatterns = [
     path('getcompletedmatches',views.GetCompletedMatchesList.as_view()),
     path('getlivematches',views.GetCompletedMatchesList.as_view()),
     path('getupcomingmatches',views.GetCompletedMatchesList.as_view()),
+    path('ageverification/admin_portal',views.RenderAgeVerificationAdmin),
 ]

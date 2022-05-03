@@ -2,7 +2,7 @@ from django.shortcuts import redirect, render
 from django.contrib.auth.decorators import login_required
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from mainAPP.repository import vision11
+from mainAPP.repository import vision11, vision11_render
 
 # Create your views here.
 
@@ -36,6 +36,12 @@ def RenderTodaysMatches(request):
     rendering Today's Matches page.
     '''
     return render(request, 'Scheduled_matches.html')
+
+
+def RenderAgeVerificationAdmin(request):
+    if request.user.is_authenticated and request.user.is_staff:
+        return vision11_render().render_age_adminportal(request)
+    return redirect('/')
 
 
 @login_required(login_url='/accounts/login')

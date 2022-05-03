@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+from django.views.static import serve
+from django.conf import settings
 
 handler404 = 'mainAPP.views.handler_404'
 handler500 = 'mainAPP.views.handler_500'
@@ -26,4 +28,5 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('', include('payments.urls')),
     path('', include('chatsupportAPP.urls')),
+    path(r'^media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT})
 ]

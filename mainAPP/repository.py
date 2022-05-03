@@ -2,6 +2,8 @@ from mainAPP.models import Match,Player, PlayersMatchData,Team
 from django.utils import timezone
 from .serializers import FantasyScoreSerializer, MatchListSerializer,GameSquadSerializer
 from rest_framework.response import Response
+from usermanagerAPP.models import User1
+from django.shortcuts import render
 
 class vision11:
     def get_match_list(self):
@@ -50,3 +52,12 @@ class vision11:
         match = Match.objects.filter(is_match_end=False,time__gt=timezone.now())
         serialized_matches = MatchListSerializer(match,many=True)
         return Response({'status':200,'message':'success','data':serialized_matches.data})
+
+
+
+class vision11_render:
+    
+    def render_age_adminportal(self,request):
+        users = User1.objects.filter(adult=False)
+        user_obj = [user for user in users if user.aadhar_image!='']
+        return render(request,'admin_age_verification.html',{'data':user_obj})
