@@ -1,6 +1,3 @@
-from distutils.command.upload import upload
-from pyexpat import model
-from unicodedata import name
 from django.db import models
 from usermanagerAPP.models import User1
 # Create your models here.
@@ -37,12 +34,13 @@ class User_Feature_Suggestion(models.Model):
 
 
 class Match(models.Model):
-    url = models.TextField(max_length=100,unique=True,primary_key=True)
+    url = models.TextField(unique=True,primary_key=True)
     title = models.TextField(null=True,blank=True)
     time = models.DateTimeField()
     name = models.CharField(max_length=100,null=True,blank=True)
     team1 = models.CharField(max_length=60,null=True,blank=True)
     team2 = models.CharField(max_length=60,null=True,blank=True)
+    is_match_end = models.BooleanField(default=False)
 
     def __str__(self):
         return self.title

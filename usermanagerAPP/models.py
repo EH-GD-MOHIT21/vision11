@@ -1,4 +1,3 @@
-from random import choices
 from django.db import models
 from .models_manager import UserManager
 from django.contrib.auth.models import AbstractUser

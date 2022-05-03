@@ -45,7 +45,7 @@
     },
     "1643": {
         "name": "Finch",
-        "points": 33
+        "points": 37
     },
     "10917": {
         "name": "Venkatesh Iyer",
@@ -53,19 +53,19 @@
     },
     "9428": {
         "name": "Shreyas Iyer",
-        "points": 546
+        "points": 585
     },
     "9204": {
         "name": "Nitish Rana",
-        "points": 836
+        "points": 891
     },
     "9624": {
         "name": "Indrajith",
-        "points": 146
+        "points": 163
     },
     "10896": {
         "name": "Rinku Singh",
-        "points": 286
+        "points": 352
     },
     "7736": {
         "name": "Russell",
@@ -73,18 +73,70 @@
     },
     "2276": {
         "name": "Sunil Narine",
-        "points": 430
+        "points": 434
     },
     "1858": {
         "name": "Umesh Yadav",
-        "points": 898
+        "points": 933
     },
     "1057": {
         "name": "Tim Southee",
-        "points": -22
+        "points": 22
     },
     "24729": {
         "name": "Harshit Rana",
         "points": 273
+    },
+    "12344": {
+        "name": "Anukul Roy",
+        "points": 33
+    },
+    "12345": {
+        "name": "Shivam Mavi",
+        "points": 33
+    },
+    "2258": {
+        "name": "Jos Buttler",
+        "points": 25
+    },
+    "13088": {
+        "name": "Padikkal",
+        "points": 2
+    },
+    "8271": {
+        "name": "Samson",
+        "points": 79
+    },
+    "8257": {
+        "name": "Karun Nair",
+        "points": 14
+    },
+    "9789": {
+        "name": "Hetmyer",
+        "points": 32
+    },
+    "12305": {
+        "name": "Riyan Parag",
+        "points": 24
+    },
+    "1593": {
+        "name": "Ravichandran Ashwin",
+        "points": 22
+    },
+    "8117": {
+        "name": "Trent Boult",
+        "points": 25
+    },
+    "10551": {
+        "name": "Prasidh Krishna",
+        "points": 23
+    },
+    "7910": {
+        "name": "Yuzvendra Chahal",
+        "points": 0
+    },
+    "14336": {
+        "name": "Kuldeep Sen",
+        "points": 25
     }
 }

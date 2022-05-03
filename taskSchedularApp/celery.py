@@ -1,6 +1,7 @@
 from __future__ import absolute_import, unicode_literals
 import os
 from celery import Celery
+from celery.schedules import crontab
 
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'vision11.settings')
@@ -10,17 +11,26 @@ app.autodiscover_tasks()
 
 
 app.conf.beat_schedule = {
-    'print_msg_main': {
-        'task': 'print_msg_main',       
-        'schedule': 80.0,
+    'get_live_score': {
+        'task': 'get_live_score',       
+        'schedule': 180.0,  # every 3 minutes (3*60 seconds)
         'options': {
             'expires': 15.0,
         },
-        # 'args': ("Hello",) 
+        # 'args': ("Hello",)
+    },
+
+    'fetch_match_list':{
+        'task': 'fetch_match_list',       
+        'schedule': crontab(hour=0, minute=10),  # every day at 0:10 AM hours GMT
+        'options': {
+            'expires': 15.0,
+        },
+    }, 
+
+    # Executes every Monday morning at 1:30 a.m. GMT
+    'updateteamorplayers': {
+        'task': 'updateteamorplayers',
+        'schedule': crontab(hour=1, minute=30, day_of_week=1),
     },
 }
-
-
-@app.task(bind=True)
-def debug_task(self):
-    print('Request: {0!r}'.format(self.request))

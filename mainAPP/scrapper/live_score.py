@@ -4,6 +4,7 @@ import json
 from operator import *
 import os
 from django.conf import settings
+from mainAPP.models import Match, Player, PlayersMatchData
 
 
 def catches(battingInfo):
@@ -476,39 +477,16 @@ def Update_Live_Score(URL):
     players = dataToBowlers(firstInnBowlInfo, players)
     players = dataToBowlers(secondInnBowlInfo, players)
 
-    if not os.path.isfile(os.path.join(settings.BASE_DIR, 'cricdata/seasonPoints.json')):
-        dumpPlayers = {}
-        for key in players:
-            try:
-                dumpPlayers[players[key]['pid']] = {
-                    'name': players[key]['name'], 'points': players[key]['points']}
-            except KeyError:
-                pass
-
-        with open(os.path.join(settings.BASE_DIR, 'cricdata/seasonPoints.json'), 'w') as f:
-            json.dump(dumpPlayers, f, indent=4)
-
-    else:
-        with open(os.path.join(settings.BASE_DIR, 'cricdata/seasonPoints.json'), 'r') as f:
-            existPlayers = json.load(f)
-
-        for key in players:
-            if key in existPlayers:
-                try:
-                    existPlayers[key]['points'] += players[key]['points']
-                except KeyError:
-                    pass
-            else:
-                try:
-                    existPlayers[players[key]['pid']] = {
-                        'name': players[key]['name'], 'points': players[key]['points']}
-                except KeyError:
-                    pass
-
-        with open(os.path.join(settings.BASE_DIR, 'cricdata/seasonPoints.json'), 'w') as f:
-            json.dump(existPlayers, f, indent=4)
-
-    matchFileName = URL.split('/')[5] + '.json'
-
-    with open(os.path.join(settings.BASE_DIR, 'cricdata/'+matchFileName), 'w') as f:
-        json.dump(players, f, indent=4)
+    
+    for player in players.keys():
+        data = players[player]
+        try:
+            pts = data['points']
+        except:
+            pts = 0
+        try:
+            match = Match.objects.get(url=URL)
+            playerscore = Player.objects.get(pid=int(player))
+            PlayersMatchData.objects.update_or_create(pid=playerscore,match_url=match,runsScored=data['runsScored'],ballsFaced=data['ballsFaced'],fours=data['fours'],sixes=data['sixes'],strikeRate=data['strikeRate'],out=data['out'],overs=data['overs'],maidens=data['maidens'],runsGiven=data['runsGiven'],wickets=data['wickets'],noBalls=data['noBalls'],wides=data['wides'],economy=data['economy'],catches=data['catches'],runouts=data['runouts'],stumpings=data['stumpings'],points=pts)
+        except Exception as e:
+            pass
