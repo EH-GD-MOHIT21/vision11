@@ -6,13 +6,11 @@
       <li><a class="navbar-link" href="/">Home</a></li>
       <li><a class="navbar-link" href="/dashboard">Dashboard</a></li>
       <li><a class="navbar-link" href="/play">Play</a></li>
-      <li>
-        <a
-          class="navbar-link"
-          href="/accounts/signup"
-          target="_blank"
-          >Register</a
-        >
+      {% if not user.is_authenticated %}
+      <li><a class="navbar-link" href="/accounts/signup" target="_blank">Register</a>
+      {% else %}
+      <li><a class="navbar-link" href="#">Hey {{user.first_name}}!</a>
+      {% endif %}
       </li>
     </ul>
   </nav>
