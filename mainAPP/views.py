@@ -44,6 +44,16 @@ def RenderAgeVerificationAdmin(request):
     return redirect('/')
 
 
+class GetAgeVerificationRequests(APIView):
+    def get(self,request):
+        try:
+            if request.user.is_authenticated and request.user.is_staff:
+                return vision11().get_age_verification_requests()
+            return Response({'status':403,'message':'Invalid Credentials for admin.'})
+        except:
+            return Response({'status':500,'message':'something went wrong.'})
+
+
 @login_required(login_url='/accounts/login')
 def RenderTeamSelection(request):
     '''
@@ -143,3 +153,20 @@ class GetUpcomingMatchesList(APIView):
             except:
                 return Response({'status':500,'message':'something went wrong.'})
         return Response({'status':403,'message':'Please authenticate yourself.'})
+
+
+def RenderStaffPage(request):
+    try:
+        if request.user.is_authenticated and request.user.is_staff:
+            return render(request,'staff_page.html')
+        return redirect('/')
+    except:
+        return redirect('/')
+
+
+@login_required(login_url='/accounts/login')
+def CreateUserTeam(request):
+    try:
+        return vision11().create_user_team(request.data)
+    except:
+        return redirect('/')
