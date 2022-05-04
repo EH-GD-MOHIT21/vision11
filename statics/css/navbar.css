@@ -7,32 +7,33 @@
   font-family: "Work Sans", sans-serif;
 }
 
-html {
-  font-size: 62.5%;
-  /* 1rem = 10px */
+body,html {
   overflow-x: hidden;
-}
-
-body {
-  overflow-x: hidden;
+  position: relative;
 }
 
 .header {
-  padding: 0 4.8rem;
-  height: 10rem;
+  padding: 0 3rem;
+  height: 7rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #e7f5ff;
+  position: absolute;
+  width: 100vw;
+  background: transparent;
+  overflow: hidden;
+  z-index: 10000;
 }
 
-.header .logo {
-  height: 3rem;
+.header img {
+  display: block;
+  margin-top: 7px;
+  z-index: 1000000;
 }
 
 .navbar-list {
   display: flex;
-  gap: 4.8rem;
+  gap: 4rem;
   list-style: none;
 }
 
@@ -41,15 +42,15 @@ body {
   display: inline-block;
   text-transform: uppercase;
   text-decoration: none;
-  font-size: 2rem;
+  font-size: 1.3rem;
   font-weight: 500;
-  color: #212529;
+  color: white;
   transition: all 0.3s;
 }
 
 .navbar-link:hover,
 .navbar-link:active {
-  color: #364fc7;
+  color: gold;
 }
 
 .mobile-navbar-btn {
@@ -59,53 +60,38 @@ body {
 }
 
 .mobile-nav-icon {
-  width: 4rem;
-  height: 4rem;
-  color: #212529;
+  width: 3.5rem;
+  height: 3.5rem;
+  color: #fff; /* hamburger */
 }
 
 .mobile-nav-icon[name="close-outline"] {
   display: none;
 }
 
-/* ===========================================
-Hero and Service Section Start
-======================================= */
-.section-hero,
-.section-services {
-  padding: 9.6rem 0;
-  background-color: #a5d8ff;
-  height: 60vh;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.section-services {
-  background: #f3f0ff;
-}
-
-.section-hero p,
-.section-services p {
-  font-size: 3.2rem;
-}
-
-/* ===========================================
-Responsive Codes 
-======================================= */
 
 /* 980px  */
-@media (max-width: 62em) {
+@media (max-width: 980px) {
   .mobile-navbar-btn {
     display: block;
     z-index: 999;
-    border: 3px solid #212529;
+    border: 3px solid #fff; /* hamburger outer layer*/
     color: #212529;
+  }
+
+  .right{
+    font-size: 20px !important;
+  }
+
+  .right h3{
+    font-size: 30px !important;
   }
 
   .header {
     position: relative;
+    background: transparent;
+    position: absolute;
   }
 
   .header .logo {
@@ -116,7 +102,10 @@ Responsive Codes
     /* display: none; */
     width: 100%;
     height: 100vh;
-    background: #e7f5ff;
+    background: crimson;
+    background-image: linear-gradient(120deg, #000 55%, crimson 55%);
+    background-repeat: no-repeat;
+    background-size: cover;
     position: absolute;
     top: 0;
     left: 0;
@@ -155,13 +144,90 @@ Responsive Codes
   }
 }
 
+@media(max-width: 875px){
+  .right button{
+    padding: 25px 25px !important;
+    font-size: 20px !important;
+  }
+  .feature-text{
+    margin: 10px !important;
+  }
+}
+
+
+@media(max-width:750px){
+  .content-div{
+    position: absolute;
+    left: 50%;
+    bottom: 80px;
+    transform: translate(-50%,0);
+  }
+  .mcbg-firstchild{
+    flex-direction: column-reverse;
+    padding: 35px;
+    margin-top: 50px;
+  }
+
+  #chat-circle{
+    bottom: 80px !important;
+  }
+  .right button{
+    color: white !important;
+    background: crimson !important;
+  }
+}
+
+@media(max-width:650px){
+  .right{
+    font-size: 14px !important;
+  }
+
+  .right h3{
+    font-size: 22px !important;
+  }
+}
+
 /* Below 560px  */
-@media (max-width: 35em) {
+@media (max-width: 560px) {
+  .managercontent{
+    flex-direction: column-reverse !important;
+  }
+  #chat-circle{
+    right: 10px !important;
+  }
+  .display-none{
+    display: none !important;
+  }
+  .managercontent .right{
+    margin: 0 20px;
+  }
   .header {
     padding: 0 2.4rem;
   }
 
+  .img1{
+    width: 100% !important;
+  }
+  .mcbg-firstchild{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
   .header .logo {
     width: 60%;
+  }
+
+  .right button {
+    padding: unset;
+    font-size: 15px !important;
+  }
+}
+
+@media(max-width:350px){
+  .content-div{
+    left: 39% !important;
+  }
+  .header {
+    padding: 0 1rem !important;
   }
 }

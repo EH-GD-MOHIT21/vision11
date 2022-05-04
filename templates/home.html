@@ -8,6 +8,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome User to Vision11</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}" />
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
     <link rel="shortcut icon" href="{% static 'imgs/web/favicon.ico' %}" type="image/x-icon">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -17,23 +19,19 @@
 
 
 <body>
+    {% include 'navbar.html' %}
     <div class="multicolorbg">
-
-        <div class="left">
-            <div class="centertxt">
-                <h1>WELCOME TO</h1>
-                <img width="250px" height="70px" src="{% static 'imgs/web/logo.png' %}" alt="">
+        <div class="mcbg-firstchild">
+            <div class="left">
+                <div class="vision11_logo">
+                    <img class="img1" src="{% static 'imgs/web/gayle4.png' %}" alt="">
+                </div>
             </div>
-            <img class="img1" src="{% static 'imgs/web/gayle4.png' %}" alt="">
-        </div>
-        <div class="managercontent">
-            <div class="center">
-                <img class="img2" src="{% static 'imgs/web/smartphone2.png' %}" alt="">
-            </div>
-
-            <div class="right content-div">
-                <h3>India's Biggest</h3>
-                <h3>Sports Game</h3>
+            <div class="feature-text">
+                <div class="display-none">
+                    Are You Dare to compete with others? Make Your Team and show the world! Secure, Reliable and Easy to Use only on Vision11.com
+                </div>
+                <div class="right content-div">
                 {% if not user.is_authenticated %}
                 <button id="registernow-btn">Register Now</button>
                 {% else %}
@@ -45,10 +43,9 @@
                     })
                 </script>
                 {% endif %}
+                </div>
             </div>
         </div>
-        {% comment %} <footer>* A Fantasy game for all ages with google security.</footer> {% endcomment %}
-
         <div id="body">
 
             <div id="chat-circle" class="btn btn-raised">
@@ -77,11 +74,30 @@
                     </form>
                 </div>
             </div>
-
-
-
-
         </div>
+    </div>
+    <div class="multicolorbg1">
+        <div class="managercontent">
+            <div class="center" data-aos="fade-in" data-aos-offset="0"
+            data-aos-delay="0"
+            data-aos-duration="100"
+            data-aos-easing="ease-in-out"
+            data-aos-mirror="true"
+            data-aos-once="true"
+            data-aos-anchor-placement="top-center">
+                <img class="img2" src="{% static 'imgs/web/smartphone22.png' %}" alt="">
+            </div>
+
+            <div class="right feature-text content-div1" data-aos="fade-in">
+                <h3>India's Biggest</h3>
+                <h3>Sports Game</h3>
+                
+                <p>Hmmm security concerns? Don't worry we use Google's Oauth login. One click login with google's security.</p>
+            </div>
+        </div>
+        {% comment %} <footer>* A Fantasy game for all ages with google security.</footer> {% endcomment %}
+
+        
         <!-- <button style="position: absolute;
         bottom: 20px;
         right: 50px;
@@ -269,5 +285,9 @@ color: white;"></i></button> -->
 {{ request.user.id|json_script:"user_id" }}
 {{ request.user.username|json_script:"user_name" }}
 <script src="{% static 'js/chat.js' %}"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 
 </html>
