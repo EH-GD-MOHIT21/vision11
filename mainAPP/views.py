@@ -54,6 +54,26 @@ class GetAgeVerificationRequests(APIView):
             return Response({'status':500,'message':'something went wrong.'})
 
 
+
+class GetFeatureRequests(APIView):
+    def get(self,request):
+        try:
+            if request.user.is_authenticated and request.user.is_staff:
+                return vision11().get_features_requests()
+            return Response({'status':403,'message':'Invalid Credentials for admin.'})
+        except:
+            return Response({'status':500,'message':'something went wrong.'})
+
+
+def Set_Seen_FeatureRequest(request,fid):
+    try:
+        if request.user.is_authenticated and request.user.is_staff:
+            return vision11().set_seen_fr(fid)
+        return redirect('/')
+    except:
+        return redirect('/')
+
+
 @login_required(login_url='/accounts/login')
 def RenderTeamSelection(request):
     '''

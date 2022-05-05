@@ -1,6 +1,6 @@
 from attr import fields
 from rest_framework.serializers import ModelSerializer
-from mainAPP.models import Match, Player, PlayersMatchData
+from mainAPP.models import Match, Player, PlayersMatchData,User_Feature_Suggestion
 from usermanagerAPP.models import User1
 
 
@@ -26,3 +26,9 @@ class UserSerializer(ModelSerializer):
     class Meta:
         model = User1
         fields = ['id','username','email','age','aadhar_image','country']
+
+
+class FeatureRequestSerializer(ModelSerializer):
+    class Meta:
+        model = User_Feature_Suggestion
+        fields = "__all__"

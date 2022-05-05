@@ -13,8 +13,6 @@
   <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
 </head>
 
-<body>
-
   <body>
     <div class="sidebar">
       <div class="logo-details">
@@ -35,19 +33,19 @@
           </a>
         </li>
         <li>
-          <a href="#" id="ageverdash">
+          <a href="#ageverification" id="ageverdash">
             <i class='bx bx-list-ul'></i>
             <span class="links_name">age verification</span>
           </a>
         </li>
         <li>
-          <a href="#" id="absdash">
+          <a href="#aboutus" id="absdash">
             <i class='bx bx-pie-chart-alt-2'></i>
             <span class="links_name">About us</span>
           </a>
         </li>
         <li>
-          <a href="#" id="hefedash">
+          <a href="#suggestafeature" id="hefedash">
             <i class='bx bx-coin-stack'></i>
             <span class="links_name">Suggest a Feature?</span>
           </a>
@@ -328,10 +326,17 @@
     </script>
   </body>
 
+  <script>
+      const names = ["#ageverification","#aboutus","#suggestafeature","#"]
+      const names_url = ["ageverdash","absdash","hefedash","basedash"]
+      for(var i=0;i<names.length;i++){
+        if(document.URL.includes(names[i])){
+          document.getElementById(names_url[i]).click();
+          break;
+        }
+      }
+  </script>
+
 </html>
 
-
-</body>
-
-</html>
 {% endblock %}

@@ -15,5 +15,7 @@ urlpatterns = [
     path('ageverification/admin_portal',views.RenderAgeVerificationAdmin),
     path('suggestions',views.Save_Suggestion_Form),
     path('staff',views.RenderStaffPage),
-    path('getageverificationrequests',views.GetAgeVerificationRequests.as_view())
+    path('getageverificationrequests',views.GetAgeVerificationRequests.as_view()),
+    path('getfeaturerequests',views.GetFeatureRequests.as_view()),
+    path('fr/mark_as_seen/fid=<int:fid>',views.Set_Seen_FeatureRequest),
 ]

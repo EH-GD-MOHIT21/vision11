@@ -1,6 +1,7 @@
+from requests import request
 from mainAPP.models import Match,Player, PlayersMatchData,Team, User_Feature_Suggestion
 from django.utils import timezone
-from .serializers import FantasyScoreSerializer, MatchListSerializer,GameSquadSerializer, UserSerializer
+from .serializers import FantasyScoreSerializer, FeatureRequestSerializer, MatchListSerializer,GameSquadSerializer, UserSerializer
 from rest_framework.response import Response
 from usermanagerAPP.models import User1
 from django.shortcuts import redirect, render
@@ -60,6 +61,19 @@ class vision11:
         user_obj = [user for user in users if user.aadhar_image!='']
         seralizer = UserSerializer(user_obj,many=True)
         return Response({'status':200,'data':seralizer.data,'message':'success'})
+
+
+    def get_features_requests(self):
+        features = User_Feature_Suggestion.objects.filter(is_seen=False)
+        serializer = FeatureRequestSerializer(features,many=True)
+        return Response({'status':200,'data':serializer.data,'message':'success'})
+
+
+    def set_seen_fr(self,fid):
+        obj = User_Feature_Suggestion.objects.get(id=fid)
+        obj.is_seen = True
+        obj.save()
+        return redirect('/staff#absdash')
 
     # non api methods
     def create_user_team(self,data):
