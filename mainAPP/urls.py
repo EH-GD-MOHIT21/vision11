@@ -14,4 +14,6 @@ urlpatterns = [
     path('getupcomingmatches',views.GetCompletedMatchesList.as_view()),
     path('ageverification/admin_portal',views.RenderAgeVerificationAdmin),
     path('suggestions',views.Save_Suggestion_Form),
+    path('staff',views.RenderStaffPage),
+    path('getageverificationrequests',views.GetAgeVerificationRequests.as_view())
 ]

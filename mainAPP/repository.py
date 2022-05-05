@@ -1,6 +1,6 @@
 from mainAPP.models import Match,Player, PlayersMatchData,Team, User_Feature_Suggestion
 from django.utils import timezone
-from .serializers import FantasyScoreSerializer, MatchListSerializer,GameSquadSerializer
+from .serializers import FantasyScoreSerializer, MatchListSerializer,GameSquadSerializer, UserSerializer
 from rest_framework.response import Response
 from usermanagerAPP.models import User1
 from django.shortcuts import redirect, render
@@ -53,6 +53,17 @@ class vision11:
         match = Match.objects.filter(is_match_end=False,time__gt=timezone.now())
         serialized_matches = MatchListSerializer(match,many=True)
         return Response({'status':200,'message':'success','data':serialized_matches.data})
+
+
+    def get_age_verification_requests(self):
+        users = User1.objects.filter(adult=False)
+        user_obj = [user for user in users if user.aadhar_image!='']
+        seralizer = UserSerializer(user_obj,many=True)
+        return Response({'status':200,'data':seralizer.data,'message':'success'})
+
+    # non api methods
+    def create_user_team(self,data):
+        pass
 
 
     def save_suggestion_form(self,request):

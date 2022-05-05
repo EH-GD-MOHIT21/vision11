@@ -50,6 +50,6 @@ def RenderAdminChat(request):
                 id_queue = all_queues.group_name
                 return render(request, 'admin_chatbox.html',{'queues':all_queues,'queue_id':id_queue}) 
             except:
-                return redirect('/')
+                return render(request, 'info.html',{'message':'No request pending for chat support'})
     return redirect('/') 
 

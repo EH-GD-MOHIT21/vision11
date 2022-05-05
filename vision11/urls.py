@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path,include
 from django.views.static import serve
 from django.conf import settings
+from django.conf.urls.static import static
 
 handler404 = 'mainAPP.views.handler_404'
 handler500 = 'mainAPP.views.handler_500'
@@ -29,4 +30,4 @@ urlpatterns = [
     path('', include('payments.urls')),
     path('', include('chatsupportAPP.urls')),
     path(r'^media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT})
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
