@@ -11,88 +11,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login page</title>
     <link rel="shortcut icon" href="/static/imgs/web/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
     <link rel="stylesheet" href="{% static 'css/util.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css" integrity="sha512-rRQtF4V2wtAvXsou4iUAs2kXHi3Lj9NE7xJR77DE7GHsxgY9RTWy93dzMXgDIG8ToiRTD45VsDNdTiUagOFeZA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
+    {% include 'navbar.html' %}
     <div class="limiter">
         <div class="container-login100">
             <div class="imgcon">
                 <img class="mainimg" src="{% static 'imgs/web/gayle1.png' %}">
-                <img class="logoimg" src="{% static 'imgs/web/logo.png' %}">
             </div>
-            <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
-                <form method="post" action="{% url 'account_login' %}" class="login100-form validate-form">
-                    {% csrf_token %}
-                    {% if redirect_field_value %}
-                        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
-                    {% endif %}
-                    <p class="form-text error-text">
-                        {{ form.non_field_errors.as_text }}
-                    </p>
-                    <div class="wrap-input100 validate-input">
-                        <label for="id_login" class="label-input100">Email/Username: </label>
-                        <input type="text" class="input100" id="id_login" aria-describedby="emailHelp"
-                            placeholder="Username or email" name="login">
-                        <span class="focus-input100" data-symbol="&#xf206;"></span>
-                    </div>
-                    <p id="emailHelp" class="form-text error-text m-b-23">
-                        {{ form.login.errors.as_text }}
-                    </p>
-                    <div class="wrap-input100 validate-input">
-                        <label for="id_password" class="label-input100">Password</label>
-                        <input type="password" class="input100" id="id_password" aria-describedby="passwordHelp"
-                            placeholder="Enter Your Password" name="password">
-                        <span class="focus-input100" data-symbol="&#xf190;"></span>
-                    </div>
-                    <p id="passwordHelp" class="form-text error-text">
-                        {{ form.password.errors.as_text }}
-                    </p>
-                    <div class="">
-                        <div class="form-check p-t-15">
-                            <label class="form-check-label remember-text" for="id_remember">
-                                Remember me
-                            </label>
-                            <input class="form-check-input" type="checkbox" value=""
-                                name="remember" id="id_remember">
+                <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+                    <form method="post" action="{% url 'account_login' %}" class="login100-form validate-form">
+                        {% csrf_token %}
+                        {% if redirect_field_value %}
+                            <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+                        {% endif %}
+                        <p class="form-text error-text">
+                            {{ form.non_field_errors.as_text }}
+                        </p>
+                        <div class="wrap-input100 validate-input">
+                            <label for="id_login" class="label-input100">Email/Username: </label>
+                            <input type="text" class="input100" id="id_login" aria-describedby="emailHelp"
+                                placeholder="Username or email" name="login">
+                            <span class="focus-input100" data-symbol="&#xf206;"></span>
                         </div>
-                        <div class="p-t-8 p-b-15" style="display: flex;justify-content: space-between;align-items: center;">
-                            <a href="{% url 'account_signup' %}" class="">
-                                Create an account
-                            </a>
-                            <a href="{% url 'account_reset_password' %}" class="">
-                                Forgot Password?
-                            </a>
+                        <p id="emailHelp" class="form-text error-text m-b-23">
+                            {{ form.login.errors.as_text }}
+                        </p>
+                        <div class="wrap-input100 validate-input">
+                            <label for="id_password" class="label-input100">Password</label>
+                            <input type="password" class="input100" id="id_password" aria-describedby="passwordHelp"
+                                placeholder="Enter Your Password" name="password">
+                            <span class="focus-input100" data-symbol="&#xf190;"></span>
                         </div>
-                    </div>
-                    <div class="container-login100-form-btn">
-                        <div class="wrap-login100-form-btn">
-                            <div class="login100-form-bgbtn">
+                        <p id="passwordHelp" class="form-text error-text">
+                            {{ form.password.errors.as_text }}
+                        </p>
+                        <div class="">
+                            <div class="form-check p-t-15">
+                                <label class="form-check-label remember-text" for="id_remember">
+                                    Remember me
+                                </label>
+                                <input class="form-check-input" type="checkbox" value=""
+                                    name="remember" id="id_remember">
                             </div>
-                            <button class="login100-form-btn" type="submit" id="loginButton">Sign In</button>
-                        </div>
-                    </div>
-                    
-                    <div class="txt1 text-center p-t-54 p-b-20">
-                        <span>
-                            Or Sign Up Using
-                        </span>
-                    </div>
-                    {% get_providers as socialaccount_providers %}
-                    {% if socialaccount_providers %}
-                    <div class="socialaccount_ballot">
-                            <div class="flex-c-m">
-                                <a href="/accounts/google/login/?process=login" class="login100-social-item bg3" style="text-decoration: none;">
-                                    <i class="fa fa-google"></i>
+                            <div class="p-t-8 p-b-15" style="display: flex;justify-content: space-between;align-items: center;">
+                                <a href="{% url 'account_signup' %}" class="">
+                                    Create an account
+                                </a>
+                                <a href="{% url 'account_reset_password' %}" class="">
+                                    Forgot Password?
                                 </a>
                             </div>
-                    </div>
-                    {% include "socialaccount/snippets/login_extra.html" %}
-                    {% endif %}
-                </form>
-            </div>
+                        </div>
+                        <div class="container-login100-form-btn">
+                            <div class="wrap-login100-form-btn">
+                                <div class="login100-form-bgbtn">
+                                </div>
+                                <button class="login100-form-btn" type="submit" id="loginButton">Sign In</button>
+                            </div>
+                        </div>
+                        
+                        <div class="txt1 text-center p-t-54 p-b-20">
+                            <span>
+                                Or Sign Up Using
+                            </span>
+                        </div>
+                        {% get_providers as socialaccount_providers %}
+                        {% if socialaccount_providers %}
+                        <div class="socialaccount_ballot">
+                                <div class="flex-c-m">
+                                    <a href="/accounts/google/login/?process=login" class="login100-social-item bg3" style="text-decoration: none;">
+                                        <i class="fa fa-google"></i>
+                                    </a>
+                                </div>
+                        </div>
+                        {% include "socialaccount/snippets/login_extra.html" %}
+                        {% endif %}
+                    </form>
+                </div>
         </div>
     </div> 
 </body>
