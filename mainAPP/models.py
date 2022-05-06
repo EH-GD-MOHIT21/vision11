@@ -34,7 +34,7 @@ class User_Feature_Suggestion(models.Model):
 
 
 class Match(models.Model):
-    url = models.TextField(unique=True,primary_key=True)
+    url = models.TextField(unique=True)
     title = models.TextField(null=True,blank=True)
     time = models.DateTimeField()
     name = models.CharField(max_length=100,null=True,blank=True)

@@ -75,12 +75,15 @@ def Set_Seen_FeatureRequest(request,fid):
 
 
 @login_required(login_url='/accounts/login')
-def RenderTeamSelection(request):
+def RenderTeamSelection(request,mid):
     '''
     This method is used for
     rendering Team selection page.
     '''
-    return render(request, 'selecting_team.html')
+    try:
+        return vision11().render_team_selection(request,mid)
+    except:
+        return redirect('/')
 
 
 

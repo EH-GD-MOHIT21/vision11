@@ -1,4 +1,3 @@
-from requests import request
 from mainAPP.models import Match,Player, PlayersMatchData,Team, User_Feature_Suggestion
 from django.utils import timezone
 from .serializers import FantasyScoreSerializer, FeatureRequestSerializer, MatchListSerializer,GameSquadSerializer, UserSerializer
@@ -28,6 +27,11 @@ class vision11:
         gamesquad1 = GameSquadSerializer(p1,many=True)
         gamesquad2 = GameSquadSerializer(p2,many=True)
         return Response({'status':200,'message':'success','team1':gamesquad1.data,'team2':gamesquad2.data})
+
+
+    def render_team_selection(self,request,mid):
+        match = Match.objects.get(id=mid)
+        return render(request, 'selecting_team.html',{'team1':match.team1,'team2':match.team2})
 
 
 

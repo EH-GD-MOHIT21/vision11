@@ -83,7 +83,6 @@ async function upcoming_match_data(api_url) {
     if (response.ok) {
         let json = await response.json();
         match_data = json['data']
-        console.log(match_data)
         res_len = match_data.length;
         for (let i = 0; i < res_len; i++) {
             console.log('completed_matches')
@@ -125,7 +124,8 @@ async function upcoming_match_data(api_url) {
             create_button.className = 'createbutton';
             match_card.appendChild(create_button)
             const a_but = document.createElement("a")
-            a_but.textContent = 'Show Team'
+            a_but.textContent = 'Create Team'
+            a_but.href = '/createteam/match='+match_data[i].id
             create_button.appendChild(a_but);
             element.appendChild(match_card);
         }
