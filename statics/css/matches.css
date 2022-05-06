@@ -11,24 +11,22 @@ body {
 
 .multicolorbg {
     background: crimson;
-    background-image: linear-gradient(120deg, #000 55%, crimson 55%);
     background-repeat: no-repeat;
     background-size: cover;
     width: 100vw;
-    height: 100vh;
     overflow: hidden;
 }
 
 .multicolorbg .match_card{
     background-color: white;
-    width: 600px;
     margin: auto;
-    margin-top: 100px;
+    margin-top: 20px;
     border-radius: 5px;
     background: #fff;
     padding: 15px 14px;
     border-radius: 12px;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    border: 1px solid #dddddd;
+    text-align: left;
 }
 
 .multicolorbg .match_card .teams{
@@ -73,6 +71,7 @@ body {
   border-radius: 4px;
   text-decoration: none;
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .multicolorbg .match_card span{
@@ -81,6 +80,43 @@ body {
 
 .multicolorbg .match_card .createbutton a:hover{
     background:  #0d3073;
+}
+
+.head{
+    display: flex;
+    justify-content: center;
+    background: white;
+}
+
+.box{
+    width: 600px;
+    margin: auto;
+    margin-top: 100px;
+    background: #fff;
+    padding: 15px 14px;
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.active{
+    background-color: #dddddd;    
+}
+
+.player_data{
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+  text-align: left;
+  padding: 8px;
+}
+
+.head a{
+    display: block;
+    cursor: pointer;
+}    
+.match_card h3{
+    text-align: center;     
 }
  
 @media (max-width:625px){

@@ -22,11 +22,14 @@ body {
 .multicolorbg .box{
   width: 600px;
   margin: auto;
-  margin-top: 100px;
+  margin-top: 40px;
+  margin-bottom: 15px;
   background: #fff;
   padding: 15px 14px;
   border-radius: 12px;
   box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  height: 85vh;
+  overflow-y: auto;
 }
 
 
@@ -44,15 +47,14 @@ body {
 
 .bastmans{
     display: none;
-    border: 1px solid #dddddd;
     border-radius: 3px;
   text-align: left;
   padding: 8px;
+  
 }
 
 .bowlers{
     display: none;
-    border: 1px solid #dddddd;
     border-radius: 3px;
   text-align: left;
   padding: 8px;
@@ -60,7 +62,6 @@ body {
 
 .allrounders{
     display: none;
-    border: 1px solid #dddddd;
     border-radius: 3px;
   text-align: left;
   padding: 8px;
@@ -74,6 +75,7 @@ body {
   text-align: left;
   padding: 8px;
   margin-top: 5px;
+  position: relative;
 }
 
 .batsman{
@@ -84,6 +86,7 @@ body {
   text-align: left;
   padding: 8px;
   margin-top: 5px;
+  position: relative;
 }
 
 .allround{
@@ -94,6 +97,7 @@ body {
   text-align: left;
   padding: 8px;
   margin-top: 5px;
+  position: relative;
 }
 
 .bowler{
@@ -103,7 +107,8 @@ body {
     border-radius: 3px;
   text-align: left;
   padding: 8px;
-  margin-top: 5px;      
+  margin-top: 5px;  
+  position: relative;    
 }
 
 .head{
@@ -156,4 +161,54 @@ body {
 
 .overmsg{
   display: none;
+  text-align: center;
+  color: red;
 }
+
+.addbtn .plus{
+  background: white;
+  border: none;
+  cursor: pointer;
+}
+
+.addbtn .minus{
+  background: lightgray;
+  border: none;
+  display: none;
+  cursor: pointer;
+}
+
+.proc_button, .procf_button{
+  border-radius: 6px;
+  padding: 3px;
+  font-size: 20px;
+  width: 200px;
+  background: white;
+  color: crimson;
+  cursor: not-allowed;
+}
+
+.player_selection{
+  display: flex;
+    justify-content: center;
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+  text-align: left;
+  padding: 8px;
+  margin-top: 5px;
+  position: relative;
+}
+
+.cap, .vicecap{
+  height: 34px;
+    width: 34px;
+    border-radius: 48%;
+    font-size: 17px;
+    cursor: pointer;
+    margin-right: 6px;
+}
+
+.selction_cap{
+  display: none;
+}
+

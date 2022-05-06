@@ -18,29 +18,28 @@
 
 <body>
     <div class="multicolorbg">
-        <div class="match_card">
-            <span>Starts at : 7:30 PM</span>
-            <h3 style="text-align: center;"> Match Title </h3>
-            <div class="teams">
-            <div class="team1info">
-                <img src="https://www.vibesofindia.com/wp-content/uploads/2022/03/Gujarat_Titans_logo.jpeg">
-                <label>Gujrat Titans</label>
+        <div class="box">
+            <div class="head">
+                <div style="font-weight: bold; width: 33.33%;" class="player_data active" id="completed_match"><a
+                        onclick="show_completed()">Completed</a></div>
+                <div style="font-weight: bold; width: 33.33%;" class="player_data" id="live_match"><a
+                        onclick="show_live()">Live Match</a></div>
+                <div style="font-weight: bold; width: 33.33%;" class="player_data" id="Upcoming"><a
+                        onclick="show_upcoming()">Upcoming</a></div>
             </div>
-            <div class="vs">
-                VS
+            <div id="completed">
             </div>
-            <div class="team2info">
-                <img src="https://static.toiimg.com/thumb/msid-90206570,width-1200,height-900,resizemode-4/.jpg">
-                <label>Sunrisers Hyderabad</label>
+
+            <div id="live" style="display: none;">
+            
             </div>
-        </div>
-        <div class="createbutton">
-            <a href="#">Create Team</a>
-        </div>
+
+            <div id="upcoming" style="display: none;">
+            </div>
         </div>
     </div>
 
 
 </body>
-
+<script src="{% static 'js/match_scheduled.js' %}"></script>
 </html>

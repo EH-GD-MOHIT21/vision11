@@ -41,6 +41,17 @@ class Match(models.Model):
     team1 = models.CharField(max_length=60,null=True,blank=True)
     team2 = models.CharField(max_length=60,null=True,blank=True)
     is_match_end = models.BooleanField(default=False)
+    team1_img = models.TextField(null=True,blank=True)
+    team2_img = models.TextField(null=True,blank=True)
+
+    def save(self,*args,**kwargs):
+        try:
+            self.team1_img = Team.objects.get(team_name=self.team1).team_img
+            self.team2_img = Team.objects.get(team_name=self.team2).team_img
+        except:
+            pass
+
+        super(Match, self).save(*args, **kwargs)
 
     def __str__(self):
         return self.title
