@@ -21,7 +21,7 @@
 }
 
 body, html {
-	height: 100%;
+	min-height: 100%;
   background: crimson;
   background-image: linear-gradient(120deg, #000 50%, crimson 50%);
   font-family: Poppins-Regular, sans-serif;
@@ -174,7 +174,7 @@ img.boyimg, img.girlimg {
 
 .container-login100 {
   width: 100%;  
-  min-height: 100vh;
+  margin-top: 90px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -490,7 +490,7 @@ img.boyimg, img.girlimg {
 
 .logoimg{
   width: 250px;
-  display: block;
+  display: none;
   margin: auto;
 }
 
@@ -513,6 +513,9 @@ img.boyimg, img.girlimg {
     width: 300px;
     height: 100px;
     margin: 20px auto;
+  }
+  .container-login100{
+    justify-content: center;
   }
 }
 

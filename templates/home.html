@@ -29,7 +29,10 @@
             </div>
             <div class="feature-text">
                 <div class="display-none">
-                    Are You Dare to compete with others? Make Your Team and show the world! Secure, Reliable and Easy to Use only on Vision11.com
+                    Are You Dare to compete with others? Make Your Team and show the world! Secure, Reliable and Easy to Use only on Vision11.com.
+                    {% if user.is_staff %}
+                        Hey Admin please checkout <a style="color:yellow;" href="/staff">Your panel here.</a>
+                    {% endif %}
                 </div>
                 <div class="right content-div">
                 {% if not user.is_authenticated %}

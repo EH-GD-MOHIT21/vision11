@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'payments',
     'taskSchedularApp',
     'django_celery_results',
-    'records',
     'django_admin_logs',
 ]
 
