@@ -5,3 +5,7 @@ cmd
 workon vision11
 python manage.py runserver
 celery -A taskSchedularApp beat -l info
+
+
+# multiworker
+celery -A taskSchedularApp.celery worker --loglevel=INFO --concurrency=2
