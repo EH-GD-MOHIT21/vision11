@@ -15,7 +15,7 @@
 </head>
 
   <body>
-    <div class="sidebar">
+    <div class="sidebar" id="sidebar-dashboard">
       <div class="logo-details">
         <i class='bx bxl-c-plus-plus'></i>
         <span class="logo_name">vision11</span>
@@ -74,12 +74,9 @@
     <section class="home-section">
       <nav>
         <div class="sidebar-button">
+          <button class='hb-btn' id="hb-btn" style="display:none;">HB</button>
           <i class='bx bx-menu sidebarBtn'></i>
           <span class="dashboard" style="color: white;">Dashboard</span>
-        </div>
-        <div class="search-box">
-          <input type="text" placeholder="Search...">
-          <i class='bx bx-search'></i>
         </div>
         <div class="profile-details">
           <!--<img src="images/profile.jpg" alt="">-->
@@ -255,7 +252,7 @@
 
       <div class="home-content" id="help-feedback-dashboard">
         <div class="overview-boxes">
-          <div class="box suggestion_box">
+          <div class="suggestion_box">
             <div class="right-side suggestion_box_child">
               <div class="suggestion_form">
                 {% if messages %}
@@ -325,6 +322,9 @@
 
       for (var i = 0; i < triggered.length; i++) {
         document.getElementById(triggered[i]).addEventListener('click', function () {
+          if(window.innerWidth < 786){
+            document.getElementById('sidebar-dashboard').style.display = 'none';
+          }
           for (var j = 0; j < elms.length; j++) {
             if (this.id == triggered[j]) {
               document.getElementById(elms[j]).style.display = 'block';
@@ -348,6 +348,14 @@
         if(document.URL.includes(names[i])){
           document.getElementById(names_url[i]).click();
           break;
+        }
+      }
+
+      window.onresize = function(){
+        if(window.innerWidth<786){
+          document.getElementById('sidebar-dashboard').style.display = 'none';
+        }else{
+          document.getElementById('sidebar-dashboard').style.display = 'block';
         }
       }
   </script>

@@ -11,7 +11,14 @@
   width: 240px;
   background: crimson;
   transition: all 0.5s ease;
+  overflow-y: auto;
 }
+
+.overview-boxes .box{
+  min-width: 300px;
+  margin-right: 10px;
+}
+
 .sidebar.active{
   width: 60px;
 }
@@ -178,12 +185,12 @@ nav .profile-details i{
 .home-content .overview-boxes{
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
   padding: 0 20px;
   margin-top: 20px;
 }
-.overview-boxes .box,.staff-box{
+.overview-boxes .box,.staff-box,.suggestion_box{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -404,7 +411,7 @@ nav .profile-details i{
 }
 
 .suggestion_box{
-  width: 70% !important;
+  width: calc(90% - 15px) !important;
   margin: auto;
 }
 
@@ -486,10 +493,38 @@ nav .profile-details i{
     margin-top: 2px;
     padding: 2px;
 }
+
+
+@media(max-width:786px){
+  .sidebar{
+    position: absolute;
+    display: none;
+    width: 100%;
+    z-index: 1;
+  }
+  .home-section{
+    left: 0;
+    width: 100%;
+    background: crimson;
+  }
+  .hb-btn{
+    display: block !important;
+  }
+  .sidebar-button .dashboard{
+    display: none;
+  }
+  .home-section nav{
+    width: 100%;
+    left: 0;
+  }
+}
+
+
+
 /*-------------------*/
 
 /* Responsive Media Query */
-@media (max-width: 1240px) {
+/* @media (max-width: 1240px) {
   .sidebar{
     width: 60px;
   }
@@ -501,7 +536,6 @@ nav .profile-details i{
     left: 60px;
   }
   .sidebar.active ~ .home-section{
-    /* width: calc(100% - 220px); */
     overflow: hidden;
     left: 220px;
   }
@@ -579,4 +613,4 @@ nav .profile-details i{
     left: 60px;
     width: calc(100% - 60px);
   }
-}
+} */

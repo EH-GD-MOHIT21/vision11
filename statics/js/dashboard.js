@@ -116,3 +116,13 @@ if(document.URL.includes('purchase')){
 document.getElementById('purchase').addEventListener('click',function(){
     show_purchase();
 })
+
+
+document.getElementById('hb-btn').addEventListener('click',function(){
+    var elm = document.getElementById('sidebar-dashboard');
+    if(window.getComputedStyle(elm).display=='none'){
+        elm.style.display = 'block';
+    }else{
+        elm.style.display = 'none'
+    }
+})
