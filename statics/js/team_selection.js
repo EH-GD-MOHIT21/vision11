@@ -1,8 +1,7 @@
-team1_name = 'Kolkata Knight Riders';
-team2_name = 'Rajasthan Royals';
-
+team1_name = JSON.parse(document.getElementById('team1').textContent);
+team2_name = JSON.parse(document.getElementById('team2').textContent);
 user_team_data=[]
-
+console.log(team1_name,team2_name)
 individual_player_data = {}
 
 const team_players_api  =
@@ -1050,6 +1049,10 @@ function add_vicecap(id){
             document.getElementById('procf_btn').style.cursor='pointer';
             document.getElementById('procf_btn').disabled=false;
     
+        }
+        else{
+            document.getElementById('procf_btn').style.cursor='not-allowed';
+            document.getElementById('procf_btn').disabled=true;
         }
     }
     else if(cap_id!=new_i){

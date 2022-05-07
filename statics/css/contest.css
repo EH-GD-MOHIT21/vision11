@@ -1,0 +1,192 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.multicolorbg {
+    background: crimson;
+    background-image: linear-gradient(120deg, #000 55%, crimson 55%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.multicolorbg .box{
+  width: 600px;
+  margin: auto;
+  margin-top: 40px;
+  margin-bottom: 15px;
+  background: #fff;
+  padding: 15px 14px;
+  border-radius: 12px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  height: 85vh;
+  overflow-y: auto;
+}
+
+.head{
+    display: flex;
+    justify-content: center;
+}
+
+.contest_type{
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+    text-align: left;
+    padding: 8px;
+}
+
+.active{
+    background-color: #dddddd;    
+}
+
+.head a{
+    display: block;
+    cursor: pointer;
+}
+
+.contest_container{
+    margin: auto;
+    margin-top: 20px;
+    background: #fff;
+    padding: 15px 14px;
+    border-radius: 12px;
+    border: 1px solid #dddddd;
+    position: relative;
+}
+
+.entr, .entryfe{
+    position: absolute;
+}
+
+.entr{
+    right: 20px;
+}
+
+.entryfe{
+    margin-top: 2px;
+    text-align: center;
+    display: inline-block;
+    right: 3px;
+    width: 77px;
+    background: lightgreen;
+    padding: 2px;
+    border-radius: 5px
+}
+
+.prize{
+    margin-top: 2px;
+}
+
+.progress_bar{
+    margin-top: 10px;
+}
+
+.prog_bar{
+    width: 100%;
+}
+
+.total_spot{
+    position: absolute;
+    right: 15px;
+}
+
+.join{
+    text-align: center;
+    margin-top: 15px;
+}
+
+.join a{
+    color: #fff;
+    background: #0A2558;
+    padding: 4px 12px;
+    font-size: 18px;
+    font-weight: 400;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.private{
+    display: none;
+    margin: auto;
+    margin-top: 20px;
+    background: #fff;
+    padding: 15px 14px;
+    border-radius: 12px;
+    border: 1px solid #dddddd;
+    position: relative;
+    text-align: center;
+}
+
+.private input{
+    display: block;
+    width: 60%;
+    margin: auto;
+    margin-bottom: 10px;
+    padding: 3px;
+    font-size: 18px;
+    border-radius: 5px;
+    border: 1px solid #dddddd;
+}
+
+.search_btn{
+    color: #fff;
+    background: #0A2558;
+    padding: 4px 12px;
+    font-size: 18px;
+    font-weight: 400;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer; 
+    margin-top: 10px;
+}
+
+.creattion{
+    display: none;
+    margin: auto;
+    margin-top: 20px;
+    background: #fff;
+    padding: 15px 14px;
+    border-radius: 12px;
+    border: 1px solid #dddddd;
+    position: relative;
+    text-align: center;
+}
+
+.creattion input{
+    display: block;
+    width: 60%;
+    margin: auto;
+    margin-bottom: 10px;
+    padding: 3px;
+    font-size: 18px;
+    border-radius: 5px;
+    border: 1px solid #dddddd;
+}
+
+select#type_conteste{
+    display: block;
+    width: 60%;
+    margin: auto;
+    margin-bottom: 10px;
+    padding: 3px;
+    font-size: 18px;
+    border-radius: 5px;
+    border: 1px solid #dddddd;
+    margin-top: 3px;
+}
+#contest_pass_create{
+    display: none;
+}
+ 

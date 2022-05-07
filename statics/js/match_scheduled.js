@@ -25,7 +25,7 @@ if (response.ok) {
         const match_card = document.createElement("div");
         match_card.className = 'match_card';
         const span_match_card = document.createElement("span");
-        span_match_card.textContent = `${match_data[i].time}`;
+        span_match_card.textContent = 'Started...';
         match_card.appendChild(span_match_card)
         const match_heading = document.createElement("h3");
         match_heading.textContent = `${match_data[i].title}`;
@@ -147,14 +147,13 @@ async function upcoming_match_data(api_url) {
         if (response.ok) {
             let json = await response.json();
             match_data = json['data']
-            console.log(match_data)
             res_len = match_data.length;
             for (let i = 0; i < res_len; i++) {
                 console.log('completed_matches')
                 const match_card = document.createElement("div");
                 match_card.className = 'match_card';
                 const span_match_card = document.createElement("span");
-                span_match_card.textContent = `${match_data[i].time}`;
+                span_match_card.textContent = 'Completed';
                 match_card.appendChild(span_match_card)
                 const match_heading = document.createElement("h3");
                 match_heading.textContent = `${match_data[i].title}`;

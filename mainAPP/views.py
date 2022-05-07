@@ -85,6 +85,14 @@ def RenderTeamSelection(request,mid):
     except:
         return redirect('/')
 
+@login_required(login_url='/accounts/login')
+def RenderContestPage(request):
+    '''
+    This method is used for
+    rendering Contest page.
+    '''
+    return render(request,'contest.html')
+
 
 
 def handler_404(request, exception=None):
@@ -173,7 +181,8 @@ class GetUpcomingMatchesList(APIView):
         if request.user.is_authenticated:
             try:
                 return vision11().get_upcoming_matches()
-            except:
+            except Exception as e:
+                print(e)
                 return Response({'status':500,'message':'something went wrong.'})
         return Response({'status':403,'message':'Please authenticate yourself.'})
 

@@ -56,8 +56,23 @@ class vision11:
     
     def get_upcoming_matches(self):
         match = Match.objects.filter(is_match_end=False,time__gt=timezone.now())
-        serialized_matches = MatchListSerializer(match,many=True)
-        return Response({'status':200,'message':'success','data':serialized_matches.data})
+        data = []
+        for i in match:
+            match_data_individual = {}
+            time_obj = (i.time)-timezone.now()
+            match_time = (time_obj.days)*24*60*60+time_obj.seconds
+            match_data_individual['id'] = i.id
+            match_data_individual['url'] = i.url
+            match_data_individual['title'] = i.title
+            match_data_individual['time'] = match_time
+            match_data_individual['name'] = i.name
+            match_data_individual['team1'] = i.team1
+            match_data_individual['team2'] = i.team2
+            match_data_individual['is_match_end'] = i.is_match_end
+            match_data_individual['team1_img'] = i.team1_img
+            match_data_individual['team2_img'] = i.team2_img
+            data.append(match_data_individual)
+        return Response({'status':200,'message':'success','data':data})
 
 
     def get_age_verification_requests(self):

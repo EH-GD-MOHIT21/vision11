@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome User to Vision11</title>
+    <link rel="stylesheet" href="{% static 'css/contest.css' %}">
+    <link rel="shortcut icon" href="{% static 'imgs/web/favicon.ico' %}" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e8423a8394.js" crossorigin="anonymous"></script>
+</head>
+
+
+<body>
+    <div class="multicolorbg">
+        <div class="box" id="box">
+            <div class="public_contests">
+                <div class="head">
+                    <div style="font-weight: bold; width: 33.33%;" class="contest_type active" id="public_contest"><a
+                            onclick="show_public()" id="pub">Public Contest</a></div>
+                    <div style="font-weight: bold; width: 33.33%;" class="contest_type" id="private_contest"><a
+                            onclick="show_private()" id="prvt">Private Contest</a></div>
+                    <div style="font-weight: bold; width: 33.33%;" class="contest_type" id="create_contest"><a
+                            onclick="show_createcontest()" id="crtcon">Create Contest</a></div>
+                </div>
+                <div class="public" id="public">
+                    <div id="public1" class="contest_container">
+                        <div class="heade">
+                        <span class="prz">Prize</span>
+                        <span class="entr">Entry</span>
+                    </div>
+                    <div class="money_container">
+                        <span id="prize1" class="prize"><i class="fa fa-inr" aria-hidden="true"></i>
+                            500</span>
+                        <span id="entryfee1" class="entryfe">30 Coins</span>
+                    </div>
+                    <div class="progress_bar">
+                        <progress id="prog1" value="0" max="100" class="prog_bar"> 0% </progress>
+                        <div class="spots">
+                            <span id="spot_left1" class="spot_left">2 Spots left</span>
+                            <span id="total_spots1" class="total_spot">2 Spots</span>
+                        </div>
+                    </div>
+                    <div class="join">
+                        <a href="#">Join Contest</a>
+                    </div>
+                    </div>
+                    
+                </div>
+
+                <div class="private" id="private">
+                    <input placeholder="Enter contest id" id="contest_id">
+                    <input placeholder="Enter Password" id="contest_pass">
+                    <button id="search_con" class="search_btn">Search Contest</button>
+                </div>
+                <div class="creattion" id="create_cont">
+                    <input placeholder="Enter contest Name" id="contest_name">
+                    <input placeholder="Create contest id" id="contest_id_create">
+                    <input placeholder="Max no of members" id="contest_max_mem">
+                    <label>Contest Type: </label>
+                    <select name="contesttype" id="type_conteste" onchange="myFunction()">
+                        <option value="public">Public</option>
+                        <option value="private">Private</option>
+                      </select>
+                    <input placeholder="Enter Password" id="contest_pass_create" >
+                    <button id="create_con" class="search_btn">Create Contest</button>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+</body>
+
+<script src="{% static 'js/contests.js' %}"></script>
+</html>
