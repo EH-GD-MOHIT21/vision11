@@ -801,7 +801,7 @@ function add_bowl(id){
     get_credit = document.getElementById('bowlcredits'+new_id).textContent
     total_credits = document.getElementById('total_credits').textContent
     total_players = total_wicketkeeper+total_batsman+total_allrounder+total_bowler
-    if((total_bowler<=5 && (parseFloat(total_credits) - parseFloat(get_credit))>0) && (total_players<=11)){
+    if((total_bowler<=5 && (parseFloat(total_credits) - parseFloat(get_credit))>0) && (total_players<11)){
     document.getElementById(id).style.display='none';
     document.getElementById('bowlminus'+new_id).style.display='inline';
     document.getElementById('bowl'+new_id).style.background='lightgray';
@@ -1079,8 +1079,31 @@ function add_vicecap(id){
     }
 }
 
+async function post_data(url){
+    let response = await fetch(url, {
+        credentials: 'include',
+        method: 'POST',
+        mode: 'same-origin',
+        headers: {
+            'X-CSRFToken': getCookie('X-CSRFToken'),
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            'players': individual_player_data,
+            'cap_data': cap_data,
+            'vice_cap_data': vice_cap_data
+        })
+    })
+    if (response.ok) {
+        let json = await response.json();
+        let message = json["message"];
+        console.log(message);
+    } else {
+        alert("HTTP-Error: " + response.status);
+    }
+}
+
 function proceed_final(){
-    console.log(individual_player_data);
-    console.log(cap_data);
-    console.log(vice_cap_data);
+    post_data('/finalizeteam')
 }

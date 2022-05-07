@@ -1,5 +1,7 @@
 from mainAPP.models import Match,Player, PlayersMatchData,Team, User_Feature_Suggestion
 from django.utils import timezone
+
+from mainAPP.team_creation_rules import filter_team_data, finalize_team, follow_base_rules
 from .serializers import FantasyScoreSerializer, FeatureRequestSerializer, MatchListSerializer,GameSquadSerializer, UserSerializer
 from rest_framework.response import Response
 from usermanagerAPP.models import User1
@@ -96,7 +98,11 @@ class vision11:
 
     # non api methods
     def create_user_team(self,data):
-        pass
+        players,captain,vicecaptain = filter_team_data(data)
+        status,message = finalize_team(players)
+        if status:
+            return Response({'status':200,'message':'success'})
+        return Response({'status':200,'message':message})
 
 
     def save_suggestion_form(self,request):

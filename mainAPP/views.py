@@ -202,3 +202,15 @@ def CreateUserTeam(request):
         return vision11().create_user_team(request.data)
     except:
         return redirect('/')
+
+
+
+class FinalizeUserTeam(APIView):
+    def post(self,request):
+        try:
+            if request.user.is_authenticated:
+                return vision11().create_user_team(request.data)
+            return Response({'status':403,'message':'unauthorized access please authenticated yourself.'})
+        except Exception as e:
+            print(e)
+            return Response({'status':500,'message':'something went wrong.'})
