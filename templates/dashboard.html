@@ -10,6 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard @ Vision11</title>
   <link rel="shortcut icon" href="/static/imgs/web/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="{% static 'css/plans.css' %}">
   <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
 </head>
 
@@ -48,6 +49,12 @@
           <a href="#suggestafeature" id="hefedash">
             <i class='bx bx-coin-stack'></i>
             <span class="links_name">Suggest a Feature?</span>
+          </a>
+        </li>
+        <li>
+          <a href="#purchase" id="purchase">
+            <i class='bx bx-pie-chart-alt-2'></i>
+            <span class="links_name">purchase</span>
           </a>
         </li>
         <li>
@@ -240,6 +247,12 @@
       </div>
 
 
+      <div class="home-content" id="purchase-dashboard">
+        <div class="overview-boxes overview_boxes_abs" id="purchase-dashboard-main-container">
+
+        </div>
+      </div>
+
       <div class="home-content" id="help-feedback-dashboard">
         <div class="overview-boxes">
           <div class="box suggestion_box">
@@ -302,8 +315,10 @@
     </script>
 
     <script>
-      elms = ["base-dashboard", "age-verification-dashboard", "about-us-dashboard", "help-feedback-dashboard"]
-      triggered = ["basedash", "ageverdash", "absdash", "hefedash"]
+      // id of divs
+      elms = ["base-dashboard", "age-verification-dashboard", "about-us-dashboard", "help-feedback-dashboard","purchase-dashboard"]
+      // id of a tags left
+      triggered = ["basedash", "ageverdash", "absdash", "hefedash","purchase"]
       for (var i = 1; i < elms.length; i++) {
         document.getElementById(elms[i]).style.display = "none";
       }
@@ -327,8 +342,8 @@
   </body>
 
   <script>
-      const names = ["#ageverification","#aboutus","#suggestafeature","#"]
-      const names_url = ["ageverdash","absdash","hefedash","basedash"]
+      const names = ["#purchase","#ageverification","#aboutus","#suggestafeature","#"]
+      const names_url = ["purchase","ageverdash","absdash","hefedash","basedash"]
       for(var i=0;i<names.length;i++){
         if(document.URL.includes(names[i])){
           document.getElementById(names_url[i]).click();
@@ -336,7 +351,7 @@
         }
       }
   </script>
-
+<script src="{% static 'js/dashboard.js' %}"></script>
 </html>
 
 {% endblock %}

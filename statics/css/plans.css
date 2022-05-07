@@ -1,0 +1,63 @@
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+    font-family: cursive;
+}
+
+
+.cards-container {
+    background-color: #f1f5f8;
+display: flex;
+justify-content: space-around;
+align-items: center;
+flex-wrap: wrap;
+}
+.card {
+    background-color: white;
+    padding: 25px;
+    border: 1px solid #bbbbbb;
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px 0px rgb(0 0 0 / 25%);
+    width: 300px;
+    margin: 20px;
+    position: relative;
+    overflow: hidden;
+}
+.title {
+    text-align: center;
+    letter-spacing: 1px;
+}
+.muted {
+    color: #8e7f7f;
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+}
+.btn_container {
+    padding: 20px;
+    text-align: center;
+}
+.btn {
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 4px 8px;
+    background-color: #ffaaa7;
+    color: white;
+    font-size: 1.2em;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+.tag-limited-time-offer{
+    width: 150px;
+height: 20px;
+background: red;
+position: absolute;
+top: 9%;
+left: -13%;
+transform: rotate(-45deg);
+text-align: center;
+}
+.parentplans {
+    padding: 25px;
+}

@@ -3,10 +3,12 @@ import razorpay
 from django.conf import settings
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponseBadRequest
+from rest_framework.response import Response
+from payments.repository import vision11_payments
 from .models import Plan, Order
 from django.contrib.auth.decorators import login_required
 from django.utils import timezone
-from usermanagerAPP.models import User1
+from rest_framework.views import APIView
 
 
 
@@ -131,3 +133,14 @@ def paymenthandler(request):
     else:
         # if other than POST request is made.
         return HttpResponseBadRequest()
+
+
+
+class GetOfferListAPI(APIView):
+    def get(self,request):
+        try:
+            if request.user.is_authenticated and request.user.is_adult:
+                return vision11_payments().get_offer_list()
+            return Response({'status':403,'message':'You aren\'t adult or authorised.'})
+        except:
+            return Response({'status':500,'message':'something went wrong.'})
