@@ -1,6 +1,6 @@
 from attr import fields
 from rest_framework.serializers import ModelSerializer
-from mainAPP.models import Match, Player, PlayersMatchData,User_Feature_Suggestion
+from mainAPP.models import Contest, Match, Player, PlayersMatchData,User_Feature_Suggestion
 from usermanagerAPP.models import User1
 
 
@@ -32,3 +32,9 @@ class FeatureRequestSerializer(ModelSerializer):
     class Meta:
         model = User_Feature_Suggestion
         fields = "__all__"
+
+
+class ContestSerializer(ModelSerializer):
+    class Meta:
+        model = Contest
+        exclude = ["password"]

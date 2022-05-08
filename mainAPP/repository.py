@@ -2,12 +2,12 @@ from mainAPP.models import Contest, Match,Player, PlayersMatchData,Team, User_Fe
 from django.utils import timezone
 
 from mainAPP.team_creation_rules import filter_team_data, finalize_team, follow_base_rules
-from .serializers import FantasyScoreSerializer, FeatureRequestSerializer, MatchListSerializer,GameSquadSerializer, UserSerializer
+from .serializers import ContestSerializer, FantasyScoreSerializer, FeatureRequestSerializer, MatchListSerializer,GameSquadSerializer, UserSerializer
 from rest_framework.response import Response
 from usermanagerAPP.models import User1
 from django.shortcuts import redirect, render
 from django.contrib import messages
-from django.contrib.auth.hashers import make_password
+from django.contrib.auth.hashers import make_password,check_password
 
 class vision11:
     def get_match_list(self):
@@ -127,6 +127,33 @@ class vision11:
         model.entry_fee = max(1,int(data["entry_fee"]))
         model.save()
         return Response({'status':200,'message':'success'})
+
+
+    def search_contest(self,data):
+        '''
+            return a Response with object of the contest.
+        '''
+        model = Contest.objects.get(match_id=int(data["match_id"]),id=int(data["contest_id"]))
+        flag = 0
+        if model.contest_type == "private":
+            if check_password(data["password"],model.password):
+                flag = 1
+        else:
+            flag = 1
+        if flag:
+            if model.length > len(model.user.all()):
+                serializer = ContestSerializer(model)
+                return Response({'status':200,'data':serializer.data,'message':'success'})
+            else:
+                return Response({'status':200,'message':'contest already filled.'})
+        else:
+            return Response({'status':200,'message':'either contest id or password is invalid.'})
+
+
+    
+    def join_private_contest(self,data):
+        pass
+
 
     def save_suggestion_form(self,request):
         model = User_Feature_Suggestion.objects.create(
