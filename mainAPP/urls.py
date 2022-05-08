@@ -20,4 +20,5 @@ urlpatterns = [
     path('fr/mark_as_seen/fid=<int:fid>',views.Set_Seen_FeatureRequest),
     path('contest/match=<int:mid>',views.RenderContestPage),
     path('finalizeteam',views.FinalizeUserTeam.as_view()),
+    path('createcontestapi',views.ContestCreateAPI.as_view()),
 ]
