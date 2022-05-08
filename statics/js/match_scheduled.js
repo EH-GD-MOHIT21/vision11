@@ -89,10 +89,13 @@ async function upcoming_match_data(api_url) {
         for (let i = 0; i < res_len; i++) {
             const match_card = document.createElement("div");
             match_card.className = 'match_card';
+            const span_match_card1 = document.createElement("span");
+            span_match_card1.textContent = 'Start after: ';
             const span_match_card = document.createElement("span");
             get_time = match_timing(match_data[i].time)
             span_match_card.textContent = get_time;
             span_match_card.id = `match${i}`;
+            match_card.appendChild(span_match_card1)
             match_card.appendChild(span_match_card)
             const match_heading = document.createElement("h3");
             match_heading.textContent = `${match_data[i].title}`;
@@ -128,8 +131,12 @@ async function upcoming_match_data(api_url) {
             match_card.appendChild(create_button)
             const a_but = document.createElement("a")
             a_but.textContent = 'Create Team'
+            const a_but1 = document.createElement("a")
+            a_but1.textContent = 'Go to Contest'
+            a_but1.href = '/contest/match='+match_data[i].id
             a_but.href = '/createteam/match='+match_data[i].id
             create_button.appendChild(a_but);
+            create_button.appendChild(a_but1);
             element.appendChild(match_card);
         }
     } else {
@@ -289,29 +296,32 @@ function updateTime() {
         sec = parseInt(timing[2]);
         if(sec > 0){
             sec-=1;
-            if(sec < 10){
-                sec = `0${sec}`
-            }
+            
         }
         else if(minute>0){
             sec = 59;
             minute -=1;
-            if(minute < 10){
-                minute = `0${minute}`
-            }
+            
         }
         else if(hour>0){
             sec = 59;
             minute = 60;
             hour-=1;
-            if(hour < 10){
-                hour = `0${hour}`
-            }
+            
         }
         else{
             sec = 0;
             minute = 0;
             hour = 0;
+        }
+        if(sec < 10){
+            sec = `0${sec}`
+        }
+        if(minute < 10){
+            minute = `0${minute}`
+        }
+        if(hour < 10){
+            hour = `0${hour}`
         }
         document.getElementById('match'+i).textContent = hour+":"+minute+":"+sec;
     }
@@ -322,39 +332,43 @@ function updateTime() {
         sec = parseInt(timing[3]);
         if(sec > 0){
             sec-=1;
-            if(sec < 10){
-                sec = `0${sec}`
-            }
+            
         }
         else if(minute>0){
             sec = 59;
             minute -=1;
-            if(minute < 10){
-                minute = `0${minute}`
-            }
+            
         }
         else if(hour>0){
             sec = 59;
             minute = 60;
             hour-=1;
-            if(hour < 10){
-                hour = `0${hour}`
-            }
+            
         }
         else if(day>0){
             day -= 1;
             hour = 24;
             minute = 59;
             sec = 59;
-            if(day < 10){
-                day = `0${day}`
-            }
+            
         }
         else{
             day=0;
             sec = 0;
             minute = 0;
             hour = 0;
+        }
+        if(sec < 10){
+            sec = `0${sec}`
+        }
+        if(minute < 10){
+            minute = `0${minute}`
+        }
+        if(hour < 10){
+            hour = `0${hour}`
+        }
+        if(day < 10){
+            day = `0${day}`
         }
         document.getElementById('match'+i).textContent = day+":"+hour+":"+minute+":"+sec;
 

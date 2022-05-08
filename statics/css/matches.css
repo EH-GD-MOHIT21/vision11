@@ -74,10 +74,14 @@ body {
   text-decoration: none;
   transition: all 0.3s ease;
   cursor: pointer;
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
 .multicolorbg .match_card span{
     font-size: 14px;
+    font-weight: 600;
+    color: crimson;
 }
 
 .multicolorbg .match_card .createbutton a:hover{
