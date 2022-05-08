@@ -30,6 +30,7 @@
                             onclick="show_createcontest()" id="crtcon">Create Contest</a></div>
                 </div>
                 <div class="public" id="public">
+                    {% for contest,slot,per in contest %}
                     <div id="public1" class="contest_container">
                         <div class="heade">
                         <span class="prz">Prize</span>
@@ -37,21 +38,21 @@
                     </div>
                     <div class="money_container">
                         <span id="prize1" class="prize"><i class="fa fa-inr" aria-hidden="true"></i>
-                            500</span>
-                        <span id="entryfee1" class="entryfe">30 Coins</span>
+                            {{ contest.price_fee }}</span>
+                        <span id="entryfee1" class="entryfe">{{ contest.entry_fee }} Coins</span>
                     </div>
                     <div class="progress_bar">
-                        <progress id="prog1" value="0" max="100" class="prog_bar"> 0% </progress>
+                        <progress id="prog1" value="{{ per }}" max="100" class="prog_bar"> 0% </progress>
                         <div class="spots">
-                            <span id="spot_left1" class="spot_left">2 Spots left</span>
-                            <span id="total_spots1" class="total_spot">2 Spots</span>
+                            <span id="spot_left1" class="spot_left">{{ slot }} Spots left</span>
+                            <span id="total_spots1" class="total_spot">{{ contest.length }} Spots</span>
                         </div>
                     </div>
                     <div class="join">
                         <a href="#">Join Contest</a>
                     </div>
                     </div>
-                    
+                    {% endfor %}
                 </div>
 
                 <div class="private" id="private">
@@ -61,7 +62,6 @@
                 </div>
                 <div class="creattion" id="create_cont">
                     <input placeholder="Enter contest Name" id="contest_name">
-                    <input placeholder="Create contest id" id="contest_id_create">
                     <input placeholder="Max no of members" id="contest_max_mem">
                     <label>Contest Type: </label>
                     <select name="contesttype" id="type_conteste" onchange="myFunction()">
