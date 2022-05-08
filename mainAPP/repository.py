@@ -1,4 +1,4 @@
-from mainAPP.models import Match,Player, PlayersMatchData,Team, User_Feature_Suggestion
+from mainAPP.models import Contest, Match,Player, PlayersMatchData,Team, User_Feature_Suggestion, UserTeam
 from django.utils import timezone
 
 from mainAPP.team_creation_rules import filter_team_data, finalize_team, follow_base_rules
@@ -126,3 +126,17 @@ class vision11_render:
         user_obj = [user for user in users if user.aadhar_image!='']
         len_obj = len(user_obj)
         return render(request,'admin_age_verification.html',{'data':user_obj,'len': len_obj})
+
+
+    def render_contest(self,request,mid):
+        match = Match.objects.get(id=mid)
+        userteams = UserTeam.objects.filter(match_id=match)
+        if userteams:
+            contests = Contest.objects.filter(match_id=match,contest_type="public")
+            render_contest = []
+            for contest in contests:
+                if contest.length > len(contest.user.all()):
+                    render_contest.append(contest)
+            return render(request,'contest.html',{'contest':render_contest})
+        else:
+            raise ValueError("User Team Doesn't Exists.")

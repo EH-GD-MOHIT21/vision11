@@ -86,12 +86,16 @@ def RenderTeamSelection(request,mid):
         return redirect('/')
 
 @login_required(login_url='/accounts/login')
-def RenderContestPage(request):
+def RenderContestPage(request,mid):
     '''
     This method is used for
     rendering Contest page.
     '''
-    return render(request,'contest.html')
+    try:
+        return vision11_render().render_contest(request,mid)
+    except Exception as e:
+        return redirect('/createteam/match='+str(mid))
+    
 
 
 

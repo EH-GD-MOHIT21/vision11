@@ -1,3 +1,4 @@
+from statistics import mode
 from django.db import models
 from usermanagerAPP.models import User1
 # Create your models here.
@@ -101,14 +102,27 @@ class UserTeam(models.Model):
     vice_captain = models.ForeignKey(Player,on_delete=models.Case,related_name="vice_captain")
 
 
+class Choices(models.TextChoices):
+    Public = ("public", "public")
+    private = ("private", "private")
+
+mychoices = (
+    ("public", "public"),
+    ("private", "private")
+)
 
 
 class Contest(models.Model):
+    match_id = models.ForeignKey(Match,on_delete=models.CASCADE)
+    user = models.ManyToManyField(User1)
     entry_fee = models.FloatField(default=1)
     length = models.IntegerField(default=1)
     price_fee = models.FloatField(default=0)
     teams = models.ManyToManyField(to=UserTeam)
-
+    reward_claimed = models.BooleanField(default=False)
+    contest_type = models.CharField(
+        choices=mychoices, default=Choices.Public, max_length=25)
+    password = models.CharField(max_length=128,null=True,blank=True)
 
 
     def save(self,*args,**kwargs):

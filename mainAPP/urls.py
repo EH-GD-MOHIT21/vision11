@@ -18,6 +18,6 @@ urlpatterns = [
     path('getageverificationrequests',views.GetAgeVerificationRequests.as_view()),
     path('getfeaturerequests',views.GetFeatureRequests.as_view()),
     path('fr/mark_as_seen/fid=<int:fid>',views.Set_Seen_FeatureRequest),
-    path('viewallcontenst',views.RenderContestPage),
+    path('contest/match=<int:mid>',views.RenderContestPage),
     path('finalizeteam',views.FinalizeUserTeam.as_view()),
 ]
