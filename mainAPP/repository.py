@@ -45,7 +45,7 @@ class vision11:
 
 
     def get_completed_matches(self):
-        match = Match.objects.filter(is_match_end=False)
+        match = Match.objects.filter(is_match_end=True)
         serialized_matches = MatchListSerializer(match,many=True)
         return Response({'status':200,'message':'success','data':serialized_matches.data})
 
