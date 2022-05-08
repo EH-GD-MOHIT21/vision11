@@ -10,7 +10,6 @@ all_teams = Team.objects.all()
 for indexmota,team in enumerate(all_teams):
     TeamName = team.team_name
     TeamId = str(team.team_id)
-    print(TeamName,TeamId)
     Dynamic_URL = f'{TeamName}/{TeamId}'
     URL = BASE_URL + Dynamic_URL + '/players'
     data = requests.get(URL).text
@@ -38,5 +37,5 @@ for indexmota,team in enumerate(all_teams):
         obj,_ = Player.objects.get_or_create(pid=int(xxx),player_name=players[xxx][0],player_pic=players[xxx][2],player_type=players[xxx][1])
         obj.player_team.add(team)
         obj.save()
-    if indexmota%10:
+    if indexmota%10==0:
         print(indexmota)

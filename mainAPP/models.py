@@ -21,6 +21,9 @@ class Player(models.Model):
     player_type = models.CharField(max_length=30)
     player_team = models.ManyToManyField(Team)
 
+    def __str__(self):
+        return self.player_name
+
 
 
 class User_Feature_Suggestion(models.Model):
@@ -81,6 +84,8 @@ class PlayersMatchData(models.Model):
 
 
 class UserTeam(models.Model):
+    match_id = models.ForeignKey(Match,on_delete=models.Case)
+    user = models.ForeignKey(User1,on_delete=models.CASCADE)
     player1 = models.ForeignKey(Player,on_delete=models.Case,related_name="player1")
     player2 = models.ForeignKey(Player,on_delete=models.Case,related_name="player2")
     player3 = models.ForeignKey(Player,on_delete=models.Case,related_name="player3")

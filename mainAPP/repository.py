@@ -97,9 +97,9 @@ class vision11:
         return redirect('/staff#absdash')
 
     # non api methods
-    def create_user_team(self,data):
+    def create_user_team(self,data,user):
         players,captain,vicecaptain = filter_team_data(data)
-        status,message = finalize_team(players)
+        status,message = finalize_team(players,captain,vicecaptain,data["match_id"],user)
         if status:
             return Response({'status':200,'message':'success'})
         return Response({'status':200,'message':message})
