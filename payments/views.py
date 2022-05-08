@@ -139,7 +139,7 @@ def paymenthandler(request):
 class GetOfferListAPI(APIView):
     def get(self,request):
         try:
-            if request.user.is_authenticated and request.user.is_adult:
+            if request.user.is_authenticated:
                 return vision11_payments().get_offer_list()
             return Response({'status':403,'message':'You aren\'t adult or authorised.'})
         except:
