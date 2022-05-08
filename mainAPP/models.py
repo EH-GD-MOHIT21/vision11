@@ -1,4 +1,3 @@
-from statistics import mode
 from django.db import models
 from usermanagerAPP.models import User1
 # Create your models here.
@@ -111,7 +110,6 @@ mychoices = (
     ("private", "private")
 )
 
-
 class Contest(models.Model):
     match_id = models.ForeignKey(Match,on_delete=models.CASCADE)
     user = models.ManyToManyField(User1)
@@ -127,4 +125,4 @@ class Contest(models.Model):
 
     def save(self,*args,**kwargs):
         self.price_fee = self.entry_fee * 0.7 * self.length
-        super().save(self,*args,**kwargs)
+        super(Contest, self).save(*args, **kwargs)

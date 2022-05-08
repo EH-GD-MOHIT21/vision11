@@ -184,9 +184,15 @@ class vision11_render:
         if userteams:
             contests = Contest.objects.filter(match_id=match,contest_type="public")
             render_contest = []
+            available_slots = []
+            percentage_full =[]
             for contest in contests:
-                if contest.length > len(contest.user.all()):
+                length = len(contest.user.all())
+                if contest.length > length:
                     render_contest.append(contest)
-            return render(request,'contest.html',{'contest':render_contest})
+                    available_slots.append(contest.length-length)
+                    num = round((length/contest.length)*100,2)
+                    percentage_full.append(num)
+            return render(request,'contest.html',{'contest':zip(render_contest,available_slots,percentage_full)})
         else:
             raise ValueError("User Team Doesn't Exists.")
