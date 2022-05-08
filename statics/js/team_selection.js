@@ -1,7 +1,6 @@
 team1_name = JSON.parse(document.getElementById('team1').textContent);
 team2_name = JSON.parse(document.getElementById('team2').textContent);
 user_team_data=[]
-console.log(team1_name,team2_name)
 individual_player_data = {}
 
 const team_players_api  =

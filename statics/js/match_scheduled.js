@@ -6,6 +6,7 @@ const live_mathc_api_url =
 const upcoming_match_api_url = '/getupcomingmatches';
 
 const completed_match_api_url = "/getcompletedmatches";
+upcoming_match_numbers = 0;
 
 async function live_match_data(api_url) {
 let response = await fetch(api_url, {
@@ -84,12 +85,14 @@ async function upcoming_match_data(api_url) {
         let json = await response.json();
         match_data = json['data']
         res_len = match_data.length;
+        upcoming_match_numbers = res_len;
         for (let i = 0; i < res_len; i++) {
-            console.log('completed_matches')
             const match_card = document.createElement("div");
             match_card.className = 'match_card';
             const span_match_card = document.createElement("span");
-            span_match_card.textContent = `${match_data[i].time}`;
+            get_time = match_timing(match_data[i].time)
+            span_match_card.textContent = get_time;
+            span_match_card.id = `match${i}`;
             match_card.appendChild(span_match_card)
             const match_heading = document.createElement("h3");
             match_heading.textContent = `${match_data[i].title}`;
@@ -245,3 +248,119 @@ function show_upcoming(){
     document.getElementById('upcoming').style.display='block';
 }
 
+function match_timing(seconds){
+    seconds = parseInt(seconds)
+    var days = Math.floor(seconds / (3600*24));
+    var hours = Math.floor(seconds % (3600*24) / 3600);
+    var minutes = Math.floor(seconds % 3600 / 60);
+    var second = Math.floor(seconds % 60);
+    if(days==0){
+        if(hours<10){
+            hours = `0${hours}`
+        }
+        if(minutes<10){
+            minutes = `0${minutes}`
+        }
+        match_time = `${hours}:${minutes}:${second}`;
+    }
+    else{
+        if(days<10){
+            days = `0${days}`
+        }
+        if(hours<10){
+            hours = `0${hours}`
+        }
+        if(minutes<10){
+            minutes = `0${minutes}`
+        }
+        match_time = `${days}:${hours}:${minutes}:${second}`;
+    }
+    return match_time 
+}
+
+
+function updateTime() {
+    total_mat = upcoming_match_numbers
+    for(var i=0;i< total_mat;i++){
+        timing = (document.getElementById('match'+i).textContent).split(":");
+        if(timing.length==3){
+        hour = parseInt(timing[0]);
+        minute = parseInt(timing[1]);
+        sec = parseInt(timing[2]);
+        if(sec > 0){
+            sec-=1;
+            if(sec < 10){
+                sec = `0${sec}`
+            }
+        }
+        else if(minute>0){
+            sec = 59;
+            minute -=1;
+            if(minute < 10){
+                minute = `0${minute}`
+            }
+        }
+        else if(hour>0){
+            sec = 59;
+            minute = 60;
+            hour-=1;
+            if(hour < 10){
+                hour = `0${hour}`
+            }
+        }
+        else{
+            sec = 0;
+            minute = 0;
+            hour = 0;
+        }
+        document.getElementById('match'+i).textContent = hour+":"+minute+":"+sec;
+    }
+    else{
+        day = parseInt(timing[0]);
+        hour = parseInt(timing[1]);
+        minute = parseInt(timing[2]);
+        sec = parseInt(timing[3]);
+        if(sec > 0){
+            sec-=1;
+            if(sec < 10){
+                sec = `0${sec}`
+            }
+        }
+        else if(minute>0){
+            sec = 59;
+            minute -=1;
+            if(minute < 10){
+                minute = `0${minute}`
+            }
+        }
+        else if(hour>0){
+            sec = 59;
+            minute = 60;
+            hour-=1;
+            if(hour < 10){
+                hour = `0${hour}`
+            }
+        }
+        else if(day>0){
+            day -= 1;
+            hour = 24;
+            minute = 59;
+            sec = 59;
+            if(day < 10){
+                day = `0${day}`
+            }
+        }
+        else{
+            day=0;
+            sec = 0;
+            minute = 0;
+            hour = 0;
+        }
+        document.getElementById('match'+i).textContent = day+":"+hour+":"+minute+":"+sec;
+
+    }
+    }
+     
+}
+
+setInterval(updateTime, 1000);
