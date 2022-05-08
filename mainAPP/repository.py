@@ -7,6 +7,7 @@ from rest_framework.response import Response
 from usermanagerAPP.models import User1
 from django.shortcuts import redirect, render
 from django.contrib import messages
+from django.contrib.auth.hashers import make_password
 
 class vision11:
     def get_match_list(self):
@@ -105,6 +106,28 @@ class vision11:
         return Response({'status':200,'message':message})
 
 
+    def is_strong(self,password):
+        if len(set(password)) < 6 or password.isalnum() or password.isspace():
+            return False
+        return True
+
+
+    def create_contest(self,data,user):
+        model = Contest()
+        match = Match.objects.get(id=int(data['match_id']))
+        model.match_id = match
+        model.user = user
+        model.length = data["length"]
+        if data["type"].lower() == "private":
+            if self.is_strong(data["password"]):
+                model.password = make_password(data["password"])
+            else:
+                return Response({'status':200,'message':'please use a strong password.'})
+        model.teams.add(UserTeam.objects.get(id=data["team"],user=user,match_id=match))
+        model.entry_fee = max(1,int(data["entry_fee"]))
+        model.save()
+        return Response({'status':200,'message':'success'})
+
     def save_suggestion_form(self,request):
         model = User_Feature_Suggestion.objects.create(
             user = request.user,
@@ -130,7 +153,7 @@ class vision11_render:
 
     def render_contest(self,request,mid):
         match = Match.objects.get(id=mid)
-        userteams = UserTeam.objects.filter(match_id=match)
+        userteams = UserTeam.objects.filter(match_id=match,user=request.user)
         if userteams:
             contests = Contest.objects.filter(match_id=match,contest_type="public")
             render_contest = []

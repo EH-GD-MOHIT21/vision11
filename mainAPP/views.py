@@ -218,3 +218,22 @@ class FinalizeUserTeam(APIView):
         except Exception as e:
             print(e)
             return Response({'status':500,'message':'something went wrong.'})
+
+
+
+class ContestCreateAPI(APIView):
+    def post(self,request):
+        try:
+            if request.user.is_authenticated:
+                return vision11().create_contest(self,request.data,request.user)
+            return Response({'status':403,'message':'please authenticate yourself.'})
+        except:
+            return Response({'status':500,'message':'something went wrong.'})
+
+
+class PrivateContestJoinAPI(APIView):
+    def post(self,request):
+        try:
+            return
+        except:
+            return
