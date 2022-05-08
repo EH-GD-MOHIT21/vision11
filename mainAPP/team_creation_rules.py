@@ -1,4 +1,4 @@
-from mainAPP.models import Player,UserTeam
+from mainAPP.models import Match, Player,UserTeam
 
 
 def filter_team_data(data):
@@ -83,12 +83,21 @@ def validate_credits(players):
 
 
 
-def validate_captains(data):
+def validate_captains(captain,vice_captain):
+    if list(captain.keys())[0] == list(vice_captain.keys())[0]:
+        return False
+    try:
+        captain = Player.objects.get(pid=int(list(captain.keys())[0]))
+        vice_captain = Player.objects.get(pid=int(list(vice_captain.keys())[0]))
+    except:
+        return False
+    if captain == vice_captain:
+        return False
     return True
 
 
 
-def finalize_team(data):
+def finalize_team(data,captain,vicecaptain,match_id,user):
     '''
         data is dictionary contains 
     '''
@@ -96,7 +105,18 @@ def finalize_team(data):
     player_ids = data.keys()
 
     try:
+        match = Match.objects.get(id=match_id)
+        team1 = match.team1
+        team2 = match.team2
         original_players = [Player.objects.get(pid=id) for id in player_ids]
+        for player in original_players:
+            flag = 1
+            for team in player.player_team.all():
+                if team.team_name == team1 or team.team_name == team2:
+                    flag = 0
+                    break
+            if flag:
+                return False, 'players has modified.'
     except:
         return False,'players has modified.'
 
@@ -118,11 +138,29 @@ def finalize_team(data):
     if not validate_credits(original_players):
         return False, 'Over limit credits'
 
-    if not validate_captains(data):
+    if not validate_captains(captain,vicecaptain):
         return False, 'Captains not valid'
 
-    return True,None
 
     # create object of userTeam
-    
+    model = UserTeam()
+    model.match_id = match
+    model.user = user
+    model.player1 = original_players[0]
+    model.player2 = original_players[1]
+    model.player3 = original_players[2]
+    model.player4 = original_players[3]
+    model.player5 = original_players[4]
+    model.player6 = original_players[5]
+    model.player7 = original_players[6]
+    model.player8 = original_players[7]
+    model.player9 = original_players[8]
+    model.player10 = original_players[9]
+    model.player11 = original_players[10]
 
+    model.captain = Player.objects.get(pid=int(list(captain.keys())[0]))
+    model.vice_captain = Player.objects.get(pid=int(list(vicecaptain.keys())[0]))
+
+    model.save()
+
+    return True,None
