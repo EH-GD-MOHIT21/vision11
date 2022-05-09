@@ -113,26 +113,30 @@ class vision11:
 
 
     def create_contest(self,data,user):
-        if user.vision_credits < data["entry_fee"]:
+        if user.vision_credits < float(data["entry_fee"]):
             return Response({'status':200,'message':'Insufficient balance for creating contest.'})
+        
         model = Contest()
         match = Match.objects.get(id=int(data['match_id']))
+        if (match.time - timezone.now()).days == 0 and (match.time - timezone.now()).seconds < 15*60:
+            return Response({'status':200,'message':'Deadline of Contest creation has passed'})
+        userteam = UserTeam.objects.get(id=data["team"],user=user,match_id=match)
         model.match_id = match
-        model.length = data["length"]
+        model.length = int(data["length"])
         model.fee_type = user.currency_type
         if data["type"].lower() == "private":
             if self.is_strong(data["password"]):
                 model.password = make_password(data["password"])
             else:
                 return Response({'status':200,'message':'please use a strong password.'})
-        model.entry_fee = max(1,int(data["entry_fee"]))
-        user.vision_credits -= data["entry_fee"]
+        model.entry_fee = max(1,float(data["entry_fee"]))
+        user.vision_credits -= float(data["entry_fee"])
         user.save()
         model.save()
-        model.teams.add(UserTeam.objects.get(id=data["team"],user=user,match_id=match))
+        model.teams.add(userteam)
         model.user.add(user)
         model.save()
-        return Response({'status':200,'message':'success'})
+        return Response({'status':200,'message':'success','contest_id':model.id})
 
 
     def search_contest(self,data):
@@ -168,7 +172,7 @@ class vision11:
                 return Response({'status':200,'message':'You have already joined the contest.'})
             else:
                 match = contest.match_id
-                if match.time and match == userteam.match_id:
+                if not ((match.time - timezone.now()).days == 0 and (match.time - timezone.now()).seconds < 15*60) and match == userteam.match_id:
                     if user.vision_credits >= contest.entry_fee and user.currency_type == contest.fee_type:
                         if contest.contest_type.lower() == "public":
                             user.vision_credits -= contest.entry_fee
@@ -176,7 +180,7 @@ class vision11:
                             contest.user.add(user)
                             contest.teams.add(userteam)
                             contest.save()
-                            return Response({'status':200,'message':'success'})
+                            return Response({'status':200,'message':'success','id':contest.id})
                         else:
                             password = data["password"]
                             if check_password(password,contest.password):

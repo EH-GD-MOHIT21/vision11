@@ -76,7 +76,7 @@ body {
     text-align: center;
     display: inline-block;
     right: 3px;
-    width: 77px;
+    width: 25%;
     background: lightgreen;
     padding: 2px;
     border-radius: 5px
@@ -194,7 +194,7 @@ select#type_conteste{
     display: none;
 }
 
-select#user_team{
+select#user_team, select#user_default_team_id{
     display: block;
     width: 60%;
     margin: auto;

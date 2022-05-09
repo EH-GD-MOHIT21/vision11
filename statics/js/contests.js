@@ -99,13 +99,10 @@ document.getElementById('create_con').addEventListener('click', async function()
 
 function show_user_team(){
     team = document.getElementById("user_team").value;
-    if(team!= 'No'){
-
     window.open(
         '/userteam/match='+team,
         '_blank'
       );
-    }
 }
 
 

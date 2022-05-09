@@ -30,6 +30,16 @@
                             onclick="show_createcontest()" id="crtcon">Create Contest</a></div>
                 </div>
                 <div class="public" id="public">
+                    <label style="display: block;
+                    margin: auto;
+                    width: fit-content;
+                    margin-top: 12px;">Choose your Default team: </label>
+                    <select name="userselectedteam" id="user_default_team_id" onchange="show_user_team()">
+                        <option value="{{ teams.0.id }}">Default Team(Team1)</option>
+                        {% for team in teams %}
+                        <option value="{{ team.id }}">Team{{ forloop.counter }}</option>
+                        {% endfor %}
+                      </select>
                     {% for contest,slot,per in contest %}
                     <div id="public1" class="contest_container">
                         <div class="heade">
@@ -95,8 +105,9 @@
                       </select>
                       <label>Select your team: </label>
                     <select name="userselectedteam" id="user_team" onchange="show_user_team()">
+                        <option value="{{ teams.0.id }}">Default Team(Team1)</option>
                         {% for team in teams %}
-                        <option value="{{ team.match_id.id }}"><a href="userteam/mathc={{ team.match_id.id }}">Team{{ forloop.counter }}</a></option>
+                        <option value="{{ team.match_id.id }}">Team{{ forloop.counter }}</option>
                         {% endfor %}
                       </select>
                     <input placeholder="Enter Password" id="contest_pass_create" >

@@ -128,5 +128,5 @@ class Contest(models.Model):
 
 
     def save(self,*args,**kwargs):
-        self.price_fee = self.entry_fee * 0.7 * self.length
+        self.price_fee = round(self.entry_fee * 0.7 * self.length,2)
         super(Contest, self).save(*args, **kwargs)
