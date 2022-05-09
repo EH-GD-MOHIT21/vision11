@@ -68,6 +68,13 @@
                         <option value="public">Public</option>
                         <option value="private">Private</option>
                       </select>
+                      <label>Select your team: </label>
+                    <select name="userselectedteam" id="user_team" onchange="show_user_team()">
+                        <option value="No">Choose Team</option>
+                        {% for team in teams %}
+                        <option value="{{ team.match_id.id }}"><a href="userteam/mathc={{ team.match_id.id }}">Team{{ forloop.counter }}</a></option>
+                        {% endfor %}
+                      </select>
                     <input placeholder="Enter Password" id="contest_pass_create" >
                     <span style="display: block;">No. of Winners are: 1</span>
                     <button id="create_con" class="search_btn">Create Contest</button>

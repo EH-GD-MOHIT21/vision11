@@ -234,6 +234,6 @@ class vision11_render:
                     available_slots.append(contest.length-length)
                     num = round((length/contest.length)*100,2)
                     percentage_full.append(num)
-            return render(request,'contest.html',{'contest':zip(render_contest,available_slots,percentage_full)})
+            return render(request,'contest.html',{'contest':zip(render_contest,available_slots,percentage_full),'teams':userteams})
         else:
             raise ValueError("User Team Doesn't Exists.")

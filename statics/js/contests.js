@@ -93,3 +93,14 @@ document.getElementById('create_con').addEventListener('click', async function()
         alert("HTTP-Error: " + response.status);
     }
 })
+
+function show_user_team(){
+    team = document.getElementById("user_team").value;
+    if(team!= 'No'){
+
+    window.open(
+        '/userteam/match='+team,
+        '_blank'
+      );
+    }
+}
