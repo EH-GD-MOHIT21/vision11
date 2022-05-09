@@ -22,5 +22,5 @@ urlpatterns = [
     path('finalizeteam',views.FinalizeUserTeam.as_view()),
     path('createcontestapi',views.ContestCreateJoinAPI.as_view()),
     path('searchcontestapi',views.ContestSearchAPI.as_view()),
-    path('joincontestapi',views.PrivateContestJoinAPI.as_view()),
+    path('joincontestapi',views.ContestJoinAPI.as_view()),
 ]

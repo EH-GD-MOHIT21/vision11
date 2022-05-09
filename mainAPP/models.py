@@ -57,7 +57,7 @@ class Match(models.Model):
         super(Match, self).save(*args, **kwargs)
 
     def __str__(self):
-        return self.title
+        return str(self.id) + ". " + self.title
 
 
 
@@ -81,6 +81,9 @@ class PlayersMatchData(models.Model):
     runouts = models.IntegerField()
     stumpings = models.IntegerField()
     points = models.FloatField()
+
+
+
 
 
 class UserTeam(models.Model):
@@ -114,6 +117,7 @@ class Contest(models.Model):
     match_id = models.ForeignKey(Match,on_delete=models.CASCADE)
     user = models.ManyToManyField(User1)
     entry_fee = models.FloatField(default=1)
+    fee_type = models.CharField(max_length=20,default='vision candies')
     length = models.IntegerField(default=1)
     price_fee = models.FloatField(default=0)
     teams = models.ManyToManyField(to=UserTeam)

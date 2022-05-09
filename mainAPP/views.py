@@ -225,9 +225,10 @@ class ContestCreateJoinAPI(APIView):
     def post(self,request):
         try:
             if request.user.is_authenticated:
-                return vision11().create_contest(self,request.data,request.user)
+                return vision11().create_contest(request.data,request.user)
             return Response({'status':403,'message':'please authenticate yourself.'})
-        except:
+        except Exception as e:
+            print(e)
             return Response({'status':500,'message':'something went wrong.'})
 
 
@@ -242,11 +243,12 @@ class ContestSearchAPI(APIView):
             return Response({'status':500,'message':'something went wrong.'})
 
 
-class PrivateContestJoinAPI(APIView):
+class ContestJoinAPI(APIView):
     def post(self,request):
         try:
             if request.user.is_authenticated:
-                return vision11().join_private_contest(self,request.data)
+                return vision11().join_contest(request.data,request.user)
             return Response({'status':403,'message':'please authenticate yourself.'})
-        except:
+        except Exception as e:
+            print(e)
             return Response({'status':500,'message':'something went wrong.'})

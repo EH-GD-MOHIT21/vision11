@@ -113,18 +113,24 @@ class vision11:
 
 
     def create_contest(self,data,user):
+        if user.vision_credits < data["entry_fee"]:
+            return Response({'status':200,'message':'Insufficient balance for creating contest.'})
         model = Contest()
         match = Match.objects.get(id=int(data['match_id']))
         model.match_id = match
-        model.user = user
         model.length = data["length"]
+        model.fee_type = user.currency_type
         if data["type"].lower() == "private":
             if self.is_strong(data["password"]):
                 model.password = make_password(data["password"])
             else:
                 return Response({'status':200,'message':'please use a strong password.'})
-        model.teams.add(UserTeam.objects.get(id=data["team"],user=user,match_id=match))
         model.entry_fee = max(1,int(data["entry_fee"]))
+        user.vision_credits -= data["entry_fee"]
+        user.save()
+        model.save()
+        model.teams.add(UserTeam.objects.get(id=data["team"],user=user,match_id=match))
+        model.user.add(user)
         model.save()
         return Response({'status':200,'message':'success'})
 
@@ -151,8 +157,43 @@ class vision11:
 
 
     
-    def join_private_contest(self,data):
-        pass
+    def join_contest(self,data,user):
+        team_id = data["team_id"]
+        userteam = UserTeam.objects.get(id=int(team_id))
+        contest_id = data["contest_id"]
+        contest = Contest.objects.get(id=int(contest_id))
+        all_users = contest.user.all()
+        if contest.length > len(all_users):
+            if user in all_users:
+                return Response({'status':200,'message':'You have already joined the contest.'})
+            else:
+                match = contest.match_id
+                if match.time and match == userteam.match_id:
+                    if user.vision_credits >= contest.entry_fee and user.currency_type == contest.fee_type:
+                        if contest.contest_type.lower() == "public":
+                            user.vision_credits -= contest.entry_fee
+                            user.save()
+                            contest.user.add(user)
+                            contest.teams.add(userteam)
+                            contest.save()
+                            return Response({'status':200,'message':'success'})
+                        else:
+                            password = data["password"]
+                            if check_password(password,contest.password):
+                                user.vision_credits -= contest.entry_fee
+                                user.save()
+                                contest.user.add(user)
+                                contest.teams.add(userteam)
+                                contest.save()
+                                return Response({'status':200,'message':'success'})
+                            else:
+                                return Response({'status':200,'message':'Invalid password for provided contest.'})
+                    else:
+                        return Response({'status':200,'message':'Invalid currency type or Insufficient balance.'})
+                else:
+                    return Response({'status':200,'message':'Deadline for join this contest is passed, or you are using invalid data.'})
+        else:
+            return Response({'status':200,'message':'contest already filled up.'})
 
 
     def save_suggestion_form(self,request):
