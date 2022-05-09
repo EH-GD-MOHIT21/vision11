@@ -116,7 +116,7 @@ body {
     cursor: pointer;
 }
 
-.private{
+.private_parent{
     display: none;
     margin: auto;
     margin-top: 20px;
@@ -126,6 +126,10 @@ body {
     border: 1px solid #dddddd;
     position: relative;
     text-align: center;
+}
+
+#privatesearchresult{
+    display: none;
 }
 
 .private input{
@@ -205,4 +209,3 @@ select#user_team{
 select#user_team a{
     cursor: pointer;
 }
-

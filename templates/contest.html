@@ -37,9 +37,9 @@
                         <span class="entr">Entry</span>
                     </div>
                     <div class="money_container">
-                        <span id="prize1" class="prize"><i class="fa fa-inr" aria-hidden="true"></i>
+                        <span id="prize{{forloop.counter0}}" class="prize"><i class="fa fa-inr" aria-hidden="true"></i>
                             {{ contest.price_fee }}</span>
-                        <span id="entryfee1" class="entryfe">{{ contest.entry_fee }} Coins</span>
+                        <span id="entryfee1" class="entryfe">{{ contest.entry_fee }} {{ contest.fee_type }}</span>
                     </div>
                     <div class="progress_bar">
                         <progress id="prog1" value="{{ per }}" max="100" class="prog_bar"> 0% </progress>
@@ -49,19 +49,44 @@
                         </div>
                     </div>
                     <div class="join">
-                        <a href="#">Join Contest</a>
+                        <a onclick="joinc('{{contest.id}}')">Join Contest</a>
                     </div>
                     </div>
                     {% endfor %}
                 </div>
-
-                <div class="private" id="private">
-                    <input placeholder="Enter contest id" id="contest_id">
-                    <input placeholder="Enter Password" id="contest_pass">
-                    <button id="search_con" class="search_btn">Search Contest</button>
+                
+                <div class="private_parent" id="private_parent">
+                    <div class="private" id="private">
+                        <input placeholder="Enter contest id" id="contest_id">
+                        <input placeholder="Enter Password" id="contest_pass">
+                        <button id="search_con" class="search_btn">Search Contest</button>
+                    </div>
+                    <div class="public private" id="privatesearchresult">
+                        <div id="public1" class="contest_container">
+                            <div class="heade">
+                            <span class="prz">Prize</span>
+                            <span class="entr">Entry</span>
+                        </div>
+                        <div class="money_container">
+                            <span id="prizeprivate" class="prize"><i class="fa fa-inr" aria-hidden="true"></i>
+                                    </span>
+                            <span id="entryfeeprivate" class="entryfe"></span>
+                        </div>
+                        <div class="progress_bar">
+                            <progress id="private_prog1" max="100" class="prog_bar"> 0% </progress>
+                            <div class="spots">
+                                <span id="private_spot_left1" class="spot_left"></span>
+                                <span id="private_total_spots1" class="total_spot"></span>
+                            </div>
+                        </div>
+                        <div class="join">
+                            <a href="#">Join Contest</a>
+                        </div>
+                    </div>
                 </div>
+            </div>
                 <div class="creattion" id="create_cont">
-                    <input placeholder="Enter contest Name" id="contest_name">
+                    <input type="number" placeholder="Enter contest price" id="contest_price">
                     <input placeholder="Max no of members" id="contest_max_mem">
                     <label>Contest Type: </label>
                     <select name="contesttype" id="type_conteste" onchange="myFunction()">
@@ -70,7 +95,6 @@
                       </select>
                       <label>Select your team: </label>
                     <select name="userselectedteam" id="user_team" onchange="show_user_team()">
-                        <option value="No">Choose Team</option>
                         {% for team in teams %}
                         <option value="{{ team.match_id.id }}"><a href="userteam/mathc={{ team.match_id.id }}">Team{{ forloop.counter }}</a></option>
                         {% endfor %}
