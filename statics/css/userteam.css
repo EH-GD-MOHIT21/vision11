@@ -1,0 +1,86 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    word-wrap: break-word;
+}
+
+h5{
+    color: white;
+}
+
+.player h5{
+    color: black;
+    background: white;
+    padding: 3px 5px;
+    border-radius: 10px;
+}
+
+.parentdiv .child1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: black;
+}
+
+.parentdiv .child2{
+    text-align: center;
+    position: relative;
+}
+
+.child2{
+    background-image: url('/static/imgs/web/team_bg.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 600px;
+    height: 600px;
+    padding: 10px;
+}
+
+
+.wicketkeeper,.batsman,.allrounder,.bowler{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 8px;
+    margin-bottom: 20px;
+}
+
+.player img{
+    width: 40px;
+    height: 40px;
+}
+
+
+.player{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+
+@media(max-width:600px){
+    .child2{
+        background-size: cover;
+        height: 100%;
+    }
+}
+
+@media(max-width:450px){
+    .player img{
+        width: 25px;
+        height: 25px;
+    }
+    .child2{
+        padding-left: 3px;
+        padding-right: 3px;
+    }
+    .player h5{
+        font-size: 9px;
+    }
+    .player{
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+}
