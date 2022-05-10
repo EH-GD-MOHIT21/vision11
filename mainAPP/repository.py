@@ -128,6 +128,7 @@ class vision11:
         if data["type"].lower() == "private":
             if self.is_strong(data["password"]):
                 model.password = make_password(data["password"])
+                model.contest_type = 'private'
             else:
                 return Response({'status':200,'message':'please use a strong password.'})
         model.entry_fee = max(1,float(data["entry_fee"]))
@@ -219,6 +220,14 @@ class vision11_render:
 
     def render_userteam(self,request,mid):
         return render(request,'userteam.html')
+
+
+    def render_contestdetails(self,request,cid):
+        return render(request,'contestdetails.html')
+    
+
+    def render_usercontest(self,request):
+        return render(request,'usercontest.html')
     
     def render_age_adminportal(self,request):
         users = User1.objects.filter(adult=False)
