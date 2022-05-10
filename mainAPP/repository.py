@@ -1,3 +1,4 @@
+from django.http import HttpResponseBadRequest
 from mainAPP.models import Contest, Match,Player, PlayersMatchData,Team, User_Feature_Suggestion, UserTeam
 from django.utils import timezone
 
@@ -215,6 +216,9 @@ class vision11:
 
 
 class vision11_render:
+
+    def render_userteam(self,request,mid):
+        return render(request,'userteam.html')
     
     def render_age_adminportal(self,request):
         users = User1.objects.filter(adult=False)
@@ -225,6 +229,8 @@ class vision11_render:
 
     def render_contest(self,request,mid):
         match = Match.objects.get(id=mid)
+        if((match.time - timezone.now()).days == 0 and (match.time - timezone.now()).seconds < 15*60):
+            return HttpResponseBadRequest('Deadline has passed')
         userteams = UserTeam.objects.filter(match_id=match,user=request.user)
         if userteams:
             contests = Contest.objects.filter(match_id=match,contest_type="public")

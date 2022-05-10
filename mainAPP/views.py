@@ -25,11 +25,6 @@ def RenderDashboard(request):
 
 
 @login_required(login_url='/accounts/login')
-def Render_show_league(request):
-    return render(request, 'leagues.html')
-
-
-@login_required(login_url='/accounts/login')
 def RenderTodaysMatches(request):
     '''
     This method is used for
@@ -95,7 +90,19 @@ def RenderContestPage(request,mid):
         return vision11_render().render_contest(request,mid)
     except Exception as e:
         return redirect('/createteam/match='+str(mid))
-    
+
+
+
+@login_required(login_url='/accounts/login')
+def RenderUserTeam(request,mid):
+    '''
+    This method is used for
+    rendering User Team page.
+    '''
+    try:
+        return vision11_render().render_userteam(request,mid)
+    except Exception as e:
+        return redirect('/createteam/match='+str(mid))
 
 
 
@@ -109,6 +116,8 @@ def handler_404(request, exception=None):
     return render(request, '404error.html', data)
 
 
+
+
 def handler_500(request,  exception=None):
     '''
         view to handle 500 error
@@ -117,6 +126,8 @@ def handler_500(request,  exception=None):
     '''
     data = {}
     return render(request, '500error.html', data)
+
+
 
 
 def Save_Suggestion_Form(request):
@@ -131,11 +142,17 @@ def Save_Suggestion_Form(request):
     except:
         return redirect('/')
 
+
+
+
 class GetTodaysMatchesListAPI(APIView):
     def get(self, request):
         if request.user.is_authenticated:
             return vision11().get_match_list()
         return Response({'status':403,'message':'Please authenticate yourself.'})
+
+
+
 
 
 class GetFantasyScoreAPI(APIView):
@@ -149,6 +166,9 @@ class GetFantasyScoreAPI(APIView):
         return Response({'status':403,'message':'Please authenticate yourself.'})
 
 
+
+
+
 class GetTodaysSquadList(APIView):
     def post(self, request):
         if request.user.is_authenticated:
@@ -158,6 +178,8 @@ class GetTodaysSquadList(APIView):
                 print(e)
                 return Response({'status':404,'message':'Either No contest available or timeline expired.'})
         return Response({'status':403,'message':'Please authenticate yourself.'})
+
+
 
 
 class GetCompletedMatchesList(APIView):
@@ -170,6 +192,8 @@ class GetCompletedMatchesList(APIView):
         return Response({'status':403,'message':'Please authenticate yourself.'})
 
 
+
+
 class GetLiveMatchesList(APIView):
     def get(self,request):
         if request.user.is_authenticated:
@@ -178,6 +202,8 @@ class GetLiveMatchesList(APIView):
             except:
                 return Response({'status':500,'message':'something went wrong.'})
         return Response({'status':403,'message':'Please authenticate yourself.'})
+
+
 
 
 class GetUpcomingMatchesList(APIView):
@@ -191,6 +217,8 @@ class GetUpcomingMatchesList(APIView):
         return Response({'status':403,'message':'Please authenticate yourself.'})
 
 
+
+
 def RenderStaffPage(request):
     try:
         if request.user.is_authenticated and request.user.is_staff:
@@ -200,12 +228,15 @@ def RenderStaffPage(request):
         return redirect('/')
 
 
+
+
 @login_required(login_url='/accounts/login')
 def CreateUserTeam(request):
     try:
         return vision11().create_user_team(request.data)
     except:
         return redirect('/')
+
 
 
 
@@ -221,6 +252,7 @@ class FinalizeUserTeam(APIView):
 
 
 
+
 class ContestCreateJoinAPI(APIView):
     def post(self,request):
         try:
@@ -232,6 +264,7 @@ class ContestCreateJoinAPI(APIView):
             return Response({'status':500,'message':'something went wrong.'})
 
 
+
 class ContestSearchAPI(APIView):
     def post(self,request):
         try:
@@ -241,6 +274,7 @@ class ContestSearchAPI(APIView):
         except Exception as e:
             print(e)
             return Response({'status':500,'message':'something went wrong.'})
+
 
 
 class ContestJoinAPI(APIView):
