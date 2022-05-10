@@ -104,14 +104,9 @@ class UserTeam(models.Model):
     vice_captain = models.ForeignKey(Player,on_delete=models.Case,related_name="vice_captain")
 
 
-class Choices(models.TextChoices):
-    Public = ("public", "public")
-    private = ("private", "private")
 
-mychoices = (
-    ("public", "public"),
-    ("private", "private")
-)
+
+
 
 class Contest(models.Model):
     match_id = models.ForeignKey(Match,on_delete=models.CASCADE)
@@ -122,8 +117,7 @@ class Contest(models.Model):
     price_fee = models.FloatField(default=0)
     teams = models.ManyToManyField(to=UserTeam)
     reward_claimed = models.BooleanField(default=False)
-    contest_type = models.CharField(
-        choices=mychoices, default=Choices.Public, max_length=25)
+    contest_type = models.CharField(default="public",max_length=25)
     password = models.CharField(max_length=128,null=True,blank=True)
 
 
