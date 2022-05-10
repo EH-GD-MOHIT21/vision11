@@ -1092,14 +1092,14 @@ async function post_data(url){
             'players': individual_player_data,
             'cap_data': cap_data,
             'vice_cap_data': vice_cap_data,
-            'match_id': document.URL.split('=')[1]
+            'match_id': document.URL.split("#")[0].split('=')[1]
         })
     })
     if (response.ok) {
         let json = await response.json();
         let message = json["message"];
         if(message=='success'){
-            window.location.href = '/contest/match='+document.URL.split('=')[1]
+            window.location.href = '/contest/match='+document.URL.split("#")[0].split('=')[1]
         }else{
             alert(message);
         }

@@ -78,7 +78,7 @@ document.getElementById('create_con').addEventListener('click', async function()
             'entry_fee': c_name,
             'length': c_length,
             'type': c_type,
-            'match_id': document.URL.split('=')[1],
+            'match_id': document.URL.split("#")[0].split('=')[1],
             'password': password,
             "team": team
         })
@@ -88,7 +88,7 @@ document.getElementById('create_con').addEventListener('click', async function()
         let message = json["message"];
         let id = json["contest_id"];
         if(message=='success'){
-            window.location.href = '/view/contest='+ id+'/match='+document.URL.split('=')[1]
+            window.location.href = '/view/contest='+ id+'/match='+document.URL.split("#")[0].split('=')[1]
         }else{
             alert(message);
         }
@@ -120,7 +120,7 @@ document.getElementById('search_con').addEventListener('click', async function()
         },
         body: JSON.stringify({
             'contest_id': c_name,
-            'match_id': document.URL.split('=')[1],
+            'match_id': document.URL.split("#")[0].split('=')[1],
             'password': password
         })
     })
@@ -168,7 +168,7 @@ async function joinc(contest_id){
         let message = json["message"];
         let id = json["contest_id"];
         if(message=='success'){
-            window.location.href = '/view/contest='+ id+'/match='+document.URL.split('=')[1]
+            window.location.href = '/view/contest='+ id+'/match='+document.URL.split("#")[0].split('=')[1]
         }else{
             alert(message);
         }
