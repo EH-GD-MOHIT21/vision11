@@ -92,6 +92,32 @@ def RenderContestPage(request,mid):
         return redirect('/createteam/match='+str(mid))
 
 
+@login_required(login_url='/accounts/login')
+def RenderUserContest(request):
+    '''
+    This method is used for
+    rendering User Contest page.
+    '''
+    try:
+        return vision11_render().render_usercontest(request)
+    except Exception as e:
+        return redirect('/')
+
+
+@login_required(login_url='/accounts/login')
+def RenderContestDetails(request,cid):
+    '''
+    This method is used for
+    rendering Contest details page.
+    '''
+    try:
+        return vision11_render().render_contestdetails(request,cid)
+    except Exception as e:
+        print(e)
+        return redirect('/userjoinedcontest')
+
+
+
 
 @login_required(login_url='/accounts/login')
 def RenderUserTeam(request,mid,tid):
