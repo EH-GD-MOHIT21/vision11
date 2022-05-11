@@ -14,65 +14,75 @@
             <div class="child2">
                 <h5>wicketkeeper</h5>
                 <div class="wicketkeeper">
+                    {% for player in data %}
+                    {%if player.player_type == "WICKET KEEPER" %}
                     <div class="player">
-                        <img src="https://www.cricbuzz.com/a/img/v1/75x75/i1/c174146/karan-sharma.jpg">
-                        <h5>Mohit Satija(C)</h5>
+                        <img src="{{player.player_pic}}">
+                        <h5>{{player.player_name}}
+                            {% if captain.pid == player.pid %}
+                            (C)
+                            {% elif vice_captain.pid == player.pid %}
+                            (VC)
+                            {% endif %}
+                        </h5>
                         <p>0.00</p>
                     </div>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <h5>Batsman</h5>
                 <div class="batsman">
+                    {% for player in data %}
+                    {%if player.player_type == "BATSMEN" %}
                     <div class="player">
-                        <img src="https://www.cricbuzz.com/a/img/v1/75x75/i1/c174146/karan-sharma.jpg">
-                        <h5>Mohit Satija(C)</h5>
+                        <img src="{{player.player_pic}}">
+                        <h5>{{player.player_name}}
+                            {% if captain.pid == player.pid %}
+                            (C)
+                            {% elif vice_captain.pid == player.pid %}
+                            (VC)
+                            {% endif %}
+                        </h5>
                         <p>0.00</p>
                     </div>
-                    <div class="player">
-                        <img src="https://www.cricbuzz.com/a/img/v1/75x75/i1/c174146/karan-sharma.jpg">
-                        <h5>Mohit Satija(C)</h5>
-                        <p>0.00</p>
-                    </div>
-                    <div class="player">
-                        <img src="https://www.cricbuzz.com/a/img/v1/75x75/i1/c174146/karan-sharma.jpg">
-                        <h5>Mohit Satija(C)</h5>
-                        <p>0.00</p>
-                    </div>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <h5>All rounder</h5>
                 <div class="allrounder">
+                    {% for player in data %}
+                    {%if player.player_type == "ALL ROUNDER" %}
                     <div class="player">
-                        <img src="https://www.cricbuzz.com/a/img/v1/75x75/i1/c174146/karan-sharma.jpg">
-                        <h5>Mohit Satija(C)</h5>
+                        <img src="{{player.player_pic}}">
+                        <h5>{{player.player_name}}
+                            {% if captain.pid == player.pid %}
+                            (C)
+                            {% elif vice_captain.pid == player.pid %}
+                            (VC)
+                            {% endif %}
+                        </h5>
                         <p>0.00</p>
                     </div>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <h5>Bowler</h5>
                 <div class="bowler">
+                    {% for player in data %}
+                    {%if player.player_type == "BOWLER" %}
                     <div class="player">
-                        <img src="https://www.cricbuzz.com/a/img/v1/75x75/i1/c174146/karan-sharma.jpg">
-                        <h5>Mohit Satija(C)</h5>
+                        <img src="{{player.player_pic}}">
+                        <h5>{{player.player_name}}
+                            {% if captain.pid == player.pid %}
+                            (C)
+                            {% elif vice_captain.pid == player.pid %}
+                            (VC)
+                            {% endif %}
+                        </h5>
                         <p>0.00</p>
                     </div>
-                    <div class="player">
-                        <img src="https://www.cricbuzz.com/a/img/v1/75x75/i1/c174146/karan-sharma.jpg">
-                        <h5>Mohit Satija(C)</h5>
-                        <p>0.00</p>
-                    </div>
-                    <div class="player">
-                        <img src="https://www.cricbuzz.com/a/img/v1/75x75/i1/c174146/karan-sharma.jpg">
-                        <h5>Mohit Satija(C)</h5>
-                        <p>0.00</p>
-                    </div>
-                    <div class="player">
-                        <img src="https://www.cricbuzz.com/a/img/v1/75x75/i1/c174146/karan-sharma.jpg">
-                        <h5>Mohit Satija(C)</h5>
-                        <p>0.00</p>
-                    </div>
-                    <div class="player">
-                        <img src="https://www.cricbuzz.com/a/img/v1/75x75/i1/c174146/karan-sharma.jpg">
-                        <h5>Mohit Satija(C)</h5>
-                        <p>0.00</p>
-                    </div>
+                    {% endif %}
+                    {% endfor %}
                 </div>
             </div>
         </div>

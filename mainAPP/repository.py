@@ -217,8 +217,14 @@ class vision11:
 
 class vision11_render:
 
-    def render_userteam(self,request,mid):
-        return render(request,'userteam.html')
+    def render_userteam(self,request,mid,tid):
+        match = Match.objects.get(id=int(mid))
+        userteam = UserTeam.objects.get(match_id=match,id=int(tid))
+        
+        if userteam.user == request.user or ((match.time - timezone.now()).days == 0 and (match.time - timezone.now()).seconds < 15*60):
+            players = [userteam.player1,userteam.player2,userteam.player3,userteam.player4,userteam.player5,userteam.player6,userteam.player7,userteam.player8,userteam.player9,userteam.player10,userteam.player11]
+            return render(request,'userteam.html',{'data':players,'captain':userteam.captain,'vice_captain':userteam.vice_captain})
+        return HttpResponseBadRequest('You can view other teams only if deadline has passed.')
     
     def render_age_adminportal(self,request):
         users = User1.objects.filter(adult=False)

@@ -94,14 +94,15 @@ def RenderContestPage(request,mid):
 
 
 @login_required(login_url='/accounts/login')
-def RenderUserTeam(request,mid):
+def RenderUserTeam(request,mid,tid):
     '''
     This method is used for
     rendering User Team page.
     '''
     try:
-        return vision11_render().render_userteam(request,mid)
+        return vision11_render().render_userteam(request,mid,tid)
     except Exception as e:
+        print(e)
         return redirect('/createteam/match='+str(mid))
 
 
