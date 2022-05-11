@@ -35,6 +35,8 @@ class vision11:
 
     def render_team_selection(self,request,mid):
         match = Match.objects.get(id=mid)
+        if ((match.time - timezone.now()).days == 0 and (match.time - timezone.now()).seconds < 15*60) or (match.time - timezone.now()).days <= -1:
+            return HttpResponseBadRequest('Deadline for the match has passed.')
         return render(request, 'selecting_team.html',{'team1':match.team1,'team2':match.team2})
 
 
@@ -119,7 +121,7 @@ class vision11:
         
         model = Contest()
         match = Match.objects.get(id=int(data['match_id']))
-        if (match.time - timezone.now()).days == 0 and (match.time - timezone.now()).seconds < 15*60:
+        if ((match.time - timezone.now()).days == 0 and (match.time - timezone.now()).seconds < 15*60) or (match.time - timezone.now()).days <= -1:
             return Response({'status':200,'message':'Deadline of Contest creation has passed'})
         userteam = UserTeam.objects.get(id=data["team"],user=user,match_id=match)
         model.match_id = match
@@ -174,7 +176,7 @@ class vision11:
                 return Response({'status':200,'message':'You have already joined the contest.'})
             else:
                 match = contest.match_id
-                if not ((match.time - timezone.now()).days == 0 and (match.time - timezone.now()).seconds < 15*60) and match == userteam.match_id:
+                if not ((match.time - timezone.now()).days == 0 and (match.time - timezone.now()).seconds < 15*60) and match == userteam.match_id and not ((match.time - timezone.now()).days <= -1):
                     if user.vision_credits >= contest.entry_fee and user.currency_type == contest.fee_type:
                         if contest.contest_type.lower() == "public":
                             user.vision_credits -= contest.entry_fee
@@ -222,7 +224,7 @@ class vision11_render:
         match = Match.objects.get(id=int(mid))
         userteam = UserTeam.objects.get(match_id=match,id=int(tid))
         
-        if userteam.user == request.user or ((match.time - timezone.now()).days == 0 and (match.time - timezone.now()).seconds < 15*60):
+        if userteam.user == request.user or ((match.time - timezone.now()).days == 0 and (match.time - timezone.now()).seconds < 15*60) or (match.time - timezone.now()).days <= -1:
             players = [userteam.player1,userteam.player2,userteam.player3,userteam.player4,userteam.player5,userteam.player6,userteam.player7,userteam.player8,userteam.player9,userteam.player10,userteam.player11]
             return render(request,'userteam.html',{'data':players,'captain':userteam.captain,'vice_captain':userteam.vice_captain})
         return HttpResponseBadRequest('You can view other teams only if deadline has passed.')
@@ -244,7 +246,7 @@ class vision11_render:
 
     def render_contest(self,request,mid):
         match = Match.objects.get(id=mid)
-        if((match.time - timezone.now()).days == 0 and (match.time - timezone.now()).seconds < 15*60):
+        if ((match.time - timezone.now()).days == 0 and (match.time - timezone.now()).seconds < 15*60) or (match.time - timezone.now()).days <= -1:
             return HttpResponseBadRequest('Deadline has passed')
         userteams = UserTeam.objects.filter(match_id=match,user=request.user)
         if userteams:
