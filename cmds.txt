@@ -7,5 +7,6 @@ python manage.py runserver
 celery -A taskSchedularApp beat -l info
 
 
-# multiworker
-celery -A taskSchedularApp.celery worker --loglevel=INFO --concurrency=2
+
+# use this
+celery -A taskSchedularApp.celery worker -l info -c 3 -P eventlet
