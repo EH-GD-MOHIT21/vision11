@@ -165,6 +165,16 @@ class vision11:
 
 
     
+    def Get_Live_Match_Urls(self):
+        matches = Match.objects.filter(is_match_end=False)
+        list_matches_url = []
+        for match in matches:
+            if match.time < timezone.now() and (timezone.now()-match.time).days <= 5:
+                list_matches_url.append(match.url)
+
+        return list_matches_url
+
+
     def join_contest(self,data,user):
         team_id = data["team_id"]
         userteam = UserTeam.objects.get(id=int(team_id))
