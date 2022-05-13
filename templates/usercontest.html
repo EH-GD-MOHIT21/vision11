@@ -20,38 +20,46 @@
 <body>
     <div class="multicolorbg">
         <div class="box" id="box">
+            {% for contest,slot,per in contests %}
             <div class="contest">
                 <div class="mathc_name">
-                    <span>Chennai Super Kings vs Delhi Capitals, 55th Match</span>
+                    <span>{{ contest.match_id.title }}</span>
                 </div>
                 <div class="maincont">
                 <div class="heade">
                     <span class="prz">Prize</span>
-                    <span class="entr">Entry<i class="fa fa-lock" aria-hidden="true"></i>
+                    {% if contest.contest_type == 'public' %}
+                    <span class="entr">Entry <i class="fa fa-users" aria-hidden="true"></i>
+                    
                     </span>
+                    {% else %}
+                    <span class="entr">Entry<i class="fa fa-lock" aria-hidden="true"></i>
+                    
+                    </span>
+                    {% endif %}
                 </div>
                 <div class="money_container">
                     <span id="prize" class="prize"><i class="fa fa-inr" aria-hidden="true"></i>
-                        7</span>
-                    <span id="entryfee1" class="entryfe">2 vision coins</span>
+                        {{ contest.price_fee }}</span>
+                    <span id="entryfee1" class="entryfe">{{ contest.entry_fee }} {{ contest.fee_type }}</span>
                 </div>
                 <div class="progress_bar">
-                    <progress id="prog1" value="0" max="100" class="prog_bar"> 0% </progress>
+                    <progress id="prog1" value="{{ per }}" max="100" class="prog_bar"> 0% </progress>
                     <div class="spots">
-                        <span id="spot_left1" class="spot_left">1 Spots left</span>
-                        <span id="total_spots1" class="total_spot">2 Spots</span>
+                        <span id="spot_left1" class="spot_left">{{ slot }} Spots left</span>
+                        <span id="total_spots1" class="total_spot">{{ contest.length }} Spots</span>
                     </div>
                 </div>
                 <div class="join">
-                    <a onclick="joinc('{{contest.id}}')">View Teams</a>
+                    <a href = "/contestdetails/contest={{ contest.id }}">View Teams</a>
                 </div>
             </div>
                 </div>
+                {% endfor %}
             </div>
         </div>
         
     </div>
 
 </body>
-
 </html>

@@ -241,11 +241,28 @@ class vision11_render:
 
 
     def render_contestdetails(self,request,cid):
-        return render(request,'contestdetails.html')
+        contest_teams = []
+        contest = Contest.objects.get(id = cid)
+        match_name = contest.match_id.title
+        for i in contest.teams.all():
+            contest_teams.append(i)
+        return render(request,'contestdetails.html',{'teams':contest_teams,'name':match_name})
     
 
     def render_usercontest(self,request):
-        return render(request,'usercontest.html')
+        contests = []
+        available_slots = []
+        percentage_full =[]
+        all_contest = Contest.objects.all()
+        for i in all_contest:
+            if(request.user in i.user.all()):
+                contests.append(i)
+                length = len(i.user.all())
+                if i.length > length:
+                    available_slots.append(i.length-length)
+                    num = round((length/i.length)*100,2)
+                    percentage_full.append(num)
+        return render(request,'usercontest.html',{'contests':zip(contests,available_slots,percentage_full)})
     
     def render_age_adminportal(self,request):
         users = User1.objects.filter(adult=False)

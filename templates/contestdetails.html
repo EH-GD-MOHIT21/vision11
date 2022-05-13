@@ -21,7 +21,7 @@
     <div class="multicolorbg">
         <div class="box" id="box">
             <div class="mathc_name">
-                <span>Chennai Super Kings vs Delhi Capitals, 55th Match</span>
+                <span>{{ name }}</span>
             </div>
             <div class="contest_teams">
             <div class="contest_head">
@@ -29,10 +29,14 @@
                 <div style="width: 25%; color: gray; font-weight: bold;">Points</div>
                 <div style="width: 14%;text-align: center; color: gray; font-weight: bold;"># Rank</div>
             </div>
+            {% for team in teams %}
             <div class="teams">
                 <div class="userinfo">
                     <i class="fa fa-user" aria-hidden="true"></i>
-                    hks@74123
+                    <a href="/userteam/match={{ team.match_id.id }}/team={{ team.id }}">
+                    
+                    {{ team.user.username }}
+                </a>
                 </div>
                 <div class="points">
                     100.0
@@ -41,18 +45,7 @@
                     100
                 </div>
             </div>
-            <div class="teams">
-                <div class="userinfo">
-                    <i class="fa fa-user" aria-hidden="true"></i>
-                    hks@74123
-                </div>
-                <div class="points">
-                    100.0
-                </div>
-                <div class="rank">
-                    100
-                </div>
-            </div>
+             {% endfor %}
         </div>
         </div>
          

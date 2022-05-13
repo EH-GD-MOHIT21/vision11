@@ -72,3 +72,12 @@ body {
     width: 15.5%;
     text-align: center;
 }
+
+.userinfo a{
+    color: black;
+    text-decoration: none;
+}
+
+.userinfo a:hover{
+    color: blue;
+}

@@ -24,6 +24,6 @@ urlpatterns = [
     path('searchcontestapi',views.ContestSearchAPI.as_view()),
     path('joincontestapi',views.ContestJoinAPI.as_view()),
     path('userteam/match=<int:mid>/team=<int:tid>',views.RenderUserTeam),
-    path('userjoinedcontest',views.RenderUserContest),
+    path('mycontests',views.RenderUserContest),
     path('contestdetails/contest=<int:cid>',views.RenderContestDetails),
 ]
