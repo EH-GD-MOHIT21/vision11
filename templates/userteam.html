@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Team 1 {{request.user}}</title>
+    <title>Team of {{user}}</title>
     <link rel="stylesheet" href="{% static 'css/userteam.css' %}">
 </head>
 <body>
@@ -18,12 +18,13 @@
                     {%if player.player_type == "WICKET KEEPER" %}
                     <div class="player">
                         <img src="{{player.player_pic}}">
-                        <h5>{{player.player_name}}
+                        <h5>
                             {% if captain.pid == player.pid %}
                             (C)
                             {% elif vice_captain.pid == player.pid %}
                             (VC)
                             {% endif %}
+                            {{player.player_name}}
                         </h5>
                         <p>0.00</p>
                     </div>
@@ -36,12 +37,13 @@
                     {%if player.player_type == "BATSMEN" %}
                     <div class="player">
                         <img src="{{player.player_pic}}">
-                        <h5>{{player.player_name}}
+                        <h5>
                             {% if captain.pid == player.pid %}
                             (C)
                             {% elif vice_captain.pid == player.pid %}
                             (VC)
                             {% endif %}
+                            {{player.player_name}}
                         </h5>
                         <p>0.00</p>
                     </div>
@@ -54,12 +56,13 @@
                     {%if player.player_type == "ALL ROUNDER" %}
                     <div class="player">
                         <img src="{{player.player_pic}}">
-                        <h5>{{player.player_name}}
+                        <h5>
                             {% if captain.pid == player.pid %}
                             (C)
                             {% elif vice_captain.pid == player.pid %}
                             (VC)
                             {% endif %}
+                            {{player.player_name}}
                         </h5>
                         <p>0.00</p>
                     </div>
@@ -72,12 +75,13 @@
                     {%if player.player_type == "BOWLER" %}
                     <div class="player">
                         <img src="{{player.player_pic}}">
-                        <h5>{{player.player_name}}
+                        <h5>
                             {% if captain.pid == player.pid %}
                             (C)
                             {% elif vice_captain.pid == player.pid %}
                             (VC)
                             {% endif %}
+                            {{player.player_name}}
                         </h5>
                         <p>0.00</p>
                     </div>

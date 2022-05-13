@@ -146,20 +146,13 @@ def finalize_team(data,captain,vicecaptain,match_id,user):
     model = UserTeam()
     model.match_id = match
     model.user = user
-    model.player1 = original_players[0]
-    model.player2 = original_players[1]
-    model.player3 = original_players[2]
-    model.player4 = original_players[3]
-    model.player5 = original_players[4]
-    model.player6 = original_players[5]
-    model.player7 = original_players[6]
-    model.player8 = original_players[7]
-    model.player9 = original_players[8]
-    model.player10 = original_players[9]
-    model.player11 = original_players[10]
 
     model.captain = Player.objects.get(pid=int(list(captain.keys())[0]))
     model.vice_captain = Player.objects.get(pid=int(list(vicecaptain.keys())[0]))
+
+    model.save()
+    for i in range(11):
+        model.players.add(original_players[i])
 
     model.save()
 
