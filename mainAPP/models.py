@@ -92,8 +92,18 @@ class UserTeam(models.Model):
     players = models.ManyToManyField(Player)
     captain = models.ForeignKey(Player,on_delete=models.Case,related_name="captain")
     vice_captain = models.ForeignKey(Player,on_delete=models.Case,related_name="vice_captain")
+    total_team_points = models.FloatField(default=0)
 
 
+    def save(self,*args,**kwargs):
+        all_players = self.players.all()
+        playersdata = PlayersMatchData.objects.filter(match_url=self.match_id)
+        for player in playersdata:
+            for team_player in all_players:
+                if player.pid == team_player.pid:
+                    self.total_team_points += player.points
+                    break
+        super(UserTeam, self).save(*args,**kwargs)
 
 
 
