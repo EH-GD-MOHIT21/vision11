@@ -96,13 +96,16 @@ class UserTeam(models.Model):
 
 
     def save(self,*args,**kwargs):
-        all_players = self.players.all()
-        playersdata = PlayersMatchData.objects.filter(match_url=self.match_id)
-        for player in playersdata:
-            for team_player in all_players:
-                if player.pid == team_player.pid:
-                    self.total_team_points += player.points
-                    break
+        try:
+            all_players = self.players.all()
+            playersdata = PlayersMatchData.objects.filter(match_url=self.match_id)
+            for player in playersdata:
+                for team_player in all_players:
+                    if player.pid == team_player.pid:
+                        self.total_team_points += player.points
+                        break
+        except:
+            pass
         super(UserTeam, self).save(*args,**kwargs)
 
 
