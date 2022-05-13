@@ -5,6 +5,7 @@ from mainAPP.scrapper.live_score import Update_Live_Score
 from mainAPP.scrapper.team_scrapper import Get_Teams
 from mainAPP.scrapper.players_scrapper import Get_Players
 from mainAPP.repository import vision11
+from mainAPP.models import UserTeam,Match
 
 
 
@@ -17,6 +18,10 @@ def EveryThreeMinutesTask():
         print(f"updating live score for: {url}")
         try:
             Update_Live_Score(url)
+            match = Match.objects.get(url=url)
+            teams = UserTeam.objects.filter(match_id=match)
+            for team in teams:
+                team.save()
             print(f"successfully updated live score for: {url}")
         except Exception as e:
             print(f"failed to update live score due to: {e}")

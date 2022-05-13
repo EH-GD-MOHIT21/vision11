@@ -89,21 +89,21 @@ class PlayersMatchData(models.Model):
 class UserTeam(models.Model):
     match_id = models.ForeignKey(Match,on_delete=models.Case)
     user = models.ForeignKey(User1,on_delete=models.CASCADE)
-    player1 = models.ForeignKey(Player,on_delete=models.Case,related_name="player1")
-    player2 = models.ForeignKey(Player,on_delete=models.Case,related_name="player2")
-    player3 = models.ForeignKey(Player,on_delete=models.Case,related_name="player3")
-    player4 = models.ForeignKey(Player,on_delete=models.Case,related_name="player4")
-    player5 = models.ForeignKey(Player,on_delete=models.Case,related_name="player5")
-    player6 = models.ForeignKey(Player,on_delete=models.Case,related_name="player6")
-    player7 = models.ForeignKey(Player,on_delete=models.Case,related_name="player7")
-    player8 = models.ForeignKey(Player,on_delete=models.Case,related_name="player8")
-    player9 = models.ForeignKey(Player,on_delete=models.Case,related_name="player9")
-    player10 = models.ForeignKey(Player,on_delete=models.Case,related_name="player10")
-    player11 = models.ForeignKey(Player,on_delete=models.Case,related_name="player11")
+    players = models.ManyToManyField(Player)
     captain = models.ForeignKey(Player,on_delete=models.Case,related_name="captain")
     vice_captain = models.ForeignKey(Player,on_delete=models.Case,related_name="vice_captain")
+    total_team_points = models.FloatField(default=0)
 
 
+    def save(self,*args,**kwargs):
+        all_players = self.players.all()
+        playersdata = PlayersMatchData.objects.filter(match_url=self.match_id)
+        for player in playersdata:
+            for team_player in all_players:
+                if player.pid == team_player.pid:
+                    self.total_team_points += player.points
+                    break
+        super(UserTeam, self).save(*args,**kwargs)
 
 
 
