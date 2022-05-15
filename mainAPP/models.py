@@ -83,7 +83,8 @@ class PlayersMatchData(models.Model):
     points = models.FloatField()
 
 
-
+    def __str__(self) -> str:
+        return str(self.pid.pid) + " " + str(self.pid.player_name)
 
 
 class UserTeam(models.Model):
@@ -94,19 +95,6 @@ class UserTeam(models.Model):
     vice_captain = models.ForeignKey(Player,on_delete=models.Case,related_name="vice_captain")
     total_team_points = models.FloatField(default=0)
 
-
-    def save(self,*args,**kwargs):
-        try:
-            all_players = self.players.all()
-            playersdata = PlayersMatchData.objects.filter(match_url=self.match_id)
-            for player in playersdata:
-                for team_player in all_players:
-                    if player.pid == team_player.pid:
-                        self.total_team_points += player.points
-                        break
-        except:
-            pass
-        super(UserTeam, self).save(*args,**kwargs)
 
 
 

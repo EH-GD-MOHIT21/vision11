@@ -88,7 +88,7 @@ document.getElementById('create_con').addEventListener('click', async function()
         let message = json["message"];
         let id = json["contest_id"];
         if(message=='success'){
-            window.location.href = '/view/contest='+ id+'/match='+document.URL.split("#")[0].split('=')[1]
+            window.location.href = '/contestdetails/contest='+ id;
         }else{
             alert(message);
         }
@@ -168,7 +168,7 @@ async function joinc(contest_id){
         let message = json["message"];
         let id = json["contest_id"];
         if(message=='success'){
-            window.location.href = '/view/contest='+ id+'/match='+document.URL.split("#")[0].split('=')[1]
+            window.location.href = '/contestdetails/contest='+ id;
         }else{
             alert(message);
         }

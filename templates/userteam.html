@@ -1,4 +1,7 @@
 {% load static %}
+{% load custom_index %}
+{% load custom_index_captain %}
+{% load custom_index_vice_captain %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,7 +29,15 @@
                             {% endif %}
                             {{player.player_name}}
                         </h5>
-                        <p>0.00</p>
+                        <p>
+                            {% if captain.pid == player.pid %}
+                                {{ playersdata|custom_index_captain:player.pid }}
+                            {% elif vice_captain.pid == player.pid %}
+                                {{ playersdata|custom_index_vice_captain:player.pid }}
+                            {% else %}
+                                {{ playersdata|custom_index:player.pid }}
+                            {% endif %}
+                        </p>
                     </div>
                     {% endif %}
                     {% endfor %}
@@ -45,7 +56,15 @@
                             {% endif %}
                             {{player.player_name}}
                         </h5>
-                        <p>0.00</p>
+                        <p>
+                            {% if captain.pid == player.pid %}
+                                {{ playersdata|custom_index_captain:player.pid }}
+                            {% elif vice_captain.pid == player.pid %}
+                                {{ playersdata|custom_index_vice_captain:player.pid }}
+                            {% else %}
+                                {{ playersdata|custom_index:player.pid }}
+                            {% endif %}
+                        </p>
                     </div>
                     {% endif %}
                     {% endfor %}
@@ -64,7 +83,15 @@
                             {% endif %}
                             {{player.player_name}}
                         </h5>
-                        <p>0.00</p>
+                        <p>
+                            {% if captain.pid == player.pid %}
+                                {{ playersdata|custom_index_captain:player.pid }}
+                            {% elif vice_captain.pid == player.pid %}
+                                {{ playersdata|custom_index_vice_captain:player.pid }}
+                            {% else %}
+                                {{ playersdata|custom_index:player.pid }}
+                            {% endif %}
+                        </p>
                     </div>
                     {% endif %}
                     {% endfor %}
@@ -83,7 +110,15 @@
                             {% endif %}
                             {{player.player_name}}
                         </h5>
-                        <p>0.00</p>
+                        <p>
+                            {% if captain.pid == player.pid %}
+                                {{ playersdata|custom_index_captain:player.pid }}
+                            {% elif vice_captain.pid == player.pid %}
+                                {{ playersdata|custom_index_vice_captain:player.pid }}
+                            {% else %}
+                                {{ playersdata|custom_index:player.pid }}
+                            {% endif %}
+                        </p>
                     </div>
                     {% endif %}
                     {% endfor %}

@@ -233,10 +233,12 @@ class vision11_render:
     def render_userteam(self,request,mid,tid):
         match = Match.objects.get(id=int(mid))
         userteam = UserTeam.objects.get(match_id=match,id=int(tid))
+        playersdata = [players for players in PlayersMatchData.objects.filter(match_url=match)]
+        
         
         if userteam.user == request.user or ((match.time - timezone.now()).days == 0 and (match.time - timezone.now()).seconds < 15*60) or (match.time - timezone.now()).days <= -1:
             players = userteam.players.all()
-            return render(request,'userteam.html',{'data':players,'captain':userteam.captain,'vice_captain':userteam.vice_captain,'user':userteam.user.username,'points':userteam.total_team_points})
+            return render(request,'userteam.html',{'data':players,'captain':userteam.captain,'vice_captain':userteam.vice_captain,'user':userteam.user.username,'points':userteam.total_team_points,'playersdata':playersdata})
         return HttpResponseBadRequest('You can view other teams only if deadline has passed.')
 
 

@@ -426,37 +426,58 @@ def Update_Live_Score(URL):
         'span', class_='pull-right').get_text().split(' ')[0]
     firstInnTeam = firstInn.find('span').get_text()
     firstInnTeam = firstInnTeam[:firstInnTeam.find(' Innings')]
+    
+    
+    try:
 
-    secondInn = soup.find_all('div', id='innings_2')[0]
-    secondInnBat = secondInn.find_all(
-        'div', class_='cb-col cb-col-100 cb-ltst-wgt-hdr')[0]
-    secondInnBat = secondInnBat.find_all(
-        'div', class_='cb-col cb-col-100 cb-scrd-itms')
-    secondInnBowl = secondInn.find_all(
-        'div', class_='cb-col cb-col-100 cb-ltst-wgt-hdr')[1]
-    secondInnBowl = secondInnBowl.find_all(
-        'div', class_='cb-col cb-col-100 cb-scrd-itms')
-    secondInnScore = secondInn.find(
-        'span', class_='pull-right').get_text().split(' ')[0]
-    secondInnTeam = secondInn.find('span').get_text()
-    secondInnTeam = secondInnTeam[:secondInnTeam.find(' Innings')]
+        secondInn = soup.find_all('div', id='innings_2')[0]
+        secondInnBat = secondInn.find_all(
+            'div', class_='cb-col cb-col-100 cb-ltst-wgt-hdr')[0]
+        secondInnBat = secondInnBat.find_all(
+            'div', class_='cb-col cb-col-100 cb-scrd-itms')
+        secondInnBowl = secondInn.find_all(
+            'div', class_='cb-col cb-col-100 cb-ltst-wgt-hdr')[1]
+        secondInnBowl = secondInnBowl.find_all(
+            'div', class_='cb-col cb-col-100 cb-scrd-itms')
+        secondInnScore = secondInn.find(
+            'span', class_='pull-right').get_text().split(' ')[0]
+        secondInnTeam = secondInn.find('span').get_text()
+        secondInnTeam = secondInnTeam[:secondInnTeam.find(' Innings')]
+        
+    except:
+        secondInnBat = []
+        secondInnBowl = []
+    
 
     firstInnCatches = catches(innOutBy(firstInnBat))
     firstInnCatches = {x: firstInnCatches.count(x) for x in firstInnCatches}
-    secondInnCatches = catches(innOutBy(secondInnBat))
-    secondInnCatches = {x: secondInnCatches.count(x) for x in secondInnCatches}
+    
+    try:
+        secondInnCatches = catches(innOutBy(secondInnBat))
+        secondInnCatches = {x: secondInnCatches.count(x) for x in secondInnCatches}
+    except:
+        secondInnCatches = {}
+    
 
     firstInnRunouts = runouts(innOutBy(firstInnBat))
     firstInnRunouts = {x: firstInnRunouts.count(x) for x in firstInnRunouts}
-    secondInnRunouts = runouts(innOutBy(secondInnBat))
-    secondInnRunouts = {x: secondInnRunouts.count(x) for x in secondInnRunouts}
-
+    try:
+        secondInnRunouts = runouts(innOutBy(secondInnBat))
+        secondInnRunouts = {x: secondInnRunouts.count(x) for x in secondInnRunouts}
+    except:
+        secondInnRunouts = {}
+    
+    
     firstInnStumpings = stumpings(innOutBy(firstInnBat))
     firstInnStumpings = {x: firstInnStumpings.count(
         x) for x in firstInnStumpings}
-    secondInnStumpings = stumpings(innOutBy(secondInnBat))
-    secondInnStumpings = {x: secondInnStumpings.count(
-        x) for x in secondInnStumpings}
+    try:
+        secondInnStumpings = stumpings(innOutBy(secondInnBat))
+        secondInnStumpings = {x: secondInnStumpings.count(
+            x) for x in secondInnStumpings}
+    except:
+        secondInnStumpings = {}
+    
 
     firstInnBatInfo = getBattingInfo(firstInnBat, firstInnCatches, secondInnCatches,
                                      firstInnRunouts, secondInnRunouts, firstInnStumpings, secondInnStumpings)
@@ -476,7 +497,6 @@ def Update_Live_Score(URL):
     players = dataToBatsman(secondInnBatInfo, players)
     players = dataToBowlers(firstInnBowlInfo, players)
     players = dataToBowlers(secondInnBowlInfo, players)
-
     
     for player in players.keys():
         data = players[player]
@@ -487,6 +507,27 @@ def Update_Live_Score(URL):
         try:
             match = Match.objects.get(url=URL)
             playerscore = Player.objects.get(pid=int(player))
-            PlayersMatchData.objects.update_or_create(pid=playerscore,match_url=match,runsScored=data['runsScored'],ballsFaced=data['ballsFaced'],fours=data['fours'],sixes=data['sixes'],strikeRate=data['strikeRate'],out=data['out'],overs=data['overs'],maidens=data['maidens'],runsGiven=data['runsGiven'],wickets=data['wickets'],noBalls=data['noBalls'],wides=data['wides'],economy=data['economy'],catches=data['catches'],runouts=data['runouts'],stumpings=data['stumpings'],points=pts)
+            try:
+                player_dtaa = PlayersMatchData.objects.get(pid=playerscore,match_url=match)
+            except:
+                player_dtaa = PlayersMatchData.objects.create(pid=playerscore,match_url=match)
+            player_dtaa.runsScored=data['runsScored']
+            player_dtaa.ballsFaced=data['ballsFaced']
+            player_dtaa.fours=data['fours']
+            player_dtaa.sixes=data['sixes']
+            player_dtaa.strikeRate=data['strikeRate']
+            player_dtaa.out=data['out']
+            player_dtaa.overs=data['overs']
+            player_dtaa.maidens=data['maidens']
+            player_dtaa.runsGiven=data['runsGiven']
+            player_dtaa.wickets=data['wickets']
+            player_dtaa.noBalls=data['noBalls']
+            player_dtaa.wides=data['wides']
+            player_dtaa.economy=data['economy']
+            player_dtaa.catches=data['catches']
+            player_dtaa.runouts=data['runouts']
+            player_dtaa.stumpings=data['stumpings']
+            player_dtaa.points=pts
+            player_dtaa.save()
         except Exception as e:
-            pass
+            print(e,"error inside updating. ",player)
