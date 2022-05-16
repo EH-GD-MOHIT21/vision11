@@ -5,7 +5,10 @@ from mainAPP.scrapper.live_score import Update_Live_Score
 from mainAPP.scrapper.team_scrapper import Get_Teams
 from mainAPP.scrapper.players_scrapper import Get_Players
 from mainAPP.repository import vision11
-from mainAPP.models import UserTeam,Match,PlayersMatchData
+from mainAPP.models import Contest, UserTeam,Match,PlayersMatchData
+from django.utils import timezone
+from celery.utils.log import get_task_logger
+logger = get_task_logger(__name__)
 
 
 
@@ -15,7 +18,7 @@ def EveryThreeMinutesTask():
 
     match_urls = vision11().Get_Live_Match_Urls()
     for url in match_urls:
-        print(f"updating live score for: {url}")
+        logger.info(f"updating live score for: {url} at "+str(timezone.now())+' hours!')
         try:
             Update_Live_Score(url)
             match = Match.objects.get(url=url)
@@ -36,16 +39,20 @@ def EveryThreeMinutesTask():
                                 team.total_team_points += player.points
                             team.save()
                             break
-            print(f"successfully updated live score for: {url}")
+            logger.info(f"successfully updated live score for: {url} at "+str(timezone.now())+' hours!')
         except Exception as e:
-            print(f"failed to update live score due to: {e}")
+            logger.debug(f"failed to update live score for: {url} at "+str(timezone.now())+f' hours! due to :{e}')
 
 
 
 # fetch next upcoming matches
 @task(name='fetch_match_list',time_limit=25)
 def EveryDayTask():
-    list_today_matches()
+    try:
+        list_today_matches()
+        logger.debug("successfully updated upcoming matches at "+str(timezone.now())+' hours!')
+    except Exception as e:
+        logger.debug(f"failed to update upcoming matches at "+str(timezone.now())+f' hours! due to :{e}')
 
 
 
@@ -53,5 +60,34 @@ def EveryDayTask():
 # update players/team model here to be updated
 @task(name='updateteamorplayers',time_limit=25)
 def EveryMondayTask():
-    Get_Teams()
-    Get_Players()
+    try:
+        Get_Teams()
+        logger.debug("successfully updated Teams at "+str(timezone.now())+' hours!')
+    except Exception as e:
+        logger.debug(f"failed to update Teams at "+str(timezone.now())+f' hours! due to :{e}')
+    try:
+        Get_Players()
+        logger.debug("successfully updated Players at "+str(timezone.now())+' hours!')
+    except Exception as e:
+        logger.debug(f"failed to update Players at "+str(timezone.now())+f' hours! due to :{e}')
+
+
+
+@task(name='providewinnerusercoins',time_limit=25)
+def ProvideMoneyUser(match_obj_id):
+    match_obj = Match.objects.get(id=match_obj_id)
+    
+    contests = Contest.objects.filter(match_id=match_obj)
+    for contest in contests:
+        if not contest.reward_claimed:
+            teams = contest.teams.all().order_by('-total_team_points')
+            price = (contest.price_fee/contest.length)/len(teams)
+            user_team = teams[0]
+            if user_team.user.currency_type == contest.fee_type:
+                user_team.user.vision_credits += round(price,2)
+                user_team.user.save()
+            contest.reward_claimed = True
+            contest.save()
+            logger.debug(f"successfully updated balance {round(price,2)} for {user_team.user.username} at "+str(timezone.now())+' hours!')
+        else:
+            logger.debug(f"skip contest updated balance for {contest.id} at "+str(timezone.now())+' hours!')

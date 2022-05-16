@@ -530,4 +530,5 @@ def Update_Live_Score(URL):
             player_dtaa.points=pts
             player_dtaa.save()
         except Exception as e:
-            print(e,"error inside updating. ",player)
+            print(data['out'])
+            print(f"error {e} inside updating player. {player}")

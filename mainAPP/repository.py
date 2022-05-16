@@ -246,8 +246,9 @@ class vision11_render:
         contest_teams = []
         contest = Contest.objects.get(id = cid)
         match_name = contest.match_id.title
-        for i in contest.teams.all():
+        for i in contest.teams.all().order_by('-total_team_points'):
             contest_teams.append(i)
+        
         return render(request,'contestdetails.html',{'teams':contest_teams,'name':match_name})
     
 

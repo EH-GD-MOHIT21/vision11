@@ -61,6 +61,8 @@ if (response.ok) {
         match_card.appendChild(create_button)
         const a_but = document.createElement("a")
         a_but.textContent = 'Check points'
+        a_but.href = '/mycontests'
+        a_but.target = "blank"
         create_button.appendChild(a_but);
         const element = document.getElementById("live");
         element.appendChild(match_card);

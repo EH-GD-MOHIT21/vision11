@@ -10,3 +10,7 @@ celery -A taskSchedularApp beat -l info
 
 # use this
 celery -A taskSchedularApp.celery worker -l info -c 3 -P eventlet
+
+
+# better to use with logs
+celery -A taskSchedularApp.celery worker -l info -c 3 -P eventlet --logfile=celery.log

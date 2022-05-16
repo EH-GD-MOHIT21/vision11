@@ -1,5 +1,8 @@
 from django.db import models
 from usermanagerAPP.models import User1
+from django.db.models.signals import pre_save
+from django.dispatch import receiver
+
 # Create your models here.
 
 
@@ -49,8 +52,9 @@ class Match(models.Model):
 
     def save(self,*args,**kwargs):
         try:
-            self.team1_img = Team.objects.get(team_name=self.team1).team_img
-            self.team2_img = Team.objects.get(team_name=self.team2).team_img
+            if self.team1_img == '' or self.team1_img == None or self.team2_img == None or self.team2_img == '':
+                self.team1_img = Team.objects.get(team_name=self.team1).team_img
+                self.team2_img = Team.objects.get(team_name=self.team2).team_img
         except:
             pass
 
@@ -58,6 +62,19 @@ class Match(models.Model):
 
     def __str__(self):
         return str(self.id) + ". " + self.title
+
+
+
+@receiver(pre_save, sender=Match)
+def pre_save(sender, instance, **kwargs):
+    try:
+        from taskSchedularApp.tasks import ProvideMoneyUser
+        previous = Match.objects.get(id=instance.id)
+    except:
+        return
+    if previous.is_match_end != instance.is_match_end and instance.is_match_end == True:
+        ProvideMoneyUser.delay(instance.id)
+        # do celery stuff here to give price money to winners
 
 
 
@@ -69,7 +86,7 @@ class PlayersMatchData(models.Model):
     fours = models.CharField(max_length=4)
     sixes = models.CharField(max_length=4)
     strikeRate = models.CharField(max_length=10)
-    out = models.BooleanField()
+    out = models.BooleanField(default=False)
     overs = models.CharField(max_length=4)
     maidens = models.CharField(max_length=4)
     runsGiven = models.CharField(max_length=4)
@@ -77,10 +94,10 @@ class PlayersMatchData(models.Model):
     wides = models.CharField(max_length=4)
     noBalls = models.CharField(max_length=4)
     economy = models.CharField(max_length=4)
-    catches = models.IntegerField()
-    runouts = models.IntegerField()
-    stumpings = models.IntegerField()
-    points = models.FloatField()
+    catches = models.IntegerField(default=0)
+    runouts = models.IntegerField(default=0)
+    stumpings = models.IntegerField(default=0)
+    points = models.FloatField(default=0)
 
 
     def __str__(self) -> str:

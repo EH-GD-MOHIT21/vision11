@@ -33,16 +33,16 @@
             <div class="teams">
                 <div class="userinfo">
                     <i class="fa fa-user" aria-hidden="true"></i>
-                    <a href="/userteam/match={{ team.match_id.id }}/team={{ team.id }}">
+                    <a target="_blank" href="/userteam/match={{ team.match_id.id }}/team={{ team.id }}">
                     
                     {{ team.user.username }}
                 </a>
                 </div>
                 <div class="points">
-                    100.0
+                    {{ team.total_team_points }}
                 </div>
                 <div class="rank">
-                    100
+                    {{ forloop.counter }}
                 </div>
             </div>
              {% endfor %}

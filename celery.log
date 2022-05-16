@@ -1,0 +1,173 @@
+[2022-05-16 16:28:04,670: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. WSAECONNREFUSED..
+Trying again in 2.00 seconds... (1/100)
+
+[2022-05-16 16:28:18,752: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. WSAECONNREFUSED..
+Trying again in 4.00 seconds... (2/100)
+
+[2022-05-16 16:28:34,843: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. WSAECONNREFUSED..
+Trying again in 6.00 seconds... (3/100)
+
+[2022-05-16 16:28:50,893: INFO/MainProcess] Connected to redis://localhost:6379//
+[2022-05-16 16:29:00,923: INFO/MainProcess] mingle: searching for neighbors
+[2022-05-16 16:29:32,009: INFO/MainProcess] mingle: all alone
+[2022-05-16 16:30:02,090: WARNING/MainProcess] C:\Users\exper\Envs\vision11\lib\site-packages\celery\fixups\django.py:203: UserWarning: Using settings.DEBUG leads to a memory
+            leak, never use this setting in production environments!
+  warnings.warn('''Using settings.DEBUG leads to a memory
+
+[2022-05-16 16:30:02,090: INFO/MainProcess] celery@MOHIT-SATIJA ready.
+[2022-05-16 16:30:02,090: INFO/MainProcess] Task get_live_score[779e6324-6bc6-40bd-a5ab-1ee197e058fa] received
+[2022-05-16 16:30:02,090: INFO/MainProcess] Discarding revoked task: get_live_score[779e6324-6bc6-40bd-a5ab-1ee197e058fa]
+[2022-05-16 16:30:02,106: INFO/MainProcess] Task fetch_match_list[f04b21ad-26f4-4a72-a480-58656d9d178b] received
+[2022-05-16 16:30:02,106: INFO/MainProcess] Discarding revoked task: fetch_match_list[f04b21ad-26f4-4a72-a480-58656d9d178b]
+[2022-05-16 16:30:02,106: INFO/MainProcess] Task updateteamorplayers[6414d2d1-4dce-4fae-b1cc-5b088bfa5938] received
+[2022-05-16 16:30:02,273: INFO/MainProcess] Task get_live_score[64d63bb8-7a0d-4aaf-8bd9-e1aaec73497f] received
+[2022-05-16 16:30:02,274: INFO/MainProcess] Discarding revoked task: get_live_score[64d63bb8-7a0d-4aaf-8bd9-e1aaec73497f]
+[2022-05-16 16:30:12,170: INFO/MainProcess] pidbox: Connected to redis://localhost:6379//.
+[2022-05-16 16:31:44,665: INFO/MainProcess] Task get_live_score[b9c27085-1242-42da-9f04-3a3ee20bd866] received
+[2022-05-16 16:31:44,665: INFO/MainProcess] get_live_score[b9c27085-1242-42da-9f04-3a3ee20bd866]: updating live score for: https://www.cricbuzz.com/live-cricket-scorecard/46191/csk-vs-gt-62nd-match-indian-premier-league-2022 at 2022-05-16 11:01:44.665941+00:00 hours!
+[2022-05-16 16:31:45,130: WARNING/MainProcess] NOT NULL constraint failed: mainAPP_playersmatchdata.out
+[2022-05-16 16:31:45,130: WARNING/MainProcess]  
+[2022-05-16 16:31:45,130: WARNING/MainProcess] error inside updating. 
+[2022-05-16 16:31:45,130: WARNING/MainProcess]  
+[2022-05-16 16:31:45,130: WARNING/MainProcess] 11813
+[2022-05-16 16:31:45,130: WARNING/MainProcess] NOT NULL constraint failed: mainAPP_playersmatchdata.out
+[2022-05-16 16:31:45,130: WARNING/MainProcess]  
+[2022-05-16 16:31:45,130: WARNING/MainProcess] error inside updating. 
+[2022-05-16 16:31:45,130: WARNING/MainProcess]  
+[2022-05-16 16:31:45,130: WARNING/MainProcess] 9838
+[2022-05-16 16:31:45,130: WARNING/MainProcess] NOT NULL constraint failed: mainAPP_playersmatchdata.out
+[2022-05-16 16:31:45,130: WARNING/MainProcess]  
+[2022-05-16 16:31:45,130: WARNING/MainProcess] error inside updating. 
+[2022-05-16 16:31:45,130: WARNING/MainProcess]  
+[2022-05-16 16:31:45,130: WARNING/MainProcess] 6692
+[2022-05-16 16:31:45,130: WARNING/MainProcess] NOT NULL constraint failed: mainAPP_playersmatchdata.out
+[2022-05-16 16:31:45,130: WARNING/MainProcess]  
+[2022-05-16 16:31:45,130: WARNING/MainProcess] error inside updating. 
+[2022-05-16 16:31:45,130: WARNING/MainProcess]  
+[2022-05-16 16:31:45,130: WARNING/MainProcess] 11195
+[2022-05-16 16:31:45,146: WARNING/MainProcess] NOT NULL constraint failed: mainAPP_playersmatchdata.out
+[2022-05-16 16:31:45,146: WARNING/MainProcess]  
+[2022-05-16 16:31:45,146: WARNING/MainProcess] error inside updating. 
+[2022-05-16 16:31:45,146: WARNING/MainProcess]  
+[2022-05-16 16:31:45,146: WARNING/MainProcess] 11675
+[2022-05-16 16:31:45,146: WARNING/MainProcess] NOT NULL constraint failed: mainAPP_playersmatchdata.out
+[2022-05-16 16:31:45,146: WARNING/MainProcess]  
+[2022-05-16 16:31:45,146: WARNING/MainProcess] error inside updating. 
+[2022-05-16 16:31:45,146: WARNING/MainProcess]  
+[2022-05-16 16:31:45,146: WARNING/MainProcess] 265
+[2022-05-16 16:31:45,146: WARNING/MainProcess] NOT NULL constraint failed: mainAPP_playersmatchdata.out
+[2022-05-16 16:31:45,146: WARNING/MainProcess]  
+[2022-05-16 16:31:45,146: WARNING/MainProcess] error inside updating. 
+[2022-05-16 16:31:45,146: WARNING/MainProcess]  
+[2022-05-16 16:31:45,146: WARNING/MainProcess] 10100
+[2022-05-16 16:31:45,146: WARNING/MainProcess] NOT NULL constraint failed: mainAPP_playersmatchdata.out
+[2022-05-16 16:31:45,146: WARNING/MainProcess]  
+[2022-05-16 16:31:45,146: WARNING/MainProcess] error inside updating. 
+[2022-05-16 16:31:45,146: WARNING/MainProcess]  
+[2022-05-16 16:31:45,146: WARNING/MainProcess] 12805
+[2022-05-16 16:31:45,146: WARNING/MainProcess] NOT NULL constraint failed: mainAPP_playersmatchdata.out
+[2022-05-16 16:31:45,146: WARNING/MainProcess]  
+[2022-05-16 16:31:45,146: WARNING/MainProcess] error inside updating. 
+[2022-05-16 16:31:45,146: WARNING/MainProcess]  
+[2022-05-16 16:31:45,162: WARNING/MainProcess] 14163
+[2022-05-16 16:31:45,162: WARNING/MainProcess] Player matching query does not exist.
+[2022-05-16 16:31:45,162: WARNING/MainProcess]  
+[2022-05-16 16:31:45,162: WARNING/MainProcess] error inside updating. 
+[2022-05-16 16:31:45,162: WARNING/MainProcess]  
+[2022-05-16 16:31:45,162: WARNING/MainProcess] 16458
+[2022-05-16 16:31:45,162: WARNING/MainProcess] NOT NULL constraint failed: mainAPP_playersmatchdata.out
+[2022-05-16 16:31:45,162: WARNING/MainProcess]  
+[2022-05-16 16:31:45,162: WARNING/MainProcess] error inside updating. 
+[2022-05-16 16:31:45,162: WARNING/MainProcess]  
+[2022-05-16 16:31:45,162: WARNING/MainProcess] 13184
+[2022-05-16 16:31:45,162: WARNING/MainProcess] NOT NULL constraint failed: mainAPP_playersmatchdata.out
+[2022-05-16 16:31:45,162: WARNING/MainProcess]  
+[2022-05-16 16:31:45,162: WARNING/MainProcess] error inside updating. 
+[2022-05-16 16:31:45,162: WARNING/MainProcess]  
+[2022-05-16 16:31:45,162: WARNING/MainProcess] 1465
+[2022-05-16 16:31:45,162: WARNING/MainProcess] NOT NULL constraint failed: mainAPP_playersmatchdata.out
+[2022-05-16 16:31:45,162: WARNING/MainProcess]  
+[2022-05-16 16:31:45,162: WARNING/MainProcess] error inside updating. 
+[2022-05-16 16:31:45,162: WARNING/MainProcess]  
+[2022-05-16 16:31:45,162: WARNING/MainProcess] 11808
+[2022-05-16 16:31:45,162: WARNING/MainProcess] NOT NULL constraint failed: mainAPP_playersmatchdata.out
+[2022-05-16 16:31:45,162: WARNING/MainProcess]  
+[2022-05-16 16:31:45,162: WARNING/MainProcess] error inside updating. 
+[2022-05-16 16:31:45,162: WARNING/MainProcess]  
+[2022-05-16 16:31:45,162: WARNING/MainProcess] 1649
+[2022-05-16 16:31:45,177: WARNING/MainProcess] NOT NULL constraint failed: mainAPP_playersmatchdata.out
+[2022-05-16 16:31:45,177: WARNING/MainProcess]  
+[2022-05-16 16:31:45,177: WARNING/MainProcess] error inside updating. 
+[2022-05-16 16:31:45,177: WARNING/MainProcess]  
+[2022-05-16 16:31:45,177: WARNING/MainProcess] 9647
+[2022-05-16 16:31:45,177: WARNING/MainProcess] NOT NULL constraint failed: mainAPP_playersmatchdata.out
+[2022-05-16 16:31:45,177: WARNING/MainProcess]  
+[2022-05-16 16:31:45,177: WARNING/MainProcess] error inside updating. 
+[2022-05-16 16:31:45,177: WARNING/MainProcess]  
+[2022-05-16 16:31:45,177: WARNING/MainProcess] 6349
+[2022-05-16 16:31:45,177: WARNING/MainProcess] NOT NULL constraint failed: mainAPP_playersmatchdata.out
+[2022-05-16 16:31:45,177: WARNING/MainProcess]  
+[2022-05-16 16:31:45,177: WARNING/MainProcess] error inside updating. 
+[2022-05-16 16:31:45,177: WARNING/MainProcess]  
+[2022-05-16 16:31:45,177: WARNING/MainProcess] 9693
+[2022-05-16 16:31:45,177: WARNING/MainProcess] NOT NULL constraint failed: mainAPP_playersmatchdata.out
+[2022-05-16 16:31:45,177: WARNING/MainProcess]  
+[2022-05-16 16:31:45,177: WARNING/MainProcess] error inside updating. 
+[2022-05-16 16:31:45,177: WARNING/MainProcess]  
+[2022-05-16 16:31:45,177: WARNING/MainProcess] 10738
+[2022-05-16 16:31:45,177: WARNING/MainProcess] NOT NULL constraint failed: mainAPP_playersmatchdata.out
+[2022-05-16 16:31:45,177: WARNING/MainProcess]  
+[2022-05-16 16:31:45,193: WARNING/MainProcess] error inside updating. 
+[2022-05-16 16:31:45,193: WARNING/MainProcess]  
+[2022-05-16 16:31:45,193: WARNING/MainProcess] 11595
+[2022-05-16 16:31:45,193: WARNING/MainProcess] NOT NULL constraint failed: mainAPP_playersmatchdata.out
+[2022-05-16 16:31:45,193: WARNING/MainProcess]  
+[2022-05-16 16:31:45,193: WARNING/MainProcess] error inside updating. 
+[2022-05-16 16:31:45,193: WARNING/MainProcess]  
+[2022-05-16 16:31:45,193: WARNING/MainProcess] 11220
+[2022-05-16 16:31:45,193: WARNING/MainProcess] NOT NULL constraint failed: mainAPP_playersmatchdata.out
+[2022-05-16 16:31:45,193: WARNING/MainProcess]  
+[2022-05-16 16:31:45,193: WARNING/MainProcess] error inside updating. 
+[2022-05-16 16:31:45,193: WARNING/MainProcess]  
+[2022-05-16 16:31:45,193: WARNING/MainProcess] 14172
+[2022-05-16 16:31:45,193: WARNING/MainProcess] NOT NULL constraint failed: mainAPP_playersmatchdata.out
+[2022-05-16 16:31:45,193: WARNING/MainProcess]  
+[2022-05-16 16:31:45,193: WARNING/MainProcess] error inside updating. 
+[2022-05-16 16:31:45,193: WARNING/MainProcess]  
+[2022-05-16 16:31:45,193: WARNING/MainProcess] 7909
+[2022-05-16 16:31:45,193: INFO/MainProcess] get_live_score[b9c27085-1242-42da-9f04-3a3ee20bd866]: successfully updated live score for: https://www.cricbuzz.com/live-cricket-scorecard/46191/csk-vs-gt-62nd-match-indian-premier-league-2022 at 2022-05-16 11:01:45.193327+00:00 hours!
+[2022-05-16 16:31:45,224: INFO/MainProcess] Task get_live_score[b9c27085-1242-42da-9f04-3a3ee20bd866] succeeded in 0.5629999999982829s: None
+[2022-05-16 16:32:30,069: INFO/MainProcess] Task updateteamorplayers[6414d2d1-4dce-4fae-b1cc-5b088bfa5938] succeeded in 147.95400000000154s: None
+[2022-05-17 01:55:46,001: INFO/MainProcess] Connected to redis://localhost:6379//
+[2022-05-17 01:55:46,019: INFO/MainProcess] mingle: searching for neighbors
+[2022-05-17 01:55:47,050: INFO/MainProcess] mingle: all alone
+[2022-05-17 01:55:47,065: INFO/MainProcess] pidbox: Connected to redis://localhost:6379//.
+[2022-05-17 01:55:47,065: WARNING/MainProcess] C:\Users\exper\Envs\vision11\lib\site-packages\celery\fixups\django.py:203: UserWarning: Using settings.DEBUG leads to a memory
+            leak, never use this setting in production environments!
+  warnings.warn('''Using settings.DEBUG leads to a memory
+
+[2022-05-17 01:55:47,065: INFO/MainProcess] celery@MOHIT-SATIJA ready.
+[2022-05-17 01:56:11,595: INFO/MainProcess] Task providewinnerusercoins[0c284a8a-6c9e-4cbf-917d-0aecc484a9f5] received
+[2022-05-17 01:56:11,642: INFO/MainProcess] Task providewinnerusercoins[0c284a8a-6c9e-4cbf-917d-0aecc484a9f5] succeeded in 0.04700000000048021s: None
+[2022-05-17 01:57:05,307: INFO/MainProcess] Connected to redis://localhost:6379//
+[2022-05-17 01:57:05,323: INFO/MainProcess] mingle: searching for neighbors
+[2022-05-17 01:57:06,359: INFO/MainProcess] mingle: all alone
+[2022-05-17 01:57:06,387: INFO/MainProcess] pidbox: Connected to redis://localhost:6379//.
+[2022-05-17 01:57:06,407: WARNING/MainProcess] C:\Users\exper\Envs\vision11\lib\site-packages\celery\fixups\django.py:203: UserWarning: Using settings.DEBUG leads to a memory
+            leak, never use this setting in production environments!
+  warnings.warn('''Using settings.DEBUG leads to a memory
+
+[2022-05-17 01:57:06,407: INFO/MainProcess] celery@MOHIT-SATIJA ready.
+[2022-05-17 01:57:41,036: INFO/MainProcess] Task providewinnerusercoins[1ece56e5-08d6-45c1-9105-e9e479482999] received
+[2022-05-17 01:57:41,085: INFO/MainProcess] Task providewinnerusercoins[1ece56e5-08d6-45c1-9105-e9e479482999] succeeded in 0.04700000000048021s: None
+[2022-05-17 01:58:41,420: INFO/MainProcess] Connected to redis://localhost:6379//
+[2022-05-17 01:58:41,428: INFO/MainProcess] mingle: searching for neighbors
+[2022-05-17 01:58:42,470: INFO/MainProcess] mingle: all alone
+[2022-05-17 01:58:42,497: INFO/MainProcess] pidbox: Connected to redis://localhost:6379//.
+[2022-05-17 01:58:42,503: WARNING/MainProcess] C:\Users\exper\Envs\vision11\lib\site-packages\celery\fixups\django.py:203: UserWarning: Using settings.DEBUG leads to a memory
+            leak, never use this setting in production environments!
+  warnings.warn('''Using settings.DEBUG leads to a memory
+
+[2022-05-17 01:58:42,503: INFO/MainProcess] celery@MOHIT-SATIJA ready.
+[2022-05-17 01:59:02,634: INFO/MainProcess] Task providewinnerusercoins[859fa244-66e4-4bd8-8ac6-61de01cfd16e] received
+[2022-05-17 01:59:12,699: INFO/MainProcess] Task providewinnerusercoins[859fa244-66e4-4bd8-8ac6-61de01cfd16e] succeeded in 10.07800000000043s: None
