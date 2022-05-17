@@ -6,8 +6,6 @@ User = get_user_model()
 # Register your models here.
 
 
-admin.site.register(models.VisionCurrencyDetails)
-
 
 @admin.register(User)
 class UserAdmin(BaseUserAdmin):
@@ -47,3 +45,12 @@ class UserAdmin(BaseUserAdmin):
                 ]
             },
         ), ]
+
+
+class CustomVisionCurrencyDetails(admin.ModelAdmin):
+    list_display = ["user","payment","payment_add","save_at"]
+    search_fields = ["user__username","user__email","save_at"]
+
+
+
+admin.site.register(models.VisionCurrencyDetails,CustomVisionCurrencyDetails)
