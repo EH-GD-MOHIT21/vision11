@@ -6,6 +6,9 @@ User = get_user_model()
 # Register your models here.
 
 
+admin.site.register(models.VisionCurrencyDetails)
+
+
 @admin.register(User)
 class UserAdmin(BaseUserAdmin):
     list_filter = ["staff"]

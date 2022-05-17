@@ -5,7 +5,7 @@ from django.utils import timezone
 from mainAPP.team_creation_rules import filter_team_data, finalize_team, follow_base_rules
 from .serializers import ContestSerializer, FantasyScoreSerializer, FeatureRequestSerializer, MatchListSerializer,GameSquadSerializer
 from rest_framework.response import Response
-from usermanagerAPP.models import User1
+from usermanagerAPP.models import User1, VisionCurrencyDetails
 from django.shortcuts import redirect, render
 from django.contrib import messages
 from django.contrib.auth.hashers import make_password,check_password
@@ -141,6 +141,7 @@ class vision11:
         model.teams.add(userteam)
         model.user.add(user)
         model.save()
+        VisionCurrencyDetails(user=user,currency_type_user=user.currency_type,currency_type_contest=user.currency_type,payment=model.entry_fee,payment_add=False).save()
         return Response({'status':200,'message':'success','contest_id':model.id})
 
 

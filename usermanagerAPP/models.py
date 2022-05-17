@@ -1,4 +1,6 @@
+from locale import currency
 from django.db import models
+from django.utils import timezone
 from .models_manager import UserManager
 from django.contrib.auth.models import AbstractUser
 from allauth.account.signals import user_logged_in
@@ -136,3 +138,18 @@ def pre_save(sender, instance, **kwargs):
         instance.vision_credits = 0
     elif previous.currency_type != instance.currency_type:
         instance.vision_credits = 0
+
+
+
+class VisionCurrencyDetails(models.Model):
+    user = models.ForeignKey(User1,on_delete=models.Case)
+    log = models.TextField()
+    currency_type_user = models.CharField(max_length=20,default='vision candies')
+    currency_type_contest = models.CharField(max_length=20,default='vision candies')
+    payment = models.FloatField(default=0)
+    payment_add = models.BooleanField(default=True)
+    save_at = models.DateTimeField(null=True,blank=True)
+
+    def save(self,*args,**kwargs):
+        self.save_at = timezone.now()
+        super(VisionCurrencyDetails, self).save(*args, **kwargs)

@@ -1,10 +1,12 @@
+from datetime import timedelta
 from django.shortcuts import redirect
-from .models import User1
+from django.utils import timezone
+from .models import User1, VisionCurrencyDetails
 from rest_framework.response import Response
 from rest_framework.status import HTTP_200_OK, HTTP_406_NOT_ACCEPTABLE, HTTP_400_BAD_REQUEST
 import re
 from vision11.email.send_email import send_mail
-from .serializers import UserSerializer
+from .serializers import UserSerializer, VisionCurrencyDetailsSeraializer
 from payments.models import Order
 from payments.serializers import OrderSerializer
 
@@ -103,4 +105,7 @@ class UserDetails:
         serializer = UserSerializer(real_user)
         orders = Order.objects.filter(user=real_user)
         serializer1 = OrderSerializer(orders,many=True)
-        return Response({'status':200,'message':'success','user':serializer.data,'orders':serializer1.data})
+        time_now = timezone.now()
+        last_seven_days_logs = VisionCurrencyDetails.objects.filter(user=real_user,save_at__gt=(time_now-timedelta(days=7)))
+        serializer2 = VisionCurrencyDetailsSeraializer(last_seven_days_logs,many=True)
+        return Response({'status':200,'message':'success','user':serializer.data,'orders':serializer1.data,'contest_logs':serializer2.data})
