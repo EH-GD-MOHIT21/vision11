@@ -45,3 +45,4 @@ class Order(models.Model):
     @property
     def update_status(self):
         self.order_status = Choices.SUCCESS
+        self.payment_capture = self.amount

@@ -7,4 +7,5 @@ urlpatterns = [
     path('upload_valid_age_doc',views.AgeVerificationUploadDocument),
     path('accept_request/pid=<int:pid>',views.accept_age_verification_request),
     path('deny_request/pid=<int:pid>',views.deny_age_verification_request),
+    path('get_user_info/user=<slug:user>',views.Get_User_Details.as_view()),
 ]

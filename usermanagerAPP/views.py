@@ -1,7 +1,9 @@
 from django.http import HttpResponseBadRequest
 from django.shortcuts import redirect
+from rest_framework.response import Response
 from rest_framework.views import APIView
-from .repository import UserValidation, admin_user_roles
+from .repository import UserValidation, admin_user_roles, UserDetails
+
 
 
 class CheckForUsername(APIView):
@@ -26,6 +28,17 @@ class CheckForEmail(APIView):
 
     def post(self, request, *args):
         return UserValidation().validate_email(request.data)
+
+
+class Get_User_Details(APIView):
+
+    def get(self,request,user):
+        try:
+            if request.user.is_staff:
+                return UserDetails().get_user_details(user)
+            return Response({'status':400,'message':'You have not authorized to perform this action.'})
+        except Exception as e:
+            return Response({'status':500,'message':'looks like you have provided some incorrect information.'})
 
 
 

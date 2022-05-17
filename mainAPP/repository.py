@@ -3,12 +3,13 @@ from mainAPP.models import Contest, Match,Player, PlayersMatchData,Team, User_Fe
 from django.utils import timezone
 
 from mainAPP.team_creation_rules import filter_team_data, finalize_team, follow_base_rules
-from .serializers import ContestSerializer, FantasyScoreSerializer, FeatureRequestSerializer, MatchListSerializer,GameSquadSerializer, UserSerializer
+from .serializers import ContestSerializer, FantasyScoreSerializer, FeatureRequestSerializer, MatchListSerializer,GameSquadSerializer
 from rest_framework.response import Response
 from usermanagerAPP.models import User1
 from django.shortcuts import redirect, render
 from django.contrib import messages
 from django.contrib.auth.hashers import make_password,check_password
+from usermanagerAPP.serializers import UserSerializer
 
 class vision11:
     def get_match_list(self):

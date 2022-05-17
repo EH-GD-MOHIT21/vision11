@@ -138,10 +138,25 @@ function show_feature_request(data){
         }
 }
 
-ids = ["ageverdash","absdash"]
+
+function show_live_matches_data(data){
+    console.log(data);
+}
+
+
+function show_user_info_data(data){
+    console.log(data);
+}
+
+
+
+ids = ["ageverdash","absdash","livematches","userinfo"]
+mids = ["base-dashboard","base-dashboard-1","livematches_container","userinfodetails"]
 
 document.getElementById('ageverdash').addEventListener('click',async function(){
-    document.getElementById('base-dashboard-1').style.display = 'none';
+    for(id of mids){
+        document.getElementById(id).style.display = 'none';
+    }
     document.getElementById('base-dashboard').style.display = 'block';
     for(id of ids){
         document.getElementById(id).classList.remove('active');
@@ -153,7 +168,9 @@ document.getElementById('ageverdash').addEventListener('click',async function(){
 })
 
 document.getElementById('absdash').addEventListener('click', async function(){
-    document.getElementById('base-dashboard').style.display = 'none';
+    for(id of mids){
+        document.getElementById(id).style.display = 'none';
+    }
     document.getElementById('base-dashboard-1').style.display = 'block';
     for(id of ids){
         document.getElementById(id).classList.remove('active');
@@ -164,8 +181,41 @@ document.getElementById('absdash').addEventListener('click', async function(){
     show_feature_request(data)
 })
 
+document.getElementById('livematches').addEventListener('click', async function(){
+    for(id of mids){
+        document.getElementById(id).style.display = 'none';
+    }
+    document.getElementById('livematches_container').style.display = 'block';
+    for(id of ids){
+        document.getElementById(id).classList.remove('active');
+    }
+    if(!document.getElementById('livematches').classList.contains('active'))
+        document.getElementById('livematches').classList.add('active');
+    data = await get_data('/getlivematches');
+    show_live_matches_data(data)
+})
+
+document.getElementById('userinfo').addEventListener('click', async function(){
+    for(id of mids){
+        document.getElementById(id).style.display = 'none';
+    }
+    document.getElementById('userinfodetails').style.display = 'block';
+    for(id of ids){
+        document.getElementById(id).classList.remove('active');
+    }
+    if(!document.getElementById('userinfo').classList.contains('active'))
+        document.getElementById('userinfo').classList.add('active');
+    data = await get_data('/getlivematches');
+    show_user_info_data(data)
+})
+
 if(document.URL.includes('absdash')){
     document.getElementById('absdash').click();
-}else{
-    document.getElementById('ageverdash').click();
+}else if(document.URL.includes('livematches')){
+    document.getElementById('livematches').click();
+}else if(document.URL.includes('userinfo')){
+    document.getElementById('userinfo').click();
+}
+else{
+    document.getElementById('ageverdash').click()
 }

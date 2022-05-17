@@ -4,6 +4,9 @@ from rest_framework.response import Response
 from rest_framework.status import HTTP_200_OK, HTTP_406_NOT_ACCEPTABLE, HTTP_400_BAD_REQUEST
 import re
 from vision11.email.send_email import send_mail
+from .serializers import UserSerializer
+from payments.models import Order
+from payments.serializers import OrderSerializer
 
 class UserValidation:
     '''
@@ -92,3 +95,12 @@ class admin_user_roles:
         send_mail(to=[user.email],subject=f'Sorry {user.username}! Your request for age verification is rejected.',message=f'Sorry {user.username}!\n\nWe understand about your efforts but this time your age verification request has been removed by our admin support either the document you\'ve uploaded is invalid or you are not 18+ years old. please try after some time with a legal document that can prove your age is 18+.\n\n\n Thanks and regards\n\n\nVision11.com')
         return redirect('/staff')
 
+
+class UserDetails:
+
+    def get_user_details(self,user):
+        real_user = User1.objects.get(username=user)
+        serializer = UserSerializer(real_user)
+        orders = Order.objects.filter(user=real_user)
+        serializer1 = OrderSerializer(orders,many=True)
+        return Response({'status':200,'message':'success','user':serializer.data,'orders':serializer1.data})
