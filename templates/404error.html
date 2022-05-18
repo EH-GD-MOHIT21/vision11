@@ -14,10 +14,17 @@
 
 <h5>error !</h5>
     <h1>404</h1>
+    {% if not message %}
     <p> Maybe this page moved? Got deleted? Is hiding out in quarantine? Never existed in the first place?
 			<br/>
-			<a href="#">Go Back</a>
+			<a href="/">Go Back</a>
 			or visit here later.</p>
+    {% else %}
+    <p> {{message}}
+        <br/>
+        <a href="/">Go Back</a>
+        </p>
+    {% endif %}
                 
 </body>
 </html>
