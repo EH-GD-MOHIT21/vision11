@@ -296,3 +296,21 @@ class vision11_render:
             return render(request,'contest.html',{'contest':zip(render_contest,available_slots,percentage_full),'teams':userteams})
         else:
             raise ValueError("User Team Doesn't Exists.")
+
+
+
+    def render_match_joined_contest(self,request,mid):
+        match = Match.objects.get(id=mid)
+        all_contest = Contest.objects.filter(match_id=match)
+        contests = []
+        available_slots = []
+        percentage_full =[]
+        for i in all_contest:
+            if(request.user in i.user.all()):
+                contests.append(i)
+                length = len(i.user.all())
+                if i.length > length:
+                    available_slots.append(i.length-length)
+                    num = round((length/i.length)*100,2)
+                    percentage_full.append(num)
+        return render(request,'usercontest.html',{'contests':zip(contests,available_slots,percentage_full)})

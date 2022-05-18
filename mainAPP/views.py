@@ -1,3 +1,4 @@
+from django.http import HttpResponseBadRequest
 from django.shortcuts import redirect, render
 from django.contrib.auth.decorators import login_required
 from rest_framework.response import Response
@@ -253,6 +254,18 @@ def RenderStaffPage(request):
         return redirect('/')
     except:
         return redirect('/')
+
+
+
+def RenderMatchJoinedContest(request,mid):
+    try:
+        if request.user.is_authenticated:
+            return vision11_render().render_match_joined_contest(request,mid)
+        return redirect('/accounts/login')
+    except Exception as e:
+        print(e)
+        return HttpResponseBadRequest('Either you have not joined any contest or try again later.')
+        
 
 
 
