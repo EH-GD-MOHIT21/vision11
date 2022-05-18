@@ -22,7 +22,11 @@ def RenderDashboard(request):
     This method is used for
     rendering dashboard page.
     '''
-    return render(request, 'dashboard.html')
+    try:
+        return vision11_render.render_dashboard(request)
+    except Exception as e:
+        print(e)
+        return redirect('/')
 
 
 @login_required(login_url='/accounts/login')
