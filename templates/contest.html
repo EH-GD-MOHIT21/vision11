@@ -34,10 +34,10 @@
                     margin: auto;
                     width: fit-content;
                     margin-top: 12px;">Choose your Default team: </label>
-                    <select name="userselectedteam" id="user_default_team_id" onchange="show_user_team()">
-                        <option value="{{ teams.0.id }}">Default Team(Team1)</option>
+                    <select name="userselectedteam" id="user_default_team_id" onchange="show_user_team(this)">
+                        <option value="{{ teams.0.id }} {{ teams.0.match_id.id }}">Default Team(Team1)</option>
                         {% for team in teams %}
-                        <option value="{{ team.id }}">Team{{ forloop.counter }}</option>
+                        <option value="{{ team.id }} {{ team.match_id.id }}">Team{{ forloop.counter }}</option>
                         {% endfor %}
                       </select>
                     {% for contest,slot,per in contest %}
@@ -90,7 +90,7 @@
                             </div>
                         </div>
                         <div class="join">
-                            <a href="#">Join Contest</a>
+                            <a href="#" id="privatejoincontest">Join Contest</a>
                         </div>
                     </div>
                 </div>
@@ -104,10 +104,10 @@
                         <option value="private">Private</option>
                       </select>
                       <label>Select your team: </label>
-                    <select name="userselectedteam" id="user_team" onchange="show_user_team()">
-                        <option value="{{ teams.0.id }}">Default Team(Team1)</option>
+                    <select name="userselectedteam" id="user_team" onchange="show_user_team(this)">
+                        <option value="{{ teams.0.id }} {{ teams.0.match_id.id }}">Default Team(Team1)</option>
                         {% for team in teams %}
-                        <option value="{{ team.match_id.id }}">Team{{ forloop.counter }}</option>
+                        <option value="{{ team.id }} {{ team.match_id.id }}">Team{{ forloop.counter }}</option>
                         {% endfor %}
                       </select>
                     <input placeholder="Enter Password" id="contest_pass_create" >
