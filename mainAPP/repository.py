@@ -263,10 +263,9 @@ class vision11_render:
             if(request.user in i.user.all()):
                 contests.append(i)
                 length = len(i.user.all())
-                if i.length > length:
-                    available_slots.append(i.length-length)
-                    num = round((length/i.length)*100,2)
-                    percentage_full.append(num)
+                available_slots.append(i.length-length)
+                num = round((length/i.length)*100,2)
+                percentage_full.append(num)
         return render(request,'usercontest.html',{'contests':zip(contests,available_slots,percentage_full)})
     
     def render_age_adminportal(self,request):
@@ -305,14 +304,13 @@ class vision11_render:
         contests = []
         available_slots = []
         percentage_full =[]
-        if not len(all_contest):
-            return render(request,'404error.html',{'message':'looks like you have not joined any contests.'})
         for i in all_contest:
             if(request.user in i.user.all()):
                 contests.append(i)
                 length = len(i.user.all())
-                if i.length > length:
-                    available_slots.append(i.length-length)
-                    num = round((length/i.length)*100,2)
-                    percentage_full.append(num)
+                available_slots.append(i.length-length)
+                num = round((length/i.length)*100,2)
+                percentage_full.append(num)
+        if not len(contests):
+            return render(request,'404error.html',{'message':'looks like you have not joined any contests.'})
         return render(request,'usercontest.html',{'contests':zip(contests,available_slots,percentage_full)})

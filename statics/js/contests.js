@@ -152,6 +152,11 @@ document.getElementById('search_con').addEventListener('click', async function()
 
 async function joinc(contest_id){
     var team_id = document.getElementById('user_default_team_id').value.split(' ')[0];
+    try{
+        var password = document.getElementById('contest_pass').value;
+    }catch(err){
+        var password = '';
+    }
     let response = await fetch("/joincontestapi", {
         credentials: 'include',
         method: 'POST',
@@ -164,6 +169,7 @@ async function joinc(contest_id){
         body: JSON.stringify({
             'team_id': team_id,
             'contest_id': contest_id,
+            'password':password
         })
     })
     if (response.ok) {
