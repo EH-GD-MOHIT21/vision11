@@ -105,6 +105,10 @@ class User1(AbstractUser):
         blank=True
     )
 
+    contests_won = models.IntegerField(
+        default=0
+    )
+
     objects = UserManager()
 
     @property

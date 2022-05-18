@@ -86,6 +86,7 @@ def ProvideMoneyUser(match_obj_id):
             user_team = teams[0]
             if user_team.user.currency_type == contest.fee_type:
                 user_team.user.vision_credits += round(price,2)
+                user_team.user.contests_won += 1
                 user_team.user.save()
                 VisionCurrencyDetails(user=user_team.user,currency_type_user=user_team.user.currency_type,payment=round(price,2),log=f'win a contest with id {contest.id}, team id {user_team.id}',currency_type_contest=contest.fee_type).save()
             else:
