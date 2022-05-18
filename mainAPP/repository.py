@@ -305,6 +305,8 @@ class vision11_render:
         contests = []
         available_slots = []
         percentage_full =[]
+        if not len(all_contest):
+            return render(request,'404error.html',{'message':'looks like you have not joined any contests.'})
         for i in all_contest:
             if(request.user in i.user.all()):
                 contests.append(i)

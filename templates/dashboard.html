@@ -70,6 +70,12 @@
           </a>
         </li>
         <li>
+          <a href="#mylogs" id="mylogs">
+            <i class='bx bx-list-ul'></i>
+            <span class="links_name">My logs</span>
+          </a>
+        </li>
+        <li>
           <a href="/accounts/logout">
             <i class='bx bx-book-alt'></i>
             <span class="links_name">logout</span>
@@ -139,25 +145,13 @@
           </div>
         </div>
 
-        <div class="sales-boxes">
-          <div class="recent-sales box">
-            <div class="title">Recent contests</div>
-            <div class="sales-details">
-              <ul class="details">
 
-              </ul>
-            </div>
-            <div class="button">
-              <a href="#">See All</a>
-            </div>
-          </div>
-        </div>
       </div>
 
       <div class="home-content age_content" id="age-verification-dashboard">
         <div class="overview-boxes overview_boxes_age">
           <div class="box box_age">
-            {% if user.aadhar_image == '' %}
+            {% if user.aadhar_image == '' and not user.is_adult %}
             <div class="right-side">
               <div class="box-topic">Your age is {{user.age}} please Verify via upload a valid proof.</div>
               <form method="post" action="/upload_valid_age_doc" enctype="multipart/form-data">
@@ -256,6 +250,12 @@
         </div>
       </div>
 
+      <div class="home-content" id="logs-dashboard">
+        <div class="overview-boxes overview_boxes_abs" id="logs-dashboard-main-container">
+
+        </div>
+      </div>
+
       <div class="home-content" id="help-feedback-dashboard">
         <div class="overview-boxes">
           <div class="suggestion_box">
@@ -319,9 +319,9 @@
 
     <script>
       // id of divs
-      elms = ["base-dashboard", "age-verification-dashboard", "about-us-dashboard", "help-feedback-dashboard","purchase-dashboard"]
+      elms = ["base-dashboard", "age-verification-dashboard", "about-us-dashboard", "help-feedback-dashboard","purchase-dashboard","logs-dashboard"]
       // id of a tags left
-      triggered = ["basedash", "ageverdash", "absdash", "hefedash","purchase"]
+      triggered = ["basedash", "ageverdash", "absdash", "hefedash","purchase","mylogs"]
       for (var i = 1; i < elms.length; i++) {
         document.getElementById(elms[i]).style.display = "none";
       }
@@ -348,8 +348,8 @@
   </body>
 
   <script>
-      const names = ["#purchase","#ageverification","#aboutus","#suggestafeature","#"]
-      const names_url = ["purchase","ageverdash","absdash","hefedash","basedash"]
+      const names = ["#mylogs","#purchase","#ageverification","#aboutus","#suggestafeature","#"]
+      const names_url = ["mylogs","purchase","ageverdash","absdash","hefedash","basedash"]
       for(var i=0;i<names.length;i++){
         if(document.URL.includes(names[i])){
           document.getElementById(names_url[i]).click();
