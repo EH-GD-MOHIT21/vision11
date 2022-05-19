@@ -130,7 +130,7 @@
                 <span class="text">Up from yesterday</span>
               </div>
             </div>
-            <i class='bx bx-cart cart three'></i>
+            <i class='bx bx-cart cart four'></i>
           </div>
           <div class="box">
             <div class="right-side">
@@ -154,11 +154,17 @@
             </div>
             <i class='bx bxs-cart-download cart four'></i>
           </div>
-
-          
         </div>
-
-
+        <script>
+          var wonmatches = {{numberwon}};
+          var lossmatches = {{numberloss}};
+          var pendingmatches = {{pending}};
+        </script>
+        <script src="https://www.amcharts.com/lib/4/core.js"></script>
+        <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+        <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+        <div id="chartdiv"></div>
+        <script src="{% static 'js/pie_chart.js' %}"></script>
       </div>
 
       <div class="home-content age_content" id="age-verification-dashboard">

@@ -150,6 +150,7 @@ nav .search-box .bx-search{
   color: #fff;
   font-size: 22px;
   transition: all 0.4 ease;
+  cursor: pointer;
 }
 .home-section nav .profile-details{
   display: flex;
@@ -598,6 +599,12 @@ margin-top: 25px;
   cursor: pointer;
   margin-right: 10px;
   margin-left: 10px;
+}
+
+#chartdiv {
+  width: 100%;
+  height: 500px;
+  color: white !important;
 }
 
 

@@ -191,8 +191,13 @@ function show_live_matches_data(data){
 
 
 function show_user_info_data(data){
-    console.log(data)
     const main_div = document.getElementById('userinfodetails')
+    if(data===undefined){
+        main_div.innerHTML = '<h1 style="color:white;text-align:center;margin:10px auto;">No user found with provided username</h1>'
+        return;
+    }else{
+        main_div.innerHTML = '';
+    }
     const parent = document.createElement('div');
     parent.className = 'userinfo-box';
     main_div.appendChild(parent)
@@ -256,9 +261,8 @@ function show_user_info_data(data){
         const order_status = document.createElement('div');
         order_status.textContent = `order_status : ${data['orders'][i].order_status}`
         details.appendChild(order_status);
-
-}
-for(var i=0;i<data['contest_logs'].length;i++){
+    }
+    for(var i=0;i<data['contest_logs'].length;i++){
     const fc = document.createElement('div');
     fc.className = 'user_logs';
     parent.appendChild(fc);
@@ -289,8 +293,7 @@ for(var i=0;i<data['contest_logs'].length;i++){
     const save_at = document.createElement('div');
     save_at.textContent = `save_at : ${data['contest_logs'][i].save_at}`
     details.appendChild(save_at);
-
-}
+    }
 }
 
 
@@ -349,9 +352,24 @@ document.getElementById('userinfo').addEventListener('click', async function(){
     }
     if(!document.getElementById('userinfo').classList.contains('active'))
         document.getElementById('userinfo').classList.add('active');
-    data = await get_data('/get_user_info/user=mohit');
-    show_user_info_data(data)
 })
+
+async function dothisforsearchuser(){
+    var username = document.getElementById('user_name_search_field').value;
+    if (username == '' || username.length < 1){
+        return
+    }
+    data = await get_data('/get_user_info/user='+username);
+    show_user_info_data(data)
+}
+
+document.getElementById('user_name_search_field').addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        dothisforsearchuser()
+    }
+});
+
+document.getElementById('finduserico').addEventListener('click',dothisforsearchuser)
 
 if(document.URL.includes('absdash')){
     document.getElementById('absdash').click();

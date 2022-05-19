@@ -26,7 +26,8 @@ class UserAdmin(BaseUserAdmin):
                     "adult",
                     "superuser",
                     "staff",
-                    "aadhar_image"
+                    "aadhar_image",
+                    "contests_won"
                 ],
             },
         ),

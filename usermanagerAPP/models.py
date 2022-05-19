@@ -1,6 +1,8 @@
 from locale import currency
 from django.db import models
 from django.utils import timezone
+
+from usermanagerAPP.exception import InvalidCurrencyType
 from .models_manager import UserManager
 from django.contrib.auth.models import AbstractUser
 from allauth.account.signals import user_logged_in
@@ -131,17 +133,16 @@ def pre_save(sender, instance, **kwargs):
         previous = User1.objects.get(id=instance.id)
     except:
         return
-    if previous.adult and previous.currency_type == 'vision coins':
-        if instance.currency_type == 'vision candies':
-            print(instance.currency_type)
-            instance.currency_type = Choices.VISION_COINS
-        if not instance.adult:
-            instance.adult = True
-    if previous.adult != instance.adult and instance.adult:
-        instance.currency_type = Choices.VISION_COINS
+    if previous.currency_type == instance.currency_type and previous.adult == instance.adult:
+        return
+    if previous.currency_type == 'vision candies' and instance.currency_type == 'vision coins' and not previous.adult and instance.adult:
         instance.vision_credits = 0
-    elif previous.currency_type != instance.currency_type:
-        instance.vision_credits = 0
+    elif previous.adult and instance.adult:
+        raise InvalidCurrencyType("You are probably demoting the Currency That is Not allowed.")
+    elif not previous.adult and instance.adult:
+        raise InvalidCurrencyType('Please specify vision coins as your currency.')
+    else:
+        raise InvalidCurrencyType()
 
 
 
