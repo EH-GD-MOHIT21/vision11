@@ -68,6 +68,13 @@ def Set_Seen_FeatureRequest(request,fid):
     except:
         return redirect('/')
 
+class Set_End_Match(APIView):
+    def get(self,request,mid):
+        try:
+            if request.user.is_authenticated and request.user.is_staff:
+                return vision11().set_match_end(mid)
+        except:
+            return Response({'status':200,'message':'Invalid request'})
 
 @login_required(login_url='/accounts/login')
 def RenderTeamSelection(request,mid):

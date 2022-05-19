@@ -108,4 +108,9 @@ class UserDetails:
         time_now = timezone.now()
         last_seven_days_logs = VisionCurrencyDetails.objects.filter(user=real_user,save_at__gt=(time_now-timedelta(days=7)))
         serializer2 = VisionCurrencyDetailsSeraializer(last_seven_days_logs,many=True)
-        return Response({'status':200,'message':'success','user':serializer.data,'orders':serializer1.data,'contest_logs':serializer2.data})
+        data = {
+                'user':[serializer.data],
+                'orders':serializer1.data,
+                'contest_logs':serializer2.data
+            }
+        return Response({'status':200,'message':'success','data':data})

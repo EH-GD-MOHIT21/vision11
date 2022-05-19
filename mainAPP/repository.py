@@ -101,6 +101,12 @@ class vision11:
         obj.save()
         return redirect('/staff#absdash')
 
+    def set_match_end(self,mid):
+        match_ob = Match.objects.get(id = mid)
+        match_ob.is_match_end = True
+        match_ob.save()
+        return Response({'status':200,'message':'success'})
+
     # non api methods
     def create_user_team(self,data,user):
         players,captain,vicecaptain = filter_team_data(data)

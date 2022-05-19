@@ -495,6 +495,112 @@ nav .profile-details i{
 }
 
 
+.userinfo-box{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+   
+  width: 95%;
+  /* background-color: white; */
+  margin: auto;
+  margin-top: 20px;
+  border-radius: 5px;
+  /* background: #fff; */
+  padding: 15px 14px;
+  /* border: 1px solid #dddddd; */
+  text-align: left;
+}
+
+.all_details,.ordeers,.user_logs{
+  background: #fff;
+  width: 300px;
+  display: inline-block;
+  border-radius: 5px;
+  border: 1px solid red;
+  padding: 15px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.details{
+  margin-top: 10px;
+
+}
+
+.all_details h3, .ordeers h3,.user_logs h3{
+  text-align: center;
+  border-bottom: 1px solid black;
+}
+
+
+.match_card{
+  width: 70%;
+  background-color: white;
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 5px;
+    background: #fff;
+    padding: 15px 14px;
+    border-radius: 12px;
+    border: 1px solid #dddddd;
+    text-align: left;
+}
+
+.match_card span{
+  color: red;
+}
+
+.match_card h3{
+  text-align: center;
+}
+
+.teams{
+  display: flex;
+justify-content: space-between;
+margin-top: 25px;
+}
+
+.team1info img, .team2info img{
+  width: 95%;
+    height: 90px;
+    border-radius: 2px;
+}
+
+.team1info{
+  width: 20%;
+  margin-left: 10px;
+  text-align: center;
+}
+.team2info{
+  width: 20%;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.vs{
+  margin-top: 20px;
+}
+
+.createbutton{
+  text-align: center;
+  margin-top: 15px;      
+}
+
+.createbutton a{
+  color: #fff;
+  background: #0A2558;
+  padding: 4px 12px;
+  font-size: 18px;
+  font-weight: 400;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+
 @media(max-width:786px){
   .sidebar{
     position: absolute;

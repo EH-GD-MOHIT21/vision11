@@ -1,113 +1,111 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Staff Dashboard @ Vision11</title>
-    <link
-      rel="shortcut icon"
-      href="/static/imgs/web/favicon.ico"
-      type="image/x-icon"
-    />
-    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}" />
-  </head>
 
-  <body>
-    <div class="sidebar">
-      <div class="logo-details">
-        <i class="bx bxl-c-plus-plus"></i>
-        <span class="logo_name">vision11</span>
-      </div>
-      <ul class="nav-links">
-        <li>
-          <a href="/">
-            <i class="bx bx-list-ul"></i>
-            <span class="links_name">Home</span>
-          </a>
-        </li>
-        <li>
-          <a href="/dashboard">
-            <i class="bx bx-grid-alt"></i>
-            <span class="links_name">Go to Dashboard</span>
-          </a>
-        </li>
-        <li>
-          <a href="#ageverdash" id="ageverdash" class="active">
-            <i class="bx bx-list-ul"></i>
-            <span class="links_name">age verification request</span>
-          </a>
-        </li>
-        <li>
-          <a href="/adminchatbox">
-            <i class="bx bx-list-ul"></i>
-            <span class="links_name">Join Admin Support</span>
-          </a>
-        </li>
-        <li>
-          <a href="#absdash" id="absdash">
-            <i class="bx bx-pie-chart-alt-2"></i>
-            <span class="links_name">Features request</span>
-          </a>
-        </li>
-        <li>
-          <a href="#livematches" id="livematches">
-            <i class="bx bx-pie-chart-alt-2"></i>
-            <span class="links_name">live matches</span>
-          </a>
-        </li>
-        <li>
-          <a href="#userinfo" id="userinfo">
-            <i class="bx bx-pie-chart-alt-2"></i>
-            <span class="links_name">user info</span>
-          </a>
-        </li>
-        <li>
-          <a href="/accounts/logout">
-            <i class="bx bx-book-alt"></i>
-            <span class="links_name">logout</span>
-          </a>
-        </li>
-      </ul>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Staff Dashboard @ Vision11</title>
+  <link rel="shortcut icon" href="/static/imgs/web/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="{% static 'css/dashboard.css' %}" />
+</head>
+
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+      <i class="bx bxl-c-plus-plus"></i>
+      <span class="logo_name">vision11</span>
     </div>
-    <section class="home-section">
-      <nav>
-        <div class="sidebar-button">
-          <i class="bx bx-menu sidebarBtn"></i>
-          <span class="dashboard" style="color: white">Dashboard</span>
-        </div>
-        <div class="search-box">
-          <input type="text" placeholder="Search..." />
-          <i class="bx bx-search"></i>
-        </div>
-        <div class="profile-details">
-          <!--<img src="images/profile.jpg" alt="">-->
-          <span class="admin_name">Hey! {{user.username}}</span>
-          <i class="bx bx-chevron-down"></i>
-        </div>
-      </nav>
+    <ul class="nav-links">
+      <li>
+        <a href="/">
+          <i class="bx bx-list-ul"></i>
+          <span class="links_name">Home</span>
+        </a>
+      </li>
+      <li>
+        <a href="/dashboard">
+          <i class="bx bx-grid-alt"></i>
+          <span class="links_name">Go to Dashboard</span>
+        </a>
+      </li>
+      <li>
+        <a href="#ageverdash" id="ageverdash" class="active">
+          <i class="bx bx-list-ul"></i>
+          <span class="links_name">age verification request</span>
+        </a>
+      </li>
+      <li>
+        <a href="/adminchatbox">
+          <i class="bx bx-list-ul"></i>
+          <span class="links_name">Join Admin Support</span>
+        </a>
+      </li>
+      <li>
+        <a href="#absdash" id="absdash">
+          <i class="bx bx-pie-chart-alt-2"></i>
+          <span class="links_name">Features request</span>
+        </a>
+      </li>
+      <li>
+        <a href="#livematches" id="livematches">
+          <i class="bx bx-pie-chart-alt-2"></i>
+          <span class="links_name">live matches</span>
+        </a>
+      </li>
+      <li>
+        <a href="#userinfo" id="userinfo">
+          <i class="bx bx-pie-chart-alt-2"></i>
+          <span class="links_name">user info</span>
+        </a>
+      </li>
+      <li>
+        <a href="/accounts/logout">
+          <i class="bx bx-book-alt"></i>
+          <span class="links_name">logout</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <section class="home-section">
+    <nav>
+      <div class="sidebar-button">
+        <i class="bx bx-menu sidebarBtn"></i>
+        <span class="dashboard" style="color: white">Dashboard</span>
+      </div>
+      <div class="search-box">
+        <input type="text" placeholder="Search..." />
+        <i class="bx bx-search"></i>
+      </div>
+      <div class="profile-details">
+        <!--<img src="images/profile.jpg" alt="">-->
+        <span class="admin_name">Hey! {{user.username}}</span>
+        <i class="bx bx-chevron-down"></i>
+      </div>
+    </nav>
 
-      <div class="home-content" id="base-dashboard">
-      </div>
-      <div class="home-content" id="base-dashboard-1">
-      </div>
-      <div class="home-content" id="livematches_container">
-      </div>
-      <div class="home-content" id="userinfodetails">
-      </div>
-    </section>
+    <div class="home-content" id="base-dashboard">
+    </div>
+    <div class="home-content" id="base-dashboard-1">
+    </div>
+    <div class="home-content" id="livematches_container">
+    </div>
+    <div class="home-content" id="userinfodetails">
+    </div>
+  </section>
 
-    <script>
-      let sidebar = document.querySelector(".sidebar");
-      let sidebarBtn = document.querySelector(".sidebarBtn");
-      sidebarBtn.onclick = function () {
-        sidebar.classList.toggle("active");
-        if (sidebar.classList.contains("active")) {
-          sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
-        } else sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
-      };
-    </script>
-  </body>
-  <script src="{% static 'js/staff.js' %}"></script>
+  <script>
+    let sidebar = document.querySelector(".sidebar");
+    let sidebarBtn = document.querySelector(".sidebarBtn");
+    sidebarBtn.onclick = function () {
+      sidebar.classList.toggle("active");
+      if (sidebar.classList.contains("active")) {
+        sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+      } else sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+    };
+  </script>
+</body>
+<script src="{% static 'js/staff.js' %}"></script>
+
 </html>
