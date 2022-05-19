@@ -26,5 +26,6 @@ urlpatterns = [
     path('userteam/match=<int:mid>/team=<int:tid>',views.RenderUserTeam),
     path('mycontests',views.RenderUserContest),
     path('contestdetails/contest=<int:cid>',views.RenderContestDetails),
-    path('is_match_end_true/match=<int:mid>',views.Set_End_Match.as_view())
+    path('is_match_end_true/match=<int:mid>',views.Set_End_Match.as_view()),
+    path('viewcontest/match=<int:mid>',views.RenderMatchJoinedContest),
 ]

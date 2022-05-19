@@ -64,7 +64,7 @@ document.getElementById('create_con').addEventListener('click', async function()
     var c_length = document.getElementById('contest_max_mem').value;
     var c_type = document.getElementById('type_conteste').value;
     var password = document.getElementById('contest_pass_create').value;
-    var team = document.getElementById('user_team').value;
+    var team = document.getElementById('user_team').value.split(' ')[0];
     let response = await fetch("/createcontestapi", {
         credentials: 'include',
         method: 'POST',
@@ -97,10 +97,11 @@ document.getElementById('create_con').addEventListener('click', async function()
     }
 })
 
-function show_user_team(){
-    team = document.getElementById("user_team").value;
+function show_user_team(elm){
+    team = elm.value;
+    [team, match] = team.split(' ');
     window.open(
-        '/userteam/match='+team,
+        '/userteam/match='+match+'/team='+team,
         '_blank'
       );
 }
@@ -134,6 +135,9 @@ document.getElementById('search_con').addEventListener('click', async function()
             document.getElementById('private_spot_left1').textContent = parseInt(data["length"])-data["user"].length + " Spots left";
             document.getElementById('private_total_spots1').textContent = data["length"] + " Spots"
             document.getElementById('private_prog1').value = (data["user"].length/data["length"])*100
+            document.getElementById('privatejoincontest').addEventListener('click',function(){
+                joinc(data["id"]);
+            })
         }
         if(message=='success'){
             document.getElementById('privatesearchresult').style.display = 'block';
@@ -147,8 +151,12 @@ document.getElementById('search_con').addEventListener('click', async function()
 
 
 async function joinc(contest_id){
-    var team_id = document.getElementById('user_default_team_id').value;
-
+    var team_id = document.getElementById('user_default_team_id').value.split(' ')[0];
+    try{
+        var password = document.getElementById('contest_pass').value;
+    }catch(err){
+        var password = '';
+    }
     let response = await fetch("/joincontestapi", {
         credentials: 'include',
         method: 'POST',
@@ -161,6 +169,7 @@ async function joinc(contest_id){
         body: JSON.stringify({
             'team_id': team_id,
             'contest_id': contest_id,
+            'password':password
         })
     })
     if (response.ok) {

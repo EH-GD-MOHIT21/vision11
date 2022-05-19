@@ -269,10 +269,9 @@ class vision11_render:
             if(request.user in i.user.all()):
                 contests.append(i)
                 length = len(i.user.all())
-                if i.length > length:
-                    available_slots.append(i.length-length)
-                    num = round((length/i.length)*100,2)
-                    percentage_full.append(num)
+                available_slots.append(i.length-length)
+                num = round((length/i.length)*100,2)
+                percentage_full.append(num)
         return render(request,'usercontest.html',{'contests':zip(contests,available_slots,percentage_full)})
     
     def render_age_adminportal(self,request):
@@ -302,3 +301,38 @@ class vision11_render:
             return render(request,'contest.html',{'contest':zip(render_contest,available_slots,percentage_full),'teams':userteams})
         else:
             raise ValueError("User Team Doesn't Exists.")
+
+
+
+    def render_match_joined_contest(self,request,mid):
+        match = Match.objects.get(id=mid)
+        all_contest = Contest.objects.filter(match_id=match)
+        contests = []
+        available_slots = []
+        percentage_full =[]
+        for i in all_contest:
+            if(request.user in i.user.all()):
+                contests.append(i)
+                length = len(i.user.all())
+                available_slots.append(i.length-length)
+                num = round((length/i.length)*100,2)
+                percentage_full.append(num)
+        if not len(contests):
+            return render(request,'404error.html',{'message':'looks like you have not joined any contests.'})
+        return render(request,'usercontest.html',{'contests':zip(contests,available_slots,percentage_full)})
+
+
+
+
+    def render_dashboard(request):
+        contests = Contest.objects.all()
+        contest_joined = []
+        pending_res = 0
+        number_contests = len(contests)
+        for contest in contests:
+            if request.user in contest.user.all():
+                contest_joined.append(contest)
+                number_contests += 1
+            if not contest.match_id.is_match_end:
+                pending_res += 1
+        return render(request, 'dashboard.html',{'contests':contest_joined,'numberjoined':number_contests,'numberwon':request.user.contests_won,'numberloss':number_contests-request.user.contests_won-pending_res,'pending':pending_res})
