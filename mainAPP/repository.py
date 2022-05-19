@@ -264,6 +264,9 @@ class vision11_render:
         contests = []
         available_slots = []
         percentage_full =[]
+        user_wined_contest = []
+        user_wined_slot = []
+        user_wined_perc = []
         all_contest = Contest.objects.all()
         for i in all_contest:
             if(request.user in i.user.all()):
@@ -272,7 +275,13 @@ class vision11_render:
                 available_slots.append(i.length-length)
                 num = round((length/i.length)*100,2)
                 percentage_full.append(num)
-        return render(request,'usercontest.html',{'contests':zip(contests,available_slots,percentage_full)})
+                if(i.reward_claimed==True):
+                    if(i.teams.all().order_by('-total_team_points')[0].user==request.user):
+                        user_wined_contest.append(i)
+                        user_wined_slot.append(i.length-length)
+                        num = round((length/i.length)*100,2)
+                        user_wined_perc.append(num)
+        return render(request,'usercontest.html',{'contests':zip(contests,available_slots,percentage_full),'live_contests':zip(contests,available_slots,percentage_full),'com_contests':zip(contests,available_slots,percentage_full),'user_wined':zip(user_wined_contest,user_wined_slot,user_wined_perc)})
     
     def render_age_adminportal(self,request):
         users = User1.objects.filter(adult=False)

@@ -102,3 +102,23 @@ body {
 .maincont{
     margin-top: 10px;
 }
+
+.user_wined{
+    display: none;
+}
+
+select#user_team{
+    display: block;
+    width: 60%;
+    margin: auto;
+    margin-bottom: 10px;
+    padding: 3px;
+    font-size: 18px;
+    border-radius: 5px;
+    border: 1px solid #dddddd;
+    margin-top: 3px;
+}
+
+.completed, .live{
+    display: none;
+}

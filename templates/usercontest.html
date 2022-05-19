@@ -20,6 +20,16 @@
 <body>
     <div class="multicolorbg">
         <div class="box" id="box">
+            <select name="contestfilter" id="user_team" onchange="change_filter(id)">
+                <option value="All Contest">All Contest</option>
+                <option value="Completed">Completed</option>
+                <option value="My Winning Contests">My Wining Contest</option>
+                <option value="Live Contests">Live Contest</option>
+              </select>
+
+             
+
+            <div class="allcontest" id="allcontest">
             {% for contest,slot,per in contests %}
             <div class="contest">
                 <div class="mathc_name">
@@ -57,9 +67,167 @@
                 </div>
                 {% endfor %}
             </div>
+
+
+            
+                <div class="completed" id="completed">
+                    {% for contest,slot,per in com_contests %}
+                    {% if contest.match_id.is_match_end %}
+                    <div class="contest">
+                        <div class="mathc_name">
+                            <span>Id: {{ contest.id }}, match: {{ contest.match_id.title }}</span>
+                        </div>
+                        <div class="maincont">
+                        <div class="heade">
+                            <span class="prz">Prize</span>
+                            {% if contest.contest_type == 'public' %}
+                            <span class="entr">Entry <i class="fa fa-users" aria-hidden="true"></i>
+                            
+                            </span>
+                            {% else %}
+                            <span class="entr">Entry<i class="fa fa-lock" aria-hidden="true"></i>
+                            
+                            </span>
+                            {% endif %}
+                        </div>
+                        <div class="money_container">
+                            <span id="prize" class="prize"><i class="fa fa-inr" aria-hidden="true"></i>
+                                {{ contest.price_fee }}</span>
+                            <span id="entryfee1" class="entryfe">{{ contest.entry_fee }} {{ contest.fee_type }}</span>
+                        </div>
+                        <div class="progress_bar">
+                            <progress id="prog1" value="{{ per }}" max="100" class="prog_bar"> 0% </progress>
+                            <div class="spots">
+                                <span id="spot_left1" class="spot_left">{{ slot }} Spots left</span>
+                                <span id="total_spots1" class="total_spot">{{ contest.length }} Spots</span>
+                            </div>
+                        </div>
+                        <div class="join">
+                            <a href = "/contestdetails/contest={{ contest.id }}">View Teams</a>
+                        </div>
+                    </div>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                </div>
+
+
+                
+                <div class="user_wined" id="winings">
+                    {% for contest,slot,per in user_wined %}
+                    <div class="contest">
+                        <div class="mathc_name">
+                            <span>Id: {{ contest.id }}, match: {{ contest.match_id.title }}</span>
+                        </div>
+                        <div class="maincont">
+                        <div class="heade">
+                            <span class="prz">Prize</span>
+                            {% if contest.contest_type == 'public' %}
+                            <span class="entr">Entry <i class="fa fa-users" aria-hidden="true"></i>
+                            
+                            </span>
+                            {% else %}
+                            <span class="entr">Entry<i class="fa fa-lock" aria-hidden="true"></i>
+                            
+                            </span>
+                            {% endif %}
+                        </div>
+                        <div class="money_container">
+                            <span id="prize" class="prize"><i class="fa fa-inr" aria-hidden="true"></i>
+                                {{ contest.price_fee }}</span>
+                            <span id="entryfee1" class="entryfe">{{ contest.entry_fee }} {{ contest.fee_type }}</span>
+                        </div>
+                        <div class="progress_bar">
+                            <progress id="prog1" value="{{ per }}" max="100" class="prog_bar"> 0% </progress>
+                            <div class="spots">
+                                <span id="spot_left1" class="spot_left">{{ slot }} Spots left</span>
+                                <span id="total_spots1" class="total_spot">{{ contest.length }} Spots</span>
+                            </div>
+                        </div>
+                        <div class="join">
+                            <a href = "/contestdetails/contest={{ contest.id }}">View Teams</a>
+                        </div>
+                    </div>
+                        </div>
+                    {% endfor %}
+                </div>
+
+
+
+                <div class="live" id="live">
+                    {% for contest,slot,per in live_contests %}
+                    {% if not contest.match_id.is_match_end %}
+                    <div class="contest">
+                        <div class="mathc_name">
+                            <span>Id: {{ contest.id }}, match: {{ contest.match_id.title }}</span>
+                        </div>
+                        <div class="maincont">
+                        <div class="heade">
+                            <span class="prz">Prize</span>
+                            {% if contest.contest_type == 'public' %}
+                            <span class="entr">Entry <i class="fa fa-users" aria-hidden="true"></i>
+                            
+                            </span>
+                            {% else %}
+                            <span class="entr">Entry<i class="fa fa-lock" aria-hidden="true"></i>
+                            
+                            </span>
+                            {% endif %}
+                        </div>
+                        <div class="money_container">
+                            <span id="prize" class="prize"><i class="fa fa-inr" aria-hidden="true"></i>
+                                {{ contest.price_fee }}</span>
+                            <span id="entryfee1" class="entryfe">{{ contest.entry_fee }} {{ contest.fee_type }}</span>
+                        </div>
+                        <div class="progress_bar">
+                            <progress id="prog1" value="{{ per }}" max="100" class="prog_bar"> 0% </progress>
+                            <div class="spots">
+                                <span id="spot_left1" class="spot_left">{{ slot }} Spots left</span>
+                                <span id="total_spots1" class="total_spot">{{ contest.length }} Spots</span>
+                            </div>
+                        </div>
+                        <div class="join">
+                            <a href = "/contestdetails/contest={{ contest.id }}">View Teams</a>
+                        </div>
+                    </div>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                </div>
+    
+
+
+            </div>
         </div>
-        
-    </div>
 
 </body>
+<script>
+    function change_filter(id){
+        val = document.getElementById(id).value;
+        if(val== 'All Contest'){
+            document.getElementById('allcontest').style.display='block';
+            document.getElementById('winings').style.display='none';
+            document.getElementById('completed').style.display='none';
+            document.getElementById('live').style.display='none';
+        }
+        else if(val=='Completed'){
+            document.getElementById('allcontest').style.display='none';
+            document.getElementById('winings').style.display='none';
+            document.getElementById('completed').style.display='block';
+            document.getElementById('live').style.display='none';
+        }
+        else if(val == 'My Winning Contests'){
+            document.getElementById('allcontest').style.display='none';
+            document.getElementById('winings').style.display='block';
+            document.getElementById('completed').style.display='none';
+            document.getElementById('live').style.display='none';
+        }
+        else if(val == 'Live Contests'){
+            document.getElementById('allcontest').style.display='none';
+            document.getElementById('winings').style.display='none';
+            document.getElementById('completed').style.display='none';
+            document.getElementById('live').style.display='block';
+        }
+    }
+</script>
 </html>
