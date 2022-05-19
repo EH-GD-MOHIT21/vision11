@@ -82,7 +82,7 @@ def ProvideMoneyUser(match_obj_id):
     for contest in contests:
         if not contest.reward_claimed:
             teams = contest.teams.all().order_by('-total_team_points')
-            price = (contest.price_fee/contest.length)/len(teams)
+            price = (contest.price_fee/contest.length)*len(teams)
             user_team = teams[0]
             if user_team.user.currency_type == contest.fee_type:
                 user_team.user.vision_credits += round(price,2)

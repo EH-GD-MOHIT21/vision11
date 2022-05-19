@@ -328,11 +328,11 @@ class vision11_render:
         contests = Contest.objects.all()
         contest_joined = []
         pending_res = 0
-        number_contests = len(contests)
+        number_contests = 0
         for contest in contests:
             if request.user in contest.user.all():
                 contest_joined.append(contest)
                 number_contests += 1
-            if not contest.match_id.is_match_end:
-                pending_res += 1
+                if not contest.match_id.is_match_end:
+                    pending_res += 1
         return render(request, 'dashboard.html',{'contests':contest_joined,'numberjoined':number_contests,'numberwon':request.user.contests_won,'numberloss':number_contests-request.user.contests_won-pending_res,'pending':pending_res})
