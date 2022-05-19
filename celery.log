@@ -1,0 +1,109 @@
+[2022-05-18 21:39:50,946: INFO/MainProcess] Connected to redis://localhost:6379//
+[2022-05-18 21:39:50,946: INFO/MainProcess] mingle: searching for neighbors
+[2022-05-18 21:39:51,986: INFO/MainProcess] mingle: all alone
+[2022-05-18 21:39:52,046: WARNING/MainProcess] C:\Users\Gopi Krishna\Envs\vision11\lib\site-packages\celery\fixups\django.py:203: UserWarning: Using settings.DEBUG leads to a memory
+            leak, never use this setting in production environments!
+  warnings.warn('''Using settings.DEBUG leads to a memory
+
+[2022-05-18 21:39:52,046: INFO/MainProcess] celery@LAPTOP-TFIEU3FN ready.
+[2022-05-18 21:39:52,078: INFO/MainProcess] pidbox: Connected to redis://localhost:6379//.
+[2022-05-18 21:40:16,050: INFO/MainProcess] Task get_live_score[302f41fa-3cc4-4baf-a249-b81490d55292] received
+[2022-05-18 21:40:16,134: INFO/MainProcess] Task get_live_score[302f41fa-3cc4-4baf-a249-b81490d55292] succeeded in 0.06199999991804361s: None
+[2022-05-18 21:40:16,134: INFO/MainProcess] Task fetch_match_list[23cb9a06-130f-4bd8-a8ff-8f4ba264145d] received
+[2022-05-18 21:40:16,697: INFO/MainProcess] Task fetch_match_list[23cb9a06-130f-4bd8-a8ff-8f4ba264145d] succeeded in 0.5630000000819564s: None
+[2022-05-18 21:40:40,307: INFO/MainProcess] Connected to redis://localhost:6379//
+[2022-05-18 21:40:40,323: INFO/MainProcess] mingle: searching for neighbors
+[2022-05-18 21:40:41,363: INFO/MainProcess] mingle: all alone
+[2022-05-18 21:40:41,427: WARNING/MainProcess] C:\Users\Gopi Krishna\Envs\vision11\lib\site-packages\celery\fixups\django.py:203: UserWarning: Using settings.DEBUG leads to a memory
+            leak, never use this setting in production environments!
+  warnings.warn('''Using settings.DEBUG leads to a memory
+
+[2022-05-18 21:40:41,443: INFO/MainProcess] celery@LAPTOP-TFIEU3FN ready.
+[2022-05-18 21:40:41,482: INFO/MainProcess] pidbox: Connected to redis://localhost:6379//.
+[2022-05-18 21:41:11,875: INFO/MainProcess] Connected to redis://localhost:6379//
+[2022-05-18 21:41:11,891: INFO/MainProcess] mingle: searching for neighbors
+[2022-05-18 21:41:12,936: INFO/MainProcess] mingle: all alone
+[2022-05-18 21:41:12,967: INFO/MainProcess] pidbox: Connected to redis://localhost:6379//.
+[2022-05-18 21:41:13,001: WARNING/MainProcess] C:\Users\Gopi Krishna\Envs\vision11\lib\site-packages\celery\fixups\django.py:203: UserWarning: Using settings.DEBUG leads to a memory
+            leak, never use this setting in production environments!
+  warnings.warn('''Using settings.DEBUG leads to a memory
+
+[2022-05-18 21:41:13,001: INFO/MainProcess] celery@LAPTOP-TFIEU3FN ready.
+[2022-05-18 21:43:15,995: INFO/MainProcess] Task get_live_score[071bb551-0f13-4bf4-bd6f-6ddc2ea0d103] received
+[2022-05-18 21:43:16,011: INFO/MainProcess] get_live_score[071bb551-0f13-4bf4-bd6f-6ddc2ea0d103]: updating live score for: https://www.cricbuzz.com/live-cricket-scorecard/46211/kkr-vs-lsg-66th-match-indian-premier-league-2022 at 2022-05-18 16:13:16.011655+00:00 hours!
+[2022-05-18 21:43:18,254: INFO/MainProcess] get_live_score[071bb551-0f13-4bf4-bd6f-6ddc2ea0d103]: successfully updated live score for: https://www.cricbuzz.com/live-cricket-scorecard/46211/kkr-vs-lsg-66th-match-indian-premier-league-2022 at 2022-05-18 16:13:18.254046+00:00 hours!
+[2022-05-18 21:43:18,254: INFO/MainProcess] get_live_score[071bb551-0f13-4bf4-bd6f-6ddc2ea0d103]: updating live score for: https://www.cricbuzz.com/live-cricket-scorecard/46611/ban-vs-sl-1st-test-day-4-sri-lanka-tour-of-bangladesh-2022 at 2022-05-18 16:13:18.254046+00:00 hours!
+[2022-05-18 21:43:18,942: WARNING/MainProcess] True
+[2022-05-18 21:43:18,942: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 14273
+[2022-05-18 21:43:19,110: WARNING/MainProcess] True
+[2022-05-18 21:43:19,110: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 12081
+[2022-05-18 21:43:19,158: WARNING/MainProcess] True
+[2022-05-18 21:43:19,158: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13105
+[2022-05-18 21:43:19,166: WARNING/MainProcess] True
+[2022-05-18 21:43:19,166: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13791
+[2022-05-18 21:43:19,438: WARNING/MainProcess] True
+[2022-05-18 21:43:19,438: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 8413
+[2022-05-18 21:43:19,478: INFO/MainProcess] get_live_score[071bb551-0f13-4bf4-bd6f-6ddc2ea0d103]: successfully updated live score for: https://www.cricbuzz.com/live-cricket-scorecard/46611/ban-vs-sl-1st-test-day-4-sri-lanka-tour-of-bangladesh-2022 at 2022-05-18 16:13:19.478765+00:00 hours!
+[2022-05-18 21:43:19,632: INFO/MainProcess] Task get_live_score[071bb551-0f13-4bf4-bd6f-6ddc2ea0d103] succeeded in 3.625s: None
+[2022-05-18 21:46:16,121: INFO/MainProcess] Task get_live_score[69f2c1c3-8458-404e-ad75-f7cb54f607e4] received
+[2022-05-18 21:46:16,130: INFO/MainProcess] get_live_score[69f2c1c3-8458-404e-ad75-f7cb54f607e4]: updating live score for: https://www.cricbuzz.com/live-cricket-scorecard/46211/kkr-vs-lsg-66th-match-indian-premier-league-2022 at 2022-05-18 16:16:16.130522+00:00 hours!
+[2022-05-18 21:46:17,927: INFO/MainProcess] get_live_score[69f2c1c3-8458-404e-ad75-f7cb54f607e4]: successfully updated live score for: https://www.cricbuzz.com/live-cricket-scorecard/46211/kkr-vs-lsg-66th-match-indian-premier-league-2022 at 2022-05-18 16:16:17.927626+00:00 hours!
+[2022-05-18 21:46:17,927: INFO/MainProcess] get_live_score[69f2c1c3-8458-404e-ad75-f7cb54f607e4]: updating live score for: https://www.cricbuzz.com/live-cricket-scorecard/46611/ban-vs-sl-1st-test-day-4-sri-lanka-tour-of-bangladesh-2022 at 2022-05-18 16:16:17.927626+00:00 hours!
+[2022-05-18 21:46:18,654: WARNING/MainProcess] True
+[2022-05-18 21:46:18,654: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 14273
+[2022-05-18 21:46:18,759: WARNING/MainProcess] True
+[2022-05-18 21:46:18,759: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 12081
+[2022-05-18 21:46:18,784: WARNING/MainProcess] True
+[2022-05-18 21:46:18,784: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13105
+[2022-05-18 21:46:18,784: WARNING/MainProcess] True
+[2022-05-18 21:46:18,799: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13791
+[2022-05-18 21:46:18,955: WARNING/MainProcess] True
+[2022-05-18 21:46:18,955: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 8413
+[2022-05-18 21:46:18,987: INFO/MainProcess] get_live_score[69f2c1c3-8458-404e-ad75-f7cb54f607e4]: successfully updated live score for: https://www.cricbuzz.com/live-cricket-scorecard/46611/ban-vs-sl-1st-test-day-4-sri-lanka-tour-of-bangladesh-2022 at 2022-05-18 16:16:18.987249+00:00 hours!
+[2022-05-18 21:46:19,035: INFO/MainProcess] Task get_live_score[69f2c1c3-8458-404e-ad75-f7cb54f607e4] succeeded in 2.9070000000065193s: None
+[2022-05-18 21:49:16,062: INFO/MainProcess] Task get_live_score[6ed60b8c-30b4-4351-be29-b26fc789c939] received
+[2022-05-18 21:49:16,078: INFO/MainProcess] get_live_score[6ed60b8c-30b4-4351-be29-b26fc789c939]: updating live score for: https://www.cricbuzz.com/live-cricket-scorecard/46211/kkr-vs-lsg-66th-match-indian-premier-league-2022 at 2022-05-18 16:19:16.078293+00:00 hours!
+[2022-05-18 21:49:17,926: INFO/MainProcess] get_live_score[6ed60b8c-30b4-4351-be29-b26fc789c939]: successfully updated live score for: https://www.cricbuzz.com/live-cricket-scorecard/46211/kkr-vs-lsg-66th-match-indian-premier-league-2022 at 2022-05-18 16:19:17.926328+00:00 hours!
+[2022-05-18 21:49:17,926: INFO/MainProcess] get_live_score[6ed60b8c-30b4-4351-be29-b26fc789c939]: updating live score for: https://www.cricbuzz.com/live-cricket-scorecard/46611/ban-vs-sl-1st-test-day-4-sri-lanka-tour-of-bangladesh-2022 at 2022-05-18 16:19:17.926328+00:00 hours!
+[2022-05-18 21:49:18,902: WARNING/MainProcess] True
+[2022-05-18 21:49:18,902: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 14273
+[2022-05-18 21:49:18,984: WARNING/MainProcess] True
+[2022-05-18 21:49:18,984: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 12081
+[2022-05-18 21:49:19,006: WARNING/MainProcess] True
+[2022-05-18 21:49:19,006: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13105
+[2022-05-18 21:49:19,019: WARNING/MainProcess] True
+[2022-05-18 21:49:19,019: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13791
+[2022-05-18 21:49:19,205: WARNING/MainProcess] True
+[2022-05-18 21:49:19,205: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 8413
+[2022-05-18 21:49:19,221: INFO/MainProcess] get_live_score[6ed60b8c-30b4-4351-be29-b26fc789c939]: successfully updated live score for: https://www.cricbuzz.com/live-cricket-scorecard/46611/ban-vs-sl-1st-test-day-4-sri-lanka-tour-of-bangladesh-2022 at 2022-05-18 16:19:19.221003+00:00 hours!
+[2022-05-18 21:49:19,267: INFO/MainProcess] Task get_live_score[6ed60b8c-30b4-4351-be29-b26fc789c939] succeeded in 3.202999999979511s: None
+[2022-05-18 21:52:16,160: INFO/MainProcess] Task get_live_score[16dd0567-ac05-492c-a2a7-aaaffed5e228] received
+[2022-05-18 21:52:16,175: INFO/MainProcess] get_live_score[16dd0567-ac05-492c-a2a7-aaaffed5e228]: updating live score for: https://www.cricbuzz.com/live-cricket-scorecard/46211/kkr-vs-lsg-66th-match-indian-premier-league-2022 at 2022-05-18 16:22:16.175665+00:00 hours!
+[2022-05-18 21:52:18,198: INFO/MainProcess] get_live_score[16dd0567-ac05-492c-a2a7-aaaffed5e228]: successfully updated live score for: https://www.cricbuzz.com/live-cricket-scorecard/46211/kkr-vs-lsg-66th-match-indian-premier-league-2022 at 2022-05-18 16:22:18.198503+00:00 hours!
+[2022-05-18 21:52:18,198: INFO/MainProcess] get_live_score[16dd0567-ac05-492c-a2a7-aaaffed5e228]: updating live score for: https://www.cricbuzz.com/live-cricket-scorecard/46611/ban-vs-sl-1st-test-day-4-sri-lanka-tour-of-bangladesh-2022 at 2022-05-18 16:22:18.198503+00:00 hours!
+[2022-05-18 21:52:19,659: WARNING/MainProcess] True
+[2022-05-18 21:52:19,673: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 14273
+[2022-05-18 21:52:19,750: WARNING/MainProcess] True
+[2022-05-18 21:52:19,750: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 12081
+[2022-05-18 21:52:19,782: WARNING/MainProcess] True
+[2022-05-18 21:52:19,782: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13105
+[2022-05-18 21:52:19,782: WARNING/MainProcess] True
+[2022-05-18 21:52:19,782: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13791
+[2022-05-18 21:52:19,954: WARNING/MainProcess] True
+[2022-05-18 21:52:19,969: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 8413
+[2022-05-18 21:52:19,993: INFO/MainProcess] get_live_score[16dd0567-ac05-492c-a2a7-aaaffed5e228]: successfully updated live score for: https://www.cricbuzz.com/live-cricket-scorecard/46611/ban-vs-sl-1st-test-day-4-sri-lanka-tour-of-bangladesh-2022 at 2022-05-18 16:22:19.993454+00:00 hours!
+[2022-05-18 21:52:20,042: INFO/MainProcess] Task get_live_score[16dd0567-ac05-492c-a2a7-aaaffed5e228] succeeded in 3.875s: None
+[2022-05-18 21:55:16,209: INFO/MainProcess] Task get_live_score[3ac85abe-e65d-44f4-b2ef-f45a47248e08] received
+[2022-05-18 21:55:16,209: INFO/MainProcess] get_live_score[3ac85abe-e65d-44f4-b2ef-f45a47248e08]: updating live score for: https://www.cricbuzz.com/live-cricket-scorecard/46211/kkr-vs-lsg-66th-match-indian-premier-league-2022 at 2022-05-18 16:25:16.209947+00:00 hours!
+[2022-05-18 21:55:17,905: INFO/MainProcess] get_live_score[3ac85abe-e65d-44f4-b2ef-f45a47248e08]: successfully updated live score for: https://www.cricbuzz.com/live-cricket-scorecard/46211/kkr-vs-lsg-66th-match-indian-premier-league-2022 at 2022-05-18 16:25:17.905605+00:00 hours!
+[2022-05-18 21:55:17,905: INFO/MainProcess] get_live_score[3ac85abe-e65d-44f4-b2ef-f45a47248e08]: updating live score for: https://www.cricbuzz.com/live-cricket-scorecard/46611/ban-vs-sl-1st-test-day-4-sri-lanka-tour-of-bangladesh-2022 at 2022-05-18 16:25:17.905605+00:00 hours!
+[2022-05-18 21:55:18,425: WARNING/MainProcess] True
+[2022-05-18 21:55:18,425: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 14273
+[2022-05-18 21:55:18,509: WARNING/MainProcess] True
+[2022-05-18 21:55:18,509: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 12081
+[2022-05-18 21:55:18,524: WARNING/MainProcess] True
+[2022-05-18 21:55:18,524: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13105
+[2022-05-18 21:55:18,540: WARNING/MainProcess] True
+[2022-05-18 21:55:18,540: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13791
+[2022-05-18 21:55:18,691: WARNING/MainProcess] True
+[2022-05-18 21:55:18,691: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 8413
