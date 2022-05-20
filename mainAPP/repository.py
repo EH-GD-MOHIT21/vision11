@@ -314,11 +314,13 @@ class vision11_render:
 
 
     def render_match_joined_contest(self,request,mid):
-        match = Match.objects.get(id=mid)
-        all_contest = Contest.objects.filter(match_id=match)
         contests = []
         available_slots = []
         percentage_full =[]
+        user_wined_contest = []
+        user_wined_slot = []
+        user_wined_perc = []
+        all_contest = Contest.objects.all()
         for i in all_contest:
             if(request.user in i.user.all()):
                 contests.append(i)
@@ -326,9 +328,15 @@ class vision11_render:
                 available_slots.append(i.length-length)
                 num = round((length/i.length)*100,2)
                 percentage_full.append(num)
+                if(i.reward_claimed==True):
+                    if(i.teams.all().order_by('-total_team_points')[0].user==request.user):
+                        user_wined_contest.append(i)
+                        user_wined_slot.append(i.length-length)
+                        num = round((length/i.length)*100,2)
+                        user_wined_perc.append(num)
         if not len(contests):
             return render(request,'404error.html',{'message':'looks like you have not joined any contests.'})
-        return render(request,'usercontest.html',{'contests':zip(contests,available_slots,percentage_full)})
+        return render(request,'usercontest.html',{'contests':zip(contests,available_slots,percentage_full),'live_contests':zip(contests,available_slots,percentage_full),'com_contests':zip(contests,available_slots,percentage_full),'user_wined':zip(user_wined_contest,user_wined_slot,user_wined_perc)})
 
 
 

@@ -15,20 +15,20 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     overflow: hidden;
 }
 
 .multicolorbg .box{
   width: 600px;
   margin: auto;
-  margin-top: 40px;
+  margin-top: 115px;
   margin-bottom: 15px;
   background: #fff;
   padding: 15px 14px;
   border-radius: 12px;
   box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-  height: 85vh;
+  height: 81vh;
   overflow-y: auto;
 }
 
@@ -186,6 +186,7 @@ body {
   background: white;
   color: crimson;
   cursor: not-allowed;
+  margin-bottom: 15px;
 }
 
 .player_selection{
