@@ -28,8 +28,6 @@ body {
   padding: 15px 14px;
   border-radius: 12px;
   box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-  height: 81vh;
-  overflow-y: auto;
 }
 
 
@@ -213,3 +211,13 @@ body {
   display: none;
 }
 
+.progress_bar_team progress{
+  display: block;
+  width: 100%;
+  margin: 20px auto;
+}
+
+#team_box_main_div1 {
+  height: 60vh;
+  overflow-y: auto;
+}

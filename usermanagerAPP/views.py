@@ -34,7 +34,7 @@ class Get_User_Details(APIView):
 
     def get(self,request,user):
         try:
-            if request.user.is_staff:
+            if request.user.is_staff or request.user == user:
                 return UserDetails().get_user_details(user)
             return Response({'status':400,'message':'You have not authorized to perform this action.'})
         except Exception as e:

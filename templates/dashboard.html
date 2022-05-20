@@ -159,6 +159,7 @@
           var wonmatches = {{numberwon}};
           var lossmatches = {{numberloss}};
           var pendingmatches = {{pending}};
+          var user = "{{user}}";
         </script>
         <script src="https://www.amcharts.com/lib/4/core.js"></script>
         <script src="https://www.amcharts.com/lib/4/charts.js"></script>
@@ -365,7 +366,8 @@
       }
     </script>
   </body>
-
+  <script src="{% static 'js/user_log.js' %}"></script>
+  <script src="{% static 'js/dashboard.js' %}"></script>
   <script>
       const names = ["#mylogs","#purchase","#ageverification","#aboutus","#suggestafeature","#"]
       const names_url = ["mylogs","purchase","ageverdash","absdash","hefedash","basedash"]
@@ -384,7 +386,6 @@
         }
       }
   </script>
-<script src="{% static 'js/dashboard.js' %}"></script>
 </html>
 
 {% endblock %}

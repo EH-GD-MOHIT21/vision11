@@ -33,41 +33,41 @@
 
             <div class="allcontest" id="allcontest">
             {% for contest,slot,per in contests %}
-            <div class="contest">
-                <div class="mathc_name">
-                    <span>Id: {{ contest.id }}, match: {{ contest.match_id.title }}</span>
-                </div>
-                <div class="maincont">
-                <div class="heade">
-                    <span class="prz">Prize</span>
-                    {% if contest.contest_type == 'public' %}
-                    <span class="entr">Entry <i class="fa fa-users" aria-hidden="true"></i>
-                    
-                    </span>
-                    {% else %}
-                    <span class="entr">Entry<i class="fa fa-lock" aria-hidden="true"></i>
-                    
-                    </span>
-                    {% endif %}
-                </div>
-                <div class="money_container">
-                    <span id="prize" class="prize"><i class="fa fa-inr" aria-hidden="true"></i>
-                        {{ contest.price_fee }}</span>
-                    <span id="entryfee1" class="entryfe">{{ contest.entry_fee }} {{ contest.fee_type }}</span>
-                </div>
-                <div class="progress_bar">
-                    <progress id="prog1" value="{{ per }}" max="100" class="prog_bar"> 0% </progress>
-                    <div class="spots">
-                        <span id="spot_left1" class="spot_left">{{ slot }} Spots left</span>
-                        <span id="total_spots1" class="total_spot">{{ contest.length }} Spots</span>
+                <div class="contest">
+                    <div class="mathc_name">
+                        <span>Id: {{ contest.id }}, match: {{ contest.match_id.title }}</span>
+                    </div>
+                    <div class="maincont">
+                        <div class="heade">
+                            <span class="prz">Prize</span>
+                            {% if contest.contest_type == 'public' %}
+                            <span class="entr">Entry <i class="fa fa-users" aria-hidden="true"></i>
+                            
+                            </span>
+                            {% else %}
+                            <span class="entr">Entry<i class="fa fa-lock" aria-hidden="true"></i>
+                            
+                            </span>
+                            {% endif %}
+                        </div>
+                        <div class="money_container">
+                            <span id="prize" class="prize"><i class="fa fa-inr" aria-hidden="true"></i>
+                                {{ contest.price_fee }}</span>
+                            <span id="entryfee1" class="entryfe">{{ contest.entry_fee }} {{ contest.fee_type }}</span>
+                        </div>
+                        <div class="progress_bar">
+                            <progress id="prog1" value="{{ per }}" max="100" class="prog_bar"> 0% </progress>
+                            <div class="spots">
+                                <span id="spot_left1" class="spot_left">{{ slot }} Spots left</span>
+                                <span id="total_spots1" class="total_spot">{{ contest.length }} Spots</span>
+                            </div>
+                        </div>
+                        <div class="join">
+                            <a href = "/contestdetails/contest={{ contest.id }}">View Teams</a>
+                        </div>
                     </div>
                 </div>
-                <div class="join">
-                    <a href = "/contestdetails/contest={{ contest.id }}">View Teams</a>
-                </div>
-            </div>
-                </div>
-                {% endfor %}
+            {% endfor %}
             </div>
 
 

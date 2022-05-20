@@ -19,6 +19,25 @@ async function get_data(url){
 }
 
 
+async function get_data_logs(url){
+    let response = await fetch(url, {
+        credentials: 'include',
+        method: 'GET',
+        mode: 'same-origin',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        }
+    })
+    if (response.ok) {
+        let json = await response.json();
+        let message = json["data"];
+        return message;
+    } else {
+        alert("HTTP-Error: " + response.status);
+    }
+}
+
 
 function mohit(id){
     new_val = id.textContent.split(':')
@@ -126,3 +145,12 @@ document.getElementById('hb-btn').addEventListener('click',function(){
         elm.style.display = 'none'
     }
 })
+
+async function user_log_display_data_mf(){
+    data = await get_data_logs('/get_user_info/user='+user);
+    const main_div = document.getElementById('logs-dashboard')
+    show_user_info_data(data,main_div);
+}
+
+
+document.getElementById('mylogs').addEventListener('click', user_log_display_data_mf);

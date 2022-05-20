@@ -23,42 +23,48 @@
     <div class="multicolorbg">
         <div class="box" id="box">
             <div class="teamplayers">
-                <div class="credit_access" style="text-align: right;margin-bottom: 10px;">
-                    <span>Available Credits :</span>
-                    <span id="total_credits">100</span>
+                <div class="wrapper_header">
+                    <div class="credit_access" style="text-align: right;margin-bottom: 10px;">
+                        <span>Available Credits :</span>
+                        <span id="total_credits">100</span>
+                    </div>
+                    <div class="payer_no" style="text-align: center;margin-bottom: 10px;">
+                        <span style="color: red;" id="player_numbers">You have to select 1-4 Wk-Bastmans </span>
+                    </div>
+                    <div class="progress_bar_team">
+                        <progress id="progress_bar_team" max="11" value="0"></progress>
+                    </div>
+                    <div class="head">
+                        <div onclick="show_wkbat()" style="font-weight: bold; width: 25%;cursor: pointer;" class="player_data active" id="Wk_Bat"><a
+                                onclick="show_wkbat()" id="wk_bat_a_tag">Wk-Bastman (0)</a></div>
+                        <div onclick="show_bat()" style="font-weight: bold; width: 25%;cursor: pointer;" class="player_data" id="Bat"><a
+                                onclick="show_bat()" id="bat_a_tag">Bastman (0)</a></div>
+                        <div style="font-weight: bold; width: 25%;cursor: pointer;" class="player_data" id="All_Round" onclick="show_allround()"><a
+                                onclick="show_allround()" id="ar_a_tag">Allrounder (0)</a></div>
+                        <div style="font-weight: bold; width: 25%;cursor: pointer;" class="player_data" id="Bowl" onclick="show_bowl()"><a
+                                onclick="show_bowl()" id="bowl_a_tag">Bowler (0)</a></div>
+                    </div>
+                    <div class="head1">
+                        <div style="width: 56%;padding-left: 15%; color: gray; font-weight: bold;">Player</div>
+                        <div style="width: 25%; color: gray; font-weight: bold;">Credits</div>
+                        <div style="width: 14%;text-align: center; color: gray; font-weight: bold;">Add</div>
+                    </div>
                 </div>
-                <div class="payer_no" style="text-align: center;margin-bottom: 10px;">
-                    <span style="color: red;" id="player_numbers">You have to select 1-4 Wk-Bastmans </span>
-                </div>
-                <div class="head">
-                    <div style="font-weight: bold; width: 25%;" class="player_data active" id="Wk_Bat"><a
-                            onclick="show_wkbat()">Wk-Bastman</a></div>
-                    <div style="font-weight: bold; width: 25%;" class="player_data" id="Bat"><a
-                            onclick="show_bat()">Bastman</a></div>
-                    <div style="font-weight: bold; width: 25%;" class="player_data" id="All_Round"><a
-                            onclick="show_allround()">Allrounder</a></div>
-                    <div style="font-weight: bold; width: 25%;" class="player_data" id="Bowl"><a
-                            onclick="show_bowl()">Bowler</a></div>
-                </div>
-                <div class="head1">
-                    <div style="width: 56%;padding-left: 15%; color: gray; font-weight: bold;">Player</div>
-                    <div style="width: 25%; color: gray; font-weight: bold;">Credits</div>
-                    <div style="width: 14%;text-align: center; color: gray; font-weight: bold;">Add</div>
-                </div>
-                
-                <div class="wkbatsmans" id="Wk_batting">
+                <div style="overflow-y:auto;height: 50vh;">
+                    <div class="wkbatsmans" id="Wk_batting">
 
-                </div>
+                    </div>
 
-                <div class="bastmans" id="batting">
+                    <div class="bastmans" id="batting">
 
-                </div>
-                <div class="allrounders" id="all_rounding">
+                    </div>
+                    <div class="allrounders" id="all_rounding">
 
+                    </div>
+                    <div class="bowlers" id="bowling">
+                        
+                    </div>
                 </div>
-                <div class="bowlers" id="bowling">
-                    
-                 </div>
             </div>
         </div>
         <div class="proceed" style="text-align: center;" id="btn_p">
@@ -76,7 +82,9 @@
                 <div style="width: 25%; color: gray; font-weight: bold;">Credits</div>
                 <div style="width: 14%;text-align: center; color: gray; font-weight: bold;">Select Cap/Vice Cap</div>
             </div>
-            
+            <div id="team_box_main_div1">
+
+            </div>
             </div>
             <div class="proceed_final" style="text-align: center;display: none;" id="btn_pf">
                 <button class="procf_button" disabled="true" id="procf_btn" onclick="proceed_final()">Proceed</button>

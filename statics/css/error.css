@@ -11,7 +11,7 @@ body {
 	color: white;
 	display: flex;
 	font: 2rem "Poiret One";
-	height: 100vh;
+	min-height: 100vh;
 	justify-content: center;
 	margin: 0;
 	padding: 0;

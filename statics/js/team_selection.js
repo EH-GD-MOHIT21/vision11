@@ -628,12 +628,14 @@ function add_wk(id){
     document.getElementById('Wk_bat'+new_id).style.background='lightgray';
     document.getElementById('total_credits').textContent = parseFloat(total_credits) - parseFloat(get_credit)
     total_wicketkeeper = total_wicketkeeper+1;
+    document.getElementById('wk_bat_a_tag').textContent = 'Wk-Bastman ('+total_wicketkeeper+')';
     individual_player_data[new_id] = [
     individual_player_data['player_name'] = document.getElementById('playername'+new_id).innerText,
     individual_player_data['player_pic'] = document.getElementById('playerimg'+new_id).src,
     individual_player_data['player_points'] = parseFloat(document.getElementById('wkcredits'+new_id).innerText),
     individual_player_data['player_type'] = document.getElementById('playerrole'+new_id).innerText
     ]
+    document.getElementById('progress_bar_team').value = parseInt(document.getElementById('progress_bar_team').value)+1;
     if(total_players+1==11){
         document.getElementById('proc_btn').disabled = false;
         document.getElementById('proc_btn').style.cursor = 'pointer'
@@ -665,6 +667,7 @@ function rem_wk(id){
     total_credits = document.getElementById('total_credits').textContent
     document.getElementById('total_credits').textContent = parseFloat(total_credits) + parseFloat(get_credit)
     total_wicketkeeper = total_wicketkeeper - 1
+    document.getElementById('wk_bat_a_tag').textContent = 'Wk-Bastman ('+total_wicketkeeper+')';
     total_players = total_wicketkeeper+total_batsman+total_allrounder+total_bowler
     for(key in individual_player_data){
         if(key == new_id){
@@ -675,6 +678,7 @@ function rem_wk(id){
         document.getElementById('proc_btn').disabled = true;
         document.getElementById('proc_btn').style.cursor = 'not-allowed'
     } 
+    document.getElementById('progress_bar_team').value -= 1;
 }
 
 function add_bat(id){
@@ -688,6 +692,8 @@ function add_bat(id){
     document.getElementById('bat'+new_id).style.background='lightgray';
     document.getElementById('total_credits').textContent = parseFloat(total_credits) - parseFloat(get_credit)
     total_batsman = total_batsman + 1
+    document.getElementById('bat_a_tag').textContent = 'Bastman ('+total_batsman+')';
+    document.getElementById('progress_bar_team').value = parseInt(document.getElementById('progress_bar_team').value)+1;
     individual_player_data[new_id] = [
         individual_player_data['player_name'] = document.getElementById('playername'+new_id).innerText,
         individual_player_data['player_pic'] = document.getElementById('playerimg'+new_id).src,
@@ -724,7 +730,9 @@ function rem_bat(id){
     total_credits = document.getElementById('total_credits').textContent
     document.getElementById('total_credits').textContent = parseFloat(total_credits) + parseFloat(get_credit)
     total_batsman = total_batsman - 1
+    document.getElementById('bat_a_tag').textContent = 'Bastman ('+total_batsman+')';
     total_players = total_wicketkeeper+total_batsman+total_allrounder+total_bowler
+    document.getElementById('progress_bar_team').value -= 1;
     for(key in individual_player_data){
         if(key == new_id){
             delete individual_player_data[key]
@@ -747,6 +755,8 @@ function add_round(id){
     document.getElementById('all_round'+new_id).style.background='lightgray';
     document.getElementById('total_credits').textContent = parseFloat(total_credits) - parseFloat(get_credit)
     total_allrounder = total_allrounder + 1
+    document.getElementById('ar_a_tag').textContent = 'Allrounder ('+total_allrounder+')';
+    document.getElementById('progress_bar_team').value = parseInt(document.getElementById('progress_bar_team').value) + 1;
     individual_player_data[new_id] = [
         individual_player_data['player_name'] = document.getElementById('playername'+new_id).innerText,
         individual_player_data['player_pic'] = document.getElementById('playerimg'+new_id).src,
@@ -784,6 +794,8 @@ function rem_round(id){
     document.getElementById('total_credits').textContent = parseFloat(total_credits) + parseFloat(get_credit)
     total_allrounder = total_allrounder - 1
     total_players = total_wicketkeeper+total_batsman+total_allrounder+total_bowler
+    document.getElementById('progress_bar_team').value -= 1;
+    document.getElementById('ar_a_tag').textContent = 'Allrounder ('+total_allrounder+')';
     for(key in individual_player_data){
         if(key == new_id){
             delete individual_player_data[key]
@@ -806,6 +818,8 @@ function add_bowl(id){
     document.getElementById('bowl'+new_id).style.background='lightgray';
     document.getElementById('total_credits').textContent = parseFloat(total_credits) - parseFloat(get_credit)
     total_bowler = total_bowler + 1
+    document.getElementById('bowl_a_tag').textContent = 'Bowler ('+total_bowler+')';
+    document.getElementById('progress_bar_team').value = parseInt(document.getElementById('progress_bar_team').value) + 1;
     individual_player_data[new_id] = [
         individual_player_data['player_name'] = document.getElementById('playername'+new_id).textContent,
         individual_player_data['player_pic'] = document.getElementById('playerimg'+new_id).src,
@@ -842,6 +856,8 @@ function rem_bowl(id){
     total_credits = document.getElementById('total_credits').textContent
     document.getElementById('total_credits').textContent = parseFloat(total_credits) + parseFloat(get_credit)
     total_bowler = total_bowler - 1
+    document.getElementById('progress_bar_team').value -= 1;
+    document.getElementById('bowl_a_tag').textContent = 'Bowler ('+total_bowler+')';
     for(key in individual_player_data){
         if(key == new_id){
             delete individual_player_data[key]
@@ -871,7 +887,7 @@ function proceed_cap(){
                                 break;
                             }
                             i+=1;
-                            const main_div =  document.getElementById('team_box');
+                            const main_div =  document.getElementById('team_box_main_div1');
                             const player_section = document.createElement('div');
                             player_section.className = 'player_selection';
                             player_section.id = 'player_sec';

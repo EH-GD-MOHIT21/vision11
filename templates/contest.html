@@ -42,29 +42,31 @@
                         <option value="{{ team.id }} {{ team.match_id.id }}">Team{{ forloop.counter }}</option>
                         {% endfor %}
                       </select>
+                    <div id="parent_wrapper_public_contest">
                     {% for contest,slot,per in contest %}
-                    <div id="public1" class="contest_container">
-                        <div class="heade">
-                        <span class="prz">Prize</span>
-                        <span class="entr">Entry</span>
-                    </div>
-                    <div class="money_container">
-                        <span id="prize{{forloop.counter0}}" class="prize"><i class="fa fa-inr" aria-hidden="true"></i>
-                            {{ contest.price_fee }}</span>
-                        <span id="entryfee1" class="entryfe">{{ contest.entry_fee }} {{ contest.fee_type }}</span>
-                    </div>
-                    <div class="progress_bar">
-                        <progress id="prog1" value="{{ per }}" max="100" class="prog_bar"> 0% </progress>
-                        <div class="spots">
-                            <span id="spot_left1" class="spot_left">{{ slot }} Spots left</span>
-                            <span id="total_spots1" class="total_spot">{{ contest.length }} Spots</span>
+                        <div id="public{{forloop.counter}}" class="contest_container">
+                            <div class="heade">
+                            <span class="prz">Prize</span>
+                            <span class="entr">Entry</span>
                         </div>
-                    </div>
-                    <div class="join">
-                        <a onclick="joinc('{{contest.id}}')">Join Contest</a>
-                    </div>
-                    </div>
+                        <div class="money_container">
+                            <span id="prize{{forloop.counter0}}" class="prize"><i class="fa fa-inr" aria-hidden="true"></i>
+                                {{ contest.price_fee }}</span>
+                            <span id="entryfee1" class="entryfe">{{ contest.entry_fee }} {{ contest.fee_type }}</span>
+                        </div>
+                        <div class="progress_bar">
+                            <progress id="prog1" value="{{ per }}" max="100" class="prog_bar"> 0% </progress>
+                            <div class="spots">
+                                <span id="spot_left1" class="spot_left">{{ slot }} Spots left</span>
+                                <span id="total_spots1" class="total_spot">{{ contest.length }} Spots</span>
+                            </div>
+                        </div>
+                        <div class="join">
+                            <a onclick="joinc('{{contest.id}}')">Join Contest</a>
+                        </div>
+                        </div>
                     {% endfor %}
+                    </div>
                 </div>
                 
                 <div class="private_parent" id="private_parent">
