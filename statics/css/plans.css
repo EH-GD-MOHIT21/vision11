@@ -8,36 +8,41 @@
 
 .cards-container {
     background-color: #f1f5f8;
-display: flex;
-justify-content: space-around;
-align-items: center;
-flex-wrap: wrap;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
 }
+
 .card {
     background-color: white;
     padding: 25px;
     border: 1px solid #bbbbbb;
     border-radius: 5px;
-    box-shadow: 1px 1px 10px 0px rgb(0 0 0 / 25%);
+    box-shadow: rgb(136 136 136) 6px 6px 15px;
     width: 300px;
     margin: 20px;
     position: relative;
     overflow: hidden;
 }
+
 .title {
     text-align: center;
     letter-spacing: 1px;
 }
+
 .muted {
     color: #8e7f7f;
     display: block;
     margin-top: 10px;
     text-align: center;
 }
+
 .btn_container {
     padding: 20px;
     text-align: center;
 }
+
 .btn {
     border-radius: 4px;
     cursor: pointer;
@@ -48,16 +53,18 @@ flex-wrap: wrap;
     font-weight: 600;
     letter-spacing: 1px;
 }
-.tag-limited-time-offer{
+
+.tag-limited-time-offer {
     width: 150px;
-height: 20px;
-background: red;
-position: absolute;
-top: 9%;
-left: -13%;
-transform: rotate(-45deg);
-text-align: center;
+    height: 20px;
+    background: red;
+    position: absolute;
+    top: 9%;
+    left: -13%;
+    transform: rotate(-45deg);
+    text-align: center;
 }
+
 .parentplans {
     padding: 25px;
 }

@@ -75,3 +75,18 @@ chart.legend.itemContainers.template.events.on("hit", function(ev) {
 pieSeries.slices.template.events.on('hit', function(ev) {
   console.log(ev.target.dataItem.index);
 });
+
+
+function myFunction(x) {
+  if (x.matches) { 
+    chart.legend.position = "top";
+    chart.legend.contentAlign = "right";
+  } else {
+    chart.legend.position = "right";
+    chart.legend.valign = "middle";
+  }
+}
+
+var x = window.matchMedia("(max-width: 1100px)")
+myFunction(x) 
+x.addListener(myFunction)
