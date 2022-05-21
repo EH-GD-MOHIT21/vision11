@@ -13,7 +13,7 @@ app.autodiscover_tasks()
 app.conf.beat_schedule = {
     'get_live_score': {
         'task': 'get_live_score',       
-        'schedule': 1800.0,  # every 5 minutes (5*60 seconds)
+        'schedule': 180.0,  # every 5 minutes (5*60 seconds)
         'options': {
             'expires': 15.0,
         },

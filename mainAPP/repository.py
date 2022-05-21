@@ -259,7 +259,7 @@ class vision11_render:
         
         return render(request,'contestdetails.html',{'teams':contest_teams,'name':match_name})
     
-
+    #user joined contest
     def render_usercontest(self,request):
         contests = []
         available_slots = []
@@ -281,8 +281,17 @@ class vision11_render:
                         user_wined_slot.append(i.length-length)
                         num = round((length/i.length)*100,2)
                         user_wined_perc.append(num)
-        return render(request,'usercontest.html',{'contests':zip(contests,available_slots,percentage_full),'live_contests':zip(contests,available_slots,percentage_full),'com_contests':zip(contests,available_slots,percentage_full),'user_wined':zip(user_wined_contest,user_wined_slot,user_wined_perc)})
+        
+        return render(request,
+            'usercontest.html',
+            {'contests':zip(contests,available_slots,percentage_full),
+            'live_contests':zip(contests,available_slots,percentage_full),
+            'com_contests':zip(contests,available_slots,percentage_full),
+            'user_wined':zip(user_wined_contest,user_wined_slot,user_wined_perc)}
+        )
     
+
+
     def render_age_adminportal(self,request):
         users = User1.objects.filter(adult=False)
         user_obj = [user for user in users if user.aadhar_image!='']
@@ -336,7 +345,14 @@ class vision11_render:
                         user_wined_perc.append(num)
         if not len(contests):
             return render(request,'404error.html',{'message':'looks like you have not joined any contests.'})
-        return render(request,'usercontest.html',{'contests':zip(contests,available_slots,percentage_full),'live_contests':zip(contests,available_slots,percentage_full),'com_contests':zip(contests,available_slots,percentage_full),'user_wined':zip(user_wined_contest,user_wined_slot,user_wined_perc)})
+        
+        return render(request,
+            'usercontest.html',
+            {'contests':zip(contests,available_slots,percentage_full),
+            'live_contests':zip(contests,available_slots,percentage_full),
+            'com_contests':zip(contests,available_slots,percentage_full),
+            'user_wined':zip(user_wined_contest,user_wined_slot,user_wined_perc)}
+        )
 
 
 
@@ -352,4 +368,11 @@ class vision11_render:
                 number_contests += 1
                 if not contest.match_id.is_match_end:
                     pending_res += 1
-        return render(request, 'dashboard.html',{'contests':contest_joined,'numberjoined':number_contests,'numberwon':request.user.contests_won,'numberloss':number_contests-request.user.contests_won-pending_res,'pending':pending_res})
+        
+        return render(request, 
+            'dashboard.html',
+            {'contests':contest_joined,'numberjoined':number_contests,
+            'numberwon':request.user.contests_won,
+            'numberloss':number_contests-request.user.contests_won-pending_res,
+            'pending':pending_res}
+        )

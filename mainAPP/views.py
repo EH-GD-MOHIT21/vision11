@@ -24,8 +24,7 @@ def RenderDashboard(request):
     '''
     try:
         return vision11_render.render_dashboard(request)
-    except Exception as e:
-        print(e)
+    except:
         return redirect('/')
 
 
@@ -100,7 +99,7 @@ def RenderContestPage(request,mid):
     '''
     try:
         return vision11_render().render_contest(request,mid)
-    except Exception as e:
+    except:
         return redirect('/createteam/match='+str(mid))
 
 
@@ -112,7 +111,7 @@ def RenderUserContest(request):
     '''
     try:
         return vision11_render().render_usercontest(request)
-    except Exception as e:
+    except:
         return redirect('/')
 
 
@@ -124,8 +123,7 @@ def RenderContestDetails(request,cid):
     '''
     try:
         return vision11_render().render_contestdetails(request,cid)
-    except Exception as e:
-        print(e)
+    except:
         return redirect('/userjoinedcontest')
 
 
@@ -139,8 +137,7 @@ def RenderUserTeam(request,mid,tid):
     '''
     try:
         return vision11_render().render_userteam(request,mid,tid)
-    except Exception as e:
-        print(e)
+    except:
         return redirect('/createteam/match='+str(mid))
 
 
@@ -199,8 +196,7 @@ class GetFantasyScoreAPI(APIView):
         if request.user.is_authenticated:
             try:
                 return vision11().get_fantasy_score(request.data['url'])
-            except Exception as e:
-                print(e)
+            except:
                 return Response({'status':500,'message':'Something went wrong please try again after some time.'})
         return Response({'status':403,'message':'Please authenticate yourself.'})
 
@@ -213,8 +209,7 @@ class GetTodaysSquadList(APIView):
         if request.user.is_authenticated:
             try:
                 return vision11().get_todays_squad(request.data['team1'],request.data['team2'])
-            except Exception as e:
-                print(e)
+            except:
                 return Response({'status':404,'message':'Either No contest available or timeline expired.'})
         return Response({'status':403,'message':'Please authenticate yourself.'})
 
@@ -250,8 +245,7 @@ class GetUpcomingMatchesList(APIView):
         if request.user.is_authenticated:
             try:
                 return vision11().get_upcoming_matches()
-            except Exception as e:
-                print(e)
+            except:
                 return Response({'status':500,'message':'something went wrong.'})
         return Response({'status':403,'message':'Please authenticate yourself.'})
 
@@ -273,8 +267,7 @@ def RenderMatchJoinedContest(request,mid):
         if request.user.is_authenticated:
             return vision11_render().render_match_joined_contest(request,mid)
         return redirect('/accounts/login')
-    except Exception as e:
-        print(e)
+    except:
         return HttpResponseBadRequest('Either you have not joined any contest or try again later.')
         
 
@@ -297,8 +290,7 @@ class FinalizeUserTeam(APIView):
             if request.user.is_authenticated:
                 return vision11().create_user_team(request.data,request.user)
             return Response({'status':403,'message':'unauthorized access please authenticated yourself.'})
-        except Exception as e:
-            print(e)
+        except:
             return Response({'status':500,'message':'something went wrong.'})
 
 
@@ -310,8 +302,7 @@ class ContestCreateJoinAPI(APIView):
             if request.user.is_authenticated:
                 return vision11().create_contest(request.data,request.user)
             return Response({'status':403,'message':'please authenticate yourself.'})
-        except Exception as e:
-            print(e)
+        except:
             return Response({'status':500,'message':'something went wrong.'})
 
 
@@ -322,8 +313,7 @@ class ContestSearchAPI(APIView):
             if request.user.is_authenticated:
                 return vision11().search_contest(request.data)
             return Response({'status':403,'message':'please authenticate yourself.'})
-        except Exception as e:
-            print(e)
+        except:
             return Response({'status':500,'message':'something went wrong.'})
 
 
@@ -334,6 +324,5 @@ class ContestJoinAPI(APIView):
             if request.user.is_authenticated:
                 return vision11().join_contest(request.data,request.user)
             return Response({'status':403,'message':'please authenticate yourself.'})
-        except Exception as e:
-            print(e)
+        except:
             return Response({'status':500,'message':'something went wrong.'})

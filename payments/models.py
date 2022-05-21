@@ -6,11 +6,26 @@ from usermanagerAPP.models import User1
 
 
 class Plan(models.Model):
-    plan_price = models.FloatField(default=0)
-    vision_coins = models.FloatField(default=0)
-    bonus_coins = models.FloatField(default=0)
-    offer_start_date = models.DateTimeField(default=timezone.now)
-    offer_end_date = models.DateTimeField(null=True, blank=True)
+    plan_price = models.FloatField(
+        default=0
+    )
+
+    vision_coins = models.FloatField(
+        default=0
+    )
+
+    bonus_coins = models.FloatField(
+        default=0
+    )
+
+    offer_start_date = models.DateTimeField(
+        default=timezone.now
+    )
+
+    offer_end_date = models.DateTimeField(
+        null=True, 
+        blank=True
+    )
 
     @property
     def set_vision_coins(self):
@@ -33,14 +48,35 @@ class Choices(models.TextChoices):
 
 
 class Order(models.Model):
-    user = models.ForeignKey(User1, on_delete=models.CASCADE)
-    amount = models.FloatField(default=0)
+    user = models.ForeignKey(
+        User1, 
+        on_delete=models.CASCADE
+    )
+
+    amount = models.FloatField(
+        default=0
+    )
+
     order_id = models.SlugField()
-    currency = models.CharField(max_length=5, default="INR")
-    payment_capture = models.FloatField(default=0)
-    plan_benefits = models.FloatField(default=0)
+
+    currency = models.CharField(
+        max_length=5, 
+        default="INR"
+    )
+
+    payment_capture = models.FloatField(
+        default=0
+    )
+
+    plan_benefits = models.FloatField(
+        default=0
+    )
+
     order_status = models.CharField(
-        choices=mychoice, default=Choices.PENDING, max_length=25)
+        choices=mychoice, 
+        default=Choices.PENDING, 
+        max_length=25
+    )
 
     @property
     def update_status(self):

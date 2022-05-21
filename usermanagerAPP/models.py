@@ -130,9 +130,13 @@ class User1(AbstractUser):
 @receiver(pre_save, sender=User1)
 def pre_save(sender, instance, **kwargs):
     try:
-        previous = User1.objects.get(id=instance.id)
+        previous = User1.objects.get(
+            id=instance.id
+    )
+
     except:
         return
+
     if previous.currency_type == instance.currency_type and previous.adult == instance.adult:
         return
     if previous.currency_type == 'vision candies' and instance.currency_type == 'vision coins' and not previous.adult and instance.adult:
@@ -147,13 +151,35 @@ def pre_save(sender, instance, **kwargs):
 
 
 class VisionCurrencyDetails(models.Model):
-    user = models.ForeignKey(User1,on_delete=models.Case)
+    user = models.ForeignKey(
+        User1,
+        on_delete=models.Case
+    )
+
     log = models.TextField()
-    currency_type_user = models.CharField(max_length=20,default='vision candies')
-    currency_type_contest = models.CharField(max_length=20,default='vision candies')
-    payment = models.FloatField(default=0)
-    payment_add = models.BooleanField(default=True)
-    save_at = models.DateTimeField(null=True,blank=True)
+
+    currency_type_user = models.CharField(
+        max_length=20,
+        default='vision candies'
+    )
+
+    currency_type_contest = models.CharField(
+        max_length=20,
+        default='vision candies'
+    )
+
+    payment = models.FloatField(
+        default=0
+    )
+
+    payment_add = models.BooleanField(
+        default=True
+    )
+
+    save_at = models.DateTimeField(
+        null=True,
+        blank=True
+    )
 
     def save(self,*args,**kwargs):
         self.save_at = timezone.now()

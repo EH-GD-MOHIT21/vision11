@@ -74,8 +74,7 @@ class UserValidation:
             user.aadhar_image = file
             user.save()
             return redirect('/dashboard')
-        except Exception as e:
-            print(e)
+        except:
             return redirect('/dashboard')
 
 
