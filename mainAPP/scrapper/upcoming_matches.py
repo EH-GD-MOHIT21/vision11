@@ -62,6 +62,8 @@ def list_today_matches(URL="https://www.cricbuzz.com/cricket-schedule/upcoming-s
         index += 1
         
         for link,title,time,name in zip(match_links,match_titles,match_times,match_names):
+            if 'day ' in title or 'Day ' in title or 'test ' in title:
+                continue
             team1,team2 = name.split(',')[0].split(' vs ')
             Match.objects.get_or_create(url=link,title=title,time=time,name=name,team1=team1,team2=team2)
         
