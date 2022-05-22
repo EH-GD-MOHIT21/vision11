@@ -200,17 +200,14 @@ RAZOR_KEY_SECRET = "cs3QfR8Wb6WQ7ZidL5Fr5P29"
 # Channel Layer Setup
 CHANNEL_LAYERS = {
     "default": {
-        "BACKEND": "channels_redis.core.RedisChannelLayer",
-        "CONFIG": {
-            "hosts": [("rediss://:Y7tedb23xMTgU7yTzjJVWnUwg2mxRGizsAzCaDsDC7M=@vision11.redis.cache.windows.net:6380/0?ssl_cert_reqs=required")],
-        },
+        "BACKEND": "channels.layers.InMemoryChannelLayer"
     },
 }
 
 
 
 # celery
-CELERY_BROKER_URL = 'rediss://:Y7tedb23xMTgU7yTzjJVWnUwg2mxRGizsAzCaDsDC7M=@vision11.redis.cache.windows.net:6380/0?ssl_cert_reqs=required'
+CELERY_BROKER_URL = "memory://"
 CELERY_RESULT_BACKEND = 'django-db'
 CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_RESULT_SERIALIZER = 'json'
