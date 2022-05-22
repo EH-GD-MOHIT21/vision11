@@ -94,16 +94,16 @@ DATABASES = {
     }
 }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'd801e0m4sdtpdu',
-#         'HOST': 'ec2-3-231-254-204.compute-1.amazonaws.com',
-#         'PORT': 5432,
-#         'USER': 'jbyoptjqibgoyy',
-#         'PASSWORD': 'aeb05c686bab5d837a7817563ffb3145533248701debdd176438901ab9313d0b'
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd15lbne5q2n61r',
+        'HOST': 'ec2-44-195-169-163.compute-1.amazonaws.com',
+        'PORT': 5432,
+        'USER': 'jqyrsjwxflfsvg',
+        'PASSWORD': '2095fb51b33157e73d5e9f15483e0f5ac4d6bc7f53ecaa36a4e097cecf2bb550'
+    }
+}
 
 
 AUTH_PASSWORD_VALIDATORS = [
