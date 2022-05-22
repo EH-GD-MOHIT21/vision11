@@ -200,7 +200,7 @@ RAZOR_KEY_SECRET = "cs3QfR8Wb6WQ7ZidL5Fr5P29"
 # Channel Layer Setup
 CHANNEL_LAYERS = {
     "default": {
-        "BACKEND": "channels.layers.InMemoryChannelLayer"
+        "BACKEND": "channels.layers.InMemoryChannelLayer",
     },
 }
 
@@ -208,6 +208,9 @@ CHANNEL_LAYERS = {
 
 # celery
 CELERY_BROKER_URL = "memory://"
+BROKER_BACKEND = 'memory'
+CELERY_TASK_ALWAYS_EAGER = True
+CELERY_TASK_EAGER_PROPAGATES = True
 CELERY_RESULT_BACKEND = 'django-db'
 CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_RESULT_SERIALIZER = 'json'
