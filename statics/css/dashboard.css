@@ -622,6 +622,9 @@ margin-top: 25px;
   }
   .hb-btn{
     display: block !important;
+    width: 30px;
+    height: 30px;
+    font-weight: bold;
   }
   .sidebar-button .dashboard{
     display: none;
@@ -630,100 +633,30 @@ margin-top: 25px;
     width: 100%;
     left: 0;
   }
-}
-
-
-
-/*-------------------*/
-
-/* Responsive Media Query */
-/* @media (max-width: 1240px) {
-  .sidebar{
-    width: 60px;
-  }
-  .sidebar.active{
-    width: 220px;
-  }
-  .home-section{
-    width: calc(100% - 60px);
-    left: 60px;
-  }
-  .sidebar.active ~ .home-section{
-    overflow: hidden;
-    left: 220px;
-  }
-  .home-section nav{
-    width: calc(100% - 60px);
-    left: 60px;
-  }
-  .sidebar.active ~ .home-section nav{
-    width: calc(100% - 220px);
-    left: 220px;
+  .userinfo-box{
+    justify-content: center;
   }
 }
-@media (max-width: 1150px) {
-  .home-content .sales-boxes{
-    flex-direction: column;
+
+
+@media(max-width:600px) {
+  .suggestion_box,.box_age, .box_abs, .staff-box{
+    width: 100% !important;
   }
-  .home-content .sales-boxes .box{
-    width: 100%;
-    overflow-x: scroll;
-    margin-bottom: 30px;
+  .card{
+    margin: 20px 0 !important;
   }
-  .home-content .sales-boxes .top-sales{
-    margin: 0;
+  .parentplans {
+    padding: 12px !important;
   }
-}
-@media (max-width: 1000px) {
   .overview-boxes .box{
-    width: calc(100% / 2 - 15px);
-    margin-bottom: 15px;
+    margin-right: 0 !important;
   }
 }
-@media (max-width: 700px) {
-  nav .sidebar-button .dashboard,
-  nav .profile-details .admin_name,
-  nav .profile-details i{
-    display: none;
-  }
-  .home-section nav .profile-details{
-    height: 50px;
-    min-width: 40px;
-  }
-  .home-content .sales-boxes .sales-details{
-    width: 560px;
+
+
+@media(max-width:400px){
+  .home-content .overview-boxes{
+    padding: 0 10px !important;
   }
 }
-@media (max-width: 550px) {
-  .overview-boxes .box{
-    width: 100%;
-    margin-bottom: 15px;
-  }
-  .sidebar.active ~ .home-section nav .profile-details{
-    display: none;
-  }
-}
-  @media (max-width: 400px) {
-  .sidebar{
-    width: 0;
-  }
-  .sidebar.active{
-    width: 60px;
-  }
-  .home-section{
-    width: 100%;
-    left: 0;
-  }
-  .sidebar.active ~ .home-section{
-    left: 60px;
-    width: calc(100% - 60px);
-  }
-  .home-section nav{
-    width: 100%;
-    left: 0;
-  }
-  .sidebar.active ~ .home-section nav{
-    left: 60px;
-    width: calc(100% - 60px);
-  }
-} */

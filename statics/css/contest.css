@@ -65,6 +65,7 @@ body {
     border-radius: 12px;
     border: 1px solid #dddddd;
     position: relative;
+    text-align: left;
 }
 
 .entr, .entryfe{
@@ -215,4 +216,17 @@ select#user_team, select#user_default_team_id{
 
 select#user_team a{
     cursor: pointer;
+}
+
+
+@media(max-width:620px){
+    .multicolorbg .box{
+        width: 98%;
+    }
+}
+
+@media(max-width:450px){
+    .creattion input,select#user_team, select#user_default_team_id,select#type_conteste,.private input{
+        width:98%;
+    }
 }

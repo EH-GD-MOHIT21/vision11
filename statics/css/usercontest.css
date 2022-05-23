@@ -128,3 +128,10 @@ select#user_team{
 .completed, .live{
     display: none;
 }
+
+
+@media(max-width:620px) {
+    .multicolorbg .box{
+        width: 98%;
+    }
+}

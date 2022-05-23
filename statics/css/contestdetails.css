@@ -81,3 +81,9 @@ body {
 .userinfo a:hover{
     color: blue;
 }
+
+@media(max-width:620px) {
+    .multicolorbg .box{
+        width: 98%;
+    }
+}

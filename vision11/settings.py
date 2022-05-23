@@ -94,16 +94,16 @@ DATABASES = {
     }
 }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd15lbne5q2n61r',
-        'HOST': 'ec2-44-195-169-163.compute-1.amazonaws.com',
-        'PORT': 5432,
-        'USER': 'jqyrsjwxflfsvg',
-        'PASSWORD': '2095fb51b33157e73d5e9f15483e0f5ac4d6bc7f53ecaa36a4e097cecf2bb550'
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'd15lbne5q2n61r',
+#         'HOST': 'ec2-44-195-169-163.compute-1.amazonaws.com',
+#         'PORT': 5432,
+#         'USER': 'jqyrsjwxflfsvg',
+#         'PASSWORD': '2095fb51b33157e73d5e9f15483e0f5ac4d6bc7f53ecaa36a4e097cecf2bb550'
+#     }
+# }
 
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -200,17 +200,17 @@ RAZOR_KEY_SECRET = "cs3QfR8Wb6WQ7ZidL5Fr5P29"
 # Channel Layer Setup
 CHANNEL_LAYERS = {
     "default": {
-        "BACKEND": "channels.layers.InMemoryChannelLayer",
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [("127.0.0.1", 6379)],
+        },
     },
 }
 
 
 
 # celery
-CELERY_BROKER_URL = "memory://"
-BROKER_BACKEND = 'memory'
-CELERY_TASK_ALWAYS_EAGER = True
-CELERY_TASK_EAGER_PROPAGATES = True
+CELERY_BROKER_URL = 'redis://localhost:6379'
 CELERY_RESULT_BACKEND = 'django-db'
 CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_RESULT_SERIALIZER = 'json'

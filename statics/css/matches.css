@@ -125,51 +125,23 @@ body {
     text-align: center;     
 }
  
-@media (max-width:625px){
-    .multicolorbg .match_card{
-        width: 95%;
-        margin: auto;
-        margin-top: 100px;
-    }
-    .multicolorbg .match_card .teams .team1info{
-        width: 25%;
-    }
-    .multicolorbg .match_card .teams .team2info{
-        width: 25%;
-    }
-}
-
-@media (max-width:425px){
-    .multicolorbg .match_card{
+@media(max-width:620px){
+    .box{
         width: 98%;
     }
-    .multicolorbg .match_card .teams .team1info{
-        width: 33%;
-        margin-left: 0px;
+    .multicolorbg .match_card .teams .team1info img,
+    .multicolorbg .match_card .teams .team2info img{
+        height: 50px;
     }
-    .multicolorbg .match_card .teams .team2info{
-        width: 33%;
-        margin-right: 0px;
+    .multicolorbg .match_card .createbutton a{
+        font-size: 13px;
     }
-    .multicolorbg .match_card .teams .team1info img, .multicolorbg .match_card .teams .team2info img{
-        width: 100%;
+    .multicolorbg .match_card .createbutton {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
     }
-    .multicolorbg .match_card span{
-        font-weight: 500;
-    font-size: 12px;
+    .head a{
+        font-size: 13px;
     }
 }
-
-@media (max-width:315px){
-    multicolorbg .match_card{
-        width: 100%;
-    }
-    .multicolorbg .match_card .teams .team1info{
-        width: 35%;
-        margin-left: 0px;
-    }
-    .multicolorbg .match_card .teams .team2info{
-        width: 35%;
-        margin-right: 0px;
-}
-}     

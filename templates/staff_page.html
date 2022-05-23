@@ -12,7 +12,7 @@
 </head>
 
 <body>
-  <div class="sidebar">
+  <div class="sidebar" id="sidebar-dashboard">
     <div class="logo-details">
       <i class="bx bxl-c-plus-plus"></i>
       <span class="logo_name">vision11 staff</span>
@@ -71,6 +71,7 @@
   <section class="home-section">
     <nav>
       <div class="sidebar-button">
+        <button class='hb-btn' id="hb-btn" style="display:none;">&#8801;</button>
         <i class="bx bx-menu sidebarBtn"></i>
         <span class="dashboard" style="color: white">Dashboard</span>
       </div>
@@ -108,5 +109,32 @@
 </body>
 <script src="{% static 'js/user_log.js' %}"></script>
 <script src="{% static 'js/staff.js' %}"></script>
+<script>
+  document.getElementById('hb-btn').addEventListener('click',function(){
+    var elm = document.getElementById('sidebar-dashboard');
+    if(window.getComputedStyle(elm).display=='none'){
+        elm.style.display = 'block';
+    }else{
+        elm.style.display = 'none'
+    }
+  })
 
+  window.onresize = function(){
+    if(window.innerWidth<786){
+      document.getElementById('sidebar-dashboard').style.display = 'none';
+    }else{
+      document.getElementById('sidebar-dashboard').style.display = 'block';
+    }
+  }
+</script>
+<style>
+  @media(max-width:620px){
+    .match_card{
+      width: 97%;
+    }
+    .home-section nav .profile-details{
+      display: none;
+    }
+  }
+</style>
 </html>

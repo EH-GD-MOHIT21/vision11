@@ -130,6 +130,9 @@ body {
     position: absolute;
     padding-left: 15px;
     margin-top: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .player_role{
@@ -220,4 +223,32 @@ body {
 #team_box_main_div1 {
   height: 60vh;
   overflow-y: auto;
+}
+
+
+@media(max-width:620px){
+  .multicolorbg .box{
+    width: 98%;
+  }
+  .credit_title,.credits{
+    text-align: center;
+  }
+  .player_info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .player_name,.player_role{
+    position: unset;
+  }
+  .player_role{
+    margin-top:0;
+  }
+  .cap, .vicecap {
+    height: 30px;
+    width: 30px;
+    font-size: 14px;
+    margin-top: 10px;
+  }
 }

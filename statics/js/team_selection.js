@@ -1027,7 +1027,7 @@ function add_cap(id){
 function add_vicecap(id){
     const new_i = id.slice(7);
     if((vice_captain_choosen==1 && vice_cap_id!=new_i) && (cap_id!=new_i)){
-        document.getElementById(id).style.background = 'yellow';
+        document.getElementById(id).style.background = 'purple';
         document.getElementById(id).style.color = 'black';
         document.getElementById('vicecap'+vice_cap_id).style.background = 'white';
         document.getElementById('vicecap'+vice_cap_id).style.color = 'black';
@@ -1071,7 +1071,7 @@ function add_vicecap(id){
         }
     }
     else if(cap_id!=new_i){
-        document.getElementById(id).style.background = 'yellow';
+        document.getElementById(id).style.background = 'purple';
         document.getElementById(id).style.color = 'white';
         vice_captain_choosen+=1;
         for(key in individual_player_data){

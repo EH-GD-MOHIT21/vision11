@@ -140,7 +140,7 @@ function show_feature_request(data){
 
 
 function show_live_matches_data(data){
-    console.log(data);
+    document.getElementById('livematches_container').innerHTML = '';
     for(var i=0;i<data.length;i++){
         const match_card = document.createElement("div");
             match_card.className = 'match_card';
@@ -195,6 +195,7 @@ ids = ["ageverdash","absdash","livematches","userinfo"]
 mids = ["base-dashboard","base-dashboard-1","livematches_container","userinfodetails"]
 
 document.getElementById('ageverdash').addEventListener('click',async function(){
+    document.getElementById('sidebar-dashboard').style.display = 'none';
     for(id of mids){
         document.getElementById(id).style.display = 'none';
     }
@@ -209,6 +210,7 @@ document.getElementById('ageverdash').addEventListener('click',async function(){
 })
 
 document.getElementById('absdash').addEventListener('click', async function(){
+    document.getElementById('sidebar-dashboard').style.display = 'none';
     for(id of mids){
         document.getElementById(id).style.display = 'none';
     }
@@ -223,6 +225,7 @@ document.getElementById('absdash').addEventListener('click', async function(){
 })
 
 document.getElementById('livematches').addEventListener('click', async function(){
+    document.getElementById('sidebar-dashboard').style.display = 'none';
     for(id of mids){
         document.getElementById(id).style.display = 'none';
     }
@@ -237,6 +240,7 @@ document.getElementById('livematches').addEventListener('click', async function(
 })
 
 document.getElementById('userinfo').addEventListener('click', async function(){
+    document.getElementById('sidebar-dashboard').style.display = 'none';
     for(id of mids){
         document.getElementById(id).style.display = 'none';
     }
