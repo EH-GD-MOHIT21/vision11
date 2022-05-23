@@ -175,9 +175,8 @@ async function joinc(contest_id){
     if (response.ok) {
         let json = await response.json();
         let message = json["message"];
-        let id = json["contest_id"];
         if(message=='success'){
-            window.location.href = '/contestdetails/contest='+ id;
+            window.location.href = '/mycontests';
         }else{
             alert(message);
         }

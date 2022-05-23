@@ -195,7 +195,11 @@ ids = ["ageverdash","absdash","livematches","userinfo"]
 mids = ["base-dashboard","base-dashboard-1","livematches_container","userinfodetails"]
 
 document.getElementById('ageverdash').addEventListener('click',async function(){
-    document.getElementById('sidebar-dashboard').style.display = 'none';
+    if(window.innerWidth<786){
+        document.getElementById('sidebar-dashboard').style.display = 'none';
+      }else{
+        document.getElementById('sidebar-dashboard').style.display = 'block';
+      }
     for(id of mids){
         document.getElementById(id).style.display = 'none';
     }
@@ -210,7 +214,11 @@ document.getElementById('ageverdash').addEventListener('click',async function(){
 })
 
 document.getElementById('absdash').addEventListener('click', async function(){
-    document.getElementById('sidebar-dashboard').style.display = 'none';
+    if(window.innerWidth<786){
+        document.getElementById('sidebar-dashboard').style.display = 'none';
+      }else{
+        document.getElementById('sidebar-dashboard').style.display = 'block';
+      }
     for(id of mids){
         document.getElementById(id).style.display = 'none';
     }
@@ -225,7 +233,11 @@ document.getElementById('absdash').addEventListener('click', async function(){
 })
 
 document.getElementById('livematches').addEventListener('click', async function(){
-    document.getElementById('sidebar-dashboard').style.display = 'none';
+    if(window.innerWidth<786){
+        document.getElementById('sidebar-dashboard').style.display = 'none';
+      }else{
+        document.getElementById('sidebar-dashboard').style.display = 'block';
+      }
     for(id of mids){
         document.getElementById(id).style.display = 'none';
     }
@@ -240,7 +252,11 @@ document.getElementById('livematches').addEventListener('click', async function(
 })
 
 document.getElementById('userinfo').addEventListener('click', async function(){
-    document.getElementById('sidebar-dashboard').style.display = 'none';
+    if(window.innerWidth<786){
+        document.getElementById('sidebar-dashboard').style.display = 'none';
+      }else{
+        document.getElementById('sidebar-dashboard').style.display = 'block';
+      }
     for(id of mids){
         document.getElementById(id).style.display = 'none';
     }
