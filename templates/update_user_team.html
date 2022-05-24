@@ -1,0 +1,107 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update User Team</title>
+    <link rel="stylesheet" href="{% static 'css/team_selection.css' %}">
+    <link rel="shortcut icon" href="{% static 'imgs/web/favicon.ico' %}" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e8423a8394.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+</head>
+
+
+<body>
+    {% include 'navbar.html' %}
+    <div class="multicolorbg">
+        <div class="box" id="box">
+            <div class="teamplayers">
+                <div class="wrapper_header">
+                    <div class="credit_access" style="text-align: right;margin-bottom: 10px;">
+                        <span>Available Credits :</span>
+                        <span id="total_credits">100</span>
+                    </div>
+                    <div class="payer_no" style="text-align: center;margin-bottom: 10px;">
+                        <span style="color: red;" id="player_numbers">You have to select 1-4 Wk-Bastmans </span>
+                    </div>
+                    <div class="progress_bar_team">
+                        <progress id="progress_bar_team" max="11" value="0"></progress>
+                    </div>
+                    <div class="head">
+                        <div onclick="show_wkbat()" style="font-weight: bold; width: 25%;cursor: pointer;word-wrap: break-word;" class="player_data active" id="Wk_Bat"><a
+                                onclick="show_wkbat()" id="wk_bat_a_tag">Wk-Bastman (0)</a></div>
+                        <div onclick="show_bat()" style="font-weight: bold; width: 25%;cursor: pointer;word-wrap: break-word;" class="player_data" id="Bat"><a
+                                onclick="show_bat()" id="bat_a_tag">Bastman (0)</a></div>
+                        <div style="font-weight: bold; width: 25%;cursor: pointer;word-wrap: break-word;" class="player_data" id="All_Round" onclick="show_allround()"><a
+                                onclick="show_allround()" id="ar_a_tag">Allrounder (0)</a></div>
+                        <div style="font-weight: bold; width: 25%;cursor: pointer;word-wrap: break-word;" class="player_data" id="Bowl" onclick="show_bowl()"><a
+                                onclick="show_bowl()" id="bowl_a_tag">Bowler (0)</a></div>
+                    </div>
+                    <div class="head1">
+                        <div style="width: 56%;padding-left: 15%; color: gray; font-weight: bold;">Player</div>
+                        <div class="credit_title" style="width: 25%; color: gray; font-weight: bold;">Credits</div>
+                        <div style="width: 14%;text-align: center; color: gray; font-weight: bold;">Add</div>
+                    </div>
+                </div>
+                <div style="overflow-y:auto;height: 50vh;">
+                    <div class="wkbatsmans" id="Wk_batting">
+
+                    </div>
+
+                    <div class="bastmans" id="batting">
+
+                    </div>
+                    <div class="allrounders" id="all_rounding">
+
+                    </div>
+                    <div class="bowlers" id="bowling">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="proceed" style="text-align: center;" id="btn_p">
+            <button class="proc_button" disabled="true" id="proc_btn" onclick="proceed_cap('{{captain}}','{{vicecaptain}}')">Proceed</button>
+        </div>
+        <div class="selction_cap box" id="team_box">
+            <div class="msgg" style="    border-bottom: 1px solid gray;
+            text-align: center;
+            color: red;
+            padding-bottom: 8px;">
+                <span id="mgstext">Please Choose your captain and vice captain</span>
+            </div>
+            <div class="head1">
+                <div style="width: 56%;padding-left: 15%; color: gray; font-weight: bold;">Player</div>
+                <div class="credit_title" style="width: 25%; color: gray; font-weight: bold;">Credits</div>
+                <div style="width: 14%;text-align: center; color: gray; font-weight: bold;">Select Cap/Vice Cap</div>
+            </div>
+            <div id="team_box_main_div1">
+
+            </div>
+            </div>
+            <div class="proceed_final" style="text-align: center;display: none;" id="btn_pf">
+                <button class="procf_button" disabled="true" id="procf_btn" onclick="proceed_final()">Proceed</button>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+{{ team1|json_script:'team1' }}
+{{ team2|json_script:'team2' }}
+{% for elm in ids %}
+    <script>
+        function loaduserbuildteam{{forloop.counter0}}(){
+            document.getElementById("{{elm}}").click();
+        }
+    </script>
+{% endfor %}
+
+<script src="{% static 'js/team_selection.js' %}"></script>
+</html>

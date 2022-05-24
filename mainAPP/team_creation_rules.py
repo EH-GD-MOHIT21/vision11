@@ -97,7 +97,7 @@ def validate_captains(captain,vice_captain):
 
 
 
-def finalize_team(data,captain,vicecaptain,match_id,user):
+def finalize_team(data,captain,vicecaptain,match_id,user,createnew=True,team_id=None):
     '''
         data is dictionary contains 
     '''
@@ -142,8 +142,17 @@ def finalize_team(data,captain,vicecaptain,match_id,user):
         return False, 'Captains not valid'
 
 
-    # create object of userTeam
-    model = UserTeam()
+    if not createnew:
+        if team_id != None:
+            model = UserTeam.objects.get(id=int(team_id))
+            model.players.clear()
+        else:
+            raise ValueError('Team Id can not be None')
+
+    else:
+        # create object of userTeam
+        model = UserTeam()
+
     model.match_id = match
     model.user = user
 

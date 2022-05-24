@@ -326,3 +326,23 @@ class ContestJoinAPI(APIView):
             return Response({'status':403,'message':'please authenticate yourself.'})
         except:
             return Response({'status':500,'message':'something went wrong.'})
+
+
+
+@login_required(login_url='/accounts/login')
+def RenderUpdateTeam(request,mid,tid):
+    try:
+        return vision11_render().render_update_team(request,mid,tid)
+    except Exception as e:
+        return redirect('/')
+
+
+
+class TeamUpdateHandler(APIView):
+    def post(self,request):
+        if not request.user.is_authenticated:
+            return Response({'status':403,'message':'Please authenticate yourself.'})
+        try:
+            return vision11().update_user_team(request.data,request.user)
+        except:
+            return Response({'status':500,'message':'something went wrong.'})

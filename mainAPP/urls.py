@@ -28,4 +28,6 @@ urlpatterns = [
     path('contestdetails/contest=<int:cid>',views.RenderContestDetails),
     path('is_match_end_true/match=<int:mid>',views.Set_End_Match.as_view()),
     path('viewcontest/match=<int:mid>',views.RenderMatchJoinedContest),
+    path('updateteam/match=<int:mid>/team=<int:tid>',views.RenderUpdateTeam),
+    path('updatemyteamhandler',views.TeamUpdateHandler.as_view()),
 ]

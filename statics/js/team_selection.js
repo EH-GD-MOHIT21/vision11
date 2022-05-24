@@ -541,6 +541,19 @@ async function player_api_data(api_url) {
             }
         }
     }
+    if(document.URL.includes('updateteam')){
+        loaduserbuildteam0();
+        loaduserbuildteam1();
+        loaduserbuildteam2();
+        loaduserbuildteam3();
+        loaduserbuildteam4();
+        loaduserbuildteam5();
+        loaduserbuildteam6();
+        loaduserbuildteam7();
+        loaduserbuildteam8();
+        loaduserbuildteam9();
+        loaduserbuildteam10();
+    }
 }
 
 player_api_data(team_players_api)
@@ -549,6 +562,7 @@ total_wicketkeeper = 0;
 total_batsman = 0;
 total_bowler = 0;
 total_allrounder = 0;
+
 
 function show_wkbat(){
     class_list = document.getElementById('Wk_Bat').classList
@@ -870,8 +884,7 @@ function rem_bowl(id){
     } 
 }
 
-function proceed_cap(){
-    console.log(individual_player_data)
+function proceed_cap(mycap='',myvc=''){
     total_players = total_wicketkeeper+total_batsman+total_allrounder+total_bowler;
     if(total_players==11){
         if(total_wicketkeeper>=1){
@@ -1124,6 +1137,41 @@ async function post_data(url){
     }
 }
 
+async function post_update_team(url){
+    let response = await fetch(url, {
+        credentials: 'include',
+        method: 'POST',
+        mode: 'same-origin',
+        headers: {
+            'X-CSRFToken': getCookie('X-CSRFToken'),
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            'players': individual_player_data,
+            'cap_data': cap_data,
+            'vice_cap_data': vice_cap_data,
+            'match_id': document.URL.split("#")[0].split('=')[1].split('/')[0],
+            'team_id': document.URL.split("#")[0].split('=')[2]
+        })
+    })
+    if (response.ok) {
+        let json = await response.json();
+        let message = json["message"];
+        if(message=='success'){
+            window.location.href = '/mycontests'
+        }else{
+            alert(message);
+        }
+    } else {
+        alert("HTTP-Error: " + response.status);
+    }
+}
+
 function proceed_final(){
+    if(document.URL.includes('updateteam')){
+        post_update_team('/updatemyteamhandler')
+        return
+    }
     post_data('/finalizeteam')
 }

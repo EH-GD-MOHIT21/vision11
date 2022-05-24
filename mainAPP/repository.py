@@ -236,6 +236,20 @@ class vision11:
         return redirect('/dashboard')
 
 
+    def update_user_team(self,data,user):
+        team_id = data["team_id"]
+        if user != UserTeam.objects.get(id=int(team_id)).user:
+            return Response({'status':403,'message':'You can not edit someone others team.'})
+        players,captain,vicecaptain = filter_team_data(data)
+        status,message = finalize_team(players,captain,vicecaptain,data["match_id"],user,createnew=False,team_id=int(team_id))
+        if status:
+            return Response({'status':200,'message':'success'})
+        return Response({'status':200,'message':message})
+
+
+
+
+
 class vision11_render:
 
     def render_userteam(self,request,mid,tid):
@@ -376,3 +390,31 @@ class vision11_render:
             'numberloss':number_contests-request.user.contests_won-pending_res,
             'pending':pending_res}
         )
+
+
+    def render_update_team(self,request,mid,tid):
+        match = Match.objects.get(id=int(mid))
+        tid = UserTeam.objects.get(id=int(tid))
+        players = tid.players.all()
+        captain = "cap"+str(tid.captain.pid)
+        vice_captain = "vicecap"+str(tid.vice_captain.pid)
+        # wk_batplus7990
+        # batplus1447
+        # allplus3007
+        # bowlplus1057
+        ids = []
+        for player in players:
+            if player.player_type == "BATSMEN":
+                ids.append("batplus"+str(player.pid))
+            elif player.player_type == "BOWLER":
+                ids.append("bowlplus"+str(player.pid))
+            elif player.player_type == "ALL ROUNDER":
+                ids.append("allplus"+str(player.pid))
+            elif player.player_type == "WICKET KEEPER":
+                ids.append("wk_batplus"+str(player.pid))
+        if tid.user == request.user:
+            if ((match.time - timezone.now()).days == 0 and (match.time - timezone.now()).seconds < 15*60) or (match.time - timezone.now()).days <= -1:
+                return HttpResponseBadRequest('Deadline for the match has passed.')
+            return render(request,'update_user_team.html',{'team1':match.team1,'team2':match.team2,'ids':ids,'captain':captain,'vicecaptain':vice_captain})
+        else:
+            return render(request,'404error.html',{'message':'Looks like team not exist or you have no access to team.'})
