@@ -10,7 +10,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-_%m7ea3s-j7c!%#$1kcr5rd9l%v0+3r2)kfokng)=fl!i992(h'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
+
+ON_HEROKU = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -87,24 +89,25 @@ TEMPLATES = [
 WSGI_APPLICATION = 'vision11.wsgi.application'
 
 
-DATABASES = {
+if ON_HEROKU:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'd15lbne5q2n61r',
+            'HOST': 'ec2-44-195-169-163.compute-1.amazonaws.com',
+            'PORT': 5432,
+            'USER': 'jqyrsjwxflfsvg',
+            'PASSWORD': '2095fb51b33157e73d5e9f15483e0f5ac4d6bc7f53ecaa36a4e097cecf2bb550'
+        }
+    }
+
+else:
+    DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+        }
     }
-}
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'd15lbne5q2n61r',
-#         'HOST': 'ec2-44-195-169-163.compute-1.amazonaws.com',
-#         'PORT': 5432,
-#         'USER': 'jqyrsjwxflfsvg',
-#         'PASSWORD': '2095fb51b33157e73d5e9f15483e0f5ac4d6bc7f53ecaa36a4e097cecf2bb550'
-#     }
-# }
-
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -198,20 +201,31 @@ RAZOR_KEY_SECRET = "cs3QfR8Wb6WQ7ZidL5Fr5P29"
 
 
 # Channel Layer Setup
-CHANNEL_LAYERS = {
+if ON_HEROKU:
+    CHANNEL_LAYERS = {
     "default": {
-        "BACKEND": "channels_redis.core.RedisChannelLayer",
-        "CONFIG": {
-            "hosts": [("127.0.0.1", 6379)],
+        "BACKEND": "channels.layers.InMemoryChannelLayer",
         },
-    },
-}
+    }
+else:
+    CHANNEL_LAYERS = {
+        "default": {
+            "BACKEND": "channels_redis.core.RedisChannelLayer",
+            "CONFIG": {
+                "hosts": [("127.0.0.1", 6379)],
+            },
+        },
+    }
 
 
 
 # celery
-CELERY_BROKER_URL = 'redis://localhost:6379'
-CELERY_RESULT_BACKEND = 'django-db'
+if ON_HEROKU:
+    CELERY_BROKER_URL = "memory://"
+    BROKER_BACKEND = 'memory'
+else:
+    CELERY_BROKER_URL = 'redis://localhost:6379'
+    CELERY_RESULT_BACKEND = 'django-db'
 CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TASK_SERIALIZER = 'json'
