@@ -136,7 +136,6 @@ def RenderPlayerMatchData(request,mid):
     try:
         return vision11_render().render_player_matchdata(request,mid)
     except Exception as e:
-        raise(e)
         return redirect('/staff')
 
 
@@ -158,7 +157,6 @@ def Updateplayermatchdata(request,mid,pid):
     try:
         return vision11_render().update_player_matchdata(request,mid,pid)
     except Exception as e:
-        raise(e)
         return redirect('/staff')
 
 def handler_404(request, exception=None):
