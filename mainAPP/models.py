@@ -179,57 +179,33 @@ class PlayersMatchData(models.Model):
         on_delete=models.Case
     )
 
-    runsScored = models.CharField(
-        max_length=4
-    )
+    runsScored = models.IntegerField(default=0)
 
-    ballsFaced = models.CharField(
-        max_length=4
-    )
+    ballsFaced = models.IntegerField(default=0)
 
-    fours = models.CharField(
-        max_length=4
-    )
+    fours = models.IntegerField(default=0)
 
-    sixes = models.CharField(
-        max_length=4
-    )
+    sixes = models.IntegerField(default=0)
 
-    strikeRate = models.CharField(
-        max_length=10
-    )
+    strikeRate = models.FloatField(default=0)
 
     out = models.BooleanField(
         default=False
     )
 
-    overs = models.CharField(
-        max_length=4
-    )
+    overs = models.FloatField(default=0)
     
-    maidens = models.CharField(
-        max_length=4
-    )
+    maidens = models.IntegerField(default=0)
 
-    runsGiven = models.CharField(
-        max_length=4
-    )
+    runsGiven = models.IntegerField(default=0)
 
-    wickets = models.CharField(
-        max_length=4
-    )
+    wickets = models.IntegerField(default=0)
 
-    wides = models.CharField(
-        max_length=4
-    )
+    wides = models.IntegerField(default=0)
 
-    noBalls = models.CharField(
-        max_length=4
-    )
+    noBalls = models.IntegerField(default=0)
 
-    economy = models.CharField(
-        max_length=4
-    )
+    economy = models.FloatField(default=0)
 
     catches = models.IntegerField(
         default=0
