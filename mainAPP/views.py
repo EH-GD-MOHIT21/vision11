@@ -134,7 +134,9 @@ def RenderPlayerMatchData(request,mid):
     rendering Player Match data page.
     '''
     try:
-        return vision11_render().render_player_matchdata(request,mid)
+        if request.user.is_staff:
+            return vision11_render().render_player_matchdata(request,mid)
+        return redirect('/')
     except Exception as e:
         return redirect('/staff')
 
@@ -155,7 +157,9 @@ def RenderUserTeam(request,mid,tid):
 @login_required(login_url='/accounts/login')
 def Updateplayermatchdata(request,mid,pid):
     try:
-        return vision11_render().update_player_matchdata(request,mid,pid)
+        if request.user.is_staff:
+            return vision11_render().update_player_matchdata(request,mid,pid)
+        return redirect('/')
     except Exception as e:
         return redirect('/staff')
 

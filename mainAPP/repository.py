@@ -434,8 +434,8 @@ class vision11_render:
 
 
     def update_player_matchdata(self,request,mid,pid):
-        match = Match.objects.get(id=mid)
-        player_obj = Player.objects.get(pid=pid)
+        match = Match.objects.get(id=int(mid))
+        player_obj = Player.objects.get(pid=int(pid))
         player = PlayersMatchData.objects.get(pid=player_obj)
         player.runsScored = int(request.POST['runs'])
         player.ballsFaced = int(request.POST['balls_faces'])
