@@ -184,6 +184,10 @@ function show_live_matches_data(data){
             a_but.textContent = 'Match Ended'
             a_but.setAttribute("onclick","set_match_end('"+data[i].id+"')")
             create_button.appendChild(a_but);
+            const a_but1 = document.createElement("a")
+            a_but1.textContent = 'view players points'
+            a_but1.href = "/playermatchdata/match="+data[i].id
+            create_button.appendChild(a_but1);
             element.appendChild(match_card);
     }
 
