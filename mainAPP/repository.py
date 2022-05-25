@@ -250,6 +250,15 @@ class vision11_render:
         return HttpResponseBadRequest('You can view other teams only if deadline has passed.')
 
 
+    def render_player_matchdata(self,request,mid):
+        try:
+            match = Match.objects.get(id=mid)
+        except:
+            return HttpResponseBadRequest('Match does not Exists!!')
+
+        get_players = PlayersMatchData.objects.filter(match_url=match)
+        return render(request,'playermatchdata.html',{'players_data':get_players})
+
     def render_contestdetails(self,request,cid):
         contest_teams = []
         contest = Contest.objects.get(id = cid)
@@ -376,3 +385,32 @@ class vision11_render:
             'numberloss':number_contests-request.user.contests_won-pending_res,
             'pending':pending_res}
         )
+
+    def update_player_matchdata(self,request,mid,pid):
+        match = Match.objects.get(id=mid)
+        player_obj = Player.objects.get(pid=pid)
+        player = PlayersMatchData.objects.get(pid=player_obj)
+        player.runsScored = int(request.POST['runs'])
+        player.ballsFaced = int(request.POST['balls_faces'])
+        player.fours = int(request.POST['fours'])
+        player.sixes = int(request.POST['sixes'])
+        player.strikeRate = float(request.POST['strike_rate'])
+        try:
+            request.POST['out']
+            player.out = True
+        except:
+            player.out = False
+        player.overs = int(request.POST['overs'])
+        player.maidens = int(request.POST['maiden'])
+        player.runsGiven = int(request.POST['runs_given'])
+        player.wickets = int(request.POST['wicket'])
+        player.wides = int(request.POST['wides'])
+        player.noBalls = int(request.POST['no_balls'])
+        player.economy = float(request.POST['economy'])
+        player.catches = int(request.POST['catches'])
+        player.runouts = int(request.POST['runouts'])
+        player.stumpings = int(request.POST['stumping'])
+        player.points = float(request.POST['points'])
+        player.additional_points = float(request.POST['add_points'])
+        player.save()
+        return redirect('/playermatchdata/match='+str(mid))

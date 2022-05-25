@@ -247,8 +247,16 @@ class PlayersMatchData(models.Model):
         default=0
     )
 
+    additional_points = models.FloatField(
+        default=0
+    )
+
     def __str__(self) -> str:
         return str(self.pid.pid) + " " + str(self.pid.player_name)
+
+    def save(self,*args,**kwargs):
+        self.points += self.additional_points
+        super(PlayersMatchData,self).save(*args,**kwargs)
 
 
 class UserTeam(models.Model):

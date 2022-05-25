@@ -127,6 +127,18 @@ def RenderContestDetails(request,cid):
         return redirect('/userjoinedcontest')
 
 
+@login_required(login_url='/accounts/login')
+def RenderPlayerMatchData(request,mid):
+    '''
+    This method is used for
+    rendering Player Match data page.
+    '''
+    try:
+        return vision11_render().render_player_matchdata(request,mid)
+    except Exception as e:
+        raise(e)
+        return redirect('/staff')
+
 
 
 @login_required(login_url='/accounts/login')
@@ -141,6 +153,13 @@ def RenderUserTeam(request,mid,tid):
         return redirect('/createteam/match='+str(mid))
 
 
+@login_required(login_url='/accounts/login')
+def Updateplayermatchdata(request,mid,pid):
+    try:
+        return vision11_render().update_player_matchdata(request,mid,pid)
+    except Exception as e:
+        raise(e)
+        return redirect('/staff')
 
 def handler_404(request, exception=None):
     '''

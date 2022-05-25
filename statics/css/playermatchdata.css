@@ -1,0 +1,83 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.multicolorbg {
+    background: crimson;
+    background-image: linear-gradient(120deg, #000 55%, crimson 55%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.multicolorbg .box{
+  width: 600px;
+  margin: auto;
+  margin-top: 115px;
+  margin-bottom: 15px;
+  background: #fff;
+  padding: 15px 14px;
+  border-radius: 12px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  height: 80vh;
+  overflow-y: auto;
+}
+
+
+.suggestion_form{
+    display: none;
+}
+
+.suggestion_form div{
+    width: 95%;
+    margin: auto;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.suggestion_form input{
+    border-radius: 5px;
+    width: 60%;
+    padding: 5px;
+    border: 1px solid #dddddd;
+}
+
+
+
+select#players {
+    display: block;
+    width: 60%;
+    margin: auto;
+    margin-bottom: 10px;
+    padding: 3px;
+    font-size: 18px;
+    border-radius: 5px;
+    border: 1px solid #dddddd;
+    margin-top: 3px;
+}
+
+.createbutton{
+    text-align: center;
+    margin-top: 15px;
+}
+
+.createbutton button{
+    color: #fff;
+    background: #0A2558;
+    padding: 4px 12px;
+    font-size: 18px;
+    font-weight: 400;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}

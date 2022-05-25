@@ -1,0 +1,137 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome User to Vision11</title>
+    <link rel="stylesheet" href="{% static 'css/playermatchdata.css' %}">
+    <link rel="shortcut icon" href="{% static 'imgs/web/favicon.ico' %}" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e8423a8394.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+</head>
+
+
+<body>
+    {% include 'navbar.html' %}
+    <div class="multicolorbg">
+        <div class="box" id="box">
+            
+            <select name="userselectedteam" id="players" onchange="show_player_data()">
+                {% for players in players_data %}
+                <option value="{{ players.pid.pid }}">{{ players.pid.player_name }}</option>
+                {% endfor %}
+              </select>
+              
+           
+            {% for players in players_data %}
+            <form class="suggestion_form"  id="player{{ players.pid.pid }}" action="/updateplayermatchdata/match={{ players.match_url.id }}/player={{ players.pid.pid }}" method="post">
+            {% csrf_token %}
+                <div >
+                <div class="head" style="text-align: center;"> 
+                </div>
+                  <div class="form_">
+                    <!-- <div class="name">
+                    <label class="input_title">Name: </label>
+                      <input placeholder="Name" name="name" value={{ players.pid.player_name }}>
+                    </div> -->
+                    <div class="runs">
+                    <label class="input_title">Run scored: </label>
+                      <input placeholder="Run Scored" name="runs" value={{ players.runsScored }}>
+                    </div>
+                    <div class="balls">
+                        <label class="input_title">Ball faced: </label>
+                      <input placeholder="Balls" name="balls_faces" value={{ players.ballsFaced }}>
+                    </div>
+                    <div class="fours">
+                        <label class="input_title">Fours: </label>
+                      <input placeholder="fours" name="fours" value = {{ players.fours }}>
+                    </div>
+                    <div class="sixes">
+                        <label class="input_title">Sixes: </label>
+                      <input placeholder="sixes" name="sixes" value = {{ players.sixes }}>
+                    </div>
+                    <div class="stiker">
+                        <label class="input_title">strike rate: </label>
+                      <input placeholder="stikr_rate" name="strike_rate" value = {{ players.strikeRate }}>
+                    </div>
+                    <div class="stiker">
+                        <label class="input_title">Out</label>
+                        {% if players.out %}
+                        <input type="checkbox" placeholder="stikr_rate" name="out" checked>
+                        {% else %}
+                        <input type="checkbox" placeholder="stikr_rate" name="out" >
+                        {% endif %}
+                    </div>
+                    <div class="overs">
+                        <label class="input_title">Overs: </label>
+                      <input placeholder="overs" name="overs" value = {{ players.overs }}>
+                    </div>
+                    <div class="maidens">
+                        <label class="input_title">Maidens: </label>
+                      <input placeholder="maiden" name="maiden" value = {{ players.maidens }}>
+                    </div>
+                    <div class="runsgiven">
+                        <label class="input_title">Runs Given: </label>
+                        <input placeholder="runs_given" name="runs_given" value = {{ players.runsGiven }}>
+                    </div>
+                    <div class="wickets">
+                        <label class="input_title">Wickets: </label>
+                      <input placeholder="wicket" name="wicket" value = {{ players.wickets }}>
+                    </div>
+                    <div class="wides">
+                        <label class="input_title">Wides: </label>
+                      <input placeholder="wides" name="wides" value = {{ players.wides }}>
+                    </div>
+                    <div class="noballs">
+                        <label class="input_title">No balls: </label>
+                      <input placeholder="no_balls" name="no_balls" value = {{ players.noBalls }}>
+                    </div>
+                    <div class="economy">
+                        <label class="input_title">Economy: </label>
+                      <input placeholder="economy" name="economy" value = {{ players.economy }}>
+                    </div>
+                    <div class="catches">
+                        <label class="input_title">Catches: </label>
+                      <input placeholder="catches" name="catches" value = {{ players.catches }}>
+                    </div>
+                    <div class="runouts">
+                        <label class="input_title">runouts: </label>
+                      <input placeholder="runouts" name="runouts" value = {{ players.runouts }}>
+                    </div>
+                    <div class="stumping">
+                        <label class="input_title">stumping: </label>
+                      <input placeholder="stumping" name="stumping" value = {{ players.stumpings }}>
+                    </div>
+                    <div class="points">
+                        <label class="input_title">Points: </label>
+                      <input placeholder="points" name="points" value = {{ players.points }}>
+                    </div>
+                    <div class="addpoints">
+                        <label class="input_title">Additional Points: </label>
+                      <input placeholder="add points" name="add_points" value = {{ players.additional_points }}>
+                    </div>
+
+                  <div class="createbutton">
+                    <button type="submit">Update details</button>
+                  </div>
+                
+                  
+                
+              </div>
+        </div>
+            </form>
+        {% endfor %}
+    </div>
+    {{ players_data.0.pid.pid|json_script:"first_id" }}
+</body>
+<script src="{% static 'js/playermatchdata.js' %}"></script>
+
+
+</html>
