@@ -15,7 +15,7 @@
     <div class="parentdiv">
         <div class="child1">
             <div class="child2">
-                <h5>wicketkeeper</h5>
+                <h5>wicketkeeper <a id="reurl" style="color: black;font-size: 14px;" href="#">Update Team?</a></h5>
                 <div class="wicketkeeper">
                     {% for player in data %}
                     {%if player.player_type == "WICKET KEEPER" %}
@@ -127,4 +127,9 @@
         </div>
     </div>
 </body>
+<script>
+    document.getElementById('reurl').addEventListener('click',function(){
+        document.getElementById('reurl').href = document.URL.replace('userteam','updateteam');
+    })
+</script>
 </html>

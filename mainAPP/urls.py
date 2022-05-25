@@ -29,5 +29,7 @@ urlpatterns = [
     path('is_match_end_true/match=<int:mid>',views.Set_End_Match.as_view()),
     path('viewcontest/match=<int:mid>',views.RenderMatchJoinedContest),
     path('playermatchdata/match=<int:mid>',views.RenderPlayerMatchData),
-    path('updateplayermatchdata/match=<int:mid>/player=<int:pid>',views.Updateplayermatchdata)
+    path('updateplayermatchdata/match=<int:mid>/player=<int:pid>',views.Updateplayermatchdata),
+    path('updateteam/match=<int:mid>/team=<int:tid>',views.RenderUpdateTeam),
+    path('updatemyteamhandler',views.TeamUpdateHandler.as_view()),
 ]
