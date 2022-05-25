@@ -259,7 +259,7 @@ class vision11_render:
         
         
         if userteam.user == request.user or ((match.time - timezone.now()).days == 0 and (match.time - timezone.now()).seconds < 15*60) or (match.time - timezone.now()).days <= -1:
-            if ((match.time - timezone.now()).days == 0 and (match.time - timezone.now()).seconds < 15*60):
+            if ((match.time - timezone.now()).days == 0 and (match.time - timezone.now()).seconds < 15*60) or (match.time - timezone.now()).days <= -1:
                 show = False
             else:
                 show = True
