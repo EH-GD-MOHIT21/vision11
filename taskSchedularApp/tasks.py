@@ -1,4 +1,5 @@
 from __future__ import absolute_import, unicode_literals
+import ast
 from celery import shared_task as task
 from mainAPP.scrapper.upcoming_matches import list_today_matches
 from mainAPP.scrapper.live_score import Update_Live_Score
@@ -83,14 +84,24 @@ def ProvideMoneyUser(match_obj_id):
         if not contest.reward_claimed:
             teams = contest.teams.all().order_by('-total_team_points')
             price = (contest.price_fee/contest.length)*len(teams)
-            user_team = teams[0]
-            if user_team.user.currency_type == contest.fee_type:
-                user_team.user.vision_credits += round(price,2)
-                user_team.user.contests_won += 1
-                user_team.user.save()
-                VisionCurrencyDetails(user=user_team.user,currency_type_user=user_team.user.currency_type,payment=round(price,2),log=f'win a contest with id {contest.id}, team id {user_team.id}',currency_type_contest=contest.fee_type).save()
-            else:
-                VisionCurrencyDetails(user=user_team.user,currency_type_user=user_team.user.currency_type,payment=round(price,2),log=f'win a contest with id {contest.id}, team id {user_team.id} but modified currency.',payment_add=False,currency_type_contest=contest.fee_type).save()
+            stack = []
+            if not(contest.price_distribution_array == '' or contest.price_distribution_array == None):
+                stack = ast.literal_eval(contest.price_distribution_array)
+            for _i in range(contest.no_of_winners):
+                user_team = teams[_i]
+                if user_team.user.currency_type == contest.fee_type:
+                    if stack:
+                        mystack = float(stack[_i])*price
+                    elif contest.is_equal_distribute:
+                        mystack = price/contest.no_of_winners
+                    else:
+                        mystack = price
+                    user_team.user.vision_credits += round(mystack,2)
+                    user_team.user.contests_won += 1
+                    user_team.user.save()
+                    VisionCurrencyDetails(user=user_team.user,currency_type_user=user_team.user.currency_type,payment=round(price,2),log=f'win a contest with id {contest.id}, team id {user_team.id}',currency_type_contest=contest.fee_type).save()
+                else:
+                    VisionCurrencyDetails(user=user_team.user,currency_type_user=user_team.user.currency_type,payment=round(price,2),log=f'win a contest with id {contest.id}, team id {user_team.id} but modified currency.',payment_add=False,currency_type_contest=contest.fee_type).save()
             contest.reward_claimed = True
             contest.save()
             logger.debug(f"successfully updated balance {round(price,2)} for {user_team.user.username} at "+str(timezone.now())+' hours!')

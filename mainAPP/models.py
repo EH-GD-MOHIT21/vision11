@@ -1,7 +1,7 @@
+import ast
 from django.db import models
+from mainAPP.Exceptions import InvalidWinnerListParser, InvalidWinnerStringParser
 from usermanagerAPP.models import User1
-from django.db.models.signals import pre_save
-from django.dispatch import receiver
 
 # Create your models here.
 
@@ -17,13 +17,13 @@ class Team(models.Model):
     )
 
     team_img = models.ImageField(
-        upload_to = 'team_img',
+        upload_to='team_img',
         null=True,
         blank=True
     )
 
     team_url = models.TextField(
-        null=True, 
+        null=True,
         blank=True
     )
 
@@ -63,7 +63,6 @@ class Player(models.Model):
         return self.player_name
 
 
-
 class User_Feature_Suggestion(models.Model):
     user = models.ForeignKey(
         User1,
@@ -91,7 +90,7 @@ class User_Feature_Suggestion(models.Model):
         null=True,
         blank=True
     )
-    
+
     is_seen = models.BooleanField(
         default=False
     )
@@ -141,11 +140,13 @@ class Match(models.Model):
         blank=True
     )
 
-    def save(self,*args,**kwargs):
+    def save(self, *args, **kwargs):
         try:
             if self.team1_img == '' or self.team1_img == None or self.team2_img == None or self.team2_img == '':
-                self.team1_img = Team.objects.get(team_name=self.team1).team_img
-                self.team2_img = Team.objects.get(team_name=self.team2).team_img
+                self.team1_img = Team.objects.get(
+                    team_name=self.team1).team_img
+                self.team2_img = Team.objects.get(
+                    team_name=self.team2).team_img
         except:
             pass
 
@@ -154,18 +155,6 @@ class Match(models.Model):
     def __str__(self):
         return str(self.id) + ". " + self.title
 
-
-
-@receiver(pre_save, sender=Match)
-def pre_save(sender, instance, **kwargs):
-    try:
-        from taskSchedularApp.tasks import ProvideMoneyUser
-        previous = Match.objects.get(id=instance.id)
-    except:
-        return
-    if previous.is_match_end != instance.is_match_end and instance.is_match_end == True:
-        ProvideMoneyUser.delay(instance.id)
-        # do celery stuff here to give price money to winners
 
 
 
@@ -195,7 +184,7 @@ class PlayersMatchData(models.Model):
     )
 
     overs = models.FloatField(default=0)
-    
+
     maidens = models.IntegerField(default=0)
 
     runsGiven = models.IntegerField(default=0)
@@ -231,9 +220,9 @@ class PlayersMatchData(models.Model):
     def __str__(self) -> str:
         return str(self.pid.pid) + " " + str(self.pid.player_name)
 
-    def save(self,*args,**kwargs):
+    def save(self, *args, **kwargs):
         self.points += self.additional_points
-        super(PlayersMatchData,self).save(*args,**kwargs)
+        super(PlayersMatchData, self).save(*args, **kwargs)
 
 
 class UserTeam(models.Model):
@@ -250,7 +239,7 @@ class UserTeam(models.Model):
     players = models.ManyToManyField(
         Player
     )
-    
+
     captain = models.ForeignKey(
         Player,
         on_delete=models.Case,
@@ -266,9 +255,6 @@ class UserTeam(models.Model):
     total_team_points = models.FloatField(
         default=0
     )
-
-
-
 
 
 class Contest(models.Model):
@@ -297,7 +283,7 @@ class Contest(models.Model):
     price_fee = models.FloatField(
         default=0
     )
-    
+
     teams = models.ManyToManyField(
         to=UserTeam
     )
@@ -317,6 +303,70 @@ class Contest(models.Model):
         blank=True
     )
 
-    def save(self,*args,**kwargs):
-        self.price_fee = round(self.entry_fee * 0.7 * self.length,2)
+    # admin accessessable fields
+    no_of_winners = models.IntegerField(
+        default=1
+    )
+
+    # internal working [0.5,0.3,0.2] -> 3 winners 1 will get 0.5 times of price_fee, 2 will get 0.3 times of,3 will 0.2 total should be one (0.5+0.3+0.2) 
+
+    price_distribution_array = models.TextField(
+        null=True,
+        blank=True
+    )
+
+    is_equal_distribute = models.BooleanField(
+        default=True
+    )
+
+    def save(self, *args, **kwargs):
+        self.price_fee = round(self.entry_fee * 0.7 * self.length, 2)
+        if self.price_distribution_array == '' or self.price_distribution_array==None:
+            pass
+        else:
+            if '-' in self.price_distribution_array and ':' in self.price_distribution_array:
+                try:
+                    ones = 0
+                    pz = 0
+                    array = [0 for i in range(self.length)]
+                    for line in self.price_distribution_array.split('\n'):
+                        playerrange,value = line.split(':')
+                        start,end = map(int,playerrange.split('-'))
+                        for i in range(start,end+1):
+                            array[i] = float(value)/(end+1-start)
+                            ones += 1
+                        pz += float(value)
+                    self.no_of_winners = ones
+                    self.price_distribution_array = array
+                    self.is_equal_distribute = False
+                    if pz > 1:
+                        raise InvalidWinnerStringParser(message="Total stackper should be less than 1.")
+                except Exception as e:
+                    raise InvalidWinnerStringParser()
+            elif self.price_distribution_array == '' or self.price_distribution_array == None:
+                pass
+            
+            else:
+                try:
+                    array = ast.literal_eval(self.price_distribution_array)
+                    if not isinstance(array,list):
+                        raise InvalidWinnerStringParser(message="Unexpected DataType: Expected List of elements or string")
+                    if sum(array) > 1:
+                        raise InvalidWinnerStringParser(message="Total stackper should be less than 1.")
+                    if self.length != len(array):
+                        raise InvalidWinnerListParser(message="Expected equal attributes as length of contests.")
+                    zeros = array.count(0)
+                    self.no_of_winners = self.length - zeros
+                    self.price_distribution_array = array
+                    self.is_equal_distribute = False
+                except Exception as e:
+                    raise(e)
+
+        if self.no_of_winners > 1 and (not self.is_equal_distribute) and (self.price_distribution_array == '' or self.price_distribution_array == None):
+            raise AttributeError('please set atleast one attribute is_equal_distribute or price_distribution_array if winner > 1.')
+        
+        if self.no_of_winners <= 0:
+            raise ValueError('Bsdk contest kyu bana raha fir.')
         super(Contest, self).save(*args, **kwargs)
+
+
