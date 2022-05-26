@@ -43,7 +43,8 @@ class Player(models.Model):
 
     player_pic = models.ImageField(
         null=True,
-        blank=True
+        blank=True,
+        default='https://www.cricbuzz.com/a/img/v1/152x152/i1/c182026/rajat-patidar.jpg'
     )
 
     player_points = models.FloatField(
