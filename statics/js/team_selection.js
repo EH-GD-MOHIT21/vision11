@@ -636,7 +636,7 @@ function add_wk(id){
     get_credit = document.getElementById('wkcredits'+new_id).textContent
     total_credits = document.getElementById('total_credits').textContent
     total_players = total_wicketkeeper+total_batsman+total_allrounder+total_bowler
-    if((total_wicketkeeper<=3 && (parseFloat(total_credits) - parseFloat(get_credit))>0) && (total_players<11)){
+    if((total_wicketkeeper<=3 && (parseFloat(total_credits) - parseFloat(get_credit))>=0) && (total_players<11)){
     document.getElementById(id).style.display='none';
     document.getElementById('wk_batminus'+new_id).style.display='inline';
     document.getElementById('Wk_bat'+new_id).style.background='lightgray';
@@ -700,7 +700,7 @@ function add_bat(id){
     get_credit = document.getElementById('batcredits'+new_id).textContent
     total_credits = document.getElementById('total_credits').textContent
     total_players = total_wicketkeeper+total_batsman+total_allrounder+total_bowler
-    if((total_batsman<=5 && (parseFloat(total_credits) - parseFloat(get_credit))>0) && (total_players<11)){
+    if((total_batsman<=5 && (parseFloat(total_credits) - parseFloat(get_credit))>=0) && (total_players<11)){
     document.getElementById(id).style.display='none';
     document.getElementById('batminus'+new_id).style.display='inline';
     document.getElementById('bat'+new_id).style.background='lightgray';
@@ -763,7 +763,7 @@ function add_round(id){
     get_credit = document.getElementById('allcredits'+new_id).textContent
     total_credits = document.getElementById('total_credits').textContent
     total_players = total_wicketkeeper+total_batsman+total_allrounder+total_bowler
-    if((total_allrounder<=3 && (parseFloat(total_credits) - parseFloat(get_credit))>0) && (total_players<11)){
+    if((total_allrounder<=3 && (parseFloat(total_credits) - parseFloat(get_credit))>=0) && (total_players<11)){
     document.getElementById(id).style.display='none';
     document.getElementById('allminus'+new_id).style.display='inline';
     document.getElementById('all_round'+new_id).style.background='lightgray';
@@ -826,7 +826,7 @@ function add_bowl(id){
     get_credit = document.getElementById('bowlcredits'+new_id).textContent
     total_credits = document.getElementById('total_credits').textContent
     total_players = total_wicketkeeper+total_batsman+total_allrounder+total_bowler
-    if((total_bowler<=5 && (parseFloat(total_credits) - parseFloat(get_credit))>0) && (total_players<11)){
+    if((total_bowler<=5 && (parseFloat(total_credits) - parseFloat(get_credit))>=0) && (total_players<11)){
     document.getElementById(id).style.display='none';
     document.getElementById('bowlminus'+new_id).style.display='inline';
     document.getElementById('bowl'+new_id).style.background='lightgray';
