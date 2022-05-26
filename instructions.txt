@@ -1,0 +1,28 @@
+1. installation of python and pip is must (add both to env variable before move ahead)
+
+2. open a command prompt and run the following :- 
+    - pip install virtualenv
+    - pip install virtualenvwrapper-win  (use -win if you are on windows otherwise remove)
+
+3. make a virtualenv
+    - mkvirualenv <name>
+    - workon <name>
+
+4. install required packages
+    - pip install -r requirements.txt
+
+5. (make sure you are in main project directory) and then run the commands of bat file
+    - .\run_cmds.bat
+    It'll also start the django ASGI server
+
+6. open new command prompt and run
+    - cd redisServer
+    - .\redis-server.exe
+
+7. open new terminal to start celery workers
+    - celery -A taskSchedularApp.celery worker -l info -c 3 -P eventlet
+
+8. open new terminal to start celery beat
+    - celery -A taskSchedularApp beat -l info
+
+You're ready to use the vision11
