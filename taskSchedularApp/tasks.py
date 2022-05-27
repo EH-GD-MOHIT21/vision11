@@ -83,11 +83,12 @@ def ProvideMoneyUser(match_obj_id):
     for contest in contests:
         if not contest.reward_claimed:
             teams = contest.teams.all().order_by('-total_team_points')
+            actual_length = len(teams)
             price = (contest.price_fee/contest.length)*len(teams)
             stack = []
             if not(contest.price_distribution_array == '' or contest.price_distribution_array == None):
                 stack = ast.literal_eval(contest.price_distribution_array)
-            for _i in range(contest.no_of_winners):
+            for _i in range(min(contest.no_of_winners,actual_length)):
                 user_team = teams[_i]
                 if user_team.user.currency_type == contest.fee_type:
                     if stack:
@@ -99,12 +100,12 @@ def ProvideMoneyUser(match_obj_id):
                     user_team.user.vision_credits += round(mystack,2)
                     user_team.user.contests_won += 1
                     user_team.user.save()
-                    VisionCurrencyDetails(user=user_team.user,currency_type_user=user_team.user.currency_type,payment=round(price,2),log=f'win a contest with id {contest.id}, team id {user_team.id}',currency_type_contest=contest.fee_type).save()
+                    VisionCurrencyDetails(user=user_team.user,currency_type_user=user_team.user.currency_type,payment=round(mystack,2),log=f'win a contest with id {contest.id}, team id {user_team.id}',currency_type_contest=contest.fee_type).save()
                 else:
-                    VisionCurrencyDetails(user=user_team.user,currency_type_user=user_team.user.currency_type,payment=round(price,2),log=f'win a contest with id {contest.id}, team id {user_team.id} but modified currency.',payment_add=False,currency_type_contest=contest.fee_type).save()
+                    VisionCurrencyDetails(user=user_team.user,currency_type_user=user_team.user.currency_type,payment=round(mystack,2),log=f'win a contest with id {contest.id}, team id {user_team.id} but modified currency.',payment_add=False,currency_type_contest=contest.fee_type).save()
             contest.reward_claimed = True
             contest.save()
-            logger.debug(f"successfully updated balance {round(price,2)} for {user_team.user.username} at "+str(timezone.now())+' hours!')
+            logger.debug(f"successfully updated balance query for prize {round(price,2)} at "+str(timezone.now())+' hours!')
         else:
             teams = contest.teams.all().order_by('-total_team_points')
             price = (contest.price_fee/contest.length)/len(teams)

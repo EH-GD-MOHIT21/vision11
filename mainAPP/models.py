@@ -326,7 +326,6 @@ class Contest(models.Model):
         else:
             if '-' in self.price_distribution_array and ':' in self.price_distribution_array:
                 try:
-                    ones = 0
                     pz = 0
                     array = [0 for i in range(self.length)]
                     for line in self.price_distribution_array.split('\n'):
@@ -334,9 +333,8 @@ class Contest(models.Model):
                         start,end = map(int,playerrange.split('-'))
                         for i in range(start,end+1):
                             array[i] = float(value)/(end+1-start)
-                            ones += 1
                         pz += float(value)
-                    self.no_of_winners = ones
+                    self.no_of_winners = self.length - array.count(0)
                     self.price_distribution_array = array
                     self.is_equal_distribute = False
                     if pz > 1:
@@ -364,9 +362,12 @@ class Contest(models.Model):
 
         if self.no_of_winners > 1 and (not self.is_equal_distribute) and (self.price_distribution_array == '' or self.price_distribution_array == None):
             raise AttributeError('please set atleast one attribute is_equal_distribute or price_distribution_array if winner > 1.')
+
+        if self.no_of_winners > self.length:
+            raise ValueError("no of winners should be less or equal to length of contest.")
         
         if self.no_of_winners <= 0:
-            raise ValueError('Bsdk contest kyu bana raha fir.')
+            raise ValueError('Why are you making contest dude?')
         super(Contest, self).save(*args, **kwargs)
 
 

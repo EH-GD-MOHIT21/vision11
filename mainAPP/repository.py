@@ -62,7 +62,7 @@ class vision11:
 
     
     def get_upcoming_matches(self):
-        match = Match.objects.filter(is_match_end=False,time__gt=timezone.now())
+        match = Match.objects.filter(is_match_end=False,time__gt=timezone.now()).order_by('time')
         data = []
         for i in match:
             match_data_individual = {}
@@ -308,7 +308,12 @@ class vision11_render:
                         user_wined_slot.append(i.length-length)
                         num = round((length/i.length)*100,2)
                         user_wined_perc.append(num)
-        
+        contests = contests[::-1]
+        available_slots = available_slots[::-1]
+        percentage_full = percentage_full[::-1]
+        user_wined_contest = user_wined_contest[::-1]
+        user_wined_slot = user_wined_slot[::-1]
+        user_wined_perc = user_wined_perc[::-1]
         return render(request,
             'usercontest.html',
             {'contests':zip(contests,available_slots,percentage_full),
@@ -447,7 +452,7 @@ class vision11_render:
             player.out = True
         except:
             player.out = False
-        player.overs = int(request.POST['overs'])
+        player.overs = float(request.POST['overs'])
         player.maidens = int(request.POST['maiden'])
         player.runsGiven = int(request.POST['runs_given'])
         player.wickets = int(request.POST['wicket'])
