@@ -25,6 +25,15 @@
             <div class="mathc_name">
                 <span>{{ name }}</span>
             </div>
+            <div class="mathc_name">
+                Winning Details :
+                <select>
+                    <option>----</option>
+                    {% for prize in prize_rules%}
+                    <option>Player {{forloop.counter}}, {{ prize }}</option>
+                    {% endfor %}
+                </select>
+            </div>
             <div class="contest_teams">
             <div class="contest_head">
                 <div style="width: 56%;padding-left: 5%; color: gray; font-weight: bold;">All Teams</div>

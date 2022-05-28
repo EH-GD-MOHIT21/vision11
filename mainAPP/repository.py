@@ -1,3 +1,4 @@
+import ast
 from django.http import HttpResponseBadRequest
 from mainAPP.models import Contest, Match,Player, PlayersMatchData,Team, User_Feature_Suggestion, UserTeam
 from django.utils import timezone
@@ -279,12 +280,23 @@ class vision11_render:
 
     def render_contestdetails(self,request,cid):
         contest_teams = []
+        prize_rules = []
         contest = Contest.objects.get(id = cid)
+        winners = contest.no_of_winners
+        pd_array = contest.price_distribution_array
+        is_equal = contest.is_equal_distribute
+        if winners == 1:
+            prize_rules = [contest.price_fee]
+        elif is_equal:
+            prize_rules = [round(contest.price_fee/contest.no_of_winners,3) for i in range(contest.no_of_winners)]
+        else:
+            pd_array = ast.literal_eval(pd_array)
+            prize_rules = [round(contest.price_fee*float(pd_array[i]),3) for i in range(contest.no_of_winners)]
         match_name = contest.match_id.title
         for i in contest.teams.all().order_by('-total_team_points'):
             contest_teams.append(i)
         
-        return render(request,'contestdetails.html',{'teams':contest_teams,'name':match_name})
+        return render(request,'contestdetails.html',{'teams':contest_teams,'name':match_name,'prize_rules':prize_rules})
     
     #user joined contest
     def render_usercontest(self,request):

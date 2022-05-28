@@ -123,8 +123,9 @@ def RenderContestDetails(request,cid):
     '''
     try:
         return vision11_render().render_contestdetails(request,cid)
-    except:
-        return redirect('/userjoinedcontest')
+    except Exception as e:
+        print(e)
+        return redirect('/mycontests')
 
 
 @login_required(login_url='/accounts/login')
@@ -345,7 +346,8 @@ class ContestJoinAPI(APIView):
             if request.user.is_authenticated:
                 return vision11().join_contest(request.data,request.user)
             return Response({'status':403,'message':'please authenticate yourself.'})
-        except:
+        except Exception as e:
+            print(e)
             return Response({'status':500,'message':'something went wrong.'})
 
 

@@ -339,7 +339,8 @@ class Contest(models.Model):
                     self.no_of_winners = self.length - array.count(0)
                     self.price_distribution_array = array
                     self.is_equal_distribute = False
-                    if pz > 1:
+                    if pz > 1.02:
+                        print(pz)
                         raise InvalidWinnerStringParser(message="Total stackper should be less than 1.")
                 except Exception as e:
                     raise InvalidWinnerStringParser()
@@ -351,7 +352,7 @@ class Contest(models.Model):
                     array = ast.literal_eval(self.price_distribution_array)
                     if not isinstance(array,list):
                         raise InvalidWinnerStringParser(message="Unexpected DataType: Expected List of elements or string")
-                    if sum(array) > 1:
+                    if sum(array) > 1.02:
                         raise InvalidWinnerStringParser(message="Total stackper should be less than 1.")
                     if self.length != len(array):
                         raise InvalidWinnerListParser(message="Expected equal attributes as length of contests.")
