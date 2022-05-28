@@ -264,7 +264,8 @@ class Contest(models.Model):
     )
 
     user = models.ManyToManyField(
-        User1
+        User1,
+        blank= True
     )
 
     entry_fee = models.FloatField(
@@ -285,7 +286,8 @@ class Contest(models.Model):
     )
 
     teams = models.ManyToManyField(
-        to=UserTeam
+        to=UserTeam,
+        blank=True
     )
 
     reward_claimed = models.BooleanField(
