@@ -248,6 +248,21 @@ class vision11:
         return Response({'status':200,'message':message})
 
 
+    def get_contest_winnerlist_price(self,contest_id):
+        # contest_id = data["contest"]
+        contest = Contest.objects.get(id=int(contest_id))
+        winners = contest.no_of_winners
+        pd_array = contest.price_distribution_array
+        is_equal = contest.is_equal_distribute
+        if winners == 1:
+            prize_rules = [contest.price_fee]
+        elif is_equal:
+            prize_rules = [round(contest.price_fee/contest.no_of_winners,3) for i in range(contest.no_of_winners)]
+        else:
+            pd_array = ast.literal_eval(pd_array)
+            prize_rules = [round(contest.price_fee*float(pd_array[i]),3) for i in range(contest.no_of_winners)]
+
+        return Response({'status':200,'message':'success','data':prize_rules})
 
 
 

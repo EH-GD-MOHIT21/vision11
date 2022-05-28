@@ -369,3 +369,14 @@ class TeamUpdateHandler(APIView):
             return vision11().update_user_team(request.data,request.user)
         except:
             return Response({'status':500,'message':'something went wrong.'})
+
+
+
+class GetContestWinnerListPrice(APIView):
+    def get(self,request,cid):
+        if not request.user.is_authenticated:
+            return Response({'status':403,'message':'Please authenticate yourself.'})
+        try:
+            return vision11().get_contest_winnerlist_price(cid)
+        except:
+            return Response({'status':500,'message':'something went wrong.'})

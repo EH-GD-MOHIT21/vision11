@@ -32,4 +32,5 @@ urlpatterns = [
     path('updateplayermatchdata/match=<int:mid>/player=<int:pid>',views.Updateplayermatchdata),
     path('updateteam/match=<int:mid>/team=<int:tid>',views.RenderUpdateTeam),
     path('updatemyteamhandler',views.TeamUpdateHandler.as_view()),
+    path('listcontestwinnertypedetails/contest=<int:cid>',views.GetContestWinnerListPrice.as_view()),
 ]
