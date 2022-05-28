@@ -1,4 +1,4 @@
-USE_LOCAL_SETTINGS = True
+USE_LOCAL_SETTINGS = False
 
 if USE_LOCAL_SETTINGS:
     from vision11.main_settings import *

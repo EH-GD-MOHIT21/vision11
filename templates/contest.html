@@ -148,13 +148,28 @@
 
 
     async function show_winners(cid){
-    
-        url = '/listcontestwinnertypedetails/contest='+parseInt(cid)
-        data = await get_data(url);
+        var display_this = []
+        var url = '/listcontestwinnertypedetails/contest='+parseInt(cid)
+        var data = await get_data(url);
+        var start = true
         for(var i=0;i<data.length;i++){
-            data[i]='Player'+(i+1)+" :"+data[i]+'\n'
+            if(start){
+                start = false;
+                new_arr = [i+1,i+1,data[i]];
+                var prev = data[i];
+            }else{
+                if(prev==data[i]){
+                    new_arr[1] = i+1;
+                }else{
+                    display_this.push(new_arr[0]+"-"+new_arr[1]+": "+new_arr[2]);
+                    display_this.push('\n');
+                    new_arr = [i+1,i+1,data[i]];
+                    var prev = data[i];
+                }
+            }
         }
-        alert(data)
+        display_this.push(new_arr[0]+"-"+new_arr[1]+": "+new_arr[2]);
+        alert(display_this)
     }    
 </script>
 <script src="{% static 'js/contests.js' %}"></script>
