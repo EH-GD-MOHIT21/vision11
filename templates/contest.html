@@ -51,7 +51,10 @@
                         </div>
                         <div class="money_container">
                             <span id="prize{{forloop.counter0}}" class="prize"><i class="fa fa-inr" aria-hidden="true"></i>
-                                {{ contest.price_fee }} ({{ contest.no_of_winners }})</span>
+                                {{ contest.price_fee }} ({{ contest.no_of_winners }})
+                                <div class="help-tip" onclick="show_winners({{ contest.id }})">
+                                </div>
+                            </span>
                             <span id="entryfee1" class="entryfe">{{ contest.entry_fee }} {{ contest.fee_type }}</span>
                         </div>
                         <div class="progress_bar">
@@ -82,8 +85,8 @@
                             <span class="entr">Entry</span>
                         </div>
                         <div class="money_container">
-                            <span id="prizeprivate" class="prize"><i class="fa fa-inr" aria-hidden="true"></i>
-                                    </span>
+                            <span id="prizeprivate" class="prize"><i class="fa fa-inr" aria-hidden="true"></i>      
+                            </span>
                             <span id="entryfeeprivate" class="entryfe"></span>
                         </div>
                         <div class="progress_bar">
@@ -124,6 +127,35 @@
     </div>
 
 </body>
+<script>
+    async function get_data(url){
+        let response = await fetch(url, {
+            credentials: 'include',
+            method: 'GET',
+            mode: 'same-origin',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+        })
+        if (response.ok) {
+            let json = await response.json();
+            return json['data'];
+        } else {
+            alert("HTTP-Error: " + response.status);
+        }
+    }
 
+
+    async function show_winners(cid){
+    
+        url = '/listcontestwinnertypedetails/contest='+parseInt(cid)
+        data = await get_data(url);
+        for(var i=0;i<data.length;i++){
+            data[i]='Player'+(i+1)+" :"+data[i]+'\n'
+        }
+        alert(data)
+    }    
+</script>
 <script src="{% static 'js/contests.js' %}"></script>
 </html>
