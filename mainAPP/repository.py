@@ -21,7 +21,7 @@ class vision11:
         
 
     def get_todays_squad(self,team1,team2,id):
-        match = Match.objects.filter(team1=team1,team2=team2)[0]
+        match = Match.objects.filter(team1=team1,team2=team2,id=int(id))[0]
         if (match.time-timezone.now()).days < 0:
             return Response({'status':404,'message':'Match has started.'})
         if (match.time - timezone.now()).days == 0 and (match.time - timezone.now()).seconds < 15*60:
