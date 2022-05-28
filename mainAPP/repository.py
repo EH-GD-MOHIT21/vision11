@@ -20,7 +20,7 @@ class vision11:
 
         
 
-    def get_todays_squad(self,team1,team2):
+    def get_todays_squad(self,team1,team2,id):
         match = Match.objects.filter(team1=team1,team2=team2)[0]
         if (match.time-timezone.now()).days < 0:
             return Response({'status':404,'message':'Match has started.'})
@@ -388,7 +388,7 @@ class vision11_render:
         user_wined_contest = []
         user_wined_slot = []
         user_wined_perc = []
-        all_contest = Contest.objects.all()
+        all_contest = Contest.objects.filter(match_id=Match.objects.get(id=int(mid)))
         for i in all_contest:
             if(request.user in i.user.all()):
                 contests.append(i)

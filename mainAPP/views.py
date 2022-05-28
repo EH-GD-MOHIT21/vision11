@@ -230,7 +230,7 @@ class GetTodaysSquadList(APIView):
     def post(self, request):
         if request.user.is_authenticated:
             try:
-                return vision11().get_todays_squad(request.data['team1'],request.data['team2'])
+                return vision11().get_todays_squad(request.data['team1'],request.data['team2'],request.data['match'])
             except:
                 return Response({'status':404,'message':'Either No contest available or timeline expired.'})
         return Response({'status':403,'message':'Please authenticate yourself.'})

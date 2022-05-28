@@ -34,7 +34,8 @@ async function player_api_data(api_url) {
         },
         body: JSON.stringify({
             "team1": team1_name,
-            "team2": team2_name
+            "team2": team2_name,
+            "match": document.URL.split("#")[0].split('=')[1]
         })
     })
     if (response.ok) {
