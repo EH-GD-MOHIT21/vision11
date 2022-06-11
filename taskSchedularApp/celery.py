@@ -12,7 +12,7 @@ app.autodiscover_tasks()
 
 app.conf.beat_schedule = {
     'get_live_score': {
-        'task': 'get_live_score',       
+        'task': 'get_live_score',
         'schedule': 180.0,  # every 10 minutes (10*60 seconds)
         'options': {
             'expires': 15.0,
@@ -20,13 +20,14 @@ app.conf.beat_schedule = {
         # 'args': ("Hello",)
     },
 
-    'fetch_match_list':{
-        'task': 'fetch_match_list',       
-        'schedule': crontab(hour=0, minute=10),  # every day at 0:10 AM hours GMT
+    'fetch_match_list': {
+        'task': 'fetch_match_list',
+        # every day at 0:10 AM hours GMT
+        'schedule': crontab(hour=0, minute=10),
         'options': {
             'expires': 15.0,
         },
-    }, 
+    },
 
     # Executes every Monday morning at 1:30 a.m. GMT
     'updateteamorplayers': {

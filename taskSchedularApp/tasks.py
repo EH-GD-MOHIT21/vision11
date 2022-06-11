@@ -2,6 +2,7 @@ from __future__ import absolute_import, unicode_literals
 import ast
 from celery import shared_task as task
 from mainAPP.scrapper.upcoming_matches import list_today_matches
+from mainAPP.scrapper.test_match_live_score import Update_Live_Score as Update_Test_Live_Score
 from mainAPP.scrapper.live_score import Update_Live_Score
 from mainAPP.scrapper.team_scrapper import Get_Teams
 from mainAPP.scrapper.players_scrapper import Get_Players
@@ -19,6 +20,7 @@ logger = get_task_logger(__name__)
 def EveryThreeMinutesTask():
 
     match_urls = vision11().Get_Live_Match_Urls()
+    test_match_urls = vision11().Get_Live_Test_Match_Urls()
     for url in match_urls:
         logger.info(f"updating live score for: {url} at "+str(timezone.now())+' hours!')
         try:
@@ -44,6 +46,34 @@ def EveryThreeMinutesTask():
             logger.info(f"successfully updated live score for: {url} at "+str(timezone.now())+' hours!')
         except Exception as e:
             logger.debug(f"failed to update live score for: {url} at "+str(timezone.now())+f' hours! due to :{e}')
+
+    
+    for url in test_match_urls:
+        logger.info(f"updating live score for Test Match: {url} at "+str(timezone.now())+' hours!')
+        try:
+            Update_Test_Live_Score(url)
+            match = Match.objects.get(url=url)
+            teams = UserTeam.objects.filter(match_id=match)
+            for team in teams:
+                team.total_team_points = 0
+                all_players = team.players.all()
+                playersdata = PlayersMatchData.objects.filter(match_url=team.match_id)
+                for player in playersdata:
+                    for team_player in all_players:
+                        if (player.pid.pid) == (team_player.pid):
+                            
+                            if team.captain.pid == team_player.pid:
+                                team.total_team_points += (player.points*2)
+                            elif team.vice_captain.pid == team_player.pid:
+                                team.total_team_points += (player.points*1.5)
+                            else:
+                                team.total_team_points += player.points
+                            team.save()
+                            break
+            logger.info(f"successfully updated live score for Test Match: {url} at "+str(timezone.now())+' hours!')
+        except Exception as e:
+            logger.debug(f"failed to update live score for Test Match: {url} at "+str(timezone.now())+f' hours! due to :{e}')
+
 
 
 

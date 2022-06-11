@@ -1,4 +1,5 @@
 import ast
+from datetime import datetime
 from django.db import models
 from mainAPP.Exceptions import InvalidWinnerListParser, InvalidWinnerStringParser
 from usermanagerAPP.models import User1
@@ -108,6 +109,12 @@ class Match(models.Model):
 
     time = models.DateTimeField()
 
+    # for specific test matches
+    match_pause_time = models.DateTimeField(
+        null=True,
+        blank=True
+    )
+
     name = models.CharField(
         max_length=100,
         null=True,
@@ -126,6 +133,10 @@ class Match(models.Model):
         blank=True
     )
 
+    is_test_match = models.BooleanField(
+        default=False
+    )
+
     is_match_end = models.BooleanField(
         default=False
     )
@@ -141,6 +152,12 @@ class Match(models.Model):
     )
 
     def save(self, *args, **kwargs):
+        if self.is_test_match and not isinstance(self.match_pause_time, datetime):
+            self.match_pause_time = self.time
+            self.match_pause_time = self.match_pause_time.replace(
+                hour=self.time.hour + 10,
+                day=self.time.day + 4
+            )
         try:
             if self.team1_img == '' or self.team1_img == None or self.team2_img == None or self.team2_img == '':
                 self.team1_img = Team.objects.get(
@@ -154,8 +171,6 @@ class Match(models.Model):
 
     def __str__(self):
         return str(self.id) + ". " + self.title
-
-
 
 
 class PlayersMatchData(models.Model):
@@ -265,7 +280,7 @@ class Contest(models.Model):
 
     user = models.ManyToManyField(
         User1,
-        blank= True
+        blank=True
     )
 
     entry_fee = models.FloatField(
@@ -310,7 +325,7 @@ class Contest(models.Model):
         default=1
     )
 
-    # internal working [0.5,0.3,0.2] -> 3 winners 1 will get 0.5 times of price_fee, 2 will get 0.3 times of,3 will 0.2 total should be one (0.5+0.3+0.2) 
+    # internal working [0.5,0.3,0.2] -> 3 winners 1 will get 0.5 times of price_fee, 2 will get 0.3 times of,3 will 0.2 total should be one (0.5+0.3+0.2)
 
     price_distribution_array = models.TextField(
         null=True,
@@ -323,7 +338,7 @@ class Contest(models.Model):
 
     def save(self, *args, **kwargs):
         self.price_fee = round(self.entry_fee * 0.7 * self.length, 2)
-        if self.price_distribution_array == '' or self.price_distribution_array==None:
+        if self.price_distribution_array == '' or self.price_distribution_array == None:
             pass
         else:
             if '-' in self.price_distribution_array and ':' in self.price_distribution_array:
@@ -331,9 +346,9 @@ class Contest(models.Model):
                     pz = 0
                     array = [0 for i in range(self.length)]
                     for line in self.price_distribution_array.split('\n'):
-                        playerrange,value = line.split(':')
-                        start,end = map(int,playerrange.split('-'))
-                        for i in range(start,end+1):
+                        playerrange, value = line.split(':')
+                        start, end = map(int, playerrange.split('-'))
+                        for i in range(start, end+1):
                             array[i] = float(value)/(end+1-start)
                         pz += float(value)
                     self.no_of_winners = self.length - array.count(0)
@@ -341,21 +356,25 @@ class Contest(models.Model):
                     self.is_equal_distribute = False
                     if pz > 1.02:
                         print(pz)
-                        raise InvalidWinnerStringParser(message="Total stackper should be less than 1.")
+                        raise InvalidWinnerStringParser(
+                            message="Total stackper should be less than 1.")
                 except Exception as e:
                     raise InvalidWinnerStringParser()
             elif self.price_distribution_array == '' or self.price_distribution_array == None:
                 pass
-            
+
             else:
                 try:
                     array = ast.literal_eval(self.price_distribution_array)
-                    if not isinstance(array,list):
-                        raise InvalidWinnerStringParser(message="Unexpected DataType: Expected List of elements or string")
+                    if not isinstance(array, list):
+                        raise InvalidWinnerStringParser(
+                            message="Unexpected DataType: Expected List of elements or string")
                     if sum(array) > 1.02:
-                        raise InvalidWinnerStringParser(message="Total stackper should be less than 1.")
+                        raise InvalidWinnerStringParser(
+                            message="Total stackper should be less than 1.")
                     if self.length != len(array):
-                        raise InvalidWinnerListParser(message="Expected equal attributes as length of contests.")
+                        raise InvalidWinnerListParser(
+                            message="Expected equal attributes as length of contests.")
                     zeros = array.count(0)
                     self.no_of_winners = self.length - zeros
                     self.price_distribution_array = array
@@ -364,13 +383,13 @@ class Contest(models.Model):
                     raise(e)
 
         if self.no_of_winners > 1 and (not self.is_equal_distribute) and (self.price_distribution_array == '' or self.price_distribution_array == None):
-            raise AttributeError('please set atleast one attribute is_equal_distribute or price_distribution_array if winner > 1.')
+            raise AttributeError(
+                'please set atleast one attribute is_equal_distribute or price_distribution_array if winner > 1.')
 
         if self.no_of_winners > self.length:
-            raise ValueError("no of winners should be less or equal to length of contest.")
-        
+            raise ValueError(
+                "no of winners should be less or equal to length of contest.")
+
         if self.no_of_winners <= 0:
             raise ValueError('Why are you making contest dude?')
         super(Contest, self).save(*args, **kwargs)
-
-

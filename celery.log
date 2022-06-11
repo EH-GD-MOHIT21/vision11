@@ -23808,3 +23808,1258 @@ Trying again in 26.00 seconds... (13/100)
 [2022-05-23 00:15:25,901: INFO/MainProcess] celery@MOHIT-SATIJA ready.
 [2022-05-23 00:15:25,901: WARNING/MainProcess] No hostname was supplied. Reverting to default 'localhost'
 [2022-05-23 00:15:25,901: INFO/MainProcess] pidbox: Connected to memory://localhost//.
+[2022-05-31 12:27:11,851: INFO/MainProcess] Connected to redis://localhost:6379//
+[2022-05-31 12:27:27,940: INFO/MainProcess] mingle: searching for neighbors
+[2022-05-31 12:27:58,136: INFO/MainProcess] mingle: all alone
+[2022-05-31 12:28:17,247: WARNING/MainProcess] C:\Users\exper\Envs\vision11\lib\site-packages\celery\fixups\django.py:203: UserWarning: Using settings.DEBUG leads to a memory
+            leak, never use this setting in production environments!
+  warnings.warn('''Using settings.DEBUG leads to a memory
+
+[2022-05-31 12:28:17,247: INFO/MainProcess] celery@MOHIT-SATIJA ready.
+[2022-05-31 12:28:17,263: INFO/MainProcess] Task fetch_match_list[0c977d6c-739d-438c-898a-7341467867cf] received
+[2022-05-31 12:28:17,263: INFO/MainProcess] Discarding revoked task: fetch_match_list[0c977d6c-739d-438c-898a-7341467867cf]
+[2022-05-31 12:28:17,278: INFO/MainProcess] Task updateteamorplayers[45380e2c-5822-4e74-8ac4-fe9146f83c9c] received
+[2022-05-31 12:28:17,351: INFO/MainProcess] Task get_live_score[1082ec6e-f30a-498b-bec1-30a75435d2a9] received
+[2022-05-31 12:28:17,351: INFO/MainProcess] Discarding revoked task: get_live_score[1082ec6e-f30a-498b-bec1-30a75435d2a9]
+[2022-05-31 12:28:24,890: INFO/MainProcess] Task updateteamorplayers[45380e2c-5822-4e74-8ac4-fe9146f83c9c] succeeded in 7.610000000000014s: None
+[2022-05-31 12:28:29,402: INFO/MainProcess] pidbox: Connected to redis://localhost:6379//.
+[2022-05-31 12:30:02,541: INFO/MainProcess] Task get_live_score[cf5a61df-ee38-474a-84e7-2aa15f835086] received
+[2022-05-31 12:30:02,549: INFO/MainProcess] get_live_score[cf5a61df-ee38-474a-84e7-2aa15f835086]: updating live score for: https://www.cricbuzz.com/live-cricket-scorecard/46211/kkr-vs-lsg-66th-match-indian-premier-league-2022 at 2022-05-31 07:00:02.549825+00:00 hours!
+[2022-05-31 12:30:04,253: INFO/MainProcess] get_live_score[cf5a61df-ee38-474a-84e7-2aa15f835086]: successfully updated live score for: https://www.cricbuzz.com/live-cricket-scorecard/46211/kkr-vs-lsg-66th-match-indian-premier-league-2022 at 2022-05-31 07:00:04.253220+00:00 hours!
+[2022-05-31 12:30:04,253: INFO/MainProcess] get_live_score[cf5a61df-ee38-474a-84e7-2aa15f835086]: updating live score for: https://www.cricbuzz.com/live-cricket-scorecard/47591/lsg-vs-rcb-eliminator-indian-premier-league-2022 at 2022-05-31 07:00:04.253220+00:00 hours!
+[2022-05-31 12:30:05,114: WARNING/MainProcess] True
+[2022-05-31 12:30:05,130: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10636
+[2022-05-31 12:30:05,286: INFO/MainProcess] get_live_score[cf5a61df-ee38-474a-84e7-2aa15f835086]: successfully updated live score for: https://www.cricbuzz.com/live-cricket-scorecard/47591/lsg-vs-rcb-eliminator-indian-premier-league-2022 at 2022-05-31 07:00:05.286184+00:00 hours!
+[2022-05-31 12:30:05,286: INFO/MainProcess] get_live_score[cf5a61df-ee38-474a-84e7-2aa15f835086]: updating live score for: https://www.cricbuzz.com/live-cricket-scorecard/47605/gt-vs-rr-final-indian-premier-league-2022 at 2022-05-31 07:00:05.286184+00:00 hours!
+[2022-05-31 12:30:06,213: INFO/MainProcess] get_live_score[cf5a61df-ee38-474a-84e7-2aa15f835086]: successfully updated live score for: https://www.cricbuzz.com/live-cricket-scorecard/47605/gt-vs-rr-final-indian-premier-league-2022 at 2022-05-31 07:00:06.213221+00:00 hours!
+[2022-05-31 12:30:06,228: INFO/MainProcess] get_live_score[cf5a61df-ee38-474a-84e7-2aa15f835086]: updating live score for: https://www.cricbuzz.com/live-cricket-scorecard/46331/warks-vs-dur-north-group-t20-blast-2022 at 2022-05-31 07:00:06.228843+00:00 hours!
+[2022-05-31 12:30:06,982: WARNING/MainProcess] True
+[2022-05-31 12:30:06,982: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 19636
+[2022-05-31 12:30:06,998: WARNING/MainProcess] True
+[2022-05-31 12:30:06,998: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 8499
+[2022-05-31 12:30:06,998: WARNING/MainProcess] True
+[2022-05-31 12:30:06,998: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 14821
+[2022-05-31 12:30:06,998: WARNING/MainProcess] True
+[2022-05-31 12:30:06,998: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10444
+[2022-05-31 12:30:06,998: WARNING/MainProcess] True
+[2022-05-31 12:30:06,998: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 19916
+[2022-05-31 12:30:07,013: WARNING/MainProcess] False
+[2022-05-31 12:30:07,013: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 12256
+[2022-05-31 12:30:07,029: WARNING/MainProcess] False
+[2022-05-31 12:30:07,029: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13063
+[2022-05-31 12:30:07,029: WARNING/MainProcess] False
+[2022-05-31 12:30:07,029: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 8005
+[2022-05-31 12:30:07,029: WARNING/MainProcess] True
+[2022-05-31 12:30:07,029: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10020
+[2022-05-31 12:30:07,045: WARNING/MainProcess] True
+[2022-05-31 12:30:07,045: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 12793
+[2022-05-31 12:30:07,045: WARNING/MainProcess] True
+[2022-05-31 12:30:07,045: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 14265
+[2022-05-31 12:30:07,045: WARNING/MainProcess] True
+[2022-05-31 12:30:07,045: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 9328
+[2022-05-31 12:30:07,045: WARNING/MainProcess] True
+[2022-05-31 12:30:07,045: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 11436
+[2022-05-31 12:30:07,060: WARNING/MainProcess] True
+[2022-05-31 12:30:07,060: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 8322
+[2022-05-31 12:30:07,060: WARNING/MainProcess] True
+[2022-05-31 12:30:07,060: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 8384
+[2022-05-31 12:30:07,064: WARNING/MainProcess] True
+[2022-05-31 12:30:07,064: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 12992
+[2022-05-31 12:30:07,064: WARNING/MainProcess] True
+[2022-05-31 12:30:07,064: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 6550
+[2022-05-31 12:30:07,064: WARNING/MainProcess] False
+[2022-05-31 12:30:07,064: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13005
+[2022-05-31 12:30:07,072: INFO/MainProcess] get_live_score[cf5a61df-ee38-474a-84e7-2aa15f835086]: successfully updated live score for: https://www.cricbuzz.com/live-cricket-scorecard/46331/warks-vs-dur-north-group-t20-blast-2022 at 2022-05-31 07:00:07.064083+00:00 hours!
+[2022-05-31 12:30:07,072: INFO/MainProcess] get_live_score[cf5a61df-ee38-474a-84e7-2aa15f835086]: updating live score for: https://www.cricbuzz.com/live-cricket-scorecard/46338/lancs-vs-worcs-north-group-t20-blast-2022 at 2022-05-31 07:00:07.072117+00:00 hours!
+[2022-05-31 12:30:07,732: WARNING/MainProcess] True
+[2022-05-31 12:30:07,732: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 9330
+[2022-05-31 12:30:07,756: WARNING/MainProcess] True
+[2022-05-31 12:30:07,756: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 6705
+[2022-05-31 12:30:07,780: WARNING/MainProcess] True
+[2022-05-31 12:30:07,780: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 9821
+[2022-05-31 12:30:07,780: WARNING/MainProcess] True
+[2022-05-31 12:30:07,788: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 12710
+[2022-05-31 12:30:07,788: WARNING/MainProcess] True
+[2022-05-31 12:30:07,788: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 18199
+[2022-05-31 12:30:07,804: WARNING/MainProcess] False
+[2022-05-31 12:30:07,804: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10395
+[2022-05-31 12:30:07,804: WARNING/MainProcess] True
+[2022-05-31 12:30:07,804: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 12991
+[2022-05-31 12:30:07,804: WARNING/MainProcess] True
+[2022-05-31 12:30:07,804: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 7949
+[2022-05-31 12:30:07,804: WARNING/MainProcess] True
+[2022-05-31 12:30:07,804: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13785
+[2022-05-31 12:30:07,820: WARNING/MainProcess] True
+[2022-05-31 12:30:07,820: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10104
+[2022-05-31 12:30:07,828: WARNING/MainProcess] True
+[2022-05-31 12:30:07,828: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 6682
+[2022-05-31 12:30:07,828: WARNING/MainProcess] True
+[2022-05-31 12:30:07,828: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 9814
+[2022-05-31 12:30:07,828: WARNING/MainProcess] True
+[2022-05-31 12:30:07,828: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10441
+[2022-05-31 12:30:07,828: WARNING/MainProcess] True
+[2022-05-31 12:30:07,828: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 19727
+[2022-05-31 12:30:07,828: WARNING/MainProcess] False
+[2022-05-31 12:30:07,836: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 11556
+[2022-05-31 12:30:07,836: WARNING/MainProcess] True
+[2022-05-31 12:30:07,836: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 12993
+[2022-05-31 12:30:07,836: INFO/MainProcess] get_live_score[cf5a61df-ee38-474a-84e7-2aa15f835086]: successfully updated live score for: https://www.cricbuzz.com/live-cricket-scorecard/46338/lancs-vs-worcs-north-group-t20-blast-2022 at 2022-05-31 07:00:07.836081+00:00 hours!
+[2022-05-31 12:30:07,836: INFO/MainProcess] get_live_score[cf5a61df-ee38-474a-84e7-2aa15f835086]: updating live score for: https://www.cricbuzz.com/live-cricket-scorecard/46345/mdx-vs-glam-south-group-t20-blast-2022 at 2022-05-31 07:00:07.836081+00:00 hours!
+[2022-05-31 12:30:08,680: WARNING/MainProcess] True
+[2022-05-31 12:30:08,680: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 11529
+[2022-05-31 12:30:08,680: WARNING/MainProcess] True
+[2022-05-31 12:30:08,680: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10448
+[2022-05-31 12:30:08,680: WARNING/MainProcess] True
+[2022-05-31 12:30:08,680: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 18365
+[2022-05-31 12:30:08,693: WARNING/MainProcess] True
+[2022-05-31 12:30:08,693: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13989
+[2022-05-31 12:30:08,693: WARNING/MainProcess] True
+[2022-05-31 12:30:08,693: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 6653
+[2022-05-31 12:30:08,693: WARNING/MainProcess] True
+[2022-05-31 12:30:08,693: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13329
+[2022-05-31 12:30:08,708: WARNING/MainProcess] True
+[2022-05-31 12:30:08,708: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 6662
+[2022-05-31 12:30:08,708: WARNING/MainProcess] False
+[2022-05-31 12:30:08,708: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 15236
+[2022-05-31 12:30:08,708: WARNING/MainProcess] False
+[2022-05-31 12:30:08,708: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 18174
+[2022-05-31 12:30:08,724: WARNING/MainProcess] True
+[2022-05-31 12:30:08,724: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 9345
+[2022-05-31 12:30:08,724: WARNING/MainProcess] True
+[2022-05-31 12:30:08,724: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 7996
+[2022-05-31 12:30:08,739: WARNING/MainProcess] True
+[2022-05-31 12:30:08,739: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 11695
+[2022-05-31 12:30:08,739: WARNING/MainProcess] True
+[2022-05-31 12:30:08,739: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 7958
+[2022-05-31 12:30:08,739: WARNING/MainProcess] True
+[2022-05-31 12:30:08,739: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 7866
+[2022-05-31 12:30:08,739: WARNING/MainProcess] True
+[2022-05-31 12:30:08,739: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13779
+[2022-05-31 12:30:08,755: WARNING/MainProcess] True
+[2022-05-31 12:30:08,755: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10511
+[2022-05-31 12:30:08,755: WARNING/MainProcess] True
+[2022-05-31 12:30:08,755: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13332
+[2022-05-31 12:30:08,755: WARNING/MainProcess] True
+[2022-05-31 12:30:08,755: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 7732
+[2022-05-31 12:30:08,755: INFO/MainProcess] get_live_score[cf5a61df-ee38-474a-84e7-2aa15f835086]: successfully updated live score for: https://www.cricbuzz.com/live-cricket-scorecard/46345/mdx-vs-glam-south-group-t20-blast-2022 at 2022-05-31 07:00:08.755605+00:00 hours!
+[2022-05-31 12:30:08,755: INFO/MainProcess] get_live_score[cf5a61df-ee38-474a-84e7-2aa15f835086]: updating live score for: https://www.cricbuzz.com/live-cricket-scorecard/46350/sus-vs-kent-south-group-t20-blast-2022 at 2022-05-31 07:00:08.755605+00:00 hours!
+[2022-05-31 12:30:09,514: WARNING/MainProcess] True
+[2022-05-31 12:30:09,514: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 9468
+[2022-05-31 12:30:09,514: WARNING/MainProcess] True
+[2022-05-31 12:30:09,514: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 776
+[2022-05-31 12:30:09,546: WARNING/MainProcess] True
+[2022-05-31 12:30:09,546: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 12260
+[2022-05-31 12:30:09,546: WARNING/MainProcess] True
+[2022-05-31 12:30:09,546: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10924
+[2022-05-31 12:30:09,554: WARNING/MainProcess] True
+[2022-05-31 12:30:09,554: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10071
+[2022-05-31 12:30:09,554: WARNING/MainProcess] False
+[2022-05-31 12:30:09,554: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 2268
+[2022-05-31 12:30:09,570: WARNING/MainProcess] False
+[2022-05-31 12:30:09,570: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 19621
+[2022-05-31 12:30:09,570: WARNING/MainProcess] False
+[2022-05-31 12:30:09,570: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 6317
+[2022-05-31 12:30:09,570: WARNING/MainProcess] True
+[2022-05-31 12:30:09,570: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 12770
+[2022-05-31 12:30:09,570: WARNING/MainProcess] True
+[2022-05-31 12:30:09,570: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 7856
+[2022-05-31 12:30:09,578: WARNING/MainProcess] True
+[2022-05-31 12:30:09,578: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 1995
+[2022-05-31 12:30:09,594: WARNING/MainProcess] True
+[2022-05-31 12:30:09,594: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 9411
+[2022-05-31 12:30:09,610: WARNING/MainProcess] True
+[2022-05-31 12:30:09,610: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 14813
+[2022-05-31 12:30:09,610: WARNING/MainProcess] True
+[2022-05-31 12:30:09,610: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 11076
+[2022-05-31 12:30:09,610: WARNING/MainProcess] True
+[2022-05-31 12:30:09,610: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13678
+[2022-05-31 12:30:09,618: WARNING/MainProcess] False
+[2022-05-31 12:30:09,618: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 12783
+[2022-05-31 12:30:09,618: WARNING/MainProcess] False
+[2022-05-31 12:30:09,618: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 8560
+[2022-05-31 12:30:09,618: INFO/MainProcess] get_live_score[cf5a61df-ee38-474a-84e7-2aa15f835086]: successfully updated live score for: https://www.cricbuzz.com/live-cricket-scorecard/46350/sus-vs-kent-south-group-t20-blast-2022 at 2022-05-31 07:00:09.618650+00:00 hours!
+[2022-05-31 12:30:09,618: INFO/MainProcess] get_live_score[cf5a61df-ee38-474a-84e7-2aa15f835086]: updating live score for: https://www.cricbuzz.com/live-cricket-scorecard/46364/yorks-vs-leic-north-group-t20-blast-2022 at 2022-05-31 07:00:09.618650+00:00 hours!
+[2022-05-31 12:30:10,455: WARNING/MainProcess] True
+[2022-05-31 12:30:10,455: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 6511
+[2022-05-31 12:30:10,471: WARNING/MainProcess] True
+[2022-05-31 12:30:10,471: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10033
+[2022-05-31 12:30:10,495: WARNING/MainProcess] True
+[2022-05-31 12:30:10,495: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 12201
+[2022-05-31 12:30:10,511: WARNING/MainProcess] True
+[2022-05-31 12:30:10,511: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13777
+[2022-05-31 12:30:10,511: WARNING/MainProcess] True
+[2022-05-31 12:30:10,511: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 15478
+[2022-05-31 12:30:10,519: WARNING/MainProcess] True
+[2022-05-31 12:30:10,519: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 11534
+[2022-05-31 12:30:10,535: WARNING/MainProcess] True
+[2022-05-31 12:30:10,535: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 14561
+[2022-05-31 12:30:10,535: WARNING/MainProcess] True
+[2022-05-31 12:30:10,535: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13996
+[2022-05-31 12:30:10,535: WARNING/MainProcess] True
+[2022-05-31 12:30:10,535: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 2255
+[2022-05-31 12:30:10,535: WARNING/MainProcess] True
+[2022-05-31 12:30:10,535: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 9336
+[2022-05-31 12:30:10,535: WARNING/MainProcess] True
+[2022-05-31 12:30:10,535: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 9360
+[2022-05-31 12:30:10,543: WARNING/MainProcess] True
+[2022-05-31 12:30:10,544: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 9725
+[2022-05-31 12:30:10,544: WARNING/MainProcess] True
+[2022-05-31 12:30:10,544: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13933
+[2022-05-31 12:30:10,544: WARNING/MainProcess] True
+[2022-05-31 12:30:10,544: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13716
+[2022-05-31 12:30:10,544: WARNING/MainProcess] True
+[2022-05-31 12:30:10,544: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 19767
+[2022-05-31 12:30:10,544: WARNING/MainProcess] True
+[2022-05-31 12:30:10,544: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13335
+[2022-05-31 12:30:10,544: WARNING/MainProcess] False
+[2022-05-31 12:30:10,544: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 11565
+[2022-05-31 12:30:10,569: INFO/MainProcess] get_live_score[cf5a61df-ee38-474a-84e7-2aa15f835086]: successfully updated live score for: https://www.cricbuzz.com/live-cricket-scorecard/46364/yorks-vs-leic-north-group-t20-blast-2022 at 2022-05-31 07:00:10.569596+00:00 hours!
+[2022-05-31 12:30:10,569: INFO/MainProcess] get_live_score[cf5a61df-ee38-474a-84e7-2aa15f835086]: updating live score for: https://www.cricbuzz.com/live-cricket-scorecard/46357/som-vs-ess-south-group-t20-blast-2022 at 2022-05-31 07:00:10.569596+00:00 hours!
+[2022-05-31 12:30:11,281: WARNING/MainProcess] True
+[2022-05-31 12:30:11,281: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 12254
+[2022-05-31 12:30:11,281: WARNING/MainProcess] True
+[2022-05-31 12:30:11,281: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 18429
+[2022-05-31 12:30:11,297: WARNING/MainProcess] True
+[2022-05-31 12:30:11,297: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10019
+[2022-05-31 12:30:11,297: WARNING/MainProcess] True
+[2022-05-31 12:30:11,305: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13013
+[2022-05-31 12:30:11,313: WARNING/MainProcess] False
+[2022-05-31 12:30:11,313: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 15238
+[2022-05-31 12:30:11,321: WARNING/MainProcess] False
+[2022-05-31 12:30:11,321: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10925
+[2022-05-31 12:30:11,345: WARNING/MainProcess] False
+[2022-05-31 12:30:11,345: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 6657
+[2022-05-31 12:30:11,353: WARNING/MainProcess] True
+[2022-05-31 12:30:11,353: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 15119
+[2022-05-31 12:30:11,353: WARNING/MainProcess] True
+[2022-05-31 12:30:11,353: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 7865
+[2022-05-31 12:30:11,353: WARNING/MainProcess] True
+[2022-05-31 12:30:11,353: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13800
+[2022-05-31 12:30:11,353: WARNING/MainProcess] True
+[2022-05-31 12:30:11,353: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10387
+[2022-05-31 12:30:11,361: WARNING/MainProcess] True
+[2022-05-31 12:30:11,361: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 11527
+[2022-05-31 12:30:11,368: WARNING/MainProcess] True
+[2022-05-31 12:30:11,368: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 6528
+[2022-05-31 12:30:11,384: WARNING/MainProcess] True
+[2022-05-31 12:30:11,384: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10414
+[2022-05-31 12:30:11,395: WARNING/MainProcess] True
+[2022-05-31 12:30:11,395: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13048
+[2022-05-31 12:30:11,395: WARNING/MainProcess] True
+[2022-05-31 12:30:11,395: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 12994
+[2022-05-31 12:30:11,395: INFO/MainProcess] get_live_score[cf5a61df-ee38-474a-84e7-2aa15f835086]: successfully updated live score for: https://www.cricbuzz.com/live-cricket-scorecard/46357/som-vs-ess-south-group-t20-blast-2022 at 2022-05-31 07:00:11.395184+00:00 hours!
+[2022-05-31 12:30:11,395: INFO/MainProcess] get_live_score[cf5a61df-ee38-474a-84e7-2aa15f835086]: updating live score for: https://www.cricbuzz.com/live-cricket-scorecard/47647/sco-vs-usa-2nd-match-icc-cricket-world-cup-league-two-2019-23 at 2022-05-31 07:00:11.395184+00:00 hours!
+[2022-05-31 12:30:12,300: WARNING/MainProcess] True
+[2022-05-31 12:30:12,300: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 14541
+[2022-05-31 12:30:12,343: WARNING/MainProcess] False
+[2022-05-31 12:30:12,343: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13744
+[2022-05-31 12:30:12,343: WARNING/MainProcess] True
+[2022-05-31 12:30:12,343: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 8670
+[2022-05-31 12:30:12,351: WARNING/MainProcess] True
+[2022-05-31 12:30:12,351: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 20217
+[2022-05-31 12:30:12,351: WARNING/MainProcess] True
+[2022-05-31 12:30:12,351: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 14732
+[2022-05-31 12:30:12,368: WARNING/MainProcess] True
+[2022-05-31 12:30:12,368: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 26232
+[2022-05-31 12:30:12,368: WARNING/MainProcess] True
+[2022-05-31 12:30:12,368: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 12788
+[2022-05-31 12:30:12,368: WARNING/MainProcess] True
+[2022-05-31 12:30:12,368: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 15475
+[2022-05-31 12:30:12,368: WARNING/MainProcess] True
+[2022-05-31 12:30:12,368: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 11005
+[2022-05-31 12:30:12,384: WARNING/MainProcess] True
+[2022-05-31 12:30:12,384: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 14729
+[2022-05-31 12:30:12,400: WARNING/MainProcess] True
+[2022-05-31 12:30:12,400: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 6320
+[2022-05-31 12:30:12,400: INFO/MainProcess] get_live_score[cf5a61df-ee38-474a-84e7-2aa15f835086]: successfully updated live score for: https://www.cricbuzz.com/live-cricket-scorecard/47647/sco-vs-usa-2nd-match-icc-cricket-world-cup-league-two-2019-23 at 2022-05-31 07:00:12.400219+00:00 hours!
+[2022-05-31 12:30:12,400: INFO/MainProcess] get_live_score[cf5a61df-ee38-474a-84e7-2aa15f835086]: updating live score for: https://www.cricbuzz.com/live-cricket-scorecard/46366/notts-vs-nhnts-north-group-t20-blast-2022 at 2022-05-31 07:00:12.400219+00:00 hours!
+[2022-05-31 12:30:13,075: WARNING/MainProcess] True
+[2022-05-31 12:30:13,075: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10921
+[2022-05-31 12:30:13,091: WARNING/MainProcess] True
+[2022-05-31 12:30:13,091: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 6735
+[2022-05-31 12:30:13,091: WARNING/MainProcess] False
+[2022-05-31 12:30:13,091: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10417
+[2022-05-31 12:30:13,091: WARNING/MainProcess] True
+[2022-05-31 12:30:13,091: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 18415
+[2022-05-31 12:30:13,091: WARNING/MainProcess] False
+[2022-05-31 12:30:13,091: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 6733
+[2022-05-31 12:30:13,106: WARNING/MainProcess] False
+[2022-05-31 12:30:13,106: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 8324
+[2022-05-31 12:30:13,119: WARNING/MainProcess] False
+[2022-05-31 12:30:13,119: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13957
+[2022-05-31 12:30:13,135: WARNING/MainProcess] False
+[2022-05-31 12:30:13,135: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 8011
+[2022-05-31 12:30:13,135: WARNING/MainProcess] False
+[2022-05-31 12:30:13,135: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10400
+[2022-05-31 12:30:13,143: WARNING/MainProcess] False
+[2022-05-31 12:30:13,143: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10031
+[2022-05-31 12:30:13,143: WARNING/MainProcess] False
+[2022-05-31 12:30:13,143: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10030
+[2022-05-31 12:30:13,143: WARNING/MainProcess] False
+[2022-05-31 12:30:13,143: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 6738
+[2022-05-31 12:30:13,158: WARNING/MainProcess] False
+[2022-05-31 12:30:13,158: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 6513
+[2022-05-31 12:30:13,166: WARNING/MainProcess] False
+[2022-05-31 12:30:13,166: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 19641
+[2022-05-31 12:30:13,166: INFO/MainProcess] get_live_score[cf5a61df-ee38-474a-84e7-2aa15f835086]: successfully updated live score for: https://www.cricbuzz.com/live-cricket-scorecard/46366/notts-vs-nhnts-north-group-t20-blast-2022 at 2022-05-31 07:00:13.166053+00:00 hours!
+[2022-05-31 12:30:13,166: INFO/MainProcess] get_live_score[cf5a61df-ee38-474a-84e7-2aa15f835086]: updating live score for: https://www.cricbuzz.com/live-cricket-scorecard/46371/ham-vs-som-south-group-t20-blast-2022 at 2022-05-31 07:00:13.166053+00:00 hours!
+[2022-05-31 12:30:13,775: WARNING/MainProcess] True
+[2022-05-31 12:30:13,775: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10026
+[2022-05-31 12:30:13,791: WARNING/MainProcess] True
+[2022-05-31 12:30:13,791: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10470
+[2022-05-31 12:30:13,791: WARNING/MainProcess] True
+[2022-05-31 12:30:13,791: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 6639
+[2022-05-31 12:30:13,791: WARNING/MainProcess] True
+[2022-05-31 12:30:13,791: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 7945
+[2022-05-31 12:30:13,791: WARNING/MainProcess] True
+[2022-05-31 12:30:13,791: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 8004
+[2022-05-31 12:30:13,807: WARNING/MainProcess] True
+[2022-05-31 12:30:13,807: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 6647
+[2022-05-31 12:30:13,815: WARNING/MainProcess] True
+[2022-05-31 12:30:13,815: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10435
+[2022-05-31 12:30:13,832: WARNING/MainProcess] True
+[2022-05-31 12:30:13,832: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 12254
+[2022-05-31 12:30:13,832: WARNING/MainProcess] True
+[2022-05-31 12:30:13,832: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 18429
+[2022-05-31 12:30:13,848: WARNING/MainProcess] True
+[2022-05-31 12:30:13,848: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10019
+[2022-05-31 12:30:13,848: WARNING/MainProcess] True
+[2022-05-31 12:30:13,848: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13013
+[2022-05-31 12:30:13,864: WARNING/MainProcess] False
+[2022-05-31 12:30:13,864: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 15238
+[2022-05-31 12:30:13,864: WARNING/MainProcess] True
+[2022-05-31 12:30:13,864: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10925
+[2022-05-31 12:30:13,892: WARNING/MainProcess] False
+[2022-05-31 12:30:13,892: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 6657
+[2022-05-31 12:30:13,892: INFO/MainProcess] get_live_score[cf5a61df-ee38-474a-84e7-2aa15f835086]: successfully updated live score for: https://www.cricbuzz.com/live-cricket-scorecard/46371/ham-vs-som-south-group-t20-blast-2022 at 2022-05-31 07:00:13.892844+00:00 hours!
+[2022-05-31 12:30:13,925: INFO/MainProcess] Task get_live_score[cf5a61df-ee38-474a-84e7-2aa15f835086] succeeded in 11.375s: None
+[2022-05-31 12:33:02,553: INFO/MainProcess] Task get_live_score[1c1af2be-0d5c-4ef5-a9f4-77e95bd4e2c6] received
+[2022-05-31 12:33:02,561: INFO/MainProcess] get_live_score[1c1af2be-0d5c-4ef5-a9f4-77e95bd4e2c6]: updating live score for: https://www.cricbuzz.com/live-cricket-scorecard/46211/kkr-vs-lsg-66th-match-indian-premier-league-2022 at 2022-05-31 07:03:02.561146+00:00 hours!
+[2022-05-31 12:33:04,593: INFO/MainProcess] get_live_score[1c1af2be-0d5c-4ef5-a9f4-77e95bd4e2c6]: successfully updated live score for: https://www.cricbuzz.com/live-cricket-scorecard/46211/kkr-vs-lsg-66th-match-indian-premier-league-2022 at 2022-05-31 07:03:04.593777+00:00 hours!
+[2022-05-31 12:33:04,593: INFO/MainProcess] get_live_score[1c1af2be-0d5c-4ef5-a9f4-77e95bd4e2c6]: updating live score for: https://www.cricbuzz.com/live-cricket-scorecard/47591/lsg-vs-rcb-eliminator-indian-premier-league-2022 at 2022-05-31 07:03:04.593777+00:00 hours!
+[2022-05-31 12:33:05,681: WARNING/MainProcess] True
+[2022-05-31 12:33:05,681: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10636
+[2022-05-31 12:33:05,847: INFO/MainProcess] get_live_score[1c1af2be-0d5c-4ef5-a9f4-77e95bd4e2c6]: successfully updated live score for: https://www.cricbuzz.com/live-cricket-scorecard/47591/lsg-vs-rcb-eliminator-indian-premier-league-2022 at 2022-05-31 07:03:05.847400+00:00 hours!
+[2022-05-31 12:33:05,847: INFO/MainProcess] get_live_score[1c1af2be-0d5c-4ef5-a9f4-77e95bd4e2c6]: updating live score for: https://www.cricbuzz.com/live-cricket-scorecard/47605/gt-vs-rr-final-indian-premier-league-2022 at 2022-05-31 07:03:05.847400+00:00 hours!
+[2022-05-31 12:33:06,803: INFO/MainProcess] get_live_score[1c1af2be-0d5c-4ef5-a9f4-77e95bd4e2c6]: successfully updated live score for: https://www.cricbuzz.com/live-cricket-scorecard/47605/gt-vs-rr-final-indian-premier-league-2022 at 2022-05-31 07:03:06.803673+00:00 hours!
+[2022-05-31 12:33:06,803: INFO/MainProcess] get_live_score[1c1af2be-0d5c-4ef5-a9f4-77e95bd4e2c6]: updating live score for: https://www.cricbuzz.com/live-cricket-scorecard/46331/warks-vs-dur-north-group-t20-blast-2022 at 2022-05-31 07:03:06.803673+00:00 hours!
+[2022-05-31 12:33:07,728: WARNING/MainProcess] True
+[2022-05-31 12:33:07,728: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 19636
+[2022-05-31 12:33:07,728: WARNING/MainProcess] True
+[2022-05-31 12:33:07,728: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 8499
+[2022-05-31 12:33:07,728: WARNING/MainProcess] True
+[2022-05-31 12:33:07,728: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 14821
+[2022-05-31 12:33:07,744: WARNING/MainProcess] True
+[2022-05-31 12:33:07,744: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10444
+[2022-05-31 12:33:07,744: WARNING/MainProcess] True
+[2022-05-31 12:33:07,744: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 19916
+[2022-05-31 12:33:07,744: WARNING/MainProcess] False
+[2022-05-31 12:33:07,744: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 12256
+[2022-05-31 12:33:07,760: WARNING/MainProcess] False
+[2022-05-31 12:33:07,760: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13063
+[2022-05-31 12:33:07,760: WARNING/MainProcess] False
+[2022-05-31 12:33:07,760: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 8005
+[2022-05-31 12:33:07,760: WARNING/MainProcess] True
+[2022-05-31 12:33:07,760: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10020
+[2022-05-31 12:33:07,775: WARNING/MainProcess] True
+[2022-05-31 12:33:07,775: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 12793
+[2022-05-31 12:33:07,775: WARNING/MainProcess] True
+[2022-05-31 12:33:07,775: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 14265
+[2022-05-31 12:33:07,775: WARNING/MainProcess] True
+[2022-05-31 12:33:07,775: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 9328
+[2022-05-31 12:33:07,775: WARNING/MainProcess] True
+[2022-05-31 12:33:07,775: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 11436
+[2022-05-31 12:33:07,775: WARNING/MainProcess] True
+[2022-05-31 12:33:07,775: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 8322
+[2022-05-31 12:33:07,791: WARNING/MainProcess] True
+[2022-05-31 12:33:07,791: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 8384
+[2022-05-31 12:33:07,791: WARNING/MainProcess] True
+[2022-05-31 12:33:07,791: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 12992
+[2022-05-31 12:33:07,791: WARNING/MainProcess] True
+[2022-05-31 12:33:07,791: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 6550
+[2022-05-31 12:33:07,791: WARNING/MainProcess] False
+[2022-05-31 12:33:07,791: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13005
+[2022-05-31 12:33:07,791: INFO/MainProcess] get_live_score[1c1af2be-0d5c-4ef5-a9f4-77e95bd4e2c6]: successfully updated live score for: https://www.cricbuzz.com/live-cricket-scorecard/46331/warks-vs-dur-north-group-t20-blast-2022 at 2022-05-31 07:03:07.791276+00:00 hours!
+[2022-05-31 12:33:07,791: INFO/MainProcess] get_live_score[1c1af2be-0d5c-4ef5-a9f4-77e95bd4e2c6]: updating live score for: https://www.cricbuzz.com/live-cricket-scorecard/46338/lancs-vs-worcs-north-group-t20-blast-2022 at 2022-05-31 07:03:07.791276+00:00 hours!
+[2022-05-31 12:33:08,560: WARNING/MainProcess] True
+[2022-05-31 12:33:08,560: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 9330
+[2022-05-31 12:33:08,575: WARNING/MainProcess] True
+[2022-05-31 12:33:08,575: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 6705
+[2022-05-31 12:33:08,591: WARNING/MainProcess] True
+[2022-05-31 12:33:08,591: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 9821
+[2022-05-31 12:33:08,591: WARNING/MainProcess] True
+[2022-05-31 12:33:08,591: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 12710
+[2022-05-31 12:33:08,591: WARNING/MainProcess] True
+[2022-05-31 12:33:08,591: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 18199
+[2022-05-31 12:33:08,607: WARNING/MainProcess] False
+[2022-05-31 12:33:08,607: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10395
+[2022-05-31 12:33:08,607: WARNING/MainProcess] True
+[2022-05-31 12:33:08,607: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 12991
+[2022-05-31 12:33:08,607: WARNING/MainProcess] True
+[2022-05-31 12:33:08,607: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 7949
+[2022-05-31 12:33:08,607: WARNING/MainProcess] True
+[2022-05-31 12:33:08,607: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13785
+[2022-05-31 12:33:08,622: WARNING/MainProcess] True
+[2022-05-31 12:33:08,622: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10104
+[2022-05-31 12:33:08,622: WARNING/MainProcess] True
+[2022-05-31 12:33:08,622: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 6682
+[2022-05-31 12:33:08,622: WARNING/MainProcess] True
+[2022-05-31 12:33:08,622: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 9814
+[2022-05-31 12:33:08,622: WARNING/MainProcess] True
+[2022-05-31 12:33:08,622: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10441
+[2022-05-31 12:33:08,622: WARNING/MainProcess] True
+[2022-05-31 12:33:08,622: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 19727
+[2022-05-31 12:33:08,622: WARNING/MainProcess] False
+[2022-05-31 12:33:08,622: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 11556
+[2022-05-31 12:33:08,622: WARNING/MainProcess] True
+[2022-05-31 12:33:08,622: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 12993
+[2022-05-31 12:33:08,638: INFO/MainProcess] get_live_score[1c1af2be-0d5c-4ef5-a9f4-77e95bd4e2c6]: successfully updated live score for: https://www.cricbuzz.com/live-cricket-scorecard/46338/lancs-vs-worcs-north-group-t20-blast-2022 at 2022-05-31 07:03:08.638462+00:00 hours!
+[2022-05-31 12:33:08,638: INFO/MainProcess] get_live_score[1c1af2be-0d5c-4ef5-a9f4-77e95bd4e2c6]: updating live score for: https://www.cricbuzz.com/live-cricket-scorecard/46345/mdx-vs-glam-south-group-t20-blast-2022 at 2022-05-31 07:03:08.638462+00:00 hours!
+[2022-05-31 12:33:09,557: WARNING/MainProcess] True
+[2022-05-31 12:33:09,557: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 11529
+[2022-05-31 12:33:09,557: WARNING/MainProcess] True
+[2022-05-31 12:33:09,557: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10448
+[2022-05-31 12:33:09,557: WARNING/MainProcess] True
+[2022-05-31 12:33:09,557: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 18365
+[2022-05-31 12:33:09,573: WARNING/MainProcess] True
+[2022-05-31 12:33:09,573: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13989
+[2022-05-31 12:33:09,573: WARNING/MainProcess] True
+[2022-05-31 12:33:09,573: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 6653
+[2022-05-31 12:33:09,573: WARNING/MainProcess] True
+[2022-05-31 12:33:09,573: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13329
+[2022-05-31 12:33:09,588: WARNING/MainProcess] True
+[2022-05-31 12:33:09,588: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 6662
+[2022-05-31 12:33:09,588: WARNING/MainProcess] False
+[2022-05-31 12:33:09,588: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 15236
+[2022-05-31 12:33:09,588: WARNING/MainProcess] False
+[2022-05-31 12:33:09,588: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 18174
+[2022-05-31 12:33:09,588: WARNING/MainProcess] True
+[2022-05-31 12:33:09,588: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 9345
+[2022-05-31 12:33:09,588: WARNING/MainProcess] True
+[2022-05-31 12:33:09,588: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 7996
+[2022-05-31 12:33:09,604: WARNING/MainProcess] True
+[2022-05-31 12:33:09,604: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 11695
+[2022-05-31 12:33:09,604: WARNING/MainProcess] True
+[2022-05-31 12:33:09,604: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 7958
+[2022-05-31 12:33:09,604: WARNING/MainProcess] True
+[2022-05-31 12:33:09,604: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 7866
+[2022-05-31 12:33:09,604: WARNING/MainProcess] True
+[2022-05-31 12:33:09,604: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13779
+[2022-05-31 12:33:09,620: WARNING/MainProcess] True
+[2022-05-31 12:33:09,620: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10511
+[2022-05-31 12:33:09,620: WARNING/MainProcess] True
+[2022-05-31 12:33:09,620: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13332
+[2022-05-31 12:33:09,620: WARNING/MainProcess] True
+[2022-05-31 12:33:09,620: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 7732
+[2022-05-31 12:33:09,620: INFO/MainProcess] get_live_score[1c1af2be-0d5c-4ef5-a9f4-77e95bd4e2c6]: successfully updated live score for: https://www.cricbuzz.com/live-cricket-scorecard/46345/mdx-vs-glam-south-group-t20-blast-2022 at 2022-05-31 07:03:09.620042+00:00 hours!
+[2022-05-31 12:33:09,620: INFO/MainProcess] get_live_score[1c1af2be-0d5c-4ef5-a9f4-77e95bd4e2c6]: updating live score for: https://www.cricbuzz.com/live-cricket-scorecard/46350/sus-vs-kent-south-group-t20-blast-2022 at 2022-05-31 07:03:09.620042+00:00 hours!
+[2022-05-31 12:33:10,270: WARNING/MainProcess] True
+[2022-05-31 12:33:10,270: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 9468
+[2022-05-31 12:33:10,270: WARNING/MainProcess] True
+[2022-05-31 12:33:10,270: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 776
+[2022-05-31 12:33:10,301: WARNING/MainProcess] True
+[2022-05-31 12:33:10,301: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 12260
+[2022-05-31 12:33:10,301: WARNING/MainProcess] True
+[2022-05-31 12:33:10,301: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10924
+[2022-05-31 12:33:10,301: WARNING/MainProcess] True
+[2022-05-31 12:33:10,317: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10071
+[2022-05-31 12:33:10,317: WARNING/MainProcess] False
+[2022-05-31 12:33:10,317: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 2268
+[2022-05-31 12:33:10,332: WARNING/MainProcess] False
+[2022-05-31 12:33:10,332: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 19621
+[2022-05-31 12:33:10,332: WARNING/MainProcess] False
+[2022-05-31 12:33:10,332: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 6317
+[2022-05-31 12:33:10,332: WARNING/MainProcess] True
+[2022-05-31 12:33:10,332: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 12770
+[2022-05-31 12:33:10,332: WARNING/MainProcess] True
+[2022-05-31 12:33:10,332: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 7856
+[2022-05-31 12:33:10,332: WARNING/MainProcess] True
+[2022-05-31 12:33:10,332: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 1995
+[2022-05-31 12:33:10,348: WARNING/MainProcess] True
+[2022-05-31 12:33:10,348: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 9411
+[2022-05-31 12:33:10,363: WARNING/MainProcess] True
+[2022-05-31 12:33:10,363: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 14813
+[2022-05-31 12:33:10,363: WARNING/MainProcess] True
+[2022-05-31 12:33:10,363: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 11076
+[2022-05-31 12:33:10,363: WARNING/MainProcess] True
+[2022-05-31 12:33:10,363: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13678
+[2022-05-31 12:33:10,363: WARNING/MainProcess] False
+[2022-05-31 12:33:10,363: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 12783
+[2022-05-31 12:33:10,363: WARNING/MainProcess] False
+[2022-05-31 12:33:10,363: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 8560
+[2022-05-31 12:33:10,379: INFO/MainProcess] get_live_score[1c1af2be-0d5c-4ef5-a9f4-77e95bd4e2c6]: successfully updated live score for: https://www.cricbuzz.com/live-cricket-scorecard/46350/sus-vs-kent-south-group-t20-blast-2022 at 2022-05-31 07:03:10.379541+00:00 hours!
+[2022-05-31 12:33:10,379: INFO/MainProcess] get_live_score[1c1af2be-0d5c-4ef5-a9f4-77e95bd4e2c6]: updating live score for: https://www.cricbuzz.com/live-cricket-scorecard/46364/yorks-vs-leic-north-group-t20-blast-2022 at 2022-05-31 07:03:10.379541+00:00 hours!
+[2022-05-31 12:33:11,117: WARNING/MainProcess] True
+[2022-05-31 12:33:11,117: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 6511
+[2022-05-31 12:33:11,132: WARNING/MainProcess] True
+[2022-05-31 12:33:11,132: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10033
+[2022-05-31 12:33:11,148: WARNING/MainProcess] True
+[2022-05-31 12:33:11,148: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 12201
+[2022-05-31 12:33:11,164: WARNING/MainProcess] True
+[2022-05-31 12:33:11,164: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13777
+[2022-05-31 12:33:11,164: WARNING/MainProcess] True
+[2022-05-31 12:33:11,164: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 15478
+[2022-05-31 12:33:11,164: WARNING/MainProcess] True
+[2022-05-31 12:33:11,164: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 11534
+[2022-05-31 12:33:11,179: WARNING/MainProcess] True
+[2022-05-31 12:33:11,179: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 14561
+[2022-05-31 12:33:11,179: WARNING/MainProcess] True
+[2022-05-31 12:33:11,179: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13996
+[2022-05-31 12:33:11,179: WARNING/MainProcess] True
+[2022-05-31 12:33:11,179: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 2255
+[2022-05-31 12:33:11,179: WARNING/MainProcess] True
+[2022-05-31 12:33:11,179: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 9336
+[2022-05-31 12:33:11,179: WARNING/MainProcess] True
+[2022-05-31 12:33:11,179: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 9360
+[2022-05-31 12:33:11,195: WARNING/MainProcess] True
+[2022-05-31 12:33:11,195: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 9725
+[2022-05-31 12:33:11,195: WARNING/MainProcess] True
+[2022-05-31 12:33:11,195: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13933
+[2022-05-31 12:33:11,195: WARNING/MainProcess] True
+[2022-05-31 12:33:11,195: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13716
+[2022-05-31 12:33:11,195: WARNING/MainProcess] True
+[2022-05-31 12:33:11,195: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 19767
+[2022-05-31 12:33:11,195: WARNING/MainProcess] True
+[2022-05-31 12:33:11,195: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13335
+[2022-05-31 12:33:11,210: WARNING/MainProcess] False
+[2022-05-31 12:33:11,210: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 11565
+[2022-05-31 12:33:11,210: INFO/MainProcess] get_live_score[1c1af2be-0d5c-4ef5-a9f4-77e95bd4e2c6]: successfully updated live score for: https://www.cricbuzz.com/live-cricket-scorecard/46364/yorks-vs-leic-north-group-t20-blast-2022 at 2022-05-31 07:03:11.210881+00:00 hours!
+[2022-05-31 12:33:11,210: INFO/MainProcess] get_live_score[1c1af2be-0d5c-4ef5-a9f4-77e95bd4e2c6]: updating live score for: https://www.cricbuzz.com/live-cricket-scorecard/46357/som-vs-ess-south-group-t20-blast-2022 at 2022-05-31 07:03:11.210881+00:00 hours!
+[2022-05-31 12:33:11,887: WARNING/MainProcess] True
+[2022-05-31 12:33:11,887: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 12254
+[2022-05-31 12:33:11,887: WARNING/MainProcess] True
+[2022-05-31 12:33:11,887: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 18429
+[2022-05-31 12:33:11,902: WARNING/MainProcess] True
+[2022-05-31 12:33:11,902: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10019
+[2022-05-31 12:33:11,902: WARNING/MainProcess] True
+[2022-05-31 12:33:11,902: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13013
+[2022-05-31 12:33:11,902: WARNING/MainProcess] False
+[2022-05-31 12:33:11,902: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 15238
+[2022-05-31 12:33:11,919: WARNING/MainProcess] False
+[2022-05-31 12:33:11,919: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10925
+[2022-05-31 12:33:11,938: WARNING/MainProcess] False
+[2022-05-31 12:33:11,938: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 6657
+[2022-05-31 12:33:11,938: WARNING/MainProcess] True
+[2022-05-31 12:33:11,938: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 15119
+[2022-05-31 12:33:11,938: WARNING/MainProcess] True
+[2022-05-31 12:33:11,938: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 7865
+[2022-05-31 12:33:11,938: WARNING/MainProcess] True
+[2022-05-31 12:33:11,938: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13800
+[2022-05-31 12:33:11,938: WARNING/MainProcess] True
+[2022-05-31 12:33:11,938: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10387
+[2022-05-31 12:33:11,946: WARNING/MainProcess] True
+[2022-05-31 12:33:11,946: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 11527
+[2022-05-31 12:33:11,954: WARNING/MainProcess] True
+[2022-05-31 12:33:11,954: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 6528
+[2022-05-31 12:33:11,962: WARNING/MainProcess] True
+[2022-05-31 12:33:11,962: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10414
+[2022-05-31 12:33:11,962: WARNING/MainProcess] True
+[2022-05-31 12:33:11,962: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13048
+[2022-05-31 12:33:11,962: WARNING/MainProcess] True
+[2022-05-31 12:33:11,962: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 12994
+[2022-05-31 12:33:11,970: INFO/MainProcess] get_live_score[1c1af2be-0d5c-4ef5-a9f4-77e95bd4e2c6]: successfully updated live score for: https://www.cricbuzz.com/live-cricket-scorecard/46357/som-vs-ess-south-group-t20-blast-2022 at 2022-05-31 07:03:11.970663+00:00 hours!
+[2022-05-31 12:33:11,970: INFO/MainProcess] get_live_score[1c1af2be-0d5c-4ef5-a9f4-77e95bd4e2c6]: updating live score for: https://www.cricbuzz.com/live-cricket-scorecard/47647/sco-vs-usa-2nd-match-icc-cricket-world-cup-league-two-2019-23 at 2022-05-31 07:03:11.970663+00:00 hours!
+[2022-05-31 12:33:12,655: WARNING/MainProcess] True
+[2022-05-31 12:33:12,655: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 14541
+[2022-05-31 12:33:12,686: WARNING/MainProcess] False
+[2022-05-31 12:33:12,686: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13744
+[2022-05-31 12:33:12,686: WARNING/MainProcess] True
+[2022-05-31 12:33:12,686: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 8670
+[2022-05-31 12:33:12,686: WARNING/MainProcess] True
+[2022-05-31 12:33:12,686: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 20217
+[2022-05-31 12:33:12,686: WARNING/MainProcess] True
+[2022-05-31 12:33:12,686: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 14732
+[2022-05-31 12:33:12,701: WARNING/MainProcess] True
+[2022-05-31 12:33:12,701: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 26232
+[2022-05-31 12:33:12,701: WARNING/MainProcess] True
+[2022-05-31 12:33:12,701: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 12788
+[2022-05-31 12:33:12,701: WARNING/MainProcess] True
+[2022-05-31 12:33:12,701: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 15475
+[2022-05-31 12:33:12,701: WARNING/MainProcess] True
+[2022-05-31 12:33:12,701: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 11005
+[2022-05-31 12:33:12,701: WARNING/MainProcess] True
+[2022-05-31 12:33:12,701: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 14729
+[2022-05-31 12:33:12,717: WARNING/MainProcess] True
+[2022-05-31 12:33:12,717: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 6320
+[2022-05-31 12:33:12,717: INFO/MainProcess] get_live_score[1c1af2be-0d5c-4ef5-a9f4-77e95bd4e2c6]: successfully updated live score for: https://www.cricbuzz.com/live-cricket-scorecard/47647/sco-vs-usa-2nd-match-icc-cricket-world-cup-league-two-2019-23 at 2022-05-31 07:03:12.717606+00:00 hours!
+[2022-05-31 12:33:12,717: INFO/MainProcess] get_live_score[1c1af2be-0d5c-4ef5-a9f4-77e95bd4e2c6]: updating live score for: https://www.cricbuzz.com/live-cricket-scorecard/46366/notts-vs-nhnts-north-group-t20-blast-2022 at 2022-05-31 07:03:12.717606+00:00 hours!
+[2022-05-31 12:33:13,378: WARNING/MainProcess] True
+[2022-05-31 12:33:13,378: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10921
+[2022-05-31 12:33:13,386: WARNING/MainProcess] True
+[2022-05-31 12:33:13,386: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 6735
+[2022-05-31 12:33:13,386: WARNING/MainProcess] False
+[2022-05-31 12:33:13,386: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10417
+[2022-05-31 12:33:13,386: WARNING/MainProcess] True
+[2022-05-31 12:33:13,386: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 18415
+[2022-05-31 12:33:13,386: WARNING/MainProcess] False
+[2022-05-31 12:33:13,386: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 6733
+[2022-05-31 12:33:13,394: WARNING/MainProcess] False
+[2022-05-31 12:33:13,394: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 8324
+[2022-05-31 12:33:13,402: WARNING/MainProcess] False
+[2022-05-31 12:33:13,402: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13957
+[2022-05-31 12:33:13,410: WARNING/MainProcess] False
+[2022-05-31 12:33:13,410: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 8011
+[2022-05-31 12:33:13,410: WARNING/MainProcess] False
+[2022-05-31 12:33:13,410: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10400
+[2022-05-31 12:33:13,418: WARNING/MainProcess] False
+[2022-05-31 12:33:13,418: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10031
+[2022-05-31 12:33:13,418: WARNING/MainProcess] False
+[2022-05-31 12:33:13,418: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10030
+[2022-05-31 12:33:13,418: WARNING/MainProcess] False
+[2022-05-31 12:33:13,418: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 6738
+[2022-05-31 12:33:13,434: WARNING/MainProcess] False
+[2022-05-31 12:33:13,434: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 6513
+[2022-05-31 12:33:13,434: WARNING/MainProcess] False
+[2022-05-31 12:33:13,434: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 19641
+[2022-05-31 12:33:13,434: INFO/MainProcess] get_live_score[1c1af2be-0d5c-4ef5-a9f4-77e95bd4e2c6]: successfully updated live score for: https://www.cricbuzz.com/live-cricket-scorecard/46366/notts-vs-nhnts-north-group-t20-blast-2022 at 2022-05-31 07:03:13.434303+00:00 hours!
+[2022-05-31 12:33:13,434: INFO/MainProcess] get_live_score[1c1af2be-0d5c-4ef5-a9f4-77e95bd4e2c6]: updating live score for: https://www.cricbuzz.com/live-cricket-scorecard/46371/ham-vs-som-south-group-t20-blast-2022 at 2022-05-31 07:03:13.434303+00:00 hours!
+[2022-05-31 12:33:13,923: WARNING/MainProcess] True
+[2022-05-31 12:33:13,923: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10026
+[2022-05-31 12:33:13,939: WARNING/MainProcess] True
+[2022-05-31 12:33:13,939: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10470
+[2022-05-31 12:33:13,939: WARNING/MainProcess] True
+[2022-05-31 12:33:13,939: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 6639
+[2022-05-31 12:33:13,939: WARNING/MainProcess] True
+[2022-05-31 12:33:13,939: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 7945
+[2022-05-31 12:33:13,939: WARNING/MainProcess] True
+[2022-05-31 12:33:13,939: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 8004
+[2022-05-31 12:33:13,955: WARNING/MainProcess] True
+[2022-05-31 12:33:13,955: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 6647
+[2022-05-31 12:33:13,955: WARNING/MainProcess] True
+[2022-05-31 12:33:13,955: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10435
+[2022-05-31 12:33:13,971: WARNING/MainProcess] True
+[2022-05-31 12:33:13,971: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 12254
+[2022-05-31 12:33:13,971: WARNING/MainProcess] True
+[2022-05-31 12:33:13,971: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 18429
+[2022-05-31 12:33:13,979: WARNING/MainProcess] True
+[2022-05-31 12:33:13,979: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10019
+[2022-05-31 12:33:13,987: WARNING/MainProcess] True
+[2022-05-31 12:33:13,987: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13013
+[2022-05-31 12:33:13,995: WARNING/MainProcess] False
+[2022-05-31 12:33:13,995: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 15238
+[2022-05-31 12:33:13,995: WARNING/MainProcess] True
+[2022-05-31 12:33:13,995: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10925
+[2022-05-31 12:33:14,011: WARNING/MainProcess] False
+[2022-05-31 12:33:14,011: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 6657
+[2022-05-31 12:33:14,011: INFO/MainProcess] get_live_score[1c1af2be-0d5c-4ef5-a9f4-77e95bd4e2c6]: successfully updated live score for: https://www.cricbuzz.com/live-cricket-scorecard/46371/ham-vs-som-south-group-t20-blast-2022 at 2022-05-31 07:03:14.011117+00:00 hours!
+[2022-05-31 12:33:14,057: INFO/MainProcess] Task get_live_score[1c1af2be-0d5c-4ef5-a9f4-77e95bd4e2c6] succeeded in 11.51600000000002s: None
+[2022-05-31 12:36:02,561: INFO/MainProcess] Task get_live_score[3ee2522c-d085-4a6f-87a5-b921080946ed] received
+[2022-05-31 12:36:02,561: INFO/MainProcess] get_live_score[3ee2522c-d085-4a6f-87a5-b921080946ed]: updating live score for: https://www.cricbuzz.com/live-cricket-scorecard/46211/kkr-vs-lsg-66th-match-indian-premier-league-2022 at 2022-05-31 07:06:02.561138+00:00 hours!
+[2022-05-31 12:36:06,018: INFO/MainProcess] get_live_score[3ee2522c-d085-4a6f-87a5-b921080946ed]: successfully updated live score for: https://www.cricbuzz.com/live-cricket-scorecard/46211/kkr-vs-lsg-66th-match-indian-premier-league-2022 at 2022-05-31 07:06:06.018005+00:00 hours!
+[2022-05-31 12:36:06,018: INFO/MainProcess] get_live_score[3ee2522c-d085-4a6f-87a5-b921080946ed]: updating live score for: https://www.cricbuzz.com/live-cricket-scorecard/47591/lsg-vs-rcb-eliminator-indian-premier-league-2022 at 2022-05-31 07:06:06.018005+00:00 hours!
+[2022-05-31 12:36:06,889: WARNING/MainProcess] True
+[2022-05-31 12:36:06,889: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10636
+[2022-05-31 12:36:07,046: INFO/MainProcess] get_live_score[3ee2522c-d085-4a6f-87a5-b921080946ed]: successfully updated live score for: https://www.cricbuzz.com/live-cricket-scorecard/47591/lsg-vs-rcb-eliminator-indian-premier-league-2022 at 2022-05-31 07:06:07.046379+00:00 hours!
+[2022-05-31 12:36:07,046: INFO/MainProcess] get_live_score[3ee2522c-d085-4a6f-87a5-b921080946ed]: updating live score for: https://www.cricbuzz.com/live-cricket-scorecard/47605/gt-vs-rr-final-indian-premier-league-2022 at 2022-05-31 07:06:07.046379+00:00 hours!
+[2022-05-31 12:36:08,127: INFO/MainProcess] get_live_score[3ee2522c-d085-4a6f-87a5-b921080946ed]: successfully updated live score for: https://www.cricbuzz.com/live-cricket-scorecard/47605/gt-vs-rr-final-indian-premier-league-2022 at 2022-05-31 07:06:08.127816+00:00 hours!
+[2022-05-31 12:36:08,127: INFO/MainProcess] get_live_score[3ee2522c-d085-4a6f-87a5-b921080946ed]: updating live score for: https://www.cricbuzz.com/live-cricket-scorecard/46331/warks-vs-dur-north-group-t20-blast-2022 at 2022-05-31 07:06:08.127816+00:00 hours!
+[2022-05-31 12:36:08,896: WARNING/MainProcess] True
+[2022-05-31 12:36:08,896: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 19636
+[2022-05-31 12:36:08,896: WARNING/MainProcess] True
+[2022-05-31 12:36:08,896: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 8499
+[2022-05-31 12:36:08,896: WARNING/MainProcess] True
+[2022-05-31 12:36:08,896: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 14821
+[2022-05-31 12:36:08,896: WARNING/MainProcess] True
+[2022-05-31 12:36:08,896: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10444
+[2022-05-31 12:36:08,896: WARNING/MainProcess] True
+[2022-05-31 12:36:08,896: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 19916
+[2022-05-31 12:36:08,912: WARNING/MainProcess] False
+[2022-05-31 12:36:08,912: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 12256
+[2022-05-31 12:36:08,928: WARNING/MainProcess] False
+[2022-05-31 12:36:08,928: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13063
+[2022-05-31 12:36:08,928: WARNING/MainProcess] False
+[2022-05-31 12:36:08,928: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 8005
+[2022-05-31 12:36:08,928: WARNING/MainProcess] True
+[2022-05-31 12:36:08,928: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10020
+[2022-05-31 12:36:08,940: WARNING/MainProcess] True
+[2022-05-31 12:36:08,940: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 12793
+[2022-05-31 12:36:08,940: WARNING/MainProcess] True
+[2022-05-31 12:36:08,940: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 14265
+[2022-05-31 12:36:08,940: WARNING/MainProcess] True
+[2022-05-31 12:36:08,940: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 9328
+[2022-05-31 12:36:08,940: WARNING/MainProcess] True
+[2022-05-31 12:36:08,940: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 11436
+[2022-05-31 12:36:08,940: WARNING/MainProcess] True
+[2022-05-31 12:36:08,940: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 8322
+[2022-05-31 12:36:08,940: WARNING/MainProcess] True
+[2022-05-31 12:36:08,940: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 8384
+[2022-05-31 12:36:08,956: WARNING/MainProcess] True
+[2022-05-31 12:36:08,956: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 12992
+[2022-05-31 12:36:08,956: WARNING/MainProcess] True
+[2022-05-31 12:36:08,956: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 6550
+[2022-05-31 12:36:08,956: WARNING/MainProcess] False
+[2022-05-31 12:36:08,956: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13005
+[2022-05-31 12:36:08,956: INFO/MainProcess] get_live_score[3ee2522c-d085-4a6f-87a5-b921080946ed]: successfully updated live score for: https://www.cricbuzz.com/live-cricket-scorecard/46331/warks-vs-dur-north-group-t20-blast-2022 at 2022-05-31 07:06:08.956386+00:00 hours!
+[2022-05-31 12:36:08,956: INFO/MainProcess] get_live_score[3ee2522c-d085-4a6f-87a5-b921080946ed]: updating live score for: https://www.cricbuzz.com/live-cricket-scorecard/46338/lancs-vs-worcs-north-group-t20-blast-2022 at 2022-05-31 07:06:08.956386+00:00 hours!
+[2022-05-31 12:36:09,602: WARNING/MainProcess] True
+[2022-05-31 12:36:09,602: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 9330
+[2022-05-31 12:36:09,618: WARNING/MainProcess] True
+[2022-05-31 12:36:09,618: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 6705
+[2022-05-31 12:36:09,634: WARNING/MainProcess] True
+[2022-05-31 12:36:09,634: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 9821
+[2022-05-31 12:36:09,634: WARNING/MainProcess] True
+[2022-05-31 12:36:09,634: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 12710
+[2022-05-31 12:36:09,634: WARNING/MainProcess] True
+[2022-05-31 12:36:09,634: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 18199
+[2022-05-31 12:36:09,651: WARNING/MainProcess] False
+[2022-05-31 12:36:09,651: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10395
+[2022-05-31 12:36:09,651: WARNING/MainProcess] True
+[2022-05-31 12:36:09,651: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 12991
+[2022-05-31 12:36:09,651: WARNING/MainProcess] True
+[2022-05-31 12:36:09,651: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 7949
+[2022-05-31 12:36:09,651: WARNING/MainProcess] True
+[2022-05-31 12:36:09,651: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13785
+[2022-05-31 12:36:09,666: WARNING/MainProcess] True
+[2022-05-31 12:36:09,666: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10104
+[2022-05-31 12:36:09,666: WARNING/MainProcess] True
+[2022-05-31 12:36:09,666: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 6682
+[2022-05-31 12:36:09,666: WARNING/MainProcess] True
+[2022-05-31 12:36:09,666: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 9814
+[2022-05-31 12:36:09,674: WARNING/MainProcess] True
+[2022-05-31 12:36:09,674: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10441
+[2022-05-31 12:36:09,674: WARNING/MainProcess] True
+[2022-05-31 12:36:09,674: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 19727
+[2022-05-31 12:36:09,674: WARNING/MainProcess] False
+[2022-05-31 12:36:09,674: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 11556
+[2022-05-31 12:36:09,674: WARNING/MainProcess] True
+[2022-05-31 12:36:09,674: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 12993
+[2022-05-31 12:36:09,682: INFO/MainProcess] get_live_score[3ee2522c-d085-4a6f-87a5-b921080946ed]: successfully updated live score for: https://www.cricbuzz.com/live-cricket-scorecard/46338/lancs-vs-worcs-north-group-t20-blast-2022 at 2022-05-31 07:06:09.682560+00:00 hours!
+[2022-05-31 12:36:09,682: INFO/MainProcess] get_live_score[3ee2522c-d085-4a6f-87a5-b921080946ed]: updating live score for: https://www.cricbuzz.com/live-cricket-scorecard/46345/mdx-vs-glam-south-group-t20-blast-2022 at 2022-05-31 07:06:09.682560+00:00 hours!
+[2022-05-31 12:36:10,403: WARNING/MainProcess] True
+[2022-05-31 12:36:10,403: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 11529
+[2022-05-31 12:36:10,403: WARNING/MainProcess] True
+[2022-05-31 12:36:10,403: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10448
+[2022-05-31 12:36:10,403: WARNING/MainProcess] True
+[2022-05-31 12:36:10,403: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 18365
+[2022-05-31 12:36:10,418: WARNING/MainProcess] True
+[2022-05-31 12:36:10,418: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13989
+[2022-05-31 12:36:10,418: WARNING/MainProcess] True
+[2022-05-31 12:36:10,418: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 6653
+[2022-05-31 12:36:10,418: WARNING/MainProcess] True
+[2022-05-31 12:36:10,418: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13329
+[2022-05-31 12:36:10,434: WARNING/MainProcess] True
+[2022-05-31 12:36:10,434: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 6662
+[2022-05-31 12:36:10,434: WARNING/MainProcess] False
+[2022-05-31 12:36:10,434: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 15236
+[2022-05-31 12:36:10,434: WARNING/MainProcess] False
+[2022-05-31 12:36:10,434: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 18174
+[2022-05-31 12:36:10,450: WARNING/MainProcess] True
+[2022-05-31 12:36:10,450: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 9345
+[2022-05-31 12:36:10,450: WARNING/MainProcess] True
+[2022-05-31 12:36:10,450: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 7996
+[2022-05-31 12:36:10,450: WARNING/MainProcess] True
+[2022-05-31 12:36:10,450: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 11695
+[2022-05-31 12:36:10,465: WARNING/MainProcess] True
+[2022-05-31 12:36:10,465: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 7958
+[2022-05-31 12:36:10,465: WARNING/MainProcess] True
+[2022-05-31 12:36:10,465: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 7866
+[2022-05-31 12:36:10,465: WARNING/MainProcess] True
+[2022-05-31 12:36:10,465: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13779
+[2022-05-31 12:36:10,465: WARNING/MainProcess] True
+[2022-05-31 12:36:10,465: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10511
+[2022-05-31 12:36:10,481: WARNING/MainProcess] True
+[2022-05-31 12:36:10,481: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13332
+[2022-05-31 12:36:10,481: WARNING/MainProcess] True
+[2022-05-31 12:36:10,481: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 7732
+[2022-05-31 12:36:10,481: INFO/MainProcess] get_live_score[3ee2522c-d085-4a6f-87a5-b921080946ed]: successfully updated live score for: https://www.cricbuzz.com/live-cricket-scorecard/46345/mdx-vs-glam-south-group-t20-blast-2022 at 2022-05-31 07:06:10.481329+00:00 hours!
+[2022-05-31 12:36:10,481: INFO/MainProcess] get_live_score[3ee2522c-d085-4a6f-87a5-b921080946ed]: updating live score for: https://www.cricbuzz.com/live-cricket-scorecard/46350/sus-vs-kent-south-group-t20-blast-2022 at 2022-05-31 07:06:10.481329+00:00 hours!
+[2022-05-31 12:36:11,062: WARNING/MainProcess] True
+[2022-05-31 12:36:11,062: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 9468
+[2022-05-31 12:36:11,062: WARNING/MainProcess] True
+[2022-05-31 12:36:11,062: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 776
+[2022-05-31 12:36:11,078: WARNING/MainProcess] True
+[2022-05-31 12:36:11,078: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 12260
+[2022-05-31 12:36:11,078: WARNING/MainProcess] True
+[2022-05-31 12:36:11,078: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10924
+[2022-05-31 12:36:11,078: WARNING/MainProcess] True
+[2022-05-31 12:36:11,078: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10071
+[2022-05-31 12:36:11,078: WARNING/MainProcess] False
+[2022-05-31 12:36:11,078: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 2268
+[2022-05-31 12:36:11,093: WARNING/MainProcess] False
+[2022-05-31 12:36:11,093: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 19621
+[2022-05-31 12:36:11,093: WARNING/MainProcess] False
+[2022-05-31 12:36:11,093: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 6317
+[2022-05-31 12:36:11,093: WARNING/MainProcess] True
+[2022-05-31 12:36:11,093: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 12770
+[2022-05-31 12:36:11,093: WARNING/MainProcess] True
+[2022-05-31 12:36:11,093: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 7856
+[2022-05-31 12:36:11,093: WARNING/MainProcess] True
+[2022-05-31 12:36:11,093: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 1995
+[2022-05-31 12:36:11,109: WARNING/MainProcess] True
+[2022-05-31 12:36:11,109: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 9411
+[2022-05-31 12:36:11,109: WARNING/MainProcess] True
+[2022-05-31 12:36:11,125: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 14813
+[2022-05-31 12:36:11,125: WARNING/MainProcess] True
+[2022-05-31 12:36:11,125: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 11076
+[2022-05-31 12:36:11,125: WARNING/MainProcess] True
+[2022-05-31 12:36:11,125: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13678
+[2022-05-31 12:36:11,125: WARNING/MainProcess] False
+[2022-05-31 12:36:11,125: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 12783
+[2022-05-31 12:36:11,125: WARNING/MainProcess] False
+[2022-05-31 12:36:11,125: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 8560
+[2022-05-31 12:36:11,125: INFO/MainProcess] get_live_score[3ee2522c-d085-4a6f-87a5-b921080946ed]: successfully updated live score for: https://www.cricbuzz.com/live-cricket-scorecard/46350/sus-vs-kent-south-group-t20-blast-2022 at 2022-05-31 07:06:11.125170+00:00 hours!
+[2022-05-31 12:36:11,125: INFO/MainProcess] get_live_score[3ee2522c-d085-4a6f-87a5-b921080946ed]: updating live score for: https://www.cricbuzz.com/live-cricket-scorecard/46364/yorks-vs-leic-north-group-t20-blast-2022 at 2022-05-31 07:06:11.125170+00:00 hours!
+[2022-05-31 12:36:11,638: WARNING/MainProcess] True
+[2022-05-31 12:36:11,638: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 6511
+[2022-05-31 12:36:11,653: WARNING/MainProcess] True
+[2022-05-31 12:36:11,653: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10033
+[2022-05-31 12:36:11,653: WARNING/MainProcess] True
+[2022-05-31 12:36:11,653: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 12201
+[2022-05-31 12:36:11,669: WARNING/MainProcess] True
+[2022-05-31 12:36:11,669: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13777
+[2022-05-31 12:36:11,669: WARNING/MainProcess] True
+[2022-05-31 12:36:11,669: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 15478
+[2022-05-31 12:36:11,669: WARNING/MainProcess] True
+[2022-05-31 12:36:11,669: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 11534
+[2022-05-31 12:36:11,684: WARNING/MainProcess] True
+[2022-05-31 12:36:11,684: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 14561
+[2022-05-31 12:36:11,684: WARNING/MainProcess] True
+[2022-05-31 12:36:11,684: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13996
+[2022-05-31 12:36:11,684: WARNING/MainProcess] True
+[2022-05-31 12:36:11,684: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 2255
+[2022-05-31 12:36:11,684: WARNING/MainProcess] True
+[2022-05-31 12:36:11,684: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 9336
+[2022-05-31 12:36:11,684: WARNING/MainProcess] True
+[2022-05-31 12:36:11,684: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 9360
+[2022-05-31 12:36:11,700: WARNING/MainProcess] True
+[2022-05-31 12:36:11,700: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 9725
+[2022-05-31 12:36:11,700: WARNING/MainProcess] True
+[2022-05-31 12:36:11,700: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13933
+[2022-05-31 12:36:11,700: WARNING/MainProcess] True
+[2022-05-31 12:36:11,700: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13716
+[2022-05-31 12:36:11,700: WARNING/MainProcess] True
+[2022-05-31 12:36:11,700: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 19767
+[2022-05-31 12:36:11,700: WARNING/MainProcess] True
+[2022-05-31 12:36:11,700: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13335
+[2022-05-31 12:36:11,700: WARNING/MainProcess] False
+[2022-05-31 12:36:11,700: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 11565
+[2022-05-31 12:36:11,716: INFO/MainProcess] get_live_score[3ee2522c-d085-4a6f-87a5-b921080946ed]: successfully updated live score for: https://www.cricbuzz.com/live-cricket-scorecard/46364/yorks-vs-leic-north-group-t20-blast-2022 at 2022-05-31 07:06:11.716141+00:00 hours!
+[2022-05-31 12:36:11,716: INFO/MainProcess] get_live_score[3ee2522c-d085-4a6f-87a5-b921080946ed]: updating live score for: https://www.cricbuzz.com/live-cricket-scorecard/46357/som-vs-ess-south-group-t20-blast-2022 at 2022-05-31 07:06:11.716141+00:00 hours!
+[2022-05-31 12:36:12,316: WARNING/MainProcess] True
+[2022-05-31 12:36:12,316: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 12254
+[2022-05-31 12:36:12,316: WARNING/MainProcess] True
+[2022-05-31 12:36:12,316: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 18429
+[2022-05-31 12:36:12,331: WARNING/MainProcess] True
+[2022-05-31 12:36:12,331: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10019
+[2022-05-31 12:36:12,331: WARNING/MainProcess] True
+[2022-05-31 12:36:12,331: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13013
+[2022-05-31 12:36:12,347: WARNING/MainProcess] False
+[2022-05-31 12:36:12,347: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 15238
+[2022-05-31 12:36:12,347: WARNING/MainProcess] False
+[2022-05-31 12:36:12,347: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10925
+[2022-05-31 12:36:12,363: WARNING/MainProcess] False
+[2022-05-31 12:36:12,363: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 6657
+[2022-05-31 12:36:12,363: WARNING/MainProcess] True
+[2022-05-31 12:36:12,363: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 15119
+[2022-05-31 12:36:12,363: WARNING/MainProcess] True
+[2022-05-31 12:36:12,363: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 7865
+[2022-05-31 12:36:12,363: WARNING/MainProcess] True
+[2022-05-31 12:36:12,363: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13800
+[2022-05-31 12:36:12,378: WARNING/MainProcess] True
+[2022-05-31 12:36:12,378: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10387
+[2022-05-31 12:36:12,378: WARNING/MainProcess] True
+[2022-05-31 12:36:12,378: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 11527
+[2022-05-31 12:36:12,378: WARNING/MainProcess] True
+[2022-05-31 12:36:12,378: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 6528
+[2022-05-31 12:36:12,394: WARNING/MainProcess] True
+[2022-05-31 12:36:12,394: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10414
+[2022-05-31 12:36:12,394: WARNING/MainProcess] True
+[2022-05-31 12:36:12,394: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13048
+[2022-05-31 12:36:12,394: WARNING/MainProcess] True
+[2022-05-31 12:36:12,394: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 12994
+[2022-05-31 12:36:12,394: INFO/MainProcess] get_live_score[3ee2522c-d085-4a6f-87a5-b921080946ed]: successfully updated live score for: https://www.cricbuzz.com/live-cricket-scorecard/46357/som-vs-ess-south-group-t20-blast-2022 at 2022-05-31 07:06:12.394313+00:00 hours!
+[2022-05-31 12:36:12,394: INFO/MainProcess] get_live_score[3ee2522c-d085-4a6f-87a5-b921080946ed]: updating live score for: https://www.cricbuzz.com/live-cricket-scorecard/47647/sco-vs-usa-2nd-match-icc-cricket-world-cup-league-two-2019-23 at 2022-05-31 07:06:12.394313+00:00 hours!
+[2022-05-31 12:36:13,056: WARNING/MainProcess] True
+[2022-05-31 12:36:13,056: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 14541
+[2022-05-31 12:36:13,088: WARNING/MainProcess] False
+[2022-05-31 12:36:13,088: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13744
+[2022-05-31 12:36:13,091: WARNING/MainProcess] True
+[2022-05-31 12:36:13,091: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 8670
+[2022-05-31 12:36:13,091: WARNING/MainProcess] True
+[2022-05-31 12:36:13,091: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 20217
+[2022-05-31 12:36:13,091: WARNING/MainProcess] True
+[2022-05-31 12:36:13,099: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 14732
+[2022-05-31 12:36:13,107: WARNING/MainProcess] True
+[2022-05-31 12:36:13,107: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 26232
+[2022-05-31 12:36:13,115: WARNING/MainProcess] True
+[2022-05-31 12:36:13,115: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 12788
+[2022-05-31 12:36:13,115: WARNING/MainProcess] True
+[2022-05-31 12:36:13,115: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 15475
+[2022-05-31 12:36:13,115: WARNING/MainProcess] True
+[2022-05-31 12:36:13,115: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 11005
+[2022-05-31 12:36:13,115: WARNING/MainProcess] True
+[2022-05-31 12:36:13,115: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 14729
+[2022-05-31 12:36:13,131: WARNING/MainProcess] True
+[2022-05-31 12:36:13,131: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 6320
+[2022-05-31 12:36:13,131: INFO/MainProcess] get_live_score[3ee2522c-d085-4a6f-87a5-b921080946ed]: successfully updated live score for: https://www.cricbuzz.com/live-cricket-scorecard/47647/sco-vs-usa-2nd-match-icc-cricket-world-cup-league-two-2019-23 at 2022-05-31 07:06:13.131532+00:00 hours!
+[2022-05-31 12:36:13,131: INFO/MainProcess] get_live_score[3ee2522c-d085-4a6f-87a5-b921080946ed]: updating live score for: https://www.cricbuzz.com/live-cricket-scorecard/46366/notts-vs-nhnts-north-group-t20-blast-2022 at 2022-05-31 07:06:13.131532+00:00 hours!
+[2022-05-31 12:36:13,569: WARNING/MainProcess] True
+[2022-05-31 12:36:13,569: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10921
+[2022-05-31 12:36:13,570: WARNING/MainProcess] True
+[2022-05-31 12:36:13,570: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 6735
+[2022-05-31 12:36:13,570: WARNING/MainProcess] False
+[2022-05-31 12:36:13,570: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10417
+[2022-05-31 12:36:13,570: WARNING/MainProcess] True
+[2022-05-31 12:36:13,570: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 18415
+[2022-05-31 12:36:13,585: WARNING/MainProcess] False
+[2022-05-31 12:36:13,585: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 6733
+[2022-05-31 12:36:13,585: WARNING/MainProcess] False
+[2022-05-31 12:36:13,585: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 8324
+[2022-05-31 12:36:13,592: WARNING/MainProcess] False
+[2022-05-31 12:36:13,592: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13957
+[2022-05-31 12:36:13,599: WARNING/MainProcess] False
+[2022-05-31 12:36:13,599: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 8011
+[2022-05-31 12:36:13,607: WARNING/MainProcess] False
+[2022-05-31 12:36:13,607: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10400
+[2022-05-31 12:36:13,607: WARNING/MainProcess] False
+[2022-05-31 12:36:13,607: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10031
+[2022-05-31 12:36:13,607: WARNING/MainProcess] False
+[2022-05-31 12:36:13,607: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10030
+[2022-05-31 12:36:13,615: WARNING/MainProcess] False
+[2022-05-31 12:36:13,615: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 6738
+[2022-05-31 12:36:13,623: WARNING/MainProcess] False
+[2022-05-31 12:36:13,623: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 6513
+[2022-05-31 12:36:13,623: WARNING/MainProcess] False
+[2022-05-31 12:36:13,623: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 19641
+[2022-05-31 12:36:13,623: INFO/MainProcess] get_live_score[3ee2522c-d085-4a6f-87a5-b921080946ed]: successfully updated live score for: https://www.cricbuzz.com/live-cricket-scorecard/46366/notts-vs-nhnts-north-group-t20-blast-2022 at 2022-05-31 07:06:13.623628+00:00 hours!
+[2022-05-31 12:36:13,623: INFO/MainProcess] get_live_score[3ee2522c-d085-4a6f-87a5-b921080946ed]: updating live score for: https://www.cricbuzz.com/live-cricket-scorecard/46371/ham-vs-som-south-group-t20-blast-2022 at 2022-05-31 07:06:13.623628+00:00 hours!
+[2022-05-31 12:36:14,204: WARNING/MainProcess] True
+[2022-05-31 12:36:14,204: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10026
+[2022-05-31 12:36:14,204: WARNING/MainProcess] True
+[2022-05-31 12:36:14,204: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10470
+[2022-05-31 12:36:14,204: WARNING/MainProcess] True
+[2022-05-31 12:36:14,204: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 6639
+[2022-05-31 12:36:14,219: WARNING/MainProcess] True
+[2022-05-31 12:36:14,219: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 7945
+[2022-05-31 12:36:14,219: WARNING/MainProcess] True
+[2022-05-31 12:36:14,219: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 8004
+[2022-05-31 12:36:14,219: WARNING/MainProcess] True
+[2022-05-31 12:36:14,219: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 6647
+[2022-05-31 12:36:14,219: WARNING/MainProcess] True
+[2022-05-31 12:36:14,219: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10435
+[2022-05-31 12:36:14,235: WARNING/MainProcess] True
+[2022-05-31 12:36:14,235: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 12254
+[2022-05-31 12:36:14,235: WARNING/MainProcess] True
+[2022-05-31 12:36:14,235: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 18429
+[2022-05-31 12:36:14,255: WARNING/MainProcess] True
+[2022-05-31 12:36:14,255: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10019
+[2022-05-31 12:36:14,255: WARNING/MainProcess] True
+[2022-05-31 12:36:14,255: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13013
+[2022-05-31 12:36:14,271: WARNING/MainProcess] False
+[2022-05-31 12:36:14,271: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 15238
+[2022-05-31 12:36:14,271: WARNING/MainProcess] True
+[2022-05-31 12:36:14,271: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10925
+[2022-05-31 12:36:14,287: WARNING/MainProcess] False
+[2022-05-31 12:36:14,287: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 6657
+[2022-05-31 12:36:14,295: INFO/MainProcess] get_live_score[3ee2522c-d085-4a6f-87a5-b921080946ed]: successfully updated live score for: https://www.cricbuzz.com/live-cricket-scorecard/46371/ham-vs-som-south-group-t20-blast-2022 at 2022-05-31 07:06:14.295582+00:00 hours!
+[2022-05-31 12:36:14,327: INFO/MainProcess] Task get_live_score[3ee2522c-d085-4a6f-87a5-b921080946ed] succeeded in 11.764999999999986s: None
+[2022-05-31 12:39:02,582: INFO/MainProcess] Task get_live_score[e94a29f5-ad56-4476-a33a-5806ca56061b] received
+[2022-05-31 12:39:02,582: INFO/MainProcess] get_live_score[e94a29f5-ad56-4476-a33a-5806ca56061b]: updating live score for: https://www.cricbuzz.com/live-cricket-scorecard/46211/kkr-vs-lsg-66th-match-indian-premier-league-2022 at 2022-05-31 07:09:02.582006+00:00 hours!
+[2022-05-31 12:39:04,629: INFO/MainProcess] get_live_score[e94a29f5-ad56-4476-a33a-5806ca56061b]: successfully updated live score for: https://www.cricbuzz.com/live-cricket-scorecard/46211/kkr-vs-lsg-66th-match-indian-premier-league-2022 at 2022-05-31 07:09:04.629378+00:00 hours!
+[2022-05-31 12:39:04,629: INFO/MainProcess] get_live_score[e94a29f5-ad56-4476-a33a-5806ca56061b]: updating live score for: https://www.cricbuzz.com/live-cricket-scorecard/47591/lsg-vs-rcb-eliminator-indian-premier-league-2022 at 2022-05-31 07:09:04.629378+00:00 hours!
+[2022-05-31 12:39:05,564: WARNING/MainProcess] True
+[2022-05-31 12:39:05,564: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10636
+[2022-05-31 12:39:05,726: INFO/MainProcess] get_live_score[e94a29f5-ad56-4476-a33a-5806ca56061b]: successfully updated live score for: https://www.cricbuzz.com/live-cricket-scorecard/47591/lsg-vs-rcb-eliminator-indian-premier-league-2022 at 2022-05-31 07:09:05.726355+00:00 hours!
+[2022-05-31 12:39:05,726: INFO/MainProcess] get_live_score[e94a29f5-ad56-4476-a33a-5806ca56061b]: updating live score for: https://www.cricbuzz.com/live-cricket-scorecard/47605/gt-vs-rr-final-indian-premier-league-2022 at 2022-05-31 07:09:05.726355+00:00 hours!
+[2022-05-31 12:39:06,823: INFO/MainProcess] get_live_score[e94a29f5-ad56-4476-a33a-5806ca56061b]: successfully updated live score for: https://www.cricbuzz.com/live-cricket-scorecard/47605/gt-vs-rr-final-indian-premier-league-2022 at 2022-05-31 07:09:06.823490+00:00 hours!
+[2022-05-31 12:39:06,823: INFO/MainProcess] get_live_score[e94a29f5-ad56-4476-a33a-5806ca56061b]: updating live score for: https://www.cricbuzz.com/live-cricket-scorecard/46331/warks-vs-dur-north-group-t20-blast-2022 at 2022-05-31 07:09:06.823490+00:00 hours!
+[2022-05-31 12:39:07,607: WARNING/MainProcess] True
+[2022-05-31 12:39:07,607: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 19636
+[2022-05-31 12:39:07,623: WARNING/MainProcess] True
+[2022-05-31 12:39:07,623: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 8499
+[2022-05-31 12:39:07,623: WARNING/MainProcess] True
+[2022-05-31 12:39:07,623: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 14821
+[2022-05-31 12:39:07,623: WARNING/MainProcess] True
+[2022-05-31 12:39:07,623: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10444
+[2022-05-31 12:39:07,623: WARNING/MainProcess] True
+[2022-05-31 12:39:07,623: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 19916
+[2022-05-31 12:39:07,623: WARNING/MainProcess] False
+[2022-05-31 12:39:07,623: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 12256
+[2022-05-31 12:39:07,638: WARNING/MainProcess] False
+[2022-05-31 12:39:07,638: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13063
+[2022-05-31 12:39:07,638: WARNING/MainProcess] False
+[2022-05-31 12:39:07,638: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 8005
+[2022-05-31 12:39:07,638: WARNING/MainProcess] True
+[2022-05-31 12:39:07,638: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10020
+[2022-05-31 12:39:07,660: WARNING/MainProcess] True
+[2022-05-31 12:39:07,660: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 12793
+[2022-05-31 12:39:07,660: WARNING/MainProcess] True
+[2022-05-31 12:39:07,660: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 14265
+[2022-05-31 12:39:07,660: WARNING/MainProcess] True
+[2022-05-31 12:39:07,660: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 9328
+[2022-05-31 12:39:07,660: WARNING/MainProcess] True
+[2022-05-31 12:39:07,660: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 11436
+[2022-05-31 12:39:07,660: WARNING/MainProcess] True
+[2022-05-31 12:39:07,660: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 8322
+[2022-05-31 12:39:07,668: WARNING/MainProcess] True
+[2022-05-31 12:39:07,668: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 8384
+[2022-05-31 12:39:07,668: WARNING/MainProcess] True
+[2022-05-31 12:39:07,668: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 12992
+[2022-05-31 12:39:07,668: WARNING/MainProcess] True
+[2022-05-31 12:39:07,668: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 6550
+[2022-05-31 12:39:07,668: WARNING/MainProcess] False
+[2022-05-31 12:39:07,668: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13005
+[2022-05-31 12:39:07,676: INFO/MainProcess] get_live_score[e94a29f5-ad56-4476-a33a-5806ca56061b]: successfully updated live score for: https://www.cricbuzz.com/live-cricket-scorecard/46331/warks-vs-dur-north-group-t20-blast-2022 at 2022-05-31 07:09:07.676270+00:00 hours!
+[2022-05-31 12:39:07,676: INFO/MainProcess] get_live_score[e94a29f5-ad56-4476-a33a-5806ca56061b]: updating live score for: https://www.cricbuzz.com/live-cricket-scorecard/46338/lancs-vs-worcs-north-group-t20-blast-2022 at 2022-05-31 07:09:07.676270+00:00 hours!
+[2022-05-31 12:39:08,486: WARNING/MainProcess] True
+[2022-05-31 12:39:08,486: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 9330
+[2022-05-31 12:39:08,486: WARNING/MainProcess] True
+[2022-05-31 12:39:08,486: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 6705
+[2022-05-31 12:39:08,502: WARNING/MainProcess] True
+[2022-05-31 12:39:08,502: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 9821
+[2022-05-31 12:39:08,517: WARNING/MainProcess] True
+[2022-05-31 12:39:08,517: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 12710
+[2022-05-31 12:39:08,517: WARNING/MainProcess] True
+[2022-05-31 12:39:08,517: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 18199
+[2022-05-31 12:39:08,517: WARNING/MainProcess] False
+[2022-05-31 12:39:08,517: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10395
+[2022-05-31 12:39:08,517: WARNING/MainProcess] True
+[2022-05-31 12:39:08,517: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 12991
+[2022-05-31 12:39:08,517: WARNING/MainProcess] True
+[2022-05-31 12:39:08,517: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 7949
+[2022-05-31 12:39:08,533: WARNING/MainProcess] True
+[2022-05-31 12:39:08,533: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13785
+[2022-05-31 12:39:08,533: WARNING/MainProcess] True
+[2022-05-31 12:39:08,533: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10104
+[2022-05-31 12:39:08,533: WARNING/MainProcess] True
+[2022-05-31 12:39:08,533: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 6682
+[2022-05-31 12:39:08,533: WARNING/MainProcess] True
+[2022-05-31 12:39:08,533: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 9814
+[2022-05-31 12:39:08,533: WARNING/MainProcess] True
+[2022-05-31 12:39:08,548: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10441
+[2022-05-31 12:39:08,548: WARNING/MainProcess] True
+[2022-05-31 12:39:08,548: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 19727
+[2022-05-31 12:39:08,548: WARNING/MainProcess] False
+[2022-05-31 12:39:08,548: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 11556
+[2022-05-31 12:39:08,548: WARNING/MainProcess] True
+[2022-05-31 12:39:08,548: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 12993
+[2022-05-31 12:39:08,548: INFO/MainProcess] get_live_score[e94a29f5-ad56-4476-a33a-5806ca56061b]: successfully updated live score for: https://www.cricbuzz.com/live-cricket-scorecard/46338/lancs-vs-worcs-north-group-t20-blast-2022 at 2022-05-31 07:09:08.548889+00:00 hours!
+[2022-05-31 12:39:08,548: INFO/MainProcess] get_live_score[e94a29f5-ad56-4476-a33a-5806ca56061b]: updating live score for: https://www.cricbuzz.com/live-cricket-scorecard/46345/mdx-vs-glam-south-group-t20-blast-2022 at 2022-05-31 07:09:08.548889+00:00 hours!
+[2022-05-31 12:39:09,442: WARNING/MainProcess] True
+[2022-05-31 12:39:09,442: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 11529
+[2022-05-31 12:39:09,442: WARNING/MainProcess] True
+[2022-05-31 12:39:09,442: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10448
+[2022-05-31 12:39:09,458: WARNING/MainProcess] True
+[2022-05-31 12:39:09,458: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 18365
+[2022-05-31 12:39:09,458: WARNING/MainProcess] True
+[2022-05-31 12:39:09,458: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13989
+[2022-05-31 12:39:09,458: WARNING/MainProcess] True
+[2022-05-31 12:39:09,458: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 6653
+[2022-05-31 12:39:09,458: WARNING/MainProcess] True
+[2022-05-31 12:39:09,458: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13329
+[2022-05-31 12:39:09,474: WARNING/MainProcess] True
+[2022-05-31 12:39:09,474: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 6662
+[2022-05-31 12:39:09,474: WARNING/MainProcess] False
+[2022-05-31 12:39:09,474: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 15236
+[2022-05-31 12:39:09,474: WARNING/MainProcess] False
+[2022-05-31 12:39:09,474: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 18174
+[2022-05-31 12:39:09,474: WARNING/MainProcess] True
+[2022-05-31 12:39:09,474: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 9345
+[2022-05-31 12:39:09,474: WARNING/MainProcess] True
+[2022-05-31 12:39:09,474: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 7996
+[2022-05-31 12:39:09,489: WARNING/MainProcess] True
+[2022-05-31 12:39:09,489: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 11695
+[2022-05-31 12:39:09,489: WARNING/MainProcess] True
+[2022-05-31 12:39:09,489: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 7958
+[2022-05-31 12:39:09,489: WARNING/MainProcess] True
+[2022-05-31 12:39:09,489: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 7866
+[2022-05-31 12:39:09,489: WARNING/MainProcess] True
+[2022-05-31 12:39:09,489: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13779
+[2022-05-31 12:39:09,505: WARNING/MainProcess] True
+[2022-05-31 12:39:09,505: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10511
+[2022-05-31 12:39:09,505: WARNING/MainProcess] True
+[2022-05-31 12:39:09,505: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13332
+[2022-05-31 12:39:09,505: WARNING/MainProcess] True
+[2022-05-31 12:39:09,505: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 7732
+[2022-05-31 12:39:09,505: INFO/MainProcess] get_live_score[e94a29f5-ad56-4476-a33a-5806ca56061b]: successfully updated live score for: https://www.cricbuzz.com/live-cricket-scorecard/46345/mdx-vs-glam-south-group-t20-blast-2022 at 2022-05-31 07:09:09.505261+00:00 hours!
+[2022-05-31 12:39:09,505: INFO/MainProcess] get_live_score[e94a29f5-ad56-4476-a33a-5806ca56061b]: updating live score for: https://www.cricbuzz.com/live-cricket-scorecard/46350/sus-vs-kent-south-group-t20-blast-2022 at 2022-05-31 07:09:09.505261+00:00 hours!
+[2022-05-31 12:39:10,377: WARNING/MainProcess] True
+[2022-05-31 12:39:10,377: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 9468
+[2022-05-31 12:39:10,377: WARNING/MainProcess] True
+[2022-05-31 12:39:10,377: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 776
+[2022-05-31 12:39:10,393: WARNING/MainProcess] True
+[2022-05-31 12:39:10,393: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 12260
+[2022-05-31 12:39:10,393: WARNING/MainProcess] True
+[2022-05-31 12:39:10,393: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10924
+[2022-05-31 12:39:10,393: WARNING/MainProcess] True
+[2022-05-31 12:39:10,393: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10071
+[2022-05-31 12:39:10,393: WARNING/MainProcess] False
+[2022-05-31 12:39:10,393: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 2268
+[2022-05-31 12:39:10,408: WARNING/MainProcess] False
+[2022-05-31 12:39:10,408: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 19621
+[2022-05-31 12:39:10,408: WARNING/MainProcess] False
+[2022-05-31 12:39:10,408: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 6317
+[2022-05-31 12:39:10,408: WARNING/MainProcess] True
+[2022-05-31 12:39:10,408: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 12770
+[2022-05-31 12:39:10,408: WARNING/MainProcess] True
+[2022-05-31 12:39:10,408: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 7856
+[2022-05-31 12:39:10,408: WARNING/MainProcess] True
+[2022-05-31 12:39:10,408: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 1995
+[2022-05-31 12:39:10,424: WARNING/MainProcess] True
+[2022-05-31 12:39:10,424: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 9411
+[2022-05-31 12:39:10,439: WARNING/MainProcess] True
+[2022-05-31 12:39:10,439: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 14813
+[2022-05-31 12:39:10,439: WARNING/MainProcess] True
+[2022-05-31 12:39:10,439: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 11076
+[2022-05-31 12:39:10,439: WARNING/MainProcess] True
+[2022-05-31 12:39:10,439: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13678
+[2022-05-31 12:39:10,439: WARNING/MainProcess] False
+[2022-05-31 12:39:10,439: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 12783
+[2022-05-31 12:39:10,439: WARNING/MainProcess] False
+[2022-05-31 12:39:10,439: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 8560
+[2022-05-31 12:39:10,439: INFO/MainProcess] get_live_score[e94a29f5-ad56-4476-a33a-5806ca56061b]: successfully updated live score for: https://www.cricbuzz.com/live-cricket-scorecard/46350/sus-vs-kent-south-group-t20-blast-2022 at 2022-05-31 07:09:10.439895+00:00 hours!
+[2022-05-31 12:39:10,439: INFO/MainProcess] get_live_score[e94a29f5-ad56-4476-a33a-5806ca56061b]: updating live score for: https://www.cricbuzz.com/live-cricket-scorecard/46364/yorks-vs-leic-north-group-t20-blast-2022 at 2022-05-31 07:09:10.439895+00:00 hours!
+[2022-05-31 12:39:11,386: WARNING/MainProcess] True
+[2022-05-31 12:39:11,386: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 6511
+[2022-05-31 12:39:11,386: WARNING/MainProcess] True
+[2022-05-31 12:39:11,386: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10033
+[2022-05-31 12:39:11,403: WARNING/MainProcess] True
+[2022-05-31 12:39:11,403: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 12201
+[2022-05-31 12:39:11,418: WARNING/MainProcess] True
+[2022-05-31 12:39:11,418: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13777
+[2022-05-31 12:39:11,418: WARNING/MainProcess] True
+[2022-05-31 12:39:11,418: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 15478
+[2022-05-31 12:39:11,418: WARNING/MainProcess] True
+[2022-05-31 12:39:11,418: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 11534
+[2022-05-31 12:39:11,435: WARNING/MainProcess] True
+[2022-05-31 12:39:11,435: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 14561
+[2022-05-31 12:39:11,435: WARNING/MainProcess] True
+[2022-05-31 12:39:11,435: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13996
+[2022-05-31 12:39:11,435: WARNING/MainProcess] True
+[2022-05-31 12:39:11,435: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 2255
+[2022-05-31 12:39:11,435: WARNING/MainProcess] True
+[2022-05-31 12:39:11,435: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 9336
+[2022-05-31 12:39:11,435: WARNING/MainProcess] True
+[2022-05-31 12:39:11,435: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 9360
+[2022-05-31 12:39:11,443: WARNING/MainProcess] True
+[2022-05-31 12:39:11,443: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 9725
+[2022-05-31 12:39:11,443: WARNING/MainProcess] True
+[2022-05-31 12:39:11,443: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13933
+[2022-05-31 12:39:11,443: WARNING/MainProcess] True
+[2022-05-31 12:39:11,443: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13716
+[2022-05-31 12:39:11,443: WARNING/MainProcess] True
+[2022-05-31 12:39:11,443: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 19767
+[2022-05-31 12:39:11,451: WARNING/MainProcess] True
+[2022-05-31 12:39:11,451: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13335
+[2022-05-31 12:39:11,452: WARNING/MainProcess] False
+[2022-05-31 12:39:11,452: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 11565
+[2022-05-31 12:39:11,452: INFO/MainProcess] get_live_score[e94a29f5-ad56-4476-a33a-5806ca56061b]: successfully updated live score for: https://www.cricbuzz.com/live-cricket-scorecard/46364/yorks-vs-leic-north-group-t20-blast-2022 at 2022-05-31 07:09:11.452547+00:00 hours!
+[2022-05-31 12:39:11,452: INFO/MainProcess] get_live_score[e94a29f5-ad56-4476-a33a-5806ca56061b]: updating live score for: https://www.cricbuzz.com/live-cricket-scorecard/46357/som-vs-ess-south-group-t20-blast-2022 at 2022-05-31 07:09:11.452547+00:00 hours!
+[2022-05-31 12:39:12,281: WARNING/MainProcess] True
+[2022-05-31 12:39:12,281: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 12254
+[2022-05-31 12:39:12,281: WARNING/MainProcess] True
+[2022-05-31 12:39:12,281: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 18429
+[2022-05-31 12:39:12,296: WARNING/MainProcess] True
+[2022-05-31 12:39:12,296: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10019
+[2022-05-31 12:39:12,296: WARNING/MainProcess] True
+[2022-05-31 12:39:12,296: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13013
+[2022-05-31 12:39:12,312: WARNING/MainProcess] False
+[2022-05-31 12:39:12,312: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 15238
+[2022-05-31 12:39:12,312: WARNING/MainProcess] False
+[2022-05-31 12:39:12,312: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10925
+[2022-05-31 12:39:12,327: WARNING/MainProcess] False
+[2022-05-31 12:39:12,327: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 6657
+[2022-05-31 12:39:12,327: WARNING/MainProcess] True
+[2022-05-31 12:39:12,327: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 15119
+[2022-05-31 12:39:12,327: WARNING/MainProcess] True
+[2022-05-31 12:39:12,327: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 7865
+[2022-05-31 12:39:12,327: WARNING/MainProcess] True
+[2022-05-31 12:39:12,327: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13800
+[2022-05-31 12:39:12,327: WARNING/MainProcess] True
+[2022-05-31 12:39:12,327: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10387
+[2022-05-31 12:39:12,327: WARNING/MainProcess] True
+[2022-05-31 12:39:12,327: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 11527
+[2022-05-31 12:39:12,343: WARNING/MainProcess] True
+[2022-05-31 12:39:12,343: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 6528
+[2022-05-31 12:39:12,343: WARNING/MainProcess] True
+[2022-05-31 12:39:12,343: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10414
+[2022-05-31 12:39:12,359: WARNING/MainProcess] True
+[2022-05-31 12:39:12,359: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13048
+[2022-05-31 12:39:12,359: WARNING/MainProcess] True
+[2022-05-31 12:39:12,359: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 12994
+[2022-05-31 12:39:12,359: INFO/MainProcess] get_live_score[e94a29f5-ad56-4476-a33a-5806ca56061b]: successfully updated live score for: https://www.cricbuzz.com/live-cricket-scorecard/46357/som-vs-ess-south-group-t20-blast-2022 at 2022-05-31 07:09:12.359111+00:00 hours!
+[2022-05-31 12:39:12,359: INFO/MainProcess] get_live_score[e94a29f5-ad56-4476-a33a-5806ca56061b]: updating live score for: https://www.cricbuzz.com/live-cricket-scorecard/47647/sco-vs-usa-2nd-match-icc-cricket-world-cup-league-two-2019-23 at 2022-05-31 07:09:12.359111+00:00 hours!
+[2022-05-31 12:39:13,371: WARNING/MainProcess] True
+[2022-05-31 12:39:13,371: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 14541
+[2022-05-31 12:39:13,387: WARNING/MainProcess] False
+[2022-05-31 12:39:13,387: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13744
+[2022-05-31 12:39:13,387: WARNING/MainProcess] True
+[2022-05-31 12:39:13,387: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 8670
+[2022-05-31 12:39:13,387: WARNING/MainProcess] True
+[2022-05-31 12:39:13,387: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 20217
+[2022-05-31 12:39:13,387: WARNING/MainProcess] True
+[2022-05-31 12:39:13,387: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 14732
+[2022-05-31 12:39:13,402: WARNING/MainProcess] True
+[2022-05-31 12:39:13,402: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 26232
+[2022-05-31 12:39:13,402: WARNING/MainProcess] True
+[2022-05-31 12:39:13,402: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 12788
+[2022-05-31 12:39:13,402: WARNING/MainProcess] True
+[2022-05-31 12:39:13,402: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 15475
+[2022-05-31 12:39:13,402: WARNING/MainProcess] True
+[2022-05-31 12:39:13,402: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 11005
+[2022-05-31 12:39:13,402: WARNING/MainProcess] True
+[2022-05-31 12:39:13,402: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 14729
+[2022-05-31 12:39:13,418: WARNING/MainProcess] True
+[2022-05-31 12:39:13,418: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 6320
+[2022-05-31 12:39:13,418: INFO/MainProcess] get_live_score[e94a29f5-ad56-4476-a33a-5806ca56061b]: successfully updated live score for: https://www.cricbuzz.com/live-cricket-scorecard/47647/sco-vs-usa-2nd-match-icc-cricket-world-cup-league-two-2019-23 at 2022-05-31 07:09:13.418546+00:00 hours!
+[2022-05-31 12:39:13,418: INFO/MainProcess] get_live_score[e94a29f5-ad56-4476-a33a-5806ca56061b]: updating live score for: https://www.cricbuzz.com/live-cricket-scorecard/46366/notts-vs-nhnts-north-group-t20-blast-2022 at 2022-05-31 07:09:13.418546+00:00 hours!
+[2022-05-31 12:39:14,150: WARNING/MainProcess] True
+[2022-05-31 12:39:14,150: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10921
+[2022-05-31 12:39:14,165: WARNING/MainProcess] True
+[2022-05-31 12:39:14,165: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 6735
+[2022-05-31 12:39:14,165: WARNING/MainProcess] False
+[2022-05-31 12:39:14,165: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10417
+[2022-05-31 12:39:14,165: WARNING/MainProcess] True
+[2022-05-31 12:39:14,165: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 18415
+[2022-05-31 12:39:14,181: WARNING/MainProcess] False
+[2022-05-31 12:39:14,181: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 6733
+[2022-05-31 12:39:14,181: WARNING/MainProcess] False
+[2022-05-31 12:39:14,181: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 8324
+[2022-05-31 12:39:14,197: WARNING/MainProcess] False
+[2022-05-31 12:39:14,197: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13957
+[2022-05-31 12:39:14,197: WARNING/MainProcess] False
+[2022-05-31 12:39:14,197: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 8011
+[2022-05-31 12:39:14,197: WARNING/MainProcess] False
+[2022-05-31 12:39:14,197: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10400
+[2022-05-31 12:39:14,212: WARNING/MainProcess] False
+[2022-05-31 12:39:14,212: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10031
+[2022-05-31 12:39:14,212: WARNING/MainProcess] False
+[2022-05-31 12:39:14,212: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10030
+[2022-05-31 12:39:14,212: WARNING/MainProcess] False
+[2022-05-31 12:39:14,212: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 6738
+[2022-05-31 12:39:14,228: WARNING/MainProcess] False
+[2022-05-31 12:39:14,228: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 6513
+[2022-05-31 12:39:14,228: WARNING/MainProcess] False
+[2022-05-31 12:39:14,228: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 19641
+[2022-05-31 12:39:14,228: INFO/MainProcess] get_live_score[e94a29f5-ad56-4476-a33a-5806ca56061b]: successfully updated live score for: https://www.cricbuzz.com/live-cricket-scorecard/46366/notts-vs-nhnts-north-group-t20-blast-2022 at 2022-05-31 07:09:14.228440+00:00 hours!
+[2022-05-31 12:39:14,228: INFO/MainProcess] get_live_score[e94a29f5-ad56-4476-a33a-5806ca56061b]: updating live score for: https://www.cricbuzz.com/live-cricket-scorecard/46371/ham-vs-som-south-group-t20-blast-2022 at 2022-05-31 07:09:14.228440+00:00 hours!
+[2022-05-31 12:39:15,096: WARNING/MainProcess] True
+[2022-05-31 12:39:15,096: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10026
+[2022-05-31 12:39:15,113: WARNING/MainProcess] True
+[2022-05-31 12:39:15,113: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10470
+[2022-05-31 12:39:15,113: WARNING/MainProcess] True
+[2022-05-31 12:39:15,113: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 6639
+[2022-05-31 12:39:15,113: WARNING/MainProcess] True
+[2022-05-31 12:39:15,113: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 7945
+[2022-05-31 12:39:15,113: WARNING/MainProcess] True
+[2022-05-31 12:39:15,113: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 8004
+[2022-05-31 12:39:15,128: WARNING/MainProcess] True
+[2022-05-31 12:39:15,128: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 6647
+[2022-05-31 12:39:15,128: WARNING/MainProcess] True
+[2022-05-31 12:39:15,128: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10435
+[2022-05-31 12:39:15,136: WARNING/MainProcess] True
+[2022-05-31 12:39:15,136: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 12254
+[2022-05-31 12:39:15,136: WARNING/MainProcess] True
+[2022-05-31 12:39:15,136: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 18429
+[2022-05-31 12:39:15,144: WARNING/MainProcess] True
+[2022-05-31 12:39:15,144: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10019
+[2022-05-31 12:39:15,153: WARNING/MainProcess] True
+[2022-05-31 12:39:15,153: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 13013
+[2022-05-31 12:39:15,153: WARNING/MainProcess] False
+[2022-05-31 12:39:15,153: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 15238
+[2022-05-31 12:39:15,153: WARNING/MainProcess] True
+[2022-05-31 12:39:15,153: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 10925
+[2022-05-31 12:39:15,169: WARNING/MainProcess] False
+[2022-05-31 12:39:15,169: WARNING/MainProcess] error Player matching query does not exist. inside updating player. 6657
+[2022-05-31 12:39:15,169: INFO/MainProcess] get_live_score[e94a29f5-ad56-4476-a33a-5806ca56061b]: successfully updated live score for: https://www.cricbuzz.com/live-cricket-scorecard/46371/ham-vs-som-south-group-t20-blast-2022 at 2022-05-31 07:09:15.169042+00:00 hours!
+[2022-05-31 12:39:15,309: INFO/MainProcess] Task get_live_score[e94a29f5-ad56-4476-a33a-5806ca56061b] succeeded in 12.735000000000014s: None
