@@ -154,8 +154,10 @@ class Match(models.Model):
     def save(self, *args, **kwargs):
         if self.is_test_match and not isinstance(self.match_pause_time, datetime):
             self.match_pause_time = self.time
+            # 8 hour support till next round value, hour 19:30 pause time means it'll pause at 20:00
+            # continue till next 4 days and same process work
             self.match_pause_time = self.match_pause_time.replace(
-                hour=self.time.hour + 10,
+                hour=self.time.hour + 8,
                 day=self.time.day + 4
             )
         try:

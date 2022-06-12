@@ -173,7 +173,8 @@ class vision11:
         matches = Match.objects.filter(is_match_end=False, is_test_match=False)
         list_matches_url = []
         for match in matches:
-            if match.time < timezone.now() and (timezone.now()-match.time).days <= 5:
+            # since test match is seprated from it either set is_match_end true to stop or it'll stop within next 2 days.
+            if match.time < timezone.now() and (timezone.now()-match.time).days <= 2:
                 list_matches_url.append(match.url)
 
         return list_matches_url
