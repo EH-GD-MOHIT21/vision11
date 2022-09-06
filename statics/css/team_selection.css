@@ -226,6 +226,12 @@ body {
 }
 
 
+.player_info img {
+  width: 75px;
+  height: 75px;
+}
+
+
 @media(max-width:620px){
   .multicolorbg .box{
     width: 98%;

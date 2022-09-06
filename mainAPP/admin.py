@@ -5,8 +5,8 @@ from .models import Match,Team,PlayersMatchData, User_Feature_Suggestion,Player,
 from django import forms
 
 class CustomMatch(admin.ModelAdmin):
-    list_display = ["title","team1", "team2", "time"]
-    search_fields = ["title","team1", "team2", "time"]
+    list_display = ["title","team1", "team2", "time", "is_match_end"]
+    search_fields = ["title","team1", "team2", "time", "is_match_end"]
 
 
 class CustomContest(admin.ModelAdmin):
