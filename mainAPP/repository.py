@@ -184,8 +184,11 @@ class vision11:
         list_matches_urls = []
         time_now = timezone.now()
         for match in matches:
-            if time_now.hour <= match.match_pause_time.hour and match.time < time_now and time_now.day <= match.match_pause_time.day:
-                list_matches_urls.append(match.url)
+            try:
+                if time_now.hour <= match.match_pause_time.hour and match.time < time_now and time_now.day <= match.match_pause_time.day:
+                    list_matches_urls.append(match.url)
+            except Exception as e:
+                print(e)
         return list_matches_urls
 
     def join_contest(self, data, user):
